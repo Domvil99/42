@@ -1,0 +1,42 @@
+== C/libft/ft_atoi.c ==
+== C/libft/ft_bzero.c ==
+== C/libft/ft_calloc.c ==
+== C/libft/ft_isalnum.c ==
+== C/libft/ft_isalpha.c ==
+== C/libft/ft_isascii.c ==
+== C/libft/ft_isdigit.c ==
+== C/libft/ft_isprint.c ==
+== C/libft/ft_itoa.c ==
+C/libft/ft_itoa.c: In function ‘ft_numlen’:
+C/libft/ft_itoa.c:8:5: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+    8 |     if(n > 0)
+      |     ^~
+C/libft/ft_itoa.c:10:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   10 |         while(n)
+      |         ^~~~~
+cc1: all warnings being treated as errors
+== C/libft/ft_memchr.c ==
+== C/libft/ft_memcmp.c ==
+== C/libft/ft_memcpy.c ==
+== C/libft/ft_memmove.c ==
+== C/libft/ft_memset.c ==
+== C/libft/ft_putchar_fd.c ==
+== C/libft/ft_putendl_fd.c ==
+== C/libft/ft_putnbr_fd.c ==
+== C/libft/ft_putstr_fd.c ==
+== C/libft/ft_split.c ==
+== C/libft/ft_strchr.c ==
+== C/libft/ft_strdup.c ==
+== C/libft/ft_striteri.c ==
+== C/libft/ft_strjoin.c ==
+== C/libft/ft_strlcat.c ==
+== C/libft/ft_strlcpy.c ==
+== C/libft/ft_strlen.c ==
+== C/libft/ft_strmapi.c ==
+== C/libft/ft_strncmp.c ==
+== C/libft/ft_strnstr.c ==
+== C/libft/ft_strrchr.c ==
+== C/libft/ft_strtrim.c ==
+== C/libft/ft_substr.c ==
+== C/libft/ft_tolower.c ==
+== C/libft/ft_toupper.c ==

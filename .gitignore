@@ -1,0 +1,10 @@
+# Delivery repo is managed separately
+/42/C/
+
+# Local tooling environment
+/.tools/norminette-venv/
+/.tools/*venv*/
+
+# Python caches
+**/__pycache__/
+*.pyc

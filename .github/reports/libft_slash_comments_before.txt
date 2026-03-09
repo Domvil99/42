@@ -1,0 +1,48 @@
+C/libft/ft_atoi.c:36:    printf("El número convertido es: %d\n", result); // Debería imprimir -12345
+C/libft/ft_calloc.c:9:		return (malloc(1));  // Devuelve un puntero válido que puede pasarse a free()
+C/libft/ft_calloc.c:24:	// Caso normal: Reserva 5 enteros
+C/libft/ft_calloc.c:36:	// Caso especial: count = 0
+C/libft/ft_calloc.c:44:	// Caso especial: size = 0
+C/libft/ft_calloc.c:52:	// Caso límite: malloc falla (simulación manual)
+C/libft/ft_isascii.c:12:    printf("ft_isascii(65) = %d\n", ft_isascii(65));   // 'A'
+C/libft/ft_isascii.c:13:    printf("ft_isascii(200) = %d\n", ft_isascii(200)); // Fuera de ASCII estándar
+C/libft/ft_isprint.c:12:    printf("ft_isprint(32) = %d\n", ft_isprint(32));  // Espacio ' '
+C/libft/ft_isprint.c:13:    printf("ft_isprint(126) = %d\n", ft_isprint(126)); // '~'
+C/libft/ft_isprint.c:14:    printf("ft_isprint(8) = %d\n", ft_isprint(8));   // No imprimible (backspace)
+C/libft/ft_memmove.c:43:    ft_memmove(str + 6, str, 5);  // Mueve "Hola," sobre sí mismo
+C/libft/ft_putchar_fd.c:11:    int fd = 1; // 1 es el descriptor de archivo para stdout
+C/libft/ft_putendl_fd.c:17:    int fd = 1; // 1 es el descriptor de archivo para stdout
+C/libft/ft_putnbr_fd.c:6:	if (n == -2147483648) // Manejo de INT_MIN
+C/libft/ft_putnbr_fd.c:11:	if (n < 0) // Si es negativo, imprimimos '-' y convertimos a positivo
+C/libft/ft_putnbr_fd.c:16:	if (n >= 10) // Si es mayor o igual a 10, llamamos recursivamente a la función
+C/libft/ft_putnbr_fd.c:18:	char c = (n % 10) + '0'; // Convertimos el último dígito a carácter
+C/libft/ft_putnbr_fd.c:24:    int fd = 1; // 1 es el descriptor de archivo para stdout
+C/libft/ft_putnbr_fd.c:26:    write(fd, "\n", 1); // Para nueva línea
+C/libft/ft_putnbr_fd.c:28:    write(fd, "\n", 1); // Para nueva línea
+C/libft/ft_putnbr_fd.c:30:    write(fd, "\n", 1); // Para nueva línea
+C/libft/ft_putnbr_fd.c:54:	num_str = ft_itoa(n); // Convertimos el número a string
+C/libft/ft_putnbr_fd.c:56:		return; // Si falla malloc, no imprimimos nada
+C/libft/ft_putnbr_fd.c:57:	ft_putstr_fd(num_str, fd); // Imprimimos la string con ft_putstr_fd
+C/libft/ft_putnbr_fd.c:58:	free(num_str); // Liberamos la memoria reservada por ft_itoa
+C/libft/ft_putnbr_fd.c:65:	if (n == -2147483648) // Manejo especial de INT_MIN
+C/libft/ft_putnbr_fd.c:70:	if (n < 0) // Si es negativo, imprimimos '-' y convertimos a positivo
+C/libft/ft_putnbr_fd.c:75:	if (n >= 10) // Si el número tiene más de un dígito, lo dividimos
+C/libft/ft_putnbr_fd.c:77:	ft_putchar_fd((n % 10) + '0', fd); // Imprimimos el último dígito
+C/libft/ft_putstr_fd.c:15:    int fd = 1; // 1 es el descriptor de archivo para stdout
+C/libft/ft_strdup.c:27:        free(duplicado); // Liberar la memoria asignada
+C/libft/ft_strjoin.c:30:        free(result); // Liberar la memoria asignada
+C/libft/ft_strtrim.c:13:	while (s1[start] && ft_strchr(set, s1[start])) // Usamos ft_strchr
+C/libft/ft_strtrim.c:16:	while (end > start && ft_strchr(set, s1[end - 1])) // Usamos ft_strchr
+C/libft/ft_strtrim.c:85:        free(result); // Liberar la memoria asignada
+C/libft/ft_substr.c:33:        free(sub); // Liberar la memoria asignada
+C/libft/ft_toupper.c:26:    printf("ft_toupper('a') = %c\n", ft_toupper('a'));   // 'A'
+C/libft/ft_toupper.c:27:    printf("ft_toupper('z') = %c\n", ft_toupper('z'));   // 'Z'
+C/libft/ft_toupper.c:28:    printf("ft_toupper('A') = %c\n", ft_toupper('A'));   // 'A' (sin cambio)
+C/libft/ft_toupper.c:29:    printf("ft_toupper('1') = %c\n", ft_toupper('1'));   // '1' (sin cambio)
+C/libft/libft.h:4:# include <unistd.h> //Para write ()
+C/libft/libft.h:5:# include <stdlib.h> //Para Malloc () y free ()
+C/libft/libft.h:6:# include <stddef.h> //Para size_t
+C/libft/libft.h:7:#include <string.h> //para memset 
+C/libft/libft.h:33:// Parte 2 - Funciones adicionales
+C/libft/libft_bonus.h:18:// Estructura para listas enlazadas
+C/libft/libft_bonus.h:25:// Funciones de listas enlazadas (bonus)

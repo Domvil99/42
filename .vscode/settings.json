@@ -1,0 +1,22 @@
+{
+  "[c]": {
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  },
+  "C_Cpp.codeAnalysisRunOnEdit": true,
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "C_Cpp.intelliSenseEngineBackend": "tag-parser",
+  "clang-format.style": "{ BasedOnStyle: LLVM, IndentWidth: 4, UseTab: ForIndentation }",
+  "files.exclude": {
+    "**/*.o": true,
+    "**/*.a": true,
+    "**/*.so": true
+  },
+  "search.exclude": {
+    "**/build": true,
+    "**/obj": true
+  }
+}
