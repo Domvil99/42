@@ -14,6 +14,10 @@ Purpose: central list for items explicitly postponed with the phrase
 When the user says `guardalo para despues`, add one entry to this file using
 this template.
 
+If a task is not `super importante`, keep it deferred and do not mention it in
+normal responses. Mention deferred items only when the user explicitly asks for
+the pending list.
+
 ## Entry Template
 
 ```md

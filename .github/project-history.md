@@ -54,6 +54,10 @@ Purpose: chronological log of important decisions, imports, and structure change
   - corrected Norminette tip to reference `$NORMI` in:
     - `.github/QUICK_REFERENCE.md`
 
+- Updated deferred task policy:
+  - if item is not `super importante`, keep it deferred and do not mention it
+    unless the user explicitly asks for the pending list.
+
 - Added tests support directory:
   - `42/testsLibf/` (manual test programs for libft)
 - Route consistency review completed after structure changes under `42/`.

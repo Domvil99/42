@@ -48,6 +48,8 @@ When the user says `guardalo para despues`:
 	- `importante`
 	- `super importante`
 3. Add enough context so it can be resumed without ambiguity.
+4. If the deferred item is not `super importante`, keep it for later and do
+	not mention it unless the user explicitly asks for pending items.
 
 ## Naming Convention for Imported Specs
 

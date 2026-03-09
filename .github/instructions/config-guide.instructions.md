@@ -75,3 +75,6 @@ Coordina con el usuario para mantener limpia la separación de responsabilidades
 	- `.github/deferred-tasks.md`
 	- prioridad obligatoria: `no importante` | `importante` |
 	  `super importante`
+9. Si el pendiente no es `super importante`, mantenerlo diferido y no
+	mencionarlo en respuestas normales; solo mostrarlo si el usuario pide
+	explicitamente la lista de pendientes.
