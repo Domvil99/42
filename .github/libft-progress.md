@@ -26,6 +26,22 @@
     `ft_split`, `ft_itoa`, `ft_substr`, `ft_strjoin`).
 - Normalización de `main` de prueba comentados: un único `main` por
     archivo `ft_*.c` en la librería.
+- Revisión integral contra especificación `42/PDFs/2026-03-08_primera_libft.txt`:
+    - `make fclean && make && make bonus` validado ✅.
+    - `norminette *.c *.h` sin errores adicionales al ignorar
+        `INVALID_HEADER` (según política temporal indicada por usuario).
+    - Control estructural de pruebas internas: 43/43 archivos `*.c` con
+        una sola ocurrencia de `int main(void)`.
+    - Test funcional con sanitizador (`-fsanitize=address`) ejecutado y
+        sin fallos reportados en la corrida disponible.
+- Revisión focalizada en `Makefile` y headers (`2026-03-09`):
+        - `libft.h` quedó solo con parte obligatoria + parte 2 (sin API bonus).
+        - `libft_bonus.h` ahora define `t_list` y declara todas las `ft_lst*`.
+        - `*_bonus.c` migrados a `#include "libft_bonus.h"`.
+        - `Makefile` actualizado para evitar relink innecesario en `bonus`
+            mediante marcador `.bonus`.
+        - flujo verificado: `make`, `make bonus`, repetición de `make bonus`
+            (sin relink), y compilación externa con ambos headers (`OK_HEADER_FLOW`).
 
 ## 🎯 Próximas a Implementar
 1. Ampliar pruebas automáticas en `42/testsLibf/`

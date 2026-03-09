@@ -61,3 +61,12 @@ Estado: obligatorio y bonus implementados, validado con compilacion
 - Se confirmó estabilidad tras cambios recientes en `ft_memcpy.c`,
 	`ft_lstdelone_bonus.c` y `ft_lstmap_bonus.c` con compilación completa
 	y revisión de Norminette (excepto política temporal de header).
+- Auditoría integral (2026-03-09) alineada al `.txt` oficial:
+	- `make` y `make bonus` correctos.
+	- sin errores de Norminette fuera de `INVALID_HEADER`.
+	- 43/43 `*.c` con un único `int main(void)` para prueba interna
+	  (en bloque comentado).
+- Ajuste de arquitectura `.h` + `Makefile`:
+	- `libft.h` expone solo API obligatoria/parte 2.
+	- `libft_bonus.h` concentra `t_list` y API `ft_lst*`.
+	- `bonus` en `Makefile` sin relink innecesario en ejecuciones repetidas.

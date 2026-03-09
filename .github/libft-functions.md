@@ -76,3 +76,13 @@
 - Estructura de prueba interna normalizada: un `main` comentado por archivo `ft_*.c`.
 - Revalidación reciente completada tras ajustes manuales en archivos de
 	memoria y bonus de listas, manteniendo 43/43 operativas.
+- Auditoría integral adicional (2026-03-09) basada en
+	`42/PDFs/2026-03-08_primera_libft.txt`:
+	- compilación obligatoria + bonus OK,
+	- sin errores no-header en Norminette,
+	- verificación de 43/43 archivos `*.c` con una sola firma
+	  `int main(void)` para pruebas internas.
+- Revisión específica de headers/Makefile:
+	- separación efectiva de API bonus en `libft_bonus.h`.
+	- `*_bonus.c` acoplados a `libft_bonus.h`.
+	- regla `bonus` optimizada para evitar relink innecesario.

@@ -149,6 +149,43 @@ Purpose: chronological log of important decisions, imports, and structure change
     - `norminette` sin errores adicionales fuera de `INVALID_HEADER`
     - `make clean && make && make bonus` ✅
 
+- Auditoría completa de cumplimiento contra la especificación:
+  - referencia usada:
+    - `42/PDFs/2026-03-08_primera_libft.txt`
+  - verificaciones ejecutadas en `42/C/libft`:
+    - `make fclean && make && make bonus` ✅
+    - `norminette *.c *.h` revisado con exclusión temporal de
+      `INVALID_HEADER` por decisión del usuario
+    - control de `main` por archivo: 43/43 archivos `*.c` con una sola
+      ocurrencia de `int main(void)`
+  - resultado:
+    - librería funcional y compilable conforme al flujo pedido,
+      pendiente únicamente de cabeceras Norminette por política temporal.
+
+- Hardening de cumplimiento en `Makefile` y headers de `libft`:
+  - archivos actualizados:
+    - `42/C/libft/.gitignore`
+    - `42/C/libft/Makefile`
+    - `42/C/libft/libft.h`
+    - `42/C/libft/libft_bonus.h`
+    - `42/C/libft/ft_lstnew_bonus.c`
+    - `42/C/libft/ft_lstadd_front_bonus.c`
+    - `42/C/libft/ft_lstsize_bonus.c`
+    - `42/C/libft/ft_lstlast_bonus.c`
+    - `42/C/libft/ft_lstadd_back_bonus.c`
+    - `42/C/libft/ft_lstdelone_bonus.c`
+    - `42/C/libft/ft_lstclear_bonus.c`
+    - `42/C/libft/ft_lstiter_bonus.c`
+    - `42/C/libft/ft_lstmap_bonus.c`
+  - cambios clave:
+    - separación de API bonus desde `libft.h` hacia `libft_bonus.h`.
+    - `*_bonus.c` usando `#include "libft_bonus.h"`.
+    - regla `bonus` con marcador `.bonus` para evitar relink innecesario.
+  - verificación final:
+    - `make fclean && make && make bonus` ✅
+    - `make bonus` repetido sin reconstrucción innecesaria ✅
+    - compilación externa con `libft.h` + `libft_bonus.h` (`OK_HEADER_FLOW`) ✅
+
 ## Log Rules
 
 1. Add one dated block per relevant change set.
