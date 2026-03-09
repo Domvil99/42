@@ -41,3 +41,21 @@ the pending list.
 - Reason deferred: requested to leave for later
 - Suggested next action: replace absolute path with relative repo-safe command
 - Status: pending
+
+## 2026-03-09
+
+- Task: Update canonical root path references after renaming directories in `empresa/42/newLibft/Raiz`
+- Priority: super importante
+- Context:
+	- `.github/workflow-rules.md:14`
+	- `.github/workflow-rules.md:15`
+	- `.github/workflow-rules.md:20`
+	- `.github/QUICK_REFERENCE.md:47`
+	- `.github/QUICK_REFERENCE.md:49`
+	- `.github/QUICK_REFERENCE.md:58`
+	- `.github/QUICK_REFERENCE.md:141`
+	- `.github/project-history.md:121`
+	- `.github/project-history.md:123`
+- Reason deferred: user will rename path later and requested to keep a precise checklist now
+- Suggested next action: after renaming folders, replace Linux and WSL path strings in the files above and add a new dated note in `.github/project-history.md`
+- Status: pending

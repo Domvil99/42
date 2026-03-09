@@ -41,6 +41,23 @@ Quick root check before commit:
 git rev-parse --show-toplevel
 ```
 
+## Canonical Root Path (Default)
+
+- Primary Linux path (use by default):
+    - `/home/domvil99/empresa/42/newLibft/Raiz`
+- Windows/WSL equivalent (reference only):
+    - `\\wsl.localhost\Ubuntu\home\domvil99\empresa\42\newLibft\Raiz`
+- Rule:
+    - Normalize all incoming paths to the Linux path before running commands.
+    - Do not operate from another root unless it is verified and explicitly requested.
+
+Quick verification:
+
+```bash
+pwd
+realpath /home/domvil99/empresa/42/newLibft/Raiz
+```
+
 ## Tracking Files You Must Keep Updated
 
 ### When `42/C/libft` changes

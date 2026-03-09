@@ -56,3 +56,8 @@ Estado: obligatorio y bonus implementados, validado con compilacion
 - Se agregó `main` de prueba comentado en `ft_bzero.c`.
 - Se corrigieron errores críticos detectados durante la revisión por lote.
 - Se agregó regla `bonus` en `Makefile` para integrar `_bonus.o` en `libft.a`.
+- Se ejecutó nuevo ciclo de validación final con compilación completa
+	(`make clean && make && make bonus`) y limpieza de estilo no-header.
+- Se confirmó estabilidad tras cambios recientes en `ft_memcpy.c`,
+	`ft_lstdelone_bonus.c` y `ft_lstmap_bonus.c` con compilación completa
+	y revisión de Norminette (excepto política temporal de header).

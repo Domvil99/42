@@ -116,6 +116,39 @@ Purpose: chronological log of important decisions, imports, and structure change
   - kept one commented `main` per `ft_*.c` file.
   - re-verified `make` and `make bonus`.
 
+- Added canonical workspace root rule to prevent path conflicts:
+  - validated Linux root path:
+    - `/home/domvil99/empresa/42/newLibft/Raiz`
+  - documented Windows/WSL equivalent:
+    - `\\wsl.localhost\Ubuntu\home\domvil99\empresa\42\newLibft\Raiz`
+  - updated:
+    - `.github/workflow-rules.md`
+    - `.github/QUICK_REFERENCE.md`
+
+- Added deferred super-important checklist for future directory rename affecting
+  canonical path segment `empresa/42/newLibft/Raiz`:
+  - recorded exact file/line targets in:
+    - `.github/deferred-tasks.md`
+
+- Final estilo/validación pass en `42/C/libft` (sin tocar política de header):
+  - corregidos errores no-header de Norminette en archivos núcleo,
+    incluyendo `ft_atoi.c`, `ft_itoa.c`, `ft_memchr.c`, `ft_memcmp.c`,
+    `ft_memcpy.c`, `ft_memmove.c`, `ft_memset.c`, `ft_putendl_fd.c`,
+    `ft_putnbr_fd.c`, `ft_putstr_fd.c`, `ft_split.c`, `ft_striteri.c`,
+    `ft_strrchr.c`, `ft_strtrim.c`, `ft_toupper.c` y `libft.h`.
+  - revalidado flujo solicitado por el usuario:
+    - paso 2: `norminette` con foco en errores no-header
+    - paso 1: `make clean && make && make bonus` ✅
+
+- Revalidación posterior a cambios recientes en `42/C/libft`:
+  - revisados archivos modificados:
+    - `42/C/libft/ft_memcpy.c`
+    - `42/C/libft/ft_lstdelone_bonus.c`
+    - `42/C/libft/ft_lstmap_bonus.c`
+  - resultado de control de calidad:
+    - `norminette` sin errores adicionales fuera de `INVALID_HEADER`
+    - `make clean && make && make bonus` ✅
+
 ## Log Rules
 
 1. Add one dated block per relevant change set.

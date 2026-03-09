@@ -70,3 +70,9 @@
 - `void ft_lstclear(t_list **lst, void (*del)(void*))` - Borra toda la lista ✅
 - `void ft_lstiter(t_list *lst, void (*f)(void*))` - Itera y aplica función ✅
 - `t_list *ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*))` - Mapea lista ✅
+
+## ✅ Estado de Revisión
+- Inventario funcional completo: 43/43 funciones implementadas.
+- Estructura de prueba interna normalizada: un `main` comentado por archivo `ft_*.c`.
+- Revalidación reciente completada tras ajustes manuales en archivos de
+	memoria y bonus de listas, manteniendo 43/43 operativas.

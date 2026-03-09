@@ -9,6 +9,16 @@ Purpose: keep updates consistent and automatic across projects.
 - Default commit target for project work: `42/C/`
 - Workspace docs/tooling commits (`.github`, `.vscode`, `42/PDFs`, `42/testsLibf`): `Raiz/`
 
+## Canonical Workspace Root Rule
+
+- Default base path for all operations: `/home/domvil99/empresa/42/newLibft/Raiz`
+- Windows/WSL equivalent reference: `\\wsl.localhost\Ubuntu\home\domvil99\empresa\42\newLibft\Raiz`
+- Always normalize to the Linux path above before running commands.
+- If a request includes another root, verify it first and only switch when the
+	user explicitly confirms.
+- Quick validation command:
+	- `pwd && realpath /home/domvil99/empresa/42/newLibft/Raiz`
+
 ## Mandatory Update Trigger
 
 When files in `42/C/libft` change (`*.c`, `*.h`, `Makefile`), update:
