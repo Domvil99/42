@@ -3,6 +3,7 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra
 AR = ar rcs
 RM = rm -f
+BONUS_MARK = .bonus
 
 SRC = ft_strlen.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_toupper.c ft_tolower.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
@@ -23,13 +24,16 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
-bonus: $(OBJ) $(BONUS_OBJ)
-	$(AR) $(NAME) $(OBJ) $(BONUS_OBJ)
+bonus: $(NAME) $(BONUS_MARK)
+
+$(BONUS_MARK): $(BONUS_OBJ)
+	$(AR) $(NAME) $(BONUS_OBJ)
+	@touch $(BONUS_MARK)
 
 clean:
-	$(RM) $(OBJ) $(BONUS_OBJ)
+	$(RM) $(OBJ) $(BONUS_OBJ) $(BONUS_MARK)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(BONUS_MARK)
 
 re: fclean all
