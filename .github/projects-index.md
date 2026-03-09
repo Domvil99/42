@@ -22,3 +22,10 @@ Purpose: central index for all projects under `42/` and their relation with `42/
 - Shared test folders: `42/<tests_name>/` (example: `42/testsLibf/`)
 - Project reference docs: `.github/`
 - Incoming source instructions (.txt/.pdf exports): `42/PDFs/`
+
+## Git Convention
+
+- Default delivery repo root: `42/C/`
+- Workspace repo root (tracking/config/tooling): `Raiz/`
+- New deliverable projects must be created under `42/C/<project_name>/` and
+	versioned in the `42/C/` repo by default.

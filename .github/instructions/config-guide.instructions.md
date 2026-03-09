@@ -47,18 +47,27 @@ El Chat 2 estará optimizado para editar código C del proyecto.
 Coordina con el usuario para mantener limpia la separación de responsabilidades.
 
 ## Reglas Operativas del Workspace
-1. Si se agrega un proyecto nuevo bajo `42/C/`, actualizar:
+0. Operación en doble repositorio:
+	- Repo de entrega por defecto: `42/C/`
+	- Repo de workspace: `Raiz/`
+	- Antes de cualquier commit, verificar raíz con:
+		- `git rev-parse --show-toplevel`
+1. Para trabajo de entrega (`libft` y futuros proyectos en `42/C/`), usar git
+	desde `42/C/`.
+2. Para documentación/tracking/tooling (`.github`, `.vscode`, `42/PDFs/`,
+	`42/testsLibf/`), usar git desde `Raiz/`.
+3. Si se agrega un proyecto nuevo bajo `42/C/`, actualizar:
 	- `.github/projects-index.md`
 	- `.github/project-history.md`
-2. Si se agrega un directorio de soporte bajo `42/` (fuera de `42/C/`),
+4. Si se agrega un directorio de soporte bajo `42/` (fuera de `42/C/`),
 	actualizar:
 	- `.github/projects-index.md`
 	- `.github/project-history.md`
 	- `.github/QUICK_REFERENCE.md`
-3. Si llega una especificación `.txt`, guardarla en `42/PDFs/`
+5. Si llega una especificación `.txt`, guardarla en `42/PDFs/`
 	usando `YYYY-MM-DD_<topic>.txt` y registrarla en
 	`.github/project-history.md`.
-4. Verificar consistencia de rutas y estructura en `.github/QUICK_REFERENCE.md`.
-5. Para cambios de estructura, usar el checklist rápido en:
+6. Verificar consistencia de rutas y estructura en `.github/QUICK_REFERENCE.md`.
+7. Para cambios de estructura, usar el checklist rápido en:
 	- `.github/QUICK_REFERENCE.md` (sección `Tracking 30s Checklist`)
 	- `.github/workflow-rules.md` (sección `30-Second Ops Checklist`)

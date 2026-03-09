@@ -32,6 +32,20 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 ## 2026-03-09
 
+- Adopted dual repository model:
+  - delivery repo root: `42/C/`
+  - workspace repo root: `Raiz/`
+- Initialized git in `42/C/` for deliverable projects (default commit/push flow).
+- Initialized git in `Raiz/` for tracking/docs/tooling.
+- Added workspace `.gitignore` to keep repo separation:
+  - ignore `42/C/` from `Raiz` repo
+  - ignore local venv caches under `.tools/`
+- Updated docs to reflect dual git operation:
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/workflow-rules.md`
+  - `.github/instructions/config-guide.instructions.md`
+  - `.github/projects-index.md`
+
 - Added tests support directory:
   - `42/testsLibf/` (manual test programs for libft)
 - Route consistency review completed after structure changes under `42/`.

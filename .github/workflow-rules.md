@@ -2,6 +2,13 @@
 
 Purpose: keep updates consistent and automatic across projects.
 
+## Dual Git Operation
+
+- Delivery repo root: `42/C/`
+- Workspace repo root: `Raiz/`
+- Default commit target for project work: `42/C/`
+- Workspace docs/tooling commits (`.github`, `.vscode`, `42/PDFs`, `42/testsLibf`): `Raiz/`
+
 ## Mandatory Update Trigger
 
 When files in `42/C/libft` change (`*.c`, `*.h`, `Makefile`), update:
@@ -42,7 +49,9 @@ Example: `2026-03-08_primera_libft.txt`
 2. Update required tracking docs for that class only.
 3. Validate docs routes:
 	 - `rg -n "C/PDFs|C/libft" .github`
-4. Add a dated block in `.github/project-history.md`.
+4. Confirm git root before commit:
+	 - `git rev-parse --show-toplevel`
+5. Add a dated block in `.github/project-history.md`.
 
 ## Project History Template
 

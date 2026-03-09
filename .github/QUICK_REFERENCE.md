@@ -25,6 +25,22 @@ Raiz/
 └── .vscode/
 ```
 
+## Git Layout (Dual Repo)
+
+- Delivery repo root (projects to submit): `42/C/`
+- Workspace repo root (docs/tooling/tracking): `Raiz/`
+- Daily rule:
+    - If you are coding a deliverable project (`libft` and next ones), run
+        `git add`, `git commit`, `git push` inside `42/C/`.
+    - If you are updating workflow/docs/tooling (`.github`, `.vscode`, `42/PDFs`,
+        `42/testsLibf`), run git in `Raiz/`.
+
+Quick root check before commit:
+
+```bash
+git rev-parse --show-toplevel
+```
+
 ## Tracking Files You Must Keep Updated
 
 ### When `42/C/libft` changes
@@ -104,8 +120,11 @@ gcc -Wall -Wextra -Werror ft_atoi.c -o program
 ## ✅ Validación Rápida de Norminette
 
 ```bash
-# Usar siempre la versión local del proyecto
-NORMI="/home/domvil99/empresa/42/newLibft/Raiz/.tools/norminette-venv/bin/python3 -m norminette"
+# Definir raíz del workspace (repo Raiz)
+WORKSPACE_ROOT="/home/domvil99/empresa/42/newLibft/Raiz"
+
+# Usar siempre la versión local del workspace
+NORMI="$WORKSPACE_ROOT/.tools/norminette-venv/bin/python3 -m norminette"
 
 # Validar un archivo
 $NORMI ft_strlen.c
@@ -151,6 +170,9 @@ valgrind --leak-check=full --show-leak-kinds=all ./program
 
 ## 📋 Checklist antes de Commit
 
+- [ ] Verifiqué la raíz git (`git rev-parse --show-toplevel`)
+- [ ] Si es entrega, estoy en repo `42/C/`
+- [ ] Si es docs/tooling, estoy en repo `Raiz/`
 - [ ] Código pasa Norminette (`$NORMI *.c`)
 - [ ] Compila sin warnings (`gcc -Wall -Wextra -Werror`)
 - [ ] Sin memory leaks (`valgrind`)
@@ -268,9 +290,15 @@ re: fclean all
 3. **Format on Save**: Clang-format automático tras guardar
 4. **Git Workflow**:
    ```bash
-   git add .
-   git commit -m "feat: add ft_strlen with 42 norm"
-   git push
+    # Entrega (desde 42/C/)
+    git add .
+    git commit -m "feat: add ft_strlen with 42 norm"
+    git push
+
+    # Workspace docs/tooling (desde Raiz/)
+    git add .github .vscode 42/PDFs 42/testsLibf
+    git commit -m "docs: update tracking and workflow"
+    git push
    ```
 5. **Norminette Hook**: Ejecuta norminette antes de commit para evitar errores
 
