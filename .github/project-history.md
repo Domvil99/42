@@ -46,6 +46,14 @@ Purpose: chronological log of important decisions, imports, and structure change
   - `.github/instructions/config-guide.instructions.md`
   - `.github/projects-index.md`
 
+- Added deferred task backlog and trigger rule:
+  - created `.github/deferred-tasks.md`
+  - added rule for phrase `guardalo para despues` in:
+    - `.github/workflow-rules.md`
+    - `.github/instructions/config-guide.instructions.md`
+  - corrected Norminette tip to reference `$NORMI` in:
+    - `.github/QUICK_REFERENCE.md`
+
 - Added tests support directory:
   - `42/testsLibf/` (manual test programs for libft)
 - Route consistency review completed after structure changes under `42/`.

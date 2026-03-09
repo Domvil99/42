@@ -71,3 +71,7 @@ Coordina con el usuario para mantener limpia la separación de responsabilidades
 7. Para cambios de estructura, usar el checklist rápido en:
 	- `.github/QUICK_REFERENCE.md` (sección `Tracking 30s Checklist`)
 	- `.github/workflow-rules.md` (sección `30-Second Ops Checklist`)
+8. Si el usuario indica `guardalo para despues`, registrar el pendiente en:
+	- `.github/deferred-tasks.md`
+	- prioridad obligatoria: `no importante` | `importante` |
+	  `super importante`

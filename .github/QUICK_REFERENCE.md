@@ -300,7 +300,7 @@ re: fclean all
     git commit -m "docs: update tracking and workflow"
     git push
    ```
-5. **Norminette Hook**: Ejecuta norminette antes de commit para evitar errores
+5. **Norminette Hook**: Ejecuta `$NORMI` antes de commit para evitar errores
 
 ---
 

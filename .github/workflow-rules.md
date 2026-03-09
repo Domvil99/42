@@ -38,6 +38,17 @@ When a new `.txt` instruction is provided:
 2. Add a line in `.github/project-history.md` with date and path.
 3. Apply spec changes to related tracking docs.
 
+## Deferred Task Trigger
+
+When the user says `guardalo para despues`:
+
+1. Add the deferred item to `.github/deferred-tasks.md`.
+2. Set priority using one of:
+	- `no importante`
+	- `importante`
+	- `super importante`
+3. Add enough context so it can be resumed without ambiguity.
+
 ## Naming Convention for Imported Specs
 
 Use: `YYYY-MM-DD_<topic>.txt`
