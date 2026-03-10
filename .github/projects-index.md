@@ -6,7 +6,7 @@ Purpose: central index for all projects under `42/` and their relation with `42/
 
 | Project | Path | Status | Uses libft | Notes |
 |---|---|---|---|---|
-| libft | 42/C/libft | in-progress | base | Core library reused by future C projects |
+| libft | 42/C/libft | completed | base | Core library reused by future C projects |
 | testsLibf | 42/testsLibf | in-progress | yes | Manual test programs for libft validation |
 
 ## Update Rules

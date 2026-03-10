@@ -1,7 +1,10 @@
 # Referencia Rápida: Funciones Disponibles
 
-Estado: obligatorio y bonus implementados, validado con compilacion
-`-Wall -Wextra -Werror`.
+Estado: cierre tecnico completado (2026-03-09), obligatorio y bonus
+implementados, validado con compilacion `-Wall -Wextra -Werror`.
+
+Uso recomendado: base estable para los siguientes proyectos de `42/C/`.
+Nota temporal: pendiente correccion de headers Norminette (`INVALID_HEADER`).
 
 ## 🔤 String Functions (Obligatorio Validado)
 | Función | Descripción | Uso |

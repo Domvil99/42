@@ -1,6 +1,6 @@
 # Progreso General Libft
 
-## 📊 Estadísticas Actuales
+## 📊 Estadísticas Finales
 - **Parte 1 - Libc Functions**: 23/23 ✅ (100%)
 - **Parte 2 - Additional Functions**: 11/11 ✅ (100%)
 - **Bonus - Linked Lists**: 9/9 ✅ (100%)
@@ -8,6 +8,11 @@
 **Total**: 43/43 funciones (100%)
 
 **Total obligatorio**: 34/34 (100%)
+
+## 🏁 Estado de Cierre
+- Cierre tecnico completado el 2026-03-09.
+- Politica temporal activa: ignorar solo `INVALID_HEADER` (headers se corregiran luego).
+- Libreria lista para reutilizacion como base del siguiente proyecto en `42/C/`.
 
 ## ✅ Validación Ejecutada
 - Compilación por archivo con `-Wall -Wextra -Werror` sin errores.
@@ -42,12 +47,16 @@
             mediante marcador `.bonus`.
         - flujo verificado: `make`, `make bonus`, repetición de `make bonus`
             (sin relink), y compilación externa con ambos headers (`OK_HEADER_FLOW`).
+- Cierre total ejecutado (`2026-03-09`):
+    - `make fclean && make && make bonus` ✅
+    - `norminette *.c *.h` revisado: solo `INVALID_HEADER` ✅
+    - smoke test externo con `/tmp/check_headers.c` (`OK_HEADER_FLOW`) ✅
 
-## 🎯 Próximas a Implementar
-1. Ampliar pruebas automáticas en `42/testsLibf/`
-2. Revisión final de edge cases antes de defensa
+## 🎯 Siguiente Etapa
+1. Corregir headers Norminette cuando indiques el cierre formal de cabeceras.
+2. Iniciar nuevo proyecto en `42/C/<project_name>/` con `libft` como base reutilizable.
 
-**Última actualización**: Marzo 9, 2026
+**Última actualización**: Marzo 9, 2026 (cierre total)
 **Versión PDF**: 16.6
 
 ## 📝 Notas Importantes

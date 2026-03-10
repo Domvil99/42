@@ -186,6 +186,30 @@ Purpose: chronological log of important decisions, imports, and structure change
     - `make bonus` repetido sin reconstrucción innecesaria ✅
     - compilación externa con `libft.h` + `libft_bonus.h` (`OK_HEADER_FLOW`) ✅
 
+- Sync de tracking docs de workspace:
+  - actualizado mapa de estructura real en:
+    - `.github/QUICK_REFERENCE.md`
+    - `.github/copilot-instructions.md`
+  - corregidas rutas del checklist de validación en:
+    - `.github/QUICK_REFERENCE.md`
+    - `.github/workflow-rules.md`
+  - comando normalizado:
+    - `rg -n "42/PDFs|42/C/libft" .github`
+
+- Cierre total operativo de `libft`:
+  - validaciones ejecutadas en `42/C/libft`:
+    - `make fclean && make && make bonus` ✅
+    - `norminette *.c *.h` revisado: solo `INVALID_HEADER` ✅
+    - smoke test externo de headers/biblioteca (`OK_HEADER_FLOW`) ✅
+  - docs de cierre actualizadas:
+    - `.github/libft-progress.md`
+    - `.github/libft-functions.md`
+    - `.github/libft-reference.md`
+    - `.github/projects-index.md`
+  - estado consolidado:
+    - `libft` marcado como `completed`.
+    - workspace listo para iniciar siguiente proyecto en `42/C/<project_name>/`.
+
 ## Log Rules
 
 1. Add one dated block per relevant change set.

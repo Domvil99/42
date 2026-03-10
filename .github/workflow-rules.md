@@ -71,7 +71,7 @@ Example: `2026-03-08_primera_libft.txt`
 1. Classify change: `project`, `support-dir`, `spec-txt`.
 2. Update required tracking docs for that class only.
 3. Validate docs routes:
-	 - `rg -n "C/PDFs|C/libft" .github`
+	 - `rg -n "42/PDFs|42/C/libft" .github`
 4. Confirm git root before commit:
 	 - `git rev-parse --show-toplevel`
 5. Add a dated block in `.github/project-history.md`.

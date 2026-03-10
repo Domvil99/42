@@ -18,14 +18,24 @@ Raiz/
 │   ├── C/
 │   │   └── libft/
 │   ├── PDFs/
+│   │   └── 2026-03-08_primera_libft.txt
 │   └── testsLibf/
+│       └── README.md
 ├── .github/
+│   ├── QUICK_REFERENCE.md
+│   ├── copilot-instructions.md
+│   ├── deferred-tasks.md
+│   ├── instructions/
+│   │   ├── c-coding.instructions.md
+│   │   └── config-guide.instructions.md
 │   ├── libft-functions.md
 │   ├── libft-progress.md
 │   ├── libft-reference.md
 │   ├── projects-index.md
 │   ├── project-history.md
+│   ├── reports/
 │   └── workflow-rules.md
+├── .tools/
 └── .vscode/
 ```
 

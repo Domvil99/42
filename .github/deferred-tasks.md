@@ -59,3 +59,12 @@ the pending list.
 - Reason deferred: user will rename path later and requested to keep a precise checklist now
 - Suggested next action: after renaming folders, replace Linux and WSL path strings in the files above and add a new dated note in `.github/project-history.md`
 - Status: pending
+
+## 2026-03-09
+
+- Task: Run full consistency audit for `.github/*.md` (routes, structure map, and wording)
+- Priority: no importante
+- Context: `.github/` documentation set after latest tracking sync
+- Reason deferred: user requested to save for later
+- Suggested next action: run `rg -n "42/PDFs|42/C/libft|Workspace Map|testsLibf|git root" .github/*.md .github/**/*.md` and normalize mismatches
+- Status: pending

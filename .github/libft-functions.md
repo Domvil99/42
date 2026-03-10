@@ -1,5 +1,10 @@
 # Funciones Implementadas en Libft
 
+## Estado
+- Cierre tecnico completado el 2026-03-09.
+- Cobertura total: 43/43 funciones implementadas y compilables.
+- Excepcion temporal acordada: `INVALID_HEADER` en archivos de cabecera.
+
 ## 📚 Parte 1 - Libc Functions (23 funciones)
 
 ### Character Classification
