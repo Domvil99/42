@@ -53,6 +53,17 @@ Raiz/
 - Nested child `libft` folders inside integrated projects are not allowed.
 - currentLibft is an evolutive base and can be refined as future projects
   require functional improvements.
+- Coexistence note:
+  - `42/C/ft_printf` (standalone deliverable) and
+    `42/C/currentLibft/libft/ft_printf` (integrated child) may coexist.
+  - This is expected and not a structural conflict.
+- Forbidden paths inside `currentLibft`:
+  - `42/C/currentLibft/ft_printf`
+  - `42/C/currentLibft/libft/ft_printf/libft`
+- New project bootstrap rule:
+  - For `42/C/<new_project>`, copy base from `42/C/currentLibft/libft` into
+    `42/C/<new_project>/libft` while keeping project deliverables in root
+    (`*.c`, `*.h`, `Makefile`).
 │   └── workflow-rules.md
 ├── .tools/
 └── .vscode/
@@ -117,10 +128,15 @@ Raiz/
 - No direct chat-to-chat channel is available.
 - Coordination between chats is handled through `.github/chat-handoff.md`.
 - Chat1 owns delegation entries (scope, priority, success criteria).
+- Chat1 must include `Topic ID` in each delegation and keep `Shared Topics`
+  updated when user-defined common points appear.
 - Specialist chats (Chat2, future Chat3+) read assigned entries, execute,
   and update status/results in the same file.
+- Receiver must ACK by moving the handoff to `WIP` before execution.
 - If a task is out of scope for a specialist chat, it must set `BLOCKED`
   with reason and explicit redirection to the correct chat.
+- Closing notes in `DONE` or `BLOCKED` must include brief outcome and next
+  suggested action.
 - The handoff file is the canonical source for cross-chat continuity.
 
 ### Chat 1 (Config and Workflow)

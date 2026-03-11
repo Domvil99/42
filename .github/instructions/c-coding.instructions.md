@@ -25,7 +25,10 @@ applyTo: "**/*.c|**/*.h"
 
 ## Protocolo de Handoff (Chat2)
 - Chat2 usa `.github/chat-handoff.md` como entrada/salida de trabajo delegado.
-- Al iniciar una tarea delegada: validar alcance, archivos y criterio de cierre.
+- Al iniciar una tarea delegada: validar `Topic ID`, alcance, archivos y
+	criterio de cierre.
+- ACK obligatorio: antes de ejecutar, mover estado a `WIP` con nota breve de
+	aceptacion.
 - Durante la ejecucion: actualizar estado (`WIP`, `BLOCKED`, `DONE`) con nota
 	breve y accionable.
 - Si la tarea excede alcance de Chat2: marcar `BLOCKED` y redirigir a Chat1

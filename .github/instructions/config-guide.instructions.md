@@ -27,10 +27,14 @@ applyTo: "" # On-demand only
 
 ## Protocolo de Handoff (Chat1)
 - Chat1 coordina otros chats mediante `.github/chat-handoff.md`.
-- Antes de delegar, registrar: objetivo, alcance, archivos, prioridad y
-	criterio de cierre.
+- Antes de delegar, registrar: `Topic ID`, objetivo, alcance, archivos,
+	prioridad y criterio de cierre.
+- Si el usuario define puntos en comun entre tareas, crear o actualizar ese
+	tema en `Shared Topics` y reutilizar el mismo `Topic ID`.
 - Al recibir resultado de un chat especialista, actualizar estado y siguiente
 	accion en el mismo archivo.
+- El chat receptor debe confirmar ACK pasando la entrada a `WIP` antes de
+	ejecutar cambios.
 - Si hay bloqueo, registrar causa y redireccion al chat que corresponde.
 - Este protocolo aplica tambien a futuros chats (Chat3+).
 

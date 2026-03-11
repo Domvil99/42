@@ -39,6 +39,34 @@ Purpose: chronological log of important decisions, imports, and structure change
     - `42/C/ft_printf/libft/Makefile`
     - `42/C/currentLibft/libft/Makefile`
     using consistent 42 header and human timestamps for this edit block.
+  - Architecture clarification validated:
+    - `currentLibft` keeps only one first-level child `libft`.
+    - Integrated child path is `42/C/currentLibft/libft/ft_printf`.
+    - Standalone `42/C/ft_printf` is allowed to coexist and is not a
+      structural conflict.
+    - Forbidden inside `currentLibft`: `currentLibft/ft_printf` and
+      `currentLibft/libft/ft_printf/libft`.
+  - New project bootstrap standardized:
+    - copy base from `42/C/currentLibft/libft` to
+      `42/C/<new_project>/libft`.
+    - keep deliverable files of `<new_project>` in project root.
+  - Inter-chat communication protocol hardened and synchronized in docs:
+    - `Topic ID` is now mandatory in each handoff entry.
+    - `Shared Topics` table tracks user-defined common points across tasks.
+    - Receiver ACK (`WIP` + acceptance note) is mandatory before execution.
+    - Closure notes must include brief outcome and next suggested action.
+    - Synced docs:
+      - `.github/chat-handoff.md`
+      - `.github/workflow-rules.md`
+      - `.github/QUICK_REFERENCE.md`
+      - `.github/copilot-instructions.md`
+      - `.github/instructions/config-guide.instructions.md`
+      - `.github/instructions/c-coding.instructions.md`
+  - Inter-chat essential reporting activated:
+    - new canonical communication report:
+      - `.github/reports/inter-chat-essential.md`
+    - workflow and quick reference linked to this report for continuous
+      improvement cycles and specialist-chat requests.
 
 ## 2026-03-08
 

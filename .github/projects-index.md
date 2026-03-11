@@ -7,8 +7,8 @@ Purpose: central index for all projects under `42/` and their relation with `42/
 | Project | Path | Status | Uses libft | Notes |
 |---|---|---|---|---|
 | libft | 42/C/libft | completed | base | Core library reused by future C projects |
-| ft_printf | 42/C/ft_printf | completed | yes | Subject audit + hardening + cleanup published (`2415cdf`, `79b2255`, `360f071`, `9ecbda6`, `b7bdcda`) |
-| currentLibft | 42/C/currentLibft | in-progress | base | Integrated base for future projects: single parent libft + child ft_printf; active header-sync policy across mirror files |
+| ft_printf | 42/C/ft_printf | completed | yes | Standalone deliverable project (coexists by design with integrated copy inside currentLibft) |
+| currentLibft | 42/C/currentLibft | in-progress | base | Integrated base: single parent libft + child ft_printf under `currentLibft/libft/ft_printf`; no `currentLibft/ft_printf` path allowed |
 | testsLibf | 42/testsLibf | completed | yes | Manual test programs for libft validation (maintained for regression) |
 | tests_ft_printf | 42/tests_ft_printf | completed | yes | Manual test harnesses for ft_printf validation (maintained for regression) |
 | tests_currentLibft | 42/tests_currentLibft | in-progress | yes | Integration gate for currentLibft build/link/norminette checks |

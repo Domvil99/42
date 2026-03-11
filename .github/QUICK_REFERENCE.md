@@ -119,6 +119,23 @@ realpath /home/domvil99/empresa/42/newLibft/Raiz
 - Do not keep a nested child `libft` inside integrated projects.
 - Keep equivalent headers synchronized across mirrors and preserve legacy
     `Created` timestamps for original libft files.
+- Coexistence note:
+    - `42/C/ft_printf` (standalone deliverable project) can coexist with
+      `42/C/currentLibft/libft/ft_printf` (integrated copy) without being a
+      structural violation.
+- Forbidden paths inside `currentLibft`:
+    - `42/C/currentLibft/ft_printf`
+    - `42/C/currentLibft/libft/ft_printf/libft`
+
+### New Project Bootstrap (using currentLibft base)
+- For a new project (example `push_swap`):
+    1. Create `42/C/push_swap/`.
+    2. Copy base library from `42/C/currentLibft/libft` to
+       `42/C/push_swap/libft`.
+    3. Keep project deliverable files in root of `42/C/push_swap/`
+       (`*.c`, `*.h`, `Makefile` of the project itself).
+    4. Keep integrated child projects only under that local `libft/` when
+       truly required by project architecture.
 
 ### When a new project is added under `42/C/`
 - `.github/projects-index.md`
@@ -435,9 +452,18 @@ re: fclean all
 
 - Archivo puente oficial: `.github/chat-handoff.md`
 - Uso rapido:
-1. Chat1 crea entrada con `ID`, `From -> To`, `Task`, `Files`, `Status`.
-2. Chat especialista actualiza estado en la misma fila (`WIP/BLOCKED/DONE`).
-3. Si la tarea no corresponde al chat, marcar `BLOCKED` y redireccionar.
-4. Cerrar tarea moviendo o reflejando resultado en `Closed Handoffs`.
+1. Chat1 crea entrada con `ID`, `Topic`, `From -> To`, `Task`, `Files`,
+     `Status` y criterio de cierre.
+2. Chat receptor confirma ACK cambiando a `WIP` antes de ejecutar.
+3. Chat especialista actualiza estado en la misma fila (`WIP/BLOCKED/DONE`).
+4. Si la tarea no corresponde al chat, marcar `BLOCKED` y redireccionar.
+5. Cerrar tarea moviendo o reflejando resultado en `Closed Handoffs`.
+- Tema comun:
+    - Si el usuario define puntos en comun, registrarlos en `Shared Topics` y
+        reutilizar el mismo `Topic ID` en todos los handoffs relacionados.
 - Regla clave: no existe canal directo entre chats; el handoff file es la
     fuente canonica de continuidad.
+- Reporte esencial de comunicacion:
+    - `.github/reports/inter-chat-essential.md`
+    - usarlo para registrar fricciones, mejoras validadas y solicitudes de
+        Chat2/futuros chats.

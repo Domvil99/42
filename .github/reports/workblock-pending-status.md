@@ -1,7 +1,7 @@
 # Workblock Pending Status
 
 Date: 2026-03-11
-Block: Header sync and timestamp policy alignment across `42/C/*`
+Block: Continuacion de validacion Chat2 + consolidacion de arquitectura/documentacion
 
 ## Repo entrega C (42/C/)
 
@@ -15,6 +15,6 @@ Pending changes:
 
 ## Closure
 
-- Delivery repo commit: `03e6abe`
-- Workspace repo commit: `99131d0`
+- Delivery repo commit: not required in this block
+- Workspace repo commits: test fix + documentation sync completed
 

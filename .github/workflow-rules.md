@@ -22,6 +22,31 @@ Purpose: keep updates consistent and automatic across projects.
 - Specialist chats update progress and final status in the same entry.
 - Allowed status values: `TODO`, `WIP`, `BLOCKED`, `DONE`, `DEFERRED`.
 - If out of scope, specialist chat must set `BLOCKED` and add redirection.
+- Every handoff must include a shared topic identifier (`Topic ID`) to keep
+	traceability across related tasks.
+- Receiver must ACK by moving entry to `WIP` with a short acceptance note
+	before execution.
+
+## Continuous Communication Optimization (Chat1)
+
+Chat1 applies this loop automatically in every conversation:
+
+1. Detect shared user themes and register/update them in
+	`.github/chat-handoff.md` under `Shared Topics`.
+2. Normalize handoff entries to include `Topic`, clear scope, closure criteria,
+	and explicit next action.
+3. Enforce ACK on delegated tasks before execution starts.
+4. On completion or block, record one-line outcome and coordination lesson.
+5. If a recurring friction appears, update workflow docs in the workspace repo
+	to prevent repetition in future cycles.
+
+Definition of optimal communication flow:
+
+1. Shared theme is explicit (`Topic ID`).
+2. Ownership is explicit (`From -> To`).
+3. Status transition is explicit (`TODO` -> `WIP` -> `DONE/BLOCKED`).
+4. Handoff note is actionable (what/where/how to close).
+5. Closure leaves reusable context for next tasks.
 
 ## Canonical Workspace Root Rule
 
@@ -70,6 +95,21 @@ Rule for `currentLibft` architecture:
 2. Integrated child projects (example: `ft_printf`) must live under
 	`42/C/currentLibft/libft/<project_name>`.
 3. Do not allow nested child `libft` folders inside integrated projects.
+4. Coexistence is valid and expected between:
+	- standalone project: `42/C/ft_printf`
+	- integrated copy: `42/C/currentLibft/libft/ft_printf`
+	They serve different purposes and are not a duplication conflict.
+5. Explicitly forbidden inside `currentLibft`:
+	- `42/C/currentLibft/ft_printf`
+	- `42/C/currentLibft/libft/ft_printf/libft`
+
+Bootstrap rule for new projects using the base:
+
+1. Create `42/C/<project_name>/` with project deliverables at root.
+2. Copy base library from `42/C/currentLibft/libft` to
+	`42/C/<project_name>/libft`.
+3. Keep project root semantics intact (`*.c`, `*.h`, `Makefile` for project).
+4. Do not move parent `libft` out of `currentLibft`; treat it as canonical base.
 
 When a support directory is added under `42/` (outside `42/C/`), update:
 
@@ -202,3 +242,32 @@ When a new project is added under `42/C/<project_name>/`:
 	- workspace repo (`Raiz/`)
 - Remove completed items from that file on every update; keep only real
 	outstanding work.
+
+## Inter-Chat Essential Report Rule
+
+- Maintain `.github/reports/inter-chat-essential.md` as canonical operational
+	report for communication quality between chats.
+- Chat1 updates this report proactively when:
+	1. a coordination friction appears,
+	2. a repeated friction is detected,
+	3. a communication improvement is validated,
+	4. Chat2 (or future chats) requests a communication/process adjustment.
+- Every logged item should reference `Topic ID` and/or `H-xxx` when available.
+- Keep only actionable open items in the active improvement table.
+
+## Chat2 Validation Intake Rule
+
+When Chat2 (or a future specialist chat) reports validations, Chat1 must
+ingest results using this canonical minimal block inside the active handoff
+note and, if relevant, in `.github/reports/inter-chat-essential.md`:
+
+1. Scope: project/path validated.
+2. Command: exact command/task used.
+3. Key output: only decisive lines (error summary or success gate).
+4. Decision: `accept`, `needs follow-up`, or `ignore-noise`.
+
+Noise filter policy:
+
+1. Ignore duplicated non-actionable logs already covered by a prior decision.
+2. Ignore outputs without scope/command traceability.
+3. Escalate only actionable deltas that change project status or next action.
