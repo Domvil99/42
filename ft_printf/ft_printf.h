@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: domvil99 <domvil99@student.42.fr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/11 09:01:56 by domvil99          #+#    #+#             */
+/*   Updated: 2026/03/11 09:01:56 by domvil99         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
@@ -34,17 +46,19 @@ typedef struct s_int_data
 
 int	ft_printf(const char *format, ...);
 
-/* Mandatory-only internal API (new base semantics). */
-int	pf_print_char(int c);
-int	pf_print_string(char *s);
-int	pf_print_pointer(unsigned long long ptr);
-int	pf_print_decimal(int n);
-int	pf_print_unsigned(unsigned int n);
-int	pf_print_hex(unsigned int n, char format);
-int	pf_print_percent(void);
-int	pf_putnbr_base(unsigned long long nbr, char *base);
+# ifndef FT_PRINTF_BONUS
 
-/* Bonus/internal API (legacy formatting engine). */
+int	print_char(int c);
+int	print_string(char *s);
+int	print_pointer(unsigned long long ptr);
+int	print_decimal(int n);
+int	print_unsigned(unsigned int n);
+int	print_hex(unsigned int n, const char format);
+int	print_percent(void);
+int	ft_putnbr_base(unsigned long long nbr, char *base);
+
+# else
+
 int	handle_format(const char *format, va_list args, int *i);
 int	parse_format(const char *format, t_format *f);
 int	print_char(va_list args, t_format f);
@@ -53,5 +67,7 @@ int	print_int(va_list args, t_format f);
 int	print_unsigned(va_list args, t_format f);
 int	print_hex(va_list args, t_format f);
 int	print_pointer(va_list args, t_format f);
+
+# endif
 
 #endif

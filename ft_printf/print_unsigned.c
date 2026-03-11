@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_unsigned.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: domvil99 <domvil99@student.42.fr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/11 09:01:56 by domvil99          #+#    #+#             */
+/*   Updated: 2026/03/11 09:01:56 by domvil99         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-static void	pf_put_unsigned(unsigned int n)
+static void	ft_put_unsigned(unsigned int n)
 {
 	if (n >= 10)
-		pf_put_unsigned(n / 10);
+		ft_put_unsigned(n / 10);
 	ft_putchar_fd((n % 10) + '0', 1);
 }
 
-static int	pf_count_udigits(unsigned int n)
+static int	count_digits(unsigned int n)
 {
 	int	count;
 
@@ -22,8 +34,8 @@ static int	pf_count_udigits(unsigned int n)
 	return (count);
 }
 
-int	pf_print_unsigned(unsigned int n)
+int	print_unsigned(unsigned int n)
 {
-	pf_put_unsigned(n);
-	return (pf_count_udigits(n));
+	ft_put_unsigned(n);
+	return (count_digits(n));
 }

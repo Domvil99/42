@@ -1,25 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_decimal.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: domvil99 <domvil99@student.42.fr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/11 09:01:56 by domvil99          #+#    #+#             */
+/*   Updated: 2026/03/11 09:01:56 by domvil99         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-static int	pf_count_digits(int n)
+static int	count_digits(int n)
 {
-	int	count;
+	int		count;
+	long	value;
 
-	count = 0;
-	if (n <= 0)
+	value = n;
+	if (value <= 0)
 	{
 		count = 1;
-		n = -n;
+		value = -value;
 	}
-	while (n)
+	else
+		count = 0;
+	while (value)
 	{
-		n /= 10;
+		value /= 10;
 		count++;
 	}
 	return (count);
 }
 
-int	pf_print_decimal(int n)
+int	print_decimal(int n)
 {
 	ft_putnbr_fd(n, 1);
-	return (pf_count_digits(n));
+	return (count_digits(n));
 }

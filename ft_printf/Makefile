@@ -16,6 +16,7 @@ LIBFT       = libft/libft.a
 
 CC          = cc
 CFLAGS      = -Wall -Wextra -Werror
+BONUS_CFLAGS= $(CFLAGS) -DFT_PRINTF_BONUS
 AR          = ar rcs
 RM          = rm -f
 
@@ -37,6 +38,12 @@ $(MAND_AR): $(OBJ) $(LIBFT)
 $(BONUS_AR): $(BONUS_OBJ) $(LIBFT)
 	$(RM) $(BONUS_AR)
 	$(AR) $(BONUS_AR) $(BONUS_OBJ) $(LIBFT)
+
+$(OBJ): %.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BONUS_OBJ): %.o: %.c
+	$(CC) $(BONUS_CFLAGS) -c $< -o $@
 
 # Limpieza
 clean:
