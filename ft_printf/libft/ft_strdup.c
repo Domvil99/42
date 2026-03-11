@@ -26,8 +26,6 @@ char	*ft_strdup(const char *s)
 	return (copy);
 }
 /*
-#include <stdio.h>
-
 int	main(void)
 {
     char	*original;
@@ -43,5 +41,4 @@ int	main(void)
     free(copy);
     return (0);
 }
-
 */

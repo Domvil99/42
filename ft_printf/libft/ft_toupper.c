@@ -19,8 +19,6 @@ int	ft_toupper(int c)
 	return (c);
 }
 /*
-#include <stdio.h>
-
 int	main(void)
 {
     printf("ft_toupper('a') = %c\n", ft_toupper('a'));

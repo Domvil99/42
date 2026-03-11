@@ -34,7 +34,6 @@ static void	to_upper(unsigned int i, char *c)
 	if (*c >= 'a' && *c <= 'z')
 		*c = *c - 32;
 }
-
 int main(void)
 {
 	char	str[] = "hola, mundo!";

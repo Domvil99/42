@@ -29,7 +29,6 @@ static void	print_str(void *p)
 {
 	printf("%s\n", (char *)p);
 }
-
 int	main(void)
 {
 	t_list	*a;

@@ -28,8 +28,6 @@ char	*ft_strrchr(const char *s, int c)
 	return (last);
 }
 /*
-#include <stdio.h>
-
 int	main(void)
 {
 	char	str[] = "Hola, mundo!";

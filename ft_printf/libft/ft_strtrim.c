@@ -31,8 +31,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (trimmed);
 }
 /*
-#include <stdio.h>
-
 int	main(void)
 {
 	char	*s1;

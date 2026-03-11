@@ -32,8 +32,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (dst_len + src_len);
 }
 /*
-#include <stdio.h>
-
 int	main(void)
 {
 	char	dst[20] = "Hola";
