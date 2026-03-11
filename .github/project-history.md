@@ -2,6 +2,16 @@
 
 Purpose: chronological log of important decisions, imports, and structure changes.
 
+## Global Active Rules
+
+- Validation order (all projects):
+  1. structure/scope against `.txt`,
+  2. behavior against `.txt`,
+  3. memory/stability,
+  4. Norminette as final closing step.
+- Historical logs that mention a different order are kept as traceability,
+  but are superseded by this active rule.
+
 ## 2026-03-08
 
 - Created base tracking docs:
@@ -136,7 +146,8 @@ Purpose: chronological log of important decisions, imports, and structure change
     `ft_memcpy.c`, `ft_memmove.c`, `ft_memset.c`, `ft_putendl_fd.c`,
     `ft_putnbr_fd.c`, `ft_putstr_fd.c`, `ft_split.c`, `ft_striteri.c`,
     `ft_strrchr.c`, `ft_strtrim.c`, `ft_toupper.c` y `libft.h`.
-  - revalidado flujo solicitado por el usuario:
+  - revalidado flujo solicitado por el usuario en ese momento
+    (registro historico, hoy supersedido por regla global functional-first):
     - paso 2: `norminette` con foco en errores no-header
     - paso 1: `make clean && make && make bonus` ✅
 
@@ -520,3 +531,17 @@ Purpose: chronological log of important decisions, imports, and structure change
 1. Add one dated block per relevant change set.
 2. Log structural changes first, then function/spec changes.
 3. Reference exact file paths for every important edit.
+
+## 2026-03-11
+
+- Sync documental de consistencia global (functional-first):
+  - se armonizaron docs de tracking y README de tests para mantener
+    el orden canonico: scope/spec -> funcionalidad -> memoria -> Norminette.
+- Archivos actualizados:
+  - `.github/libft-progress.md`
+  - `.github/project-history.md`
+  - `.github/ft_printf-progress.md`
+  - `.github/ft_printf-functions.md`
+  - `.github/ft_printf-reference.md`
+  - `42/testsLibf/README.md`
+  - `42/tests_ft_printf/README.md`

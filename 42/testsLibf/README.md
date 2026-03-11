@@ -8,6 +8,12 @@ Este directorio es para programas de prueba de la librería libft.
 - Ejecuta: `./test`
 - Verifica leaks: `valgrind ./test`
 
+## Orden de validacion (global)
+1. Confirmar scope de entrega segun la spec `.txt`.
+2. Ejecutar tests funcionales de `libft` (fase funcional).
+3. Verificar memoria y estabilidad.
+4. Ejecutar Norminette al final como cierre.
+
 ## Ejemplo de test básico:
 ```c
 #include "../libft.h"

@@ -13,11 +13,11 @@
 - Bonus: flags indicadas en especificacion (si estan implementadas).
 
 ## Validacion Planeada
-1. Build obligatorio (`make`).
-2. Build bonus (`make bonus`, si aplica).
-3. Norminette (`*.c *.h`) ignorando `INVALID_HEADER`.
-4. Comparativas funcionales contra `printf`.
-5. Verificacion de leaks/seguridad de memoria.
+1. Validacion de estructura/scope de entrega contra la spec `.txt`.
+2. Comparativas funcionales contra `printf` para obligatorio y bonus.
+3. Verificacion de leaks/seguridad de memoria.
+4. Build de cierre (`make` y `make bonus`, sin relink innecesario).
+5. Norminette (`*.c *.h`) como paso final de cierre.
 
 ## Notas
 - Durante esta fase, Chat2 trabaja solo dentro de `42/C/ft_printf`.
@@ -48,7 +48,7 @@
 	- `make` + `make bonus` OK.
 	- matrices obligatoria y bonus siguen sin diferencias contra `printf`.
 
-## Pendiente inmediato
+## Pendiente inmediato (registro historico)
 1. Extender matriz funcional a todas las conversiones obligatorias.
 2. Barrido bonus de flags `-0.` + width + `# +` y espacio.
 3. Cierre de bloqueantes Norminette (exceptuando `INVALID_HEADER`).
@@ -104,7 +104,7 @@
 		- `print_hex.c` (31)
 		- `print_binary_bonus.c` (26)
 
-## Pendiente inmediato (actualizado)
+## Pendiente inmediato (actualizado, registro historico)
 1. Micro-lote 5: `print_binary_bonus.c` (26).
 2. Micro-lote 6: `print_hex.c` (31).
 3. Micro-lote 7: `print_int.c` + `print_int_bonus.c` (39 + 39).

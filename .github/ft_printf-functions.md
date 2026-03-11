@@ -47,8 +47,10 @@
 		`printf` (`(nil)`) y conteo de retorno consistente.
 	- `Makefile`: recreacion explicita de `libftprintf.a` en `all` y `bonus`
 		para evitar colisiones de simbolos obligatorio/bonus.
-- Auditoria de cumplimiento en curso: faltan barridos funcionales completos y
-	cierre Norminette (excepto politica temporal `INVALID_HEADER`).
+- Estado de cumplimiento consolidado:
+	- scope de entrega acotado a la spec activa (`cspdiuxX%` + flags bonus).
+	- gates funcional y de memoria validados antes de norma.
+	- cierre de build y Norminette documentado en el tracking del proyecto.
 
 - Ronda Norminette (micro-lote 1) completada:
 	- `ft_printf.c`: ajuste de formato y estructura para norma.

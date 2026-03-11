@@ -18,9 +18,10 @@
 - Compilación por archivo con `-Wall -Wextra -Werror` sin errores.
 - Compilación completa de librería obligatoria: `make` ✅
 - Compilación completa de bonus: `make bonus` ✅
-- Bucle de validación final (orden solicitado: paso 2 -> paso 1):
-    - `norminette` relanzado tras correcciones de estilo no-header.
-    - `make clean && make && make bonus` relanzado y validado ✅.
+- Registro historico de validacion:
+    - en una ronda antigua se ejecuto primero `norminette` y luego build.
+    - esa secuencia queda obsoleta por la regla global actual:
+      scope/funcionalidad -> memoria -> Norminette al final.
 - Revalidación posterior a ediciones recientes en `42/C/libft`:
         - revisión puntual de `ft_memcpy.c`, `ft_lstdelone_bonus.c` y
             `ft_lstmap_bonus.c`.
@@ -62,7 +63,7 @@
 1. Corregir headers Norminette cuando indiques el cierre formal de cabeceras.
 2. Iniciar nuevo proyecto en `42/C/<project_name>/` con `libft` como base reutilizable.
 
-**Última actualización**: Marzo 10, 2026 (migracion de tests)
+**Última actualización**: Marzo 11, 2026 (sync de orden global de validacion)
 **Versión PDF**: 16.6
 
 ## 📝 Notas Importantes

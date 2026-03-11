@@ -1,6 +1,6 @@
 # Referencia Rapida ft_printf
 
-Estado: en validacion/correccion contra spec `42/PDFs/2026-03-10_ft_printf.txt`.
+Estado: referencia operativa alineada a spec `42/PDFs/2026-03-10_ft_printf.txt`.
 
 Nota actual (2026-03-11):
 - Migracion activa de obligatorio desde `42/C/ft_printf_new_base/` hacia
@@ -26,11 +26,11 @@ Nota actual (2026-03-11):
 - Corregir automaticamente errores claros; validar contigo casos ambiguos.
 
 ## Implementacion en curso (2026-03-11)
-- Orden de ejecucion activo:
-    1. fixes P1 de memoria/robustez,
-    2. correcciones funcionales de parseo/dispatch,
-    3. matrices de validacion obligatoria y bonus,
-    4. cierre de Norminette bloqueante.
+- Orden de ejecucion activo (global):
+    1. estructura/scope segun spec,
+    2. correcciones y validacion funcional (matrices mandatory/bonus),
+    3. validacion de memoria/estabilidad,
+    4. cierre de build + Norminette.
 - Caso validado: `%.0d` y `%.0u` con valor `0` coincide con `printf` en
     salida y valor de retorno.
 
@@ -131,8 +131,7 @@ Nota actual (2026-03-11):
     - ninguno (cierre completado).
 
 ## Estado Norminette final (actual)
-- `norminette *.c *.h`: sin errores accionables.
-- Se mantiene unicamente `INVALID_HEADER` (politica temporal activa).
+- `norminette *.c *.h libft/*.c libft/*.h`: en verde segun auditoria final.
 - Build de confirmacion tras el cierre:
     - `make` OK.
     - `make bonus` OK.
