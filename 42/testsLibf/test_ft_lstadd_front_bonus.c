@@ -15,7 +15,7 @@ int	main(void)
 	b = ft_lstnew("B");
 	ft_lstadd_front(&a, b);
 	printf("%s\n", (char *)a->content);
-	free(b);
+	free(a->next);
 	free(a);
 	return (0);
 }
