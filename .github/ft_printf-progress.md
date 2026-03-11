@@ -227,3 +227,20 @@
 3. Estado final del proyecto `ft_printf`:
 	- validado contra subject,
 	- listo para entrega (sin bloqueantes tecnicos abiertos).
+
+## Blindaje de Makefile y headers (2026-03-11)
+1. Objetivo aplicado:
+	- cumplir de forma estricta el enunciado en `*Makefile` y `*.h`,
+	  incluyendo separacion mandatory/bonus y orden de compilacion de `libft`.
+2. Cambios estructurales:
+	- `ft_printf.h` ahora mantiene solo contrato/soporte mandatory.
+	- nuevo `ft_printf_bonus.h` para tipos/prototipos bonus.
+	- fuentes bonus migradas a incluir `ft_printf_bonus.h`.
+3. Verificacion de reglas Makefile:
+	- `make` y `make bonus` en verde.
+	- segunda corrida sin relink innecesario.
+	- confirmada dependencia efectiva de `$(LIBFT)` antes de archivado final.
+4. Revalidacion final post-cambio:
+	- `norminette *.c *.h libft/*.c libft/*.h` -> `RC=0`.
+	- matrices mandatory/bonus -> `RET_TOTAL=212` / `146`.
+	- valgrind mandatory/bonus -> `0` errores, `0` leaks.

@@ -163,3 +163,11 @@
 	- commit de proyecto en `42/C/`: `2415cdf`.
 	- commit de tracking en `Raiz/`: `7cf296d`.
 	- estado funcional consolidado para evaluacion final del proyecto.
+
+- Blindaje Makefile/headers segun spec (2026-03-11):
+	- `ft_printf.h` desacoplado de declaraciones bonus.
+	- nuevo `ft_printf_bonus.h` agregado para tipos y prototipos bonus.
+	- `*_bonus.c` migrados a `#include "ft_printf_bonus.h"`.
+	- comprobado flujo de compilacion previo de `libft` desde `Makefile`.
+	- revalidado: build mandatory/bonus, no-relink, norma completa,
+	  matrices (`212`/`146`) y valgrind (0 errores, 0 leaks).

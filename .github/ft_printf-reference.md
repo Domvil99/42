@@ -160,3 +160,12 @@ Nota actual (2026-03-11):
     - `2415cdf`.
 - Tracking `Raiz` registrado en commit:
     - `7cf296d`.
+
+## Blindaje final de arquitectura (2026-03-11)
+- Separacion de headers aplicada:
+    - `ft_printf.h` (mandatory)
+    - `ft_printf_bonus.h` (bonus)
+- Validacion de regla clave del enunciado:
+    - el `Makefile` principal compila primero `libft` y luego `ft_printf`.
+- Cierre tecnico tras blindaje:
+    - build/relink, norma, funcional y memoria en verde.

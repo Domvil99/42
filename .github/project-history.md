@@ -338,6 +338,18 @@ Purpose: chronological log of important decisions, imports, and structure change
   - revalidacion de build:
     - `make bonus` OK tras los cambios.
 
+- Blindaje de `ft_printf` en Makefile y headers contra enunciado oficial:
+  - `ft_printf.h` separado de API bonus.
+  - creado `42/C/ft_printf/ft_printf_bonus.h`.
+  - migrados includes bonus a `ft_printf_bonus.h`.
+  - validada la regla de orden: compilar `libft` primero y luego
+    archivado final de `ft_printf`.
+  - revalidacion final completa:
+    - `make` / `make bonus` OK + no-relink.
+    - `norminette *.c *.h libft/*.c libft/*.h` -> `RC=0`.
+    - matrices mandatory/bonus -> `RET_TOTAL=212` / `146`.
+    - valgrind mandatory/bonus -> `0` leaks, `0` errores.
+
 - Inicio de implementacion `ft_printf` (ciclo 1):
   - cambios en codigo:
     - `42/C/ft_printf/handle_format.c`
