@@ -138,3 +138,21 @@
 	- resultado: barrido `norminette *.c *.h` sin errores accionables;
 	  solo `INVALID_HEADER` por politica temporal.
 	- `make` y `make bonus` se mantienen en verde tras el lote final.
+
+- Estabilizacion post-pegado `new_base` (2026-03-11, tramo continuo):
+	- mandatory revisado sin cambio de firmas ni semantica en:
+	  `ft_printf.c`, `print_char.c`, `print_decimal.c`,
+	  `print_unsigned.c`, `print_pointer.c`.
+	- ajuste mecanico de formato para norma:
+	  newline de cierre de archivo y normalizacion de bloque condicional en
+	  `ft_printf.h`.
+	- validacion ejecutada tras ajustes:
+	  `make` OK, `make bonus` OK, matrices mandatory/bonus en verde,
+	  valgrind mandatory sin leaks/errores.
+
+- Cierre de auditoria integral (2026-03-11):
+	- normalizacion de header 42 aplicada a todos los entregables del
+	  proyecto (`ft_printf/*.c`, `ft_printf/*.h`, `ft_printf/libft/*.c`,
+	  `ft_printf/libft/*.h`).
+	- `norminette` full scope en verde (`RC=0`).
+	- matriz funcional y memoria revalidadas sin regresion.

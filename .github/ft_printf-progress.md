@@ -182,3 +182,39 @@
 3. Revalidacion post-ajuste:
 	- `make` OK.
 	- `make bonus` OK.
+
+## Continuidad de implementacion (2026-03-11)
+1. Mandatory estabilizado tras pegado del usuario (sin cambiar firmas):
+	- revisados `ft_printf.c`, `print_char.c`, `print_decimal.c`,
+	  `print_unsigned.c`, `print_pointer.c`.
+2. Ajustes mecanicos aplicados:
+	- cierre de linea final en archivos mandatory afectados.
+	- normalizacion de bloque condicional `# ifndef FT_PRINTF_BONUS` en
+	  `ft_printf.h`.
+3. Revalidacion funcional y memoria:
+	- `42/tests_ft_printf/test_mandatory_matrix`: `RET_TOTAL=212`.
+	- `42/tests_ft_printf/test_bonus_matrix`: `RET_TOTAL=146`.
+	- valgrind sobre matriz mandatory: `0` leaks, `0` errores.
+4. Estado de norma tras esta ronda:
+	- sin hallazgos accionables adicionales en los archivos tocados.
+	- politica temporal de `INVALID_HEADER` se mantiene sin cambios.
+
+## Auditoria final contra subject (2026-03-11)
+1. Verificacion de spec fuente:
+	- `42/PDFs/2026-03-10_ft_printf.txt` y el `.txt` recibido en chat
+	  coinciden en requisitos normativos.
+2. Makefile y build:
+	- `make` y `make bonus` OK.
+	- no relink verificado en segunda corrida (`make`: "Nothing to be done").
+	- `ar` usado para generar librerias (`libft.a`, `.mandatory.a`, `.bonus.a`
+	  y copia a `libftprintf.a`).
+3. Cumplimiento de funciones autorizadas:
+	- barrido de llamadas prohibidas en `ft_printf/*.c` sin hallazgos.
+4. Norminette full scope:
+	- se normalizaron headers 42 en `ft_printf/*.c`, `ft_printf/*.h`,
+	  `ft_printf/libft/*.c`, `ft_printf/libft/*.h`.
+	- resultado actual: `norminette *.c *.h libft/*.c libft/*.h` -> `RC=0`.
+5. Validacion funcional y memoria final:
+	- mandatory matrix: `RET_TOTAL=212`.
+	- bonus matrix: `RET_TOTAL=146`.
+	- valgrind mandatory y bonus: `0` leaks, `0` errores.

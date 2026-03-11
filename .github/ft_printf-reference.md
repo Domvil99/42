@@ -136,3 +136,22 @@ Nota actual (2026-03-11):
 - Build de confirmacion tras el cierre:
     - `make` OK.
     - `make bonus` OK.
+
+## Estado de continuidad (2026-03-11)
+- Ajustes de continuidad aplicados en mandatory sin cambio de API ni
+    semantica.
+- Verificaciones de control en verde:
+    - matrices de pruebas mandatory y bonus (`RET_TOTAL=212` y `146`).
+    - valgrind mandatory (`0` leaks, `0` errores).
+- Scope actual preparado para siguiente lote (commit/revision de diff).
+
+## Estado de auditoria final (2026-03-11)
+- Revisados todos los puntos evaluables del subject `ft_printf`.
+- Norminette full scope en verde incluyendo headers 42:
+    - `norminette *.c *.h libft/*.c libft/*.h` -> `RC=0`.
+- Build/relink en verde:
+    - `make` OK, `make` segunda corrida sin relink,
+    - `make bonus` OK.
+- Paridad funcional y memoria en verde:
+    - matrices mandatory/bonus (`RET_TOTAL=212` / `146`),
+    - valgrind mandatory/bonus (`0` errores, `0` leaks).
