@@ -614,3 +614,20 @@ Purpose: chronological log of important decisions, imports, and structure change
   - `.github/workflow-rules.md`
   - `42/tests_ft_printf/README.md`
   - `.github/project-history.md`
+
+## 2026-03-11
+
+- Inicio de `42/C/currentLibft` como base evolutiva para futuros proyectos C.
+- Estructura integrada aplicada:
+  - `42/C/currentLibft/libft`
+  - `42/C/currentLibft/libft/ft_printf`
+- Regla de arquitectura formalizada:
+  - una sola `libft` padre dentro de `currentLibft`.
+  - proyectos hijos integrados (como `ft_printf`) no pueden incluir
+    una `libft` hija propia dentro de su subarbol.
+- Ajustes tecnicos de integracion inicial:
+  - `ft_printf` integrado apunta a la `libft` padre de `currentLibft`
+    via headers y Makefile.
+  - Makefile raiz en `currentLibft` para orquestar `make`/`bonus`.
+- Gate de pruebas creado para continuidad:
+  - `42/tests_currentLibft/README.md`.

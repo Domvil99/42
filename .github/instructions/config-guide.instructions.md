@@ -86,6 +86,15 @@ Coordina con el usuario para mantener limpia la separación de responsabilidades
 	- `.github/ft_printf-functions.md`
 	- `.github/ft_printf-progress.md`
 	- `.github/ft_printf-reference.md`
+4.1. Si hay cambios en `42/C/currentLibft`, actualizar:
+	- `.github/projects-index.md`
+	- `.github/project-history.md`
+	- `.github/QUICK_REFERENCE.md`
+4.2. Regla estructural de `currentLibft`:
+	- mantener una sola `libft` padre en `42/C/currentLibft/libft`.
+	- proyectos hijos integrados (ejemplo: `ft_printf`) viven en
+	  `42/C/currentLibft/libft/<project_name>`.
+	- no permitir `libft` hija dentro de proyectos integrados.
 5. Si se agrega un directorio de soporte bajo `42/` (fuera de `42/C/`),
 	actualizar:
 	- `.github/projects-index.md`

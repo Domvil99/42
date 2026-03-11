@@ -13,6 +13,7 @@ Raiz/
 │   ├── C/
 │   │   ├── libft/
 │   │   ├── ft_printf/
+│   │   └── currentLibft/
 │   ├── PDFs/
 │   │   ├── 2026-03-08_primera_libft.txt
 │   │   └── 2026-03-10_ft_printf.txt
@@ -21,6 +22,8 @@ Raiz/
 │   ├── testsCurrentLibft/
 │   │   └── README.md
 │   ├── tests_ft_printf/
+│   │   └── README.md
+│   ├── tests_currentLibft/
 │   │   └── README.md
 │   └── tests_<project_name>/
 │       └── README.md
@@ -95,6 +98,13 @@ realpath /home/domvil99/empresa/42/newLibft/Raiz
 - Note (2026-03-11): ft_printf tracking is in closure state.
   Post-closure updates should be logged first in `.github/project-history.md`.
 
+### currentLibft Integration Rule
+- `42/C/currentLibft` must keep a single parent `libft` at:
+    - `42/C/currentLibft/libft`
+- Integrated child projects (example: `ft_printf`) live under:
+    - `42/C/currentLibft/libft/<project>`
+- Do not keep a nested child `libft` inside integrated projects.
+
 ### When a new project is added under `42/C/`
 - `.github/projects-index.md`
 - `.github/project-history.md`
@@ -166,6 +176,9 @@ gcc -Wall -Wextra -Werror -c ft_atoi.c
 
 # Compilar y enlazar
 gcc -Wall -Wextra -Werror ft_atoi.c -o program
+
+# Build integrado currentLibft
+cd 42/C/currentLibft && make && make bonus
 ```
 
 ## ✅ Validación Rápida de Norminette

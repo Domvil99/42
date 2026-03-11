@@ -68,3 +68,12 @@ the pending list.
 - Reason deferred: user requested to save for later
 - Suggested next action: run `rg -n "42/PDFs|42/C/libft|Workspace Map|testsLibf|git root" .github/*.md .github/**/*.md` and normalize mismatches
 - Status: pending
+
+## 2026-03-11
+
+- Task: Explicar modelo de integracion hijo/padre en currentLibft y evolucion de Makefiles
+- Priority: importante
+- Context: `42/C/currentLibft` y reglas de integracion de futuros proyectos
+- Reason deferred: usuario prioriza ejecucion e integracion ahora; aprendizaje detallado despues
+- Suggested next action: preparar guia paso a paso con casos reales de `ft_printf` integrado y checklist para nuevos hijos
+- Status: pending

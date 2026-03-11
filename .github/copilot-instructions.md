@@ -18,6 +18,7 @@ Raiz/
 │   ├── C/
 │   │   ├── libft/
 │   │   └── ft_printf/
+- Integration base project: `42/C/currentLibft` (in-progress, evolutive).
 │   ├── PDFs/
 │   │   ├── 2026-03-08_primera_libft.txt
 │   │   └── 2026-03-10_ft_printf.txt
@@ -28,6 +29,7 @@ Raiz/
 │   └── tests_<project_name>/
 │       └── README.md
 ├── .github/
+│   │   └── currentLibft/
 │   ├── QUICK_REFERENCE.md
 │   ├── chat-handoff.md
 │   ├── copilot-instructions.md
@@ -39,11 +41,18 @@ Raiz/
 │   ├── libft-progress.md
 │   ├── libft-reference.md
 │   ├── ft_printf-functions.md
-│   ├── ft_printf-progress.md
 │   ├── ft_printf-reference.md
 │   ├── projects-index.md
 │   ├── project-history.md
-│   ├── reports/
+
+## currentLibft Architecture Rule (Important)
+- `42/C/currentLibft` must contain a single parent `libft` at
+  `42/C/currentLibft/libft`.
+- Integrated child projects (for example `ft_printf`) must be placed under
+  `42/C/currentLibft/libft/<project_name>`.
+- Nested child `libft` folders inside integrated projects are not allowed.
+- currentLibft is an evolutive base and can be refined as future projects
+  require functional improvements.
 │   └── workflow-rules.md
 ├── .tools/
 └── .vscode/
@@ -129,6 +138,10 @@ Raiz/
   - `.github/ft_printf-functions.md`
   - `.github/ft_printf-progress.md`
   - `.github/ft_printf-reference.md`
+- If `42/C/currentLibft` changes, update:
+  - `.github/projects-index.md`
+  - `.github/project-history.md`
+  - `.github/QUICK_REFERENCE.md`
 - If a new project appears under `42/C/`, update:
   - `.github/projects-index.md`
   - `.github/project-history.md`

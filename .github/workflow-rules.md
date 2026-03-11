@@ -52,6 +52,19 @@ When a new project is added under `42/C/`, update:
 1. `.github/projects-index.md`
 2. `.github/project-history.md`
 
+When files in `42/C/currentLibft` change (`*.c`, `*.h`, `Makefile`), update:
+
+1. `.github/projects-index.md`
+2. `.github/project-history.md`
+3. `.github/QUICK_REFERENCE.md`
+
+Rule for `currentLibft` architecture:
+
+1. Keep exactly one parent `libft` in `42/C/currentLibft/libft`.
+2. Integrated child projects (example: `ft_printf`) must live under
+	`42/C/currentLibft/libft/<project_name>`.
+3. Do not allow nested child `libft` folders inside integrated projects.
+
 When a support directory is added under `42/` (outside `42/C/`), update:
 
 1. `.github/projects-index.md`

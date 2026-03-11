@@ -43,6 +43,7 @@ applyTo: "**/*.c|**/*.h"
 ## Contexto del Proyecto
 - **Proyecto base**: libft (completado)
 - **Proyecto activo**: ft_printf (en validacion y correccion)
+- **Base de integracion activa**: currentLibft (evolutiva)
 - **Estándar de código**: 42 Norminette
 - **Funciones**: libc reimplementada (libft) + salida formateada variadica (ft_printf)
 - **Requerimientos**: Sin funciones prohibidas, gestión manual de memoria;
@@ -163,6 +164,10 @@ Si cambia el alcance del proyecto o una decision relevante, actualizar tambien:
 - Para `ft_printf`, mantener alcance de edicion dentro de `42/C/ft_printf`
 	hasta el cierre total del proyecto.
 - No aplicar excepciones a `INVALID_HEADER` durante la validacion.
+- En `42/C/currentLibft`, mantener una sola `libft` padre en
+	`42/C/currentLibft/libft`.
+- Si `ft_printf` se integra en `currentLibft`, no permitir
+	`42/C/currentLibft/libft/ft_printf/libft`.
 
 ## Integración con Chat 1
 Para dudas sobre:
