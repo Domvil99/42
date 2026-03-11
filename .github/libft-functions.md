@@ -79,6 +79,10 @@
 ## ✅ Estado de Revisión
 - Inventario funcional completo: 43/43 funciones implementadas.
 - Estructura de prueba interna normalizada: un `main` comentado por archivo `ft_*.c`.
+- Migracion de pruebas (2026-03-10):
+	- `main` de validacion mantenidos comentados en `42/C/libft/*.c`.
+	- Casos extraidos a `42/testsLibf/test_<funcion>.c` (43 archivos).
+	- Validacion de compilacion por test contra `libft.a` completada (43/43).
 - Revalidación reciente completada tras ajustes manuales en archivos de
 	memoria y bonus de listas, manteniendo 43/43 operativas.
 - Auditoría integral adicional (2026-03-09) basada en

@@ -1,0 +1,85 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Normi Autofix: Active File",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "${workspaceFolder}/.tools/normi-autofix.sh",
+        "${file}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Normi Check: Active File (No Header)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "if [ ! -f \"${file}\" ]; then echo \"Open a .c or .h file first.\"; exit 1; fi; if [ -x \"${workspaceFolder}/.tools/norminette-venv/bin/python3\" ]; then OUT=$(\"${workspaceFolder}/.tools/norminette-venv/bin/python3\" -m norminette \"${file}\" 2>&1 || true); else OUT=$(norminette \"${file}\" 2>&1 || true); fi; ACT=$(printf \"%s\\n\" \"$OUT\" | grep \"Error:\" | grep -v \"INVALID_HEADER\" || true); if [ -n \"$ACT\" ]; then printf \"%s\\n\" \"$ACT\"; exit 2; fi; echo \"No actionable norminette errors for: ${file}\""
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Normi Check: ft_printf All (No Header)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "cd \"${workspaceFolder}/42/C/ft_printf\" || exit 1; if [ -x \"${workspaceFolder}/.tools/norminette-venv/bin/python3\" ]; then OUT=$(\"${workspaceFolder}/.tools/norminette-venv/bin/python3\" -m norminette *.c *.h 2>&1 || true); else OUT=$(norminette *.c *.h 2>&1 || true); fi; ACT=$(printf \"%s\\n\" \"$OUT\" | grep \"Error:\" | grep -v \"INVALID_HEADER\" || true); if [ -n \"$ACT\" ]; then printf \"%s\\n\" \"$ACT\"; exit 2; fi; echo \"No actionable norminette errors in 42/C/ft_printf.\""
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Normi Check: Project All (No Header)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "P=\"${input:normiProjectPath}\"; cd \"${workspaceFolder}/42/C/$P\" || { echo \"Invalid project path: 42/C/$P\"; exit 1; }; if [ -x \"${workspaceFolder}/.tools/norminette-venv/bin/python3\" ]; then OUT=$(\"${workspaceFolder}/.tools/norminette-venv/bin/python3\" -m norminette *.c *.h 2>&1 || true); else OUT=$(norminette *.c *.h 2>&1 || true); fi; ACT=$(printf \"%s\\n\" \"$OUT\" | grep \"Error:\" | grep -v \"INVALID_HEADER\" || true); if [ -n \"$ACT\" ]; then printf \"%s\\n\" \"$ACT\"; exit 2; fi; echo \"No actionable norminette errors in 42/C/$P.\""
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "normiProjectPath",
+      "type": "promptString",
+      "description": "Project path under 42/C (e.g., ft_printf or libft)",
+      "default": "ft_printf"
+    }
+  ]
+}

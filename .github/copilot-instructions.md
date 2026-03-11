@@ -7,7 +7,7 @@ description: "Global workspace instructions for C projects in 42, with libft as 
 
 ## Scope
 - Main language: C (no C++).
-- Current primary project: `42/C/libft`.
+- Current primary projects: `42/C/libft` (completed) and `42/C/ft_printf` (active).
 - Workspace supports multiple projects under `42/C/`.
 - `libft` is reusable across future projects and can evolve over time.
 
@@ -16,13 +16,20 @@ description: "Global workspace instructions for C projects in 42, with libft as 
 Raiz/
 ├── 42/
 │   ├── C/
-│   │   └── libft/
+│   │   ├── libft/
+│   │   └── ft_printf/
 │   ├── PDFs/
-│   │   └── 2026-03-08_primera_libft.txt
-│   └── testsLibf/
+│   │   ├── 2026-03-08_primera_libft.txt
+│   │   └── 2026-03-10_ft_printf.txt
+│   ├── testsLibf/
+│   │   └── README.md
+│   ├── testsCurrentLibft/
+│   │   └── README.md
+│   └── tests_<project_name>/
 │       └── README.md
 ├── .github/
 │   ├── QUICK_REFERENCE.md
+│   ├── chat-handoff.md
 │   ├── copilot-instructions.md
 │   ├── deferred-tasks.md
 │   ├── instructions/
@@ -31,6 +38,9 @@ Raiz/
 │   ├── libft-functions.md
 │   ├── libft-progress.md
 │   ├── libft-reference.md
+│   ├── ft_printf-functions.md
+│   ├── ft_printf-progress.md
+│   ├── ft_printf-reference.md
 │   ├── projects-index.md
 │   ├── project-history.md
 │   ├── reports/
@@ -49,6 +59,13 @@ Raiz/
 - Manage memory safely (no leaks, no invalid frees).
 - Avoid forbidden functions per project subject.
 
+## Validation Priority (Global Rule)
+- For this and all future projects, validation order is mandatory:
+  1. Validate behavior against the project `.txt` specification.
+  2. Validate memory safety and stability.
+  3. Run Norminette as the final closing step.
+- Do not start broad Norminette cleanup while functional/spec issues remain.
+
 ## Libft Official Counts (PDF v16.6)
 - Part 1: 23 functions.
 - Part 2: 11 functions.
@@ -62,9 +79,35 @@ Raiz/
 - If the first token of the user message is `Chat2`, force Chat 2 mode.
 - Accept common forms: `Chat1`, `Chat 1`, `chat1` and `Chat2`, `Chat 2`,
   `chat2`.
-- Keep the selected mode for the current request unless the user explicitly
-  changes it.
-- If no prefix is provided, infer the mode from task type.
+- Persist the selected mode for the full conversation.
+- Do not auto-switch to the companion chat based on task type.
+- Only change mode if the user explicitly requests a mode change.
+- If no prefix is provided at conversation start, infer once from task type and
+  then keep that mode for the rest of the conversation.
+
+## Chat Governance Model (User Rule)
+- Chat1 is the admin role ("jefe"): coordinates work, decides workflow,
+  and delegates execution to the appropriate chat.
+- Chat1 should avoid doing execution work that belongs to a specialist chat
+  when delegation is possible.
+- Chat2 is an implementation role for C code tasks.
+- If Chat2 receives a task outside its allowed scope, it must not execute it
+  directly. It must answer with:
+  - clear reason why it cannot do it in Chat2,
+  - practical solution,
+  - explicit redirection to Chat1 (or another future chat if defined).
+- Keep this model extensible so future roles (for example Chat3) can be added
+  without breaking existing rules.
+
+## Inter-Chat Relay (File-Based)
+- No direct chat-to-chat channel is available.
+- Coordination between chats is handled through `.github/chat-handoff.md`.
+- Chat1 owns delegation entries (scope, priority, success criteria).
+- Specialist chats (Chat2, future Chat3+) read assigned entries, execute,
+  and update status/results in the same file.
+- If a task is out of scope for a specialist chat, it must set `BLOCKED`
+  with reason and explicit redirection to the correct chat.
+- The handoff file is the canonical source for cross-chat continuity.
 
 ### Chat 1 (Config and Workflow)
 - VS Code setup and tooling.
@@ -75,12 +118,17 @@ Raiz/
 - Edit `*.c` and `*.h`.
 - Refactor and debug C logic.
 - Keep Norminette and memory safety.
+- Apply the global validation priority: spec behavior first, Norminette last.
 
 ## Automatic Tracking Rules
 - If `42/C/libft` changes, update:
   - `.github/libft-functions.md`
   - `.github/libft-progress.md`
   - `.github/libft-reference.md`
+- If `42/C/ft_printf` changes, update:
+  - `.github/ft_printf-functions.md`
+  - `.github/ft_printf-progress.md`
+  - `.github/ft_printf-reference.md`
 - If a new project appears under `42/C/`, update:
   - `.github/projects-index.md`
   - `.github/project-history.md`
@@ -90,8 +138,19 @@ Raiz/
   - `.github/QUICK_REFERENCE.md`
 - If a new `.txt` spec is received:
   - Save it in `42/PDFs/` using `YYYY-MM-DD_<topic>.txt`
+  - Transcribe it completely (no summarizing), preserving normative content
+    and section structure semantics
   - Log it in `.github/project-history.md`
   - Apply any required updates to tracking files
+- If the user says `refrescar memoria` or `(refrescar memoria)`:
+  - refresh full workspace baseline (git status, tracking docs, available specs,
+    deferred tasks)
+  - summarize current state before starting implementation
+  - then proceed with the requested project work
+- If a new project appears under `42/C/`, also ensure:
+  - `42/tests_<project_name>/` exists
+  - `42/tests_<project_name>/README.md` exists
+  - `42/testsCurrentLibft/` remains available as integration gate
 
 ## References
 - Norminette: https://github.com/42School/norminette

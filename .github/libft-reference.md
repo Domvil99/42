@@ -56,6 +56,10 @@ Nota temporal: pendiente correccion de headers Norminette (`INVALID_HEADER`).
 
 ## 🧪 Notas de Revisión
 - Todos los `main` de prueba quedaron comentados.
+- Migracion aplicada (2026-03-10): cada `main` de `42/C/libft/*.c` tiene
+	su espejo descomentado en `42/testsLibf/test_<funcion>.c`.
+- Validacion actual: `make` + `make bonus` en `42/C/libft` y compilacion
+	de 43/43 tests contra `libft.a`.
 - Se agregó `main` de prueba comentado en `ft_bzero.c`.
 - Se corrigieron errores críticos detectados durante la revisión por lote.
 - Se agregó regla `bonus` en `Makefile` para integrar `_bonus.o` en `libft.a`.

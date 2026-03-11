@@ -11,13 +11,23 @@ description: "Quick reference guide for C development in libft project with comm
 Raiz/
 ├── 42/
 │   ├── C/
-│   │   └── libft/
+│   │   ├── libft/
+│   │   ├── ft_printf/
+│   │   └── ft_printf_new_base/
 │   ├── PDFs/
-│   │   └── 2026-03-08_primera_libft.txt
-│   └── testsLibf/
+│   │   ├── 2026-03-08_primera_libft.txt
+│   │   └── 2026-03-10_ft_printf.txt
+│   ├── testsLibf/
+│   │   └── README.md
+│   ├── testsCurrentLibft/
+│   │   └── README.md
+│   ├── tests_ft_printf/
+│   │   └── README.md
+│   └── tests_<project_name>/
 │       └── README.md
 ├── .github/
 │   ├── QUICK_REFERENCE.md
+│   ├── chat-handoff.md
 │   ├── copilot-instructions.md
 │   ├── deferred-tasks.md
 │   ├── instructions/
@@ -26,6 +36,9 @@ Raiz/
 │   ├── libft-functions.md
 │   ├── libft-progress.md
 │   ├── libft-reference.md
+│   ├── ft_printf-functions.md
+│   ├── ft_printf-progress.md
+│   ├── ft_printf-reference.md
 │   ├── projects-index.md
 │   ├── project-history.md
 │   ├── reports/
@@ -42,7 +55,9 @@ Raiz/
     - If you are coding a deliverable project (`libft` and next ones), run
         `git add`, `git commit`, `git push` inside `42/C/`.
     - If you are updating workflow/docs/tooling (`.github`, `.vscode`, `42/PDFs`,
-        `42/testsLibf`), run git in `Raiz/`.
+        `42/testsLibf`, `42/testsCurrentLibft`, `42/tests_ft_printf`,
+        `42/tests_<project_name>`), run
+        git in `Raiz/`.
 
 Quick root check before commit:
 
@@ -74,6 +89,11 @@ realpath /home/domvil99/empresa/42/newLibft/Raiz
 - `.github/libft-progress.md`
 - `.github/libft-reference.md`
 
+### When `42/C/ft_printf` changes
+- `.github/ft_printf-functions.md`
+- `.github/ft_printf-progress.md`
+- `.github/ft_printf-reference.md`
+
 ### When a new project is added under `42/C/`
 - `.github/projects-index.md`
 - `.github/project-history.md`
@@ -85,6 +105,9 @@ realpath /home/domvil99/empresa/42/newLibft/Raiz
 
 ### When a new instruction `.txt` is received
 - Save into `42/PDFs/`
+- Transcribe full content (no summary, no omission of normative details)
+- Preserve section semantics: title, summary, index, chapters,
+  requirements, bonus, delivery/evaluation
 - Log it in `.github/project-history.md`
 - Apply relevant spec changes in tracking files
 
@@ -96,10 +119,11 @@ realpath /home/domvil99/empresa/42/newLibft/Raiz
 - `support-dir` (`42/...` outside `42/C/`): `.github/projects-index.md`,
     `.github/project-history.md`, `.github/QUICK_REFERENCE.md`
 - `spec-txt` (`42/PDFs/...`): save with `YYYY-MM-DD_<topic>.txt` and log in
-    `.github/project-history.md`
+    `.github/project-history.md`; transcribe complete content preserving
+    section semantics
 3. Run quick route check in docs:
 ```bash
-rg -n "42/PDFs|42/C/libft" .github
+rg -n "42/PDFs|42/C/libft|42/C/ft_printf" .github
 ```
 
 ## Tracking Copy/Paste Template
@@ -162,6 +186,35 @@ $NORMI *.c
 $NORMI libft.h
 ```
 
+## VS Code: Norminette Automation
+
+- Task de correccion automatica por archivo activo:
+    - `Normi Autofix: Active File`
+- Task de chequeo rapido (ignora `INVALID_HEADER`):
+    - `Normi Check: Active File (No Header)`
+- Task de barrido completo en `ft_printf` (ignora `INVALID_HEADER`):
+    - `Normi Check: ft_printf All (No Header)`
+- Task de barrido completo para cualquier proyecto `42/C/<project>`:
+    - `Normi Check: Project All (No Header)`
+- Atajo dedicado sin colision con shortcuts comunes:
+    - `Ctrl+Alt+Shift+N`, luego `Ctrl+Alt+Shift+F`
+- Atajo de chequeo rapido:
+    - `Ctrl+Alt+Shift+N`, luego `Ctrl+Alt+Shift+C`
+- Atajo de barrido completo `ft_printf`:
+    - `Ctrl+Alt+Shift+N`, luego `Ctrl+Alt+Shift+A`
+- Atajo de barrido completo por proyecto:
+    - `Ctrl+Alt+Shift+N`, luego `Ctrl+Alt+Shift+P`
+
+Flujo recomendado por archivo:
+1. Editar el `.c` o `.h`.
+2. Ejecutar atajo de autofix.
+3. Si quedan errores, ejecutar atajo de check para ver solo accionables.
+
+Si un atajo no responde:
+1. Ejecutar `Tasks: Run Task` y lanzar la tarea equivalente.
+2. Verificar que el keybinding tambien exista en `Keyboard Shortcuts (JSON)`
+    de usuario.
+
 ## 🐛 Debugging con lldb
 
 ```bash
@@ -193,6 +246,16 @@ valgrind --leak-check=full ./program
 # Perfiles detallados
 valgrind --leak-check=full --show-leak-kinds=all ./program
 ```
+
+## Orden Obligatorio de Revisión
+
+Para este y todos los proyectos:
+1. Validar comportamiento segun la especificacion `.txt`.
+2. Validar memoria y estabilidad.
+3. Ejecutar Norminette al final como cierre.
+
+Regla practica:
+- Si la funcionalidad no esta en verde, no empezar limpieza masiva de estilo.
 
 ## 📋 Checklist antes de Commit
 
@@ -322,7 +385,7 @@ re: fclean all
     git push
 
     # Workspace docs/tooling (desde Raiz/)
-    git add .github .vscode 42/PDFs 42/testsLibf
+    git add .github .vscode 42/PDFs 42/testsLibf 42/testsCurrentLibft
     git commit -m "docs: update tracking and workflow"
     git push
    ```
@@ -331,3 +394,21 @@ re: fclean all
 ---
 
 **Versión**: 1.0 | **Actualizado**: Marzo 2026
+
+### New Project Test Checklist
+- Create `42/tests_<project_name>/`
+- Add `README.md` with compile/run commands
+- Register in `.github/projects-index.md`
+- Log in `.github/project-history.md`
+- Re-run `42/testsCurrentLibft/` before integrating into libft
+
+## Inter-Chat Handoff (Chat1 <-> Chat2+)
+
+- Archivo puente oficial: `.github/chat-handoff.md`
+- Uso rapido:
+1. Chat1 crea entrada con `ID`, `From -> To`, `Task`, `Files`, `Status`.
+2. Chat especialista actualiza estado en la misma fila (`WIP/BLOCKED/DONE`).
+3. Si la tarea no corresponde al chat, marcar `BLOCKED` y redireccionar.
+4. Cerrar tarea moviendo o reflejando resultado en `Closed Handoffs`.
+- Regla clave: no existe canal directo entre chats; el handoff file es la
+    fuente canonica de continuidad.

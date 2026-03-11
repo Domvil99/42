@@ -51,12 +51,18 @@
     - `make fclean && make && make bonus` ✅
     - `norminette *.c *.h` revisado: solo `INVALID_HEADER` ✅
     - smoke test externo con `/tmp/check_headers.c` (`OK_HEADER_FLOW`) ✅
+- Migracion de `main` de pruebas a `42/testsLibf/` (`2026-03-10`):
+    - 43 `main` detectados en `42/C/libft/*.c`.
+    - 43 archivos creados en `42/testsLibf/test_<funcion>.c`.
+    - `make` en `42/C/libft` validado ✅.
+    - `make bonus` en `42/C/libft` validado ✅.
+    - Compilacion de 43/43 tests contra `42/C/libft/libft.a` validada ✅.
 
 ## 🎯 Siguiente Etapa
 1. Corregir headers Norminette cuando indiques el cierre formal de cabeceras.
 2. Iniciar nuevo proyecto en `42/C/<project_name>/` con `libft` como base reutilizable.
 
-**Última actualización**: Marzo 9, 2026 (cierre total)
+**Última actualización**: Marzo 10, 2026 (migracion de tests)
 **Versión PDF**: 16.6
 
 ## 📝 Notas Importantes

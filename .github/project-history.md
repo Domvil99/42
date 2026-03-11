@@ -210,6 +210,280 @@ Purpose: chronological log of important decisions, imports, and structure change
     - `libft` marcado como `completed`.
     - workspace listo para iniciar siguiente proyecto en `42/C/<project_name>/`.
 
+- Nueva regla operativa de refresco de contexto:
+  - trigger aceptado: `refrescar memoria` y `(refrescar memoria)`.
+  - comportamiento definido:
+    - refrescar estado git (`Raiz/` y `42/C/`), tracking docs, specs en
+      `42/PDFs/` y pendientes diferidos.
+    - resumir baseline actualizado antes de cualquier nueva implementación.
+  - docs actualizadas:
+    - `.github/workflow-rules.md`
+    - `.github/instructions/config-guide.instructions.md`
+    - `.github/copilot-instructions.md`
+
+## 2026-03-10
+
+- Onboarding de especificacion `ft_printf`:
+  - spec agregada en:
+    - `42/PDFs/2026-03-10_ft_printf.txt`
+  - referencia base para validacion/correccion:
+    - conversiones obligatorias `cspdiuxX%`
+    - Makefile con `-Wall -Wextra -Werror` y sin relink
+    - uso permitido de `libft`
+
+- Nuevo proyecto detectado en `42/C/`:
+  - `42/C/ft_printf/` (estado: in-progress, en revision y correccion)
+  - actualizado:
+    - `.github/projects-index.md`
+
+- Se habilito tracking dedicado para `ft_printf`:
+  - `.github/ft_printf-functions.md`
+  - `.github/ft_printf-progress.md`
+  - `.github/ft_printf-reference.md`
+
+- Se actualizaron reglas/instrucciones para escalar a siguientes proyectos:
+  - `.github/copilot-instructions.md`
+  - `.github/workflow-rules.md`
+  - `.github/instructions/config-guide.instructions.md`
+  - `.github/instructions/c-coding.instructions.md`
+  - `.github/QUICK_REFERENCE.md`
+
+- Correccion de especificacion `ft_printf`:
+  - se elimino la version previa importada por error y se reemplazo por el
+    `.txt` correcto compartido por el usuario.
+  - archivo final mantenido:
+    - `42/PDFs/2026-03-10_ft_printf.txt`
+  - se limpiaron referencias de version anterior en tracking:
+    - `.github/ft_printf-progress.md`
+    - `.github/ft_printf-functions.md`
+    - `.github/projects-index.md`
+
+## 2026-03-11
+
+- Retranscripcion completa de especificacion `ft_printf`:
+  - se regenero el contenido de:
+    - `42/PDFs/2026-03-10_ft_printf.txt`
+  - criterio aplicado:
+    - sin resumen, sin recortes, preservando semantica de secciones
+      (titulo, resumen, indice, capitulos, requisitos, bonus,
+      entrega/evaluacion)
+
+- Regla permanente anti-resumen para specs `.txt`:
+  - actualizadas reglas de importacion en:
+    - `.github/copilot-instructions.md`
+    - `.github/workflow-rules.md`
+    - `.github/instructions/config-guide.instructions.md`
+    - `.github/QUICK_REFERENCE.md`
+
+- Inicio de implementacion de optimizacion Norminette en `ft_printf`:
+  - baseline completo ejecutado sobre `42/C/ft_printf`.
+  - estrategia activada: micro-lotes (`editar -> norminette archivo`).
+  - micro-lote 1 completado en:
+    - `42/C/ft_printf/ft_printf.c`
+    - `42/C/ft_printf/parse_format.c`
+    - `42/C/ft_printf/parse_format_bonus.c`
+  - resultado del lote:
+    - en esos archivos, solo `INVALID_HEADER`.
+  - build verificado tras cambios:
+    - `make bonus` OK en `42/C/ft_printf`.
+
+- Continuacion de optimizacion Norminette en `ft_printf`:
+  - micro-lote 2 aplicado en:
+    - `42/C/ft_printf/print_char.c`
+    - `42/C/ft_printf/print_char_bonus.c`
+  - resultado del lote:
+    - en ambos archivos, solo `INVALID_HEADER`.
+  - revalidacion de build:
+    - `make bonus` OK tras los cambios.
+
+- Inicio de implementacion `ft_printf` (ciclo 1):
+  - cambios en codigo:
+    - `42/C/ft_printf/handle_format.c`
+    - `42/C/ft_printf/handle_format_bonus.c`
+    - `42/C/ft_printf/print_int.c`
+    - `42/C/ft_printf/print_int_bonus.c`
+    - `42/C/ft_printf/print_unsigned_bonus.c`
+  - ajustes aplicados:
+    - fix de avance de indice en dispatch para evitar salto de caracteres
+      post-conversion.
+    - hardening de memoria en casos `.0` con `0` y guardas de `malloc`
+      en rutas afectadas.
+  - validacion inicial:
+    - `make` y `make bonus` OK.
+    - smoke comparativo `%.0d`/`%.0u` alineado con `printf` (output + return).
+    - valgrind smoke sin leaks/errores.
+
+- Continuacion implementacion `ft_printf` (ciclo 2):
+  - cambios en codigo:
+    - `42/C/ft_printf/print_pointer.c`
+    - `42/C/ft_printf/print_pointer_bonus.c`
+    - `42/C/ft_printf/Makefile`
+  - ajustes aplicados:
+    - `%p` con puntero `NULL` alineado con `printf` (`(nil)`) en obligatorio y
+      bonus.
+    - `Makefile` robustecido para recrear `libftprintf.a` en `all` y `bonus`,
+      evitando mezcla de objetos entre modos.
+  - validacion:
+    - matriz obligatoria comparada contra `printf`: sin diffs de output ni
+      return total.
+    - matriz bonus oficial comparada contra `printf`: sin diffs de output ni
+      return total.
+
+- Continuacion implementacion `ft_printf` (ciclo 3):
+  - cambios en codigo:
+    - `42/C/ft_printf/handle_format.c`
+    - `42/C/ft_printf/handle_format_bonus.c`
+  - objetivo:
+    - limpieza incremental de Norminette en dispatchers sin alterar
+      comportamiento funcional.
+  - resultado:
+    - en ambos archivos, unico hallazgo restante: `INVALID_HEADER`.
+    - `make` y `make bonus` OK tras refactor.
+    - matrices obligatoria y bonus se mantienen en paridad con `printf`.
+
+- Habilitacion de coordinacion inter-chat por archivo puente:
+  - objetivo:
+    - permitir comunicacion operativa entre Chat1 y chats especialistas
+      (Chat2 y futuros Chat3+) sin canal directo interno.
+  - archivo canonico creado:
+    - `.github/chat-handoff.md`
+  - reglas y guias actualizadas:
+    - `.github/copilot-instructions.md`
+    - `.github/instructions/config-guide.instructions.md`
+    - `.github/instructions/c-coding.instructions.md`
+    - `.github/workflow-rules.md`
+    - `.github/QUICK_REFERENCE.md`
+  - politica de estado definida:
+    - `TODO`, `WIP`, `BLOCKED`, `DONE`, `DEFERRED`.
+  - resultado:
+    - Chat1 delega y prioriza; chat especialista ejecuta y reporta en la
+      misma entrada, manteniendo trazabilidad continua.
+
+- Revalidacion de progreso `ft_printf` y tracking actualizado:
+  - verificacion puntual en archivo foco:
+    - `42/C/ft_printf/print_hex_bonus.c` mantiene solo `INVALID_HEADER`.
+  - estado de compilacion actualizado:
+    - `make` OK.
+    - `make bonus` OK.
+  - snapshot de deuda Norminette accionable (sin `INVALID_HEADER`):
+    - total `286` errores.
+    - distribucion: `print_unsigned.c` (151), `print_int_bonus.c` (39),
+      `print_int.c` (39), `print_hex.c` (31), `print_binary_bonus.c` (26).
+  - docs de tracking sincronizadas a este baseline:
+    - `.github/ft_printf-functions.md`
+    - `.github/ft_printf-progress.md`
+    - `.github/ft_printf-reference.md`
+    - `.github/chat-handoff.md`
+
+- Inicio de migracion a nueva base de `ft_printf`:
+  - nueva fuente obligatoria agregada en:
+    - `42/C/ft_printf_new_base/`
+  - decision de migracion:
+    - mantener destino final en `42/C/ft_printf/`
+    - aplicar switch por diff para preservar trazabilidad y bonus.
+  - cambios iniciales aplicados en `42/C/ft_printf`:
+    - entrypoint obligatorio nuevo: `ft_printf.c`
+    - entrypoint bonus desacoplado: `ft_printf_bonus.c`
+    - obligatorio reorganizado: `print_char.c`, `print_string.c`,
+      `print_decimal.c`, `print_unsigned.c`, `print_hex.c`,
+      `print_pointer.c`, `utils.c`
+    - `Makefile` actualizado para `SRC` obligatorio nuevo y `BONUS_SRC`
+      con `ft_printf_bonus.c`.
+  - validacion inicial post-switch:
+    - `make fclean && make` OK.
+    - `make bonus` OK.
+    - smoke obligatorio base (`cspdiuxX%`) alineado con `printf`.
+
+- Nuevo directorio de soporte para pruebas de `ft_printf`:
+  - creado:
+    - `42/tests_ft_printf/`
+    - `42/tests_ft_printf/README.md`
+  - tracking actualizado por regla `support-dir`:
+    - `.github/projects-index.md`
+    - `.github/project-history.md`
+    - `.github/QUICK_REFERENCE.md`
+
+- Auditoria solicitada a Chat1 via handoff activo:
+  - entrada activa agregada:
+    - `H-003` en `.github/chat-handoff.md`
+  - alcance:
+    - auditoria de estrategia de migracion por diff y criterio de cierre.
+
+- Regla global reforzada por solicitud de usuario (todos los proyectos):
+  - orden obligatorio de revision:
+    1. funcionalidad contra `.txt`,
+    2. memoria/estabilidad,
+    3. norminette al final como cierre.
+  - docs de gobierno actualizadas:
+    - `.github/copilot-instructions.md`
+    - `.github/instructions/config-guide.instructions.md`
+    - `.github/instructions/c-coding.instructions.md`
+    - `.github/workflow-rules.md`
+    - `.github/QUICK_REFERENCE.md`
+
+- Ejecucion funcional-first aplicada en `ft_printf`:
+  - gates completados antes de nueva limpieza de norma:
+    - obligatorio: comparativa contra `printf` sin diff de salida,
+      `RET_TOTAL=212`.
+    - bonus: comparativa contra `printf` sin diff de salida,
+      `RET_TOTAL=146`.
+    - memoria: valgrind en casos frontera con `0` leaks y `0` errores.
+  - ajuste puntual posterior de estilo:
+    - `42/C/ft_printf/print_binary_bonus.c` (cierre de
+      `BRACE_SHOULD_EOL`, quedando solo `INVALID_HEADER`).
+  - snapshot de deuda Norminette accionable recalculado (sin
+    `INVALID_HEADER`):
+    - `42/C/ft_printf/ft_printf.h` (60)
+    - `42/C/ft_printf/parse_format_bonus.c` (56)
+    - `42/C/ft_printf/handle_format_bonus.c` (28)
+  - tracking sincronizado:
+    - `.github/ft_printf-progress.md`
+    - `.github/ft_printf-reference.md`
+    - `.github/ft_printf-functions.md`
+
+- Estructura/scope-first reforzado y ejecutado en `ft_printf`:
+  - decision aplicada: validar estructura de entrega antes de norma para
+    evitar retrabajo en archivos que luego se eliminan/reescriben.
+  - cambios en entrega (`42/C/ft_printf`):
+    - `Makefile` ajustado con regla explicita `$(NAME)` y flujo sin relink
+      innecesario (`all`/`bonus` con copia condicional a `libftprintf.a`).
+    - eliminados extras fuera de alcance activo de la spec:
+      - `print_reverse_bonus.c`
+      - `print_n_bonus.c`
+      - `print_binary_bonus.c` (no presente en baseline final).
+  - validacion posterior:
+    - `make` OK y segunda corrida sin relink (`Nothing to be done for all`).
+    - `make bonus` OK y segunda corrida sin relink.
+    - matrices mandatory/bonus en paridad con `printf`
+      (`RET_TOTAL=212` y `RET_TOTAL=146`).
+    - valgrind frontera: `0` leaks y `0` errores.
+  - docs de gobierno reforzadas para evitar recurrencia:
+    - `.github/workflow-rules.md`
+    - `.github/instructions/config-guide.instructions.md`
+    - `.github/instructions/c-coding.instructions.md`
+
+- Limpieza de residuos de pruebas y snapshot de cierre parcial:
+  - en `42/tests_ft_printf/` se eliminaron artefactos generados
+    (`*.out`, `*.err`, ejecutables) para mantener el directorio de tests
+    en estado fuente.
+  - verificacion post-limpieza en `42/C/ft_printf`:
+    - `make` OK
+    - `make bonus` OK
+  - estado Norminette accionable actual (ignorando `INVALID_HEADER`):
+    - `42/C/ft_printf/ft_printf.h`
+    - `42/C/ft_printf/parse_format_bonus.c`
+    - `42/C/ft_printf/handle_format_bonus.c`
+
+- Cierre de norma accionable en `ft_printf`:
+  - micro-lote final aplicado sobre:
+    - `42/C/ft_printf/ft_printf.h`
+    - `42/C/ft_printf/parse_format_bonus.c`
+    - `42/C/ft_printf/handle_format_bonus.c`
+  - resultado de validacion:
+    - `norminette *.c *.h` sin errores accionables (solo `INVALID_HEADER`).
+    - `make` OK.
+    - `make bonus` OK.
+
 ## Log Rules
 
 1. Add one dated block per relevant change set.

@@ -10,6 +10,29 @@ applyTo: "" # On-demand only
 - Prefijo recomendado para iniciar este modo: `Chat1`
 - También válido: `Chat 1` o `chat1`
 - Si el mensaje inicia con ese prefijo, tratar la solicitud como Chat 1.
+- Una vez iniciado en Chat1, mantener Chat1 durante toda la conversación.
+- No cambiar automáticamente a Chat2 por tipo de tarea.
+- Solo cambiar de chat si el usuario lo pide explícitamente.
+
+## Rol de Chat1 (Administrador)
+- Chat1 actúa como "jefe administrador": coordina, prioriza y delega.
+- Aunque Chat1 puede abarcar todo el flujo, por norma operativa debe delegar
+	ejecución técnica al chat especialista cuando corresponda.
+- Si una solicitud pertenece a otro chat, Chat1 debe responder con:
+	1. Motivo de la delegación.
+	2. Siguiente paso concreto para el usuario.
+	3. Redirección explícita al chat correcto.
+- El modelo debe mantenerse extensible para futuros chats (por ejemplo Chat3)
+	sin romper reglas existentes.
+
+## Protocolo de Handoff (Chat1)
+- Chat1 coordina otros chats mediante `.github/chat-handoff.md`.
+- Antes de delegar, registrar: objetivo, alcance, archivos, prioridad y
+	criterio de cierre.
+- Al recibir resultado de un chat especialista, actualizar estado y siguiente
+	accion en el mismo archivo.
+- Si hay bloqueo, registrar causa y redireccion al chat que corresponde.
+- Este protocolo aplica tambien a futuros chats (Chat3+).
 
 ## Propósito
 Este es el chat EXCLUSIVO para:
@@ -59,22 +82,76 @@ Coordina con el usuario para mantener limpia la separación de responsabilidades
 3. Si se agrega un proyecto nuevo bajo `42/C/`, actualizar:
 	- `.github/projects-index.md`
 	- `.github/project-history.md`
-4. Si se agrega un directorio de soporte bajo `42/` (fuera de `42/C/`),
+4. Si hay cambios en `42/C/ft_printf`, actualizar:
+	- `.github/ft_printf-functions.md`
+	- `.github/ft_printf-progress.md`
+	- `.github/ft_printf-reference.md`
+5. Si se agrega un directorio de soporte bajo `42/` (fuera de `42/C/`),
 	actualizar:
 	- `.github/projects-index.md`
 	- `.github/project-history.md`
 	- `.github/QUICK_REFERENCE.md`
-5. Si llega una especificación `.txt`, guardarla en `42/PDFs/`
+6. Si llega una especificación `.txt`, guardarla en `42/PDFs/`
 	usando `YYYY-MM-DD_<topic>.txt` y registrarla en
 	`.github/project-history.md`.
-6. Verificar consistencia de rutas y estructura en `.github/QUICK_REFERENCE.md`.
-7. Para cambios de estructura, usar el checklist rápido en:
+	- Transcribir el contenido completo (sin resumir).
+	- Mantener semantica de estructura por secciones (titulo, resumen,
+	  indice, capitulos, requisitos, bonus, entrega/evaluacion).
+	- Corregir encoding solo si afecta legibilidad, sin cambiar el
+	  significado tecnico/normativo.
+7. Verificar consistencia de rutas y estructura en `.github/QUICK_REFERENCE.md`.
+8. Para cambios de estructura, usar el checklist rápido en:
 	- `.github/QUICK_REFERENCE.md` (sección `Tracking 30s Checklist`)
 	- `.github/workflow-rules.md` (sección `30-Second Ops Checklist`)
-8. Si el usuario indica `guardalo para despues`, registrar el pendiente en:
+9. Si el usuario indica `guardalo para despues`, registrar el pendiente en:
 	- `.github/deferred-tasks.md`
 	- prioridad obligatoria: `no importante` | `importante` |
 	  `super importante`
-9. Si el pendiente no es `super importante`, mantenerlo diferido y no
+10. Si el pendiente no es `super importante`, mantenerlo diferido y no
 	mencionarlo en respuestas normales; solo mostrarlo si el usuario pide
 	explicitamente la lista de pendientes.
+11. Si el usuario indica `refrescar memoria` o `(refrescar memoria)`, ejecutar
+	un refresco completo de contexto antes de implementar:
+	- estado git en `Raiz/` y `42/C/`
+	- estado de tracking (`projects-index`, `project-history`, docs clave)
+	- especificaciones disponibles en `42/PDFs/`
+	- pendientes diferidos que impacten el siguiente proyecto
+	Luego resumir el baseline actualizado y recien despues continuar.
+
+## Prioridad Global de Validacion (Todos los Proyectos)
+- Orden obligatorio:
+	1. validar estructura/scope de entrega segun `.txt`
+	   (sin archivos extra fuera del alcance activo),
+	2. validar funcionamiento contra la especificacion `.txt`,
+	3. validar memoria/estabilidad,
+	4. cerrar Norminette al final.
+- Si hay desvio funcional abierto, no iniciar rondas grandes de Norminette.
+- Si hay desvio de estructura/scope, detener y corregir estructura antes de
+	continuar con funcionalidad o estilo.
+
+## Automatizacion de Norminette en VS Code
+- Configuracion workspace disponible:
+	- `.vscode/tasks.json`
+	- `.vscode/keybindings.json`
+	- `.tools/normi-autofix.sh`
+- Tarea principal por archivo activo:
+	- `Normi Autofix: Active File`
+	- Ejecuta formateo + limpieza basica + `norminette` ignorando solo
+	  `INVALID_HEADER`.
+- Atajo dedicado (chord no comun):
+	- `Ctrl+Alt+Shift+N`, luego `Ctrl+Alt+Shift+F`
+- Tarea de diagnostico rapido:
+	- `Normi Check: Active File (No Header)`
+	- Atajo: `Ctrl+Alt+Shift+N`, luego `Ctrl+Alt+Shift+C`
+- Regla de uso:
+	- editar -> autofix -> check -> continuar.
+
+- Requisito para atajos consistentes:
+	- Replicar estos chords en `Keyboard Shortcuts (JSON)` de usuario.
+	- Si no estan activos, usar `Tasks: Run Task` como fallback operativo.
+
+- Nota de alcance:
+    - `Normi Check: ft_printf All (No Header)` es especifica de `ft_printf`.
+    - Para cualquier otro proyecto bajo `42/C/<project>`, usar
+      `Normi Check: Active File (No Header)` por archivo hasta crear una tarea
+      global equivalente por proyecto.

@@ -7,7 +7,10 @@ Purpose: central index for all projects under `42/` and their relation with `42/
 | Project | Path | Status | Uses libft | Notes |
 |---|---|---|---|---|
 | libft | 42/C/libft | completed | base | Core library reused by future C projects |
+| ft_printf | 42/C/ft_printf | in-progress | yes | Under validation and error-fix pass against current spec |
+| ft_printf_new_base | 42/C/ft_printf_new_base | in-progress | yes | Staging mandatory-only reference used as migration source |
 | testsLibf | 42/testsLibf | in-progress | yes | Manual test programs for libft validation |
+| tests_ft_printf | 42/tests_ft_printf | in-progress | yes | Manual test harnesses for ft_printf migration and validation |
 
 ## Update Rules
 
@@ -19,6 +22,8 @@ Purpose: central index for all projects under `42/` and their relation with `42/
 ## Directory Convention
 
 - Main C projects: `42/C/<project_name>/`
+- Per-project tests: `42/tests_<project_name>/`
+- Current libft integration tests: `42/testsCurrentLibft/` (mandatory gate)
 - Shared test folders: `42/<tests_name>/` (example: `42/testsLibf/`)
 - Project reference docs: `.github/`
 - Incoming source instructions (.txt/.pdf exports): `42/PDFs/`
