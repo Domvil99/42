@@ -97,9 +97,10 @@
 	- regla `bonus` optimizada para evitar relink innecesario.
 
 ## Estado operativo actual (2026-03-11)
-- Se detecta una tanda pendiente en `42/C/libft` (42 archivos `*.c`).
-- Naturaleza del delta actual:
+
+- Tanda de limpieza interna de `42/C/libft` cerrada en commit:
+	- `bfe932d` (`libft: clean legacy commented test blocks and normalize eof`).
+- Naturaleza del delta aplicado:
 	- limpieza de bloques de prueba comentados y ajuste menor de finales de archivo.
-	- sin cambios de API publica (`libft.h` / `libft_bonus.h` sin delta pendiente).
-- Impacto esperado:
-	- mantenimiento/estilo interno, sin cambio funcional objetivo de la libreria.
+- Impacto validado:
+	- mantenimiento/estilo interno, sin cambio funcional de la libreria.

@@ -284,6 +284,11 @@ Purpose: chronological log of important decisions, imports, and structure change
     limpieza de comentarios de pruebas y ajustes menores de formato.
   - no se detecta delta pendiente en `libft.h` / `libft_bonus.h`.
 
+- Cierre del lote pendiente de `libft`:
+  - commit en `42/C/`: `bfe932d`
+    (`libft: clean legacy commented test blocks and normalize eof`).
+  - working tree de `42/C` queda sin cambios tracked pendientes en `libft`.
+
 ## 2026-03-11
 
 - Retranscripcion completa de especificacion `ft_printf`:

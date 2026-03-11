@@ -71,10 +71,9 @@
 
 ## Estado de continuidad (2026-03-11)
 1. Baseline funcional de `libft` se mantiene estable (43/43).
-2. Pendiente actual en repo `42/C/`:
-    - 42 archivos `42/C/libft/*.c` modificados en working tree.
-    - enfoque del delta: limpieza de bloques comentados de pruebas y
-      normalizacion menor de formato.
-3. No hay cambios pendientes detectados en:
+2. Cierre aplicado en repo `42/C/`:
+    - commit `bfe932d` con limpieza de bloques comentados de pruebas y
+      normalizacion menor de formato en `libft/*.c`.
+3. No se detectan cambios de API en:
     - `42/C/libft/libft.h`
     - `42/C/libft/libft_bonus.h`
