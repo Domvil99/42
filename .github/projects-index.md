@@ -7,10 +7,9 @@ Purpose: central index for all projects under `42/` and their relation with `42/
 | Project | Path | Status | Uses libft | Notes |
 |---|---|---|---|---|
 | libft | 42/C/libft | completed | base | Core library reused by future C projects |
-| ft_printf | 42/C/ft_printf | completed | yes | Subject audit completed and delivery commit created (`2415cdf`) |
-| ft_printf_new_base | 42/C/ft_printf_new_base | paused | yes | Reference/staging snapshot kept out of deliverable scope |
+| ft_printf | 42/C/ft_printf | completed | yes | Subject audit + hardening + cleanup published (`2415cdf`, `79b2255`, `360f071`) |
 | testsLibf | 42/testsLibf | in-progress | yes | Manual test programs for libft validation |
-| tests_ft_printf | 42/tests_ft_printf | in-progress | yes | Manual test harnesses for ft_printf migration and validation |
+| tests_ft_printf | 42/tests_ft_printf | in-progress | yes | Manual test harnesses for ft_printf validation and regression checks |
 
 ## Update Rules
 

@@ -3,9 +3,9 @@
 Estado: referencia operativa alineada a spec `42/PDFs/2026-03-10_ft_printf.txt`.
 
 Nota actual (2026-03-11):
-- Migracion activa de obligatorio desde `42/C/ft_printf_new_base/` hacia
-    `42/C/ft_printf/`.
-- Bonus se mantiene operativo con `ft_printf_bonus.c` durante el rebase.
+- Base entregable consolidada en `42/C/ft_printf/`.
+- Arquitectura de headers separada (`ft_printf.h` mandatory,
+    `ft_printf_bonus.h` bonus).
 
 ## API requerida
 - `int ft_printf(char const *format, ...);`
@@ -158,8 +158,12 @@ Nota actual (2026-03-11):
 ## Estado de cierre (commit)
 - Entrega `42/C` registrada en commit:
     - `2415cdf`.
+    - `79b2255`.
+    - `360f071`.
 - Tracking `Raiz` registrado en commit:
     - `7cf296d`.
+    - `9ecbda6`.
+    - `b7bdcda`.
 
 ## Blindaje final de arquitectura (2026-03-11)
 - Separacion de headers aplicada:

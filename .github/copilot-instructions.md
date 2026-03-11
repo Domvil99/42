@@ -7,7 +7,7 @@ description: "Global workspace instructions for C projects in 42, with libft as 
 
 ## Scope
 - Main language: C (no C++).
-- Current primary projects: `42/C/libft` (completed) and `42/C/ft_printf` (active).
+- Current primary projects: `42/C/libft` (completed) and `42/C/ft_printf` (completed).
 - Workspace supports multiple projects under `42/C/`.
 - `libft` is reusable across future projects and can evolve over time.
 

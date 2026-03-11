@@ -538,6 +538,22 @@ Purpose: chronological log of important decisions, imports, and structure change
     - `make` OK.
     - `make bonus` OK.
 
+- Cierre final de sesion `ft_printf` (higiene + publicacion):
+  - limpieza final aplicada en entrega:
+    - eliminado staging `42/C/ft_printf_new_base/` del scope tracked.
+    - agregado ignore de artefactos locales en `42/C/ft_printf/.gitignore`.
+  - limpieza final aplicada en workspace de tests:
+    - agregado ignore de binarios locales en `42/tests_ft_printf/.gitignore`.
+  - commits de cierre en `42/C/`:
+    - `79b2255` `ft_printf: harden headers and keep makefile/spec compliance`
+    - `360f071` `chore(ft_printf): ignore local build artifacts and drop staging base`
+  - commits de cierre en `Raiz/`:
+    - `9ecbda6` `docs(ft_printf): record makefile/header hardening and final checks`
+    - `b7bdcda` `chore(tests): ignore local ft_printf test binaries`
+  - publicacion remota completada:
+    - `42/C` -> `main` actualizado `2bdbff1..360f071`
+    - `Raiz` -> `main` actualizado `e23e537..b7bdcda`
+
 ## Log Rules
 
 1. Add one dated block per relevant change set.

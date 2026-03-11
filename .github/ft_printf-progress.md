@@ -2,11 +2,9 @@
 
 ## Estado Actual
 - Proyecto detectado en `42/C/ft_printf`.
-- Nueva base de referencia detectada en `42/C/ft_printf_new_base`.
 - Especificacion registrada: `42/PDFs/2026-03-10_ft_printf.txt`.
-- Objetivo actual: validacion completa + correccion de errores.
-- Politica temporal: ignorar solo `INVALID_HEADER`.
-- Implementacion activa iniciada el `2026-03-11`.
+- Estado actual: cierre tecnico completado y publicado.
+- Politica vigente: sin pendientes tecnicos abiertos para entrega.
 
 ## Cobertura Objetivo
 - Obligatorio: conversiones `cspdiuxX%`.
@@ -110,16 +108,10 @@
 3. Micro-lote 7: `print_int.c` + `print_int_bonus.c` (39 + 39).
 4. Micro-lote 8: `print_unsigned.c` (151).
 
-## Migracion base obligatoria (2026-03-11)
-1. Switch inicial aplicado en obligatorio usando semantica de
-	`42/C/ft_printf_new_base`.
-2. Build validado:
-	- `make fclean && make` OK.
-	- `make bonus` OK con entrypoint separado `ft_printf_bonus.c`.
-3. Smoke obligatorio esencial validado (`cspdiuxX%` en formato simple):
-	- output y retorno alineados con `printf` en caso de prueba base.
-4. Infra de pruebas creada:
-	- `42/tests_ft_printf/README.md`.
+## Nota de continuidad (2026-03-11)
+1. Se descarto el staging de migracion y se mantiene solo la base final
+	entregable en `42/C/ft_printf`.
+2. El flujo de pruebas queda consolidado en `42/tests_ft_printf/`.
 
 ## Actualizacion metodologia (2026-03-11)
 1. Cambio operativo aplicado por solicitud del usuario:
@@ -244,3 +236,16 @@
 	- `norminette *.c *.h libft/*.c libft/*.h` -> `RC=0`.
 	- matrices mandatory/bonus -> `RET_TOTAL=212` / `146`.
 	- valgrind mandatory/bonus -> `0` errores, `0` leaks.
+
+## Cierre final publicado (2026-03-11)
+1. Repo de entrega `42/C/`:
+	- `79b2255` -> `ft_printf: harden headers and keep makefile/spec compliance`.
+	- `360f071` -> `chore(ft_printf): ignore local build artifacts and drop staging base`.
+	- push remoto completado (`main -> main`).
+2. Repo de tracking `Raiz/`:
+	- `9ecbda6` -> `docs(ft_printf): record makefile/header hardening and final checks`.
+	- `b7bdcda` -> `chore(tests): ignore local ft_printf test binaries`.
+	- push remoto completado (`main -> main`).
+3. Estado de cierre:
+	- repos locales limpios,
+	- tracking alineado con estado real de entrega.

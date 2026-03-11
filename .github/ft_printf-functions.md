@@ -23,9 +23,7 @@
 
 ## Estado
 - Baseline importado para revision.
-- Migracion a nueva base obligatoria iniciada (2026-03-11):
-	- Fuente de referencia: `42/C/ft_printf_new_base/` (obligatorio).
-	- Switch aplicado en `42/C/ft_printf/` con nueva organizacion mandatory:
+- Reorganizacion mandatory aplicada en `42/C/ft_printf/`:
 		- `ft_printf.c` (dispatcher obligatorio simplificado)
 		- `print_char.c`, `print_string.c`, `print_decimal.c`,
 		  `print_unsigned.c`, `print_hex.c`, `print_pointer.c`, `utils.c`
@@ -163,6 +161,15 @@
 	- commit de proyecto en `42/C/`: `2415cdf`.
 	- commit de tracking en `Raiz/`: `7cf296d`.
 	- estado funcional consolidado para evaluacion final del proyecto.
+
+- Publicacion final de cierre (2026-03-11):
+	- commits adicionales en `42/C/`:
+		- `79b2255` (`ft_printf: harden headers and keep makefile/spec compliance`)
+		- `360f071` (`chore(ft_printf): ignore local build artifacts and drop staging base`)
+	- commits adicionales en `Raiz/`:
+		- `9ecbda6` (`docs(ft_printf): record makefile/header hardening and final checks`)
+		- `b7bdcda` (`chore(tests): ignore local ft_printf test binaries`)
+	- pushes remotos completados en ambos repos (`main -> main`).
 
 - Blindaje Makefile/headers segun spec (2026-03-11):
 	- `ft_printf.h` desacoplado de declaraciones bonus.
