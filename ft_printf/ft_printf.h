@@ -1,0 +1,57 @@
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+
+# include <stdarg.h>
+
+# include <unistd.h>
+# include <stdlib.h>
+# include "libft/libft.h"
+
+typedef struct s_format
+{
+	int		left_align;
+	int		zero_pad;
+	int		width;
+	int		precision;
+	int		has_precision;
+	int		plus;
+	int		space;
+	int		hash;
+	int		type;
+}	t_format;
+
+typedef struct s_int_data
+{
+	char	*raw;
+	char	*num;
+	int		num_len;
+	int		sign_char;
+	int		sign_len;
+	int		zero_pad;
+	int		full_len;
+	int		space_pad;
+}	t_int_data;
+
+int	ft_printf(const char *format, ...);
+
+/* Mandatory-only internal API (new base semantics). */
+int	pf_print_char(int c);
+int	pf_print_string(char *s);
+int	pf_print_pointer(unsigned long long ptr);
+int	pf_print_decimal(int n);
+int	pf_print_unsigned(unsigned int n);
+int	pf_print_hex(unsigned int n, char format);
+int	pf_print_percent(void);
+int	pf_putnbr_base(unsigned long long nbr, char *base);
+
+/* Bonus/internal API (legacy formatting engine). */
+int	handle_format(const char *format, va_list args, int *i);
+int	parse_format(const char *format, t_format *f);
+int	print_char(va_list args, t_format f);
+int	print_str(va_list args, t_format f);
+int	print_int(va_list args, t_format f);
+int	print_unsigned(va_list args, t_format f);
+int	print_hex(va_list args, t_format f);
+int	print_pointer(va_list args, t_format f);
+
+#endif
