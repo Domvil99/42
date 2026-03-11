@@ -22,8 +22,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (NULL);
 }
 /*
-#include <stdio.h>
-
 int	main(void)
 {
 	char	haystack[] = "Hola, mundo!";

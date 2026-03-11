@@ -43,7 +43,6 @@ static void	*dup_content(void *p)
 {
 	return (ft_strdup((char *)p));
 }
-
 int	main(void)
 {
 	t_list	*a;

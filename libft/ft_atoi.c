@@ -25,8 +25,6 @@ int	ft_atoi(const char *str)
 	return (result * sign);
 }
 /*
-#include <stdio.h>
-
 int	main(void)
 {
 	printf("atoi('42') = %d\n", ft_atoi("42"));

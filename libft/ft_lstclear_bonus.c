@@ -20,7 +20,6 @@ static void	del_str(void *p)
 {
 	free(p);
 }
-
 int	main(void)
 {
 	t_list	*a;

@@ -73,8 +73,6 @@ char	**ft_split(char const *s, char c)
 	return (words);
 }
 /*
-#include <stdio.h>
-
 int	main(void)
 {
 	char	**result;

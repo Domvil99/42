@@ -13,8 +13,6 @@ int	ft_lstsize(t_list *lst)
 	return (size);
 }
 /*
-#include <stdio.h>
-
 int	main(void)
 {
 	t_list	*a;

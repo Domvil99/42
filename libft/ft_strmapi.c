@@ -30,7 +30,6 @@ char	to_upper(unsigned int i, char c)
         return (c - 32);
     return (c);
 }
-
 int	main(void)
 {
     char *s = "hola, mundo!";
