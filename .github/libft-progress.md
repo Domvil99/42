@@ -11,7 +11,8 @@
 
 ## 🏁 Estado de Cierre
 - Cierre tecnico completado el 2026-03-09.
-- Politica temporal activa: ignorar solo `INVALID_HEADER` (headers se corregiran luego).
+- Headers normalizados y sincronizados desde `42/C/ft_printf/libft`.
+- Politica vigente: no se ignora `INVALID_HEADER`.
 - Libreria lista para reutilizacion como base del siguiente proyecto en `42/C/`.
 
 ## ✅ Validación Ejecutada

@@ -113,15 +113,15 @@ estas tareas de VS Code antes de reportar errores manuales:
     - Shortcut: `Ctrl+Alt+Shift+N`, luego `Ctrl+Alt+Shift+F`
     - Uso: correccion mecanica del archivo activo (`*.c`/`*.h`).
 
-2. `Normi Check: Active File (No Header)`
+2. `Normi Check: Active File`
     - Shortcut: `Ctrl+Alt+Shift+N`, luego `Ctrl+Alt+Shift+C`
     - Uso: listar solo errores accionables del archivo activo.
 
-3. `Normi Check: ft_printf All (No Header)`
+3. `Normi Check: ft_printf All`
     - Shortcut: `Ctrl+Alt+Shift+N`, luego `Ctrl+Alt+Shift+A`
     - Uso: barrido completo de `42/C/ft_printf`.
 
-4. `Normi Check: Project All (No Header)`
+4. `Normi Check: Project All`
 	- Shortcut: `Ctrl+Alt+Shift+N`, luego `Ctrl+Alt+Shift+P`
 	- Uso: barrido completo del proyecto indicado en `42/C/<project>`.
 
@@ -134,7 +134,7 @@ Regla operativa:
 - Siempre ejecutar `Autofix` antes de refactor manual.
 - Si quedan errores, resolver por micro-lotes (1 archivo, maximo 2 si son par
   normal/bonus).
-- Ignorar solo `INVALID_HEADER` cuando la politica temporal lo permita.
+- No ignorar `INVALID_HEADER`: todos los headers deben ser validos.
 
 ## Tracking Obligatorio al Cambiar `42/C/libft`
 Cada cambio en `*.c`, `*.h` o `Makefile` de `42/C/libft` debe reflejarse en:
@@ -162,8 +162,7 @@ Si cambia el alcance del proyecto o una decision relevante, actualizar tambien:
 - SIEMPRE mantén compatibilidad con headers existentes
 - Para `ft_printf`, mantener alcance de edicion dentro de `42/C/ft_printf`
 	hasta el cierre total del proyecto.
-- Si el usuario lo indica, ignorar unicamente `INVALID_HEADER` durante
-	la validacion temporal.
+- No aplicar excepciones a `INVALID_HEADER` durante la validacion.
 
 ## Integración con Chat 1
 Para dudas sobre:

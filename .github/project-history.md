@@ -259,6 +259,30 @@ Purpose: chronological log of important decisions, imports, and structure change
   - `.github/instructions/c-coding.instructions.md`
   - `.github/QUICK_REFERENCE.md`
 
+## 2026-03-11
+
+- Normalizacion global de headers 42 en proyectos C activos:
+  - `42/C/ft_printf/*.c`, `42/C/ft_printf/*.h`
+  - `42/C/ft_printf/libft/*.{c,h}`
+  - `42/C/libft/*.{c,h}` (sincronizado desde `42/C/ft_printf/libft`)
+- Alineacion estandar de cabeceras aplicada a 80 columnas.
+- Autor/correo unificado en `ft_printf` y su `libft` integrada:
+  - `By: saospina <saospina@student.42.fr>`
+- Fechas bonus de `ft_printf` fijadas por politica acordada:
+  - `Created: 2026/03/11 07:48:38`
+  - `Updated: 2026/03/11 15:53:48`
+- Se retiro la excepcion operativa de `INVALID_HEADER` en:
+  - `.vscode/tasks.json`
+  - `.vscode/keybindings.json`
+  - `.tools/normi-autofix.sh`
+  - `.github/instructions/c-coding.instructions.md`
+  - `.github/instructions/config-guide.instructions.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/workflow-rules.md`
+- Validacion de cierre sin filtros:
+  - `norminette *.c *.h` en `42/C/ft_printf` ✅
+  - `norminette *.c *.h` en `42/C/libft` ✅
+
 - Correccion de especificacion `ft_printf`:
   - se elimino la version previa importada por error y se reemplazo por el
     `.txt` correcto compartido por el usuario.

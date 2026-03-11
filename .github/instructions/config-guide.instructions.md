@@ -136,12 +136,11 @@ Coordina con el usuario para mantener limpia la separación de responsabilidades
 	- `.tools/normi-autofix.sh`
 - Tarea principal por archivo activo:
 	- `Normi Autofix: Active File`
-	- Ejecuta formateo + limpieza basica + `norminette` ignorando solo
-	  `INVALID_HEADER`.
+	- Ejecuta formateo + limpieza basica + `norminette` sin excepciones.
 - Atajo dedicado (chord no comun):
 	- `Ctrl+Alt+Shift+N`, luego `Ctrl+Alt+Shift+F`
 - Tarea de diagnostico rapido:
-	- `Normi Check: Active File (No Header)`
+	- `Normi Check: Active File`
 	- Atajo: `Ctrl+Alt+Shift+N`, luego `Ctrl+Alt+Shift+C`
 - Regla de uso:
 	- editar -> autofix -> check -> continuar.
@@ -151,7 +150,7 @@ Coordina con el usuario para mantener limpia la separación de responsabilidades
 	- Si no estan activos, usar `Tasks: Run Task` como fallback operativo.
 
 - Nota de alcance:
-    - `Normi Check: ft_printf All (No Header)` es especifica de `ft_printf`.
+    - `Normi Check: ft_printf All` es especifica de `ft_printf`.
     - Para cualquier otro proyecto bajo `42/C/<project>`, usar
-      `Normi Check: Active File (No Header)` por archivo hasta crear una tarea
+      `Normi Check: Active File` por archivo hasta crear una tarea
       global equivalente por proyecto.

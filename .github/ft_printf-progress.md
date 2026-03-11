@@ -5,6 +5,8 @@
 - Especificacion registrada: `42/PDFs/2026-03-10_ft_printf.txt`.
 - Estado actual: cierre tecnico completado y publicado.
 - Politica vigente: sin pendientes tecnicos abiertos para entrega.
+- Headers: normalizados y alineados en 80 columnas en `*.c`/`*.h` (mandatory, bonus y `ft_printf/libft`).
+- Norma vigente: `INVALID_HEADER` ya no se ignora en checks de VS Code ni en autofix.
 
 ## Cierre Definitivo (2026-03-11)
 - ✅ Estructura/scope de entrega validado contra spec activa (`cspdiuxX%` + flags bonus).

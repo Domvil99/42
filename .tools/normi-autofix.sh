@@ -43,13 +43,13 @@ else
 fi
 
 RAW_OUTPUT="$("${NORMI_CMD[@]}" "$TARGET_FILE" 2>&1 || true)"
-ACTIONABLE="$(printf '%s\n' "$RAW_OUTPUT" | grep "Error:" | grep -v "INVALID_HEADER" || true)"
+ACTIONABLE="$(printf '%s\n' "$RAW_OUTPUT" | grep "Error:" || true)"
 
-printf '%s\n' "--- Norminette (ignoring INVALID_HEADER) ---"
+printf '%s\n' "--- Norminette ---"
 if [[ -n "$ACTIONABLE" ]]; then
 	printf '%s\n' "$ACTIONABLE"
 	printf '%s\n' "Autofix finished but actionable issues remain in: $TARGET_FILE"
 	exit 2
 fi
 
-printf '%s\n' "No actionable norminette errors for: $TARGET_FILE"
+printf '%s\n' "No norminette errors for: $TARGET_FILE"

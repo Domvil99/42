@@ -8,19 +8,19 @@
   {
     "key": "ctrl+alt+shift+n ctrl+alt+shift+c",
     "command": "workbench.action.tasks.runTask",
-    "args": "Normi Check: Active File (No Header)",
+    "args": "Normi Check: Active File",
     "when": "editorTextFocus"
   },
   {
     "key": "ctrl+alt+shift+n ctrl+alt+shift+a",
     "command": "workbench.action.tasks.runTask",
-    "args": "Normi Check: ft_printf All (No Header)",
+    "args": "Normi Check: ft_printf All",
     "when": "editorTextFocus"
   },
   {
     "key": "ctrl+alt+shift+n ctrl+alt+shift+p",
     "command": "workbench.action.tasks.runTask",
-    "args": "Normi Check: Project All (No Header)",
+    "args": "Normi Check: Project All",
     "when": "editorTextFocus"
   }
 ]

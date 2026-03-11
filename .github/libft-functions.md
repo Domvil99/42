@@ -3,7 +3,8 @@
 ## Estado
 - Cierre tecnico completado el 2026-03-09.
 - Cobertura total: 43/43 funciones implementadas y compilables.
-- Excepcion temporal acordada: `INVALID_HEADER` en archivos de cabecera.
+- Headers 42 normalizados y alineados en todo `42/C/libft`.
+- Validacion vigente sin excepciones para `INVALID_HEADER`.
 
 ## 📚 Parte 1 - Libc Functions (23 funciones)
 

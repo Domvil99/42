@@ -21,8 +21,8 @@ Nota actual (2026-03-11):
 - Compilar con `-Wall -Wextra -Werror`.
 - Crear libreria con `ar` (no `libtool`).
 
-## Politica operativa temporal
-- Ignorar solo `INVALID_HEADER`.
+## Politica operativa vigente
+- No ignorar `INVALID_HEADER`.
 - Corregir automaticamente errores claros; validar contigo casos ambiguos.
 
 ## Implementacion en curso (2026-03-11)

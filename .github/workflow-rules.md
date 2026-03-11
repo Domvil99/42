@@ -135,13 +135,13 @@ If structure/scope is not green, stop and fix structure first.
 	- Task: `Normi Autofix: Active File`
 	- Shortcut: `Ctrl+Alt+Shift+N`, then `Ctrl+Alt+Shift+F`
 - For quick diagnostics without header noise:
-	- Task: `Normi Check: Active File (No Header)`
+	- Task: `Normi Check: Active File`
 	- Shortcut: `Ctrl+Alt+Shift+N`, then `Ctrl+Alt+Shift+C`
 - Validation policy remains:
-	- Ignore only `INVALID_HEADER` temporarily.
-	- Treat all other `Error:` lines as actionable.
+	- Do not ignore `INVALID_HEADER`.
+	- Treat all `Error:` lines as actionable.
 - For full project scan in ft_printf:
-    - Task: `Normi Check: ft_printf All (No Header)`
+    - Task: `Normi Check: ft_printf All`
     - Shortcut: `Ctrl+Alt+Shift+N`, then `Ctrl+Alt+Shift+A`
 	
 ## Project History Template

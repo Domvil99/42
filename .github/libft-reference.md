@@ -4,7 +4,8 @@ Estado: cierre tecnico completado (2026-03-09), obligatorio y bonus
 implementados, validado con compilacion `-Wall -Wextra -Werror`.
 
 Uso recomendado: base estable para los siguientes proyectos de `42/C/`.
-Nota temporal: pendiente correccion de headers Norminette (`INVALID_HEADER`).
+Headers 42 normalizados y validados en todo `42/C/libft`.
+Norminette se ejecuta sin excepciones de `INVALID_HEADER`.
 
 ## 🔤 String Functions (Obligatorio Validado)
 | Función | Descripción | Uso |

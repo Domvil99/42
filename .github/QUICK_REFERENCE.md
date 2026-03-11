@@ -191,12 +191,12 @@ $NORMI libft.h
 
 - Task de correccion automatica por archivo activo:
     - `Normi Autofix: Active File`
-- Task de chequeo rapido (ignora `INVALID_HEADER`):
-    - `Normi Check: Active File (No Header)`
-- Task de barrido completo en `ft_printf` (ignora `INVALID_HEADER`):
-    - `Normi Check: ft_printf All (No Header)`
+- Task de chequeo rapido (sin excepciones):
+    - `Normi Check: Active File`
+- Task de barrido completo en `ft_printf` (sin excepciones):
+    - `Normi Check: ft_printf All`
 - Task de barrido completo para cualquier proyecto `42/C/<project>`:
-    - `Normi Check: Project All (No Header)`
+    - `Normi Check: Project All`
 - Atajo dedicado sin colision con shortcuts comunes:
     - `Ctrl+Alt+Shift+N`, luego `Ctrl+Alt+Shift+F`
 - Atajo de chequeo rapido:
