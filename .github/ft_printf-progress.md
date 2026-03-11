@@ -218,3 +218,12 @@
 	- mandatory matrix: `RET_TOTAL=212`.
 	- bonus matrix: `RET_TOTAL=146`.
 	- valgrind mandatory y bonus: `0` leaks, `0` errores.
+
+## Cierre de entrega y tracking (2026-03-11)
+1. Commit de entrega en repo `42/C/`:
+	- `2415cdf` -> `ft_printf: finalize subject compliance and full validation`.
+2. Commit de tracking en repo `Raiz/`:
+	- `7cf296d` -> `docs(ft_printf): record full subject audit and validation status`.
+3. Estado final del proyecto `ft_printf`:
+	- validado contra subject,
+	- listo para entrega (sin bloqueantes tecnicos abiertos).

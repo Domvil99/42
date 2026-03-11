@@ -155,3 +155,9 @@ Nota actual (2026-03-11):
 - Paridad funcional y memoria en verde:
     - matrices mandatory/bonus (`RET_TOTAL=212` / `146`),
     - valgrind mandatory/bonus (`0` errores, `0` leaks).
+
+## Estado de cierre (commit)
+- Entrega `42/C` registrada en commit:
+    - `2415cdf`.
+- Tracking `Raiz` registrado en commit:
+    - `7cf296d`.

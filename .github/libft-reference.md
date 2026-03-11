@@ -77,3 +77,9 @@ Nota temporal: pendiente correccion de headers Norminette (`INVALID_HEADER`).
 	- `libft.h` expone solo API obligatoria/parte 2.
 	- `libft_bonus.h` concentra `t_list` y API `ft_lst*`.
 	- `bonus` en `Makefile` sin relink innecesario en ejecuciones repetidas.
+
+## Estado actual de trabajo (2026-03-11)
+- Lote pendiente detectado en `42/C/libft/*.c`:
+  - limpieza de comentarios de pruebas legacy y ajustes menores de formato.
+- No se detectan cambios pendientes de API en cabeceras publicas.
+- Referencia de uso se mantiene vigente para proyectos siguientes.

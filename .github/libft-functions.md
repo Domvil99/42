@@ -95,3 +95,11 @@
 	- separación efectiva de API bonus en `libft_bonus.h`.
 	- `*_bonus.c` acoplados a `libft_bonus.h`.
 	- regla `bonus` optimizada para evitar relink innecesario.
+
+## Estado operativo actual (2026-03-11)
+- Se detecta una tanda pendiente en `42/C/libft` (42 archivos `*.c`).
+- Naturaleza del delta actual:
+	- limpieza de bloques de prueba comentados y ajuste menor de finales de archivo.
+	- sin cambios de API publica (`libft.h` / `libft_bonus.h` sin delta pendiente).
+- Impacto esperado:
+	- mantenimiento/estilo interno, sin cambio funcional objetivo de la libreria.

@@ -260,6 +260,32 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 ## 2026-03-11
 
+- Cierre completo de `ft_printf` contra subject:
+  - compliance funcional, memoria, build/no-relink y Norminette en verde.
+  - matriz mandatory (`RET_TOTAL=212`) y bonus (`RET_TOTAL=146`) en paridad.
+
+- Commits de cierre registrados:
+  - repo `42/C/`:
+    - `2415cdf` `ft_printf: finalize subject compliance and full validation`
+  - repo `Raiz/`:
+    - `7cf296d` `docs(ft_printf): record full subject audit and validation status`
+
+- Sincronizacion de tracking global actualizada en:
+  - `.github/ft_printf-functions.md`
+  - `.github/ft_printf-progress.md`
+  - `.github/ft_printf-reference.md`
+  - `.github/libft-functions.md`
+  - `.github/libft-progress.md`
+  - `.github/libft-reference.md`
+  - `.github/projects-index.md`
+
+- Estado pendiente detectado en repo de entrega (`42/C/`):
+  - lote no commiteado en `42/C/libft/*.c` (42 archivos), orientado a
+    limpieza de comentarios de pruebas y ajustes menores de formato.
+  - no se detecta delta pendiente en `libft.h` / `libft_bonus.h`.
+
+## 2026-03-11
+
 - Retranscripcion completa de especificacion `ft_printf`:
   - se regenero el contenido de:
     - `42/PDFs/2026-03-10_ft_printf.txt`

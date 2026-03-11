@@ -156,3 +156,8 @@
 	  `ft_printf/libft/*.h`).
 	- `norminette` full scope en verde (`RC=0`).
 	- matriz funcional y memoria revalidadas sin regresion.
+
+- Cierre de version para entrega (2026-03-11):
+	- commit de proyecto en `42/C/`: `2415cdf`.
+	- commit de tracking en `Raiz/`: `7cf296d`.
+	- estado funcional consolidado para evaluacion final del proyecto.
