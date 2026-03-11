@@ -12,6 +12,34 @@ Purpose: chronological log of important decisions, imports, and structure change
 - Historical logs that mention a different order are kept as traceability,
   but are superseded by this active rule.
 
+## 2026-03-11
+
+- Change type: project
+- Paths changed:
+  - `42/C/currentLibft/Makefile`
+  - `42/C/currentLibft/libft/ft_printf/Makefile`
+  - `42/C/currentLibft/libft/ft_printf/ft_printf.h`
+  - `42/C/currentLibft/libft/ft_printf/ft_printf_bonus.h`
+- Tracking docs updated:
+  - `.github/project-history.md`
+  - `.github/projects-index.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/workflow-rules.md`
+  - `.github/copilot-instructions.md`
+- Notes:
+  - Start implementation of currentLibft sync for direct ft_printf equivalents.
+  - Human-like timestamp policy enforced for edited new-integration Makefiles
+    (non-exact seconds, no `:00` pattern).
+  - Legacy-equivalent headers synchronized with ft_printf root metadata for
+    `Created`/`Updated` where applicable.
+  - Commit message policy activated: no commit message may be about username,
+    date, or email metadata changes.
+  - Mirror Makefile normalization completed in:
+    - `42/C/libft/Makefile`
+    - `42/C/ft_printf/libft/Makefile`
+    - `42/C/currentLibft/libft/Makefile`
+    using consistent 42 header and human timestamps for this edit block.
+
 ## 2026-03-08
 
 - Created base tracking docs:

@@ -8,6 +8,11 @@
 - Headers: normalizados y alineados en 80 columnas en `*.c`/`*.h` (mandatory, bonus y `ft_printf/libft`).
 - Norma vigente: `INVALID_HEADER` ya no se ignora en checks de VS Code ni en autofix.
 
+## Sync Mirrors (2026-03-11)
+- `42/C/ft_printf/libft/*.{c,h}` resincronizado contra `42/C/libft/*.{c,h}`.
+- Objetivo: mantener coincidencia de headers (autor/Created/Updated) entre
+	las tres copias de libft activas del workspace.
+
 ## Cierre Definitivo (2026-03-11)
 - ✅ Estructura/scope de entrega validado contra spec activa (`cspdiuxX%` + flags bonus).
 - ✅ Funcionalidad validada: mandatory `RET_TOTAL=212`, bonus `RET_TOTAL=146` (paridad con `printf`).

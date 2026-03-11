@@ -105,3 +105,8 @@
 	- limpieza de bloques de prueba comentados y ajuste menor de finales de archivo.
 - Impacto validado:
 	- mantenimiento/estilo interno, sin cambio funcional de la libreria.
+- Actualizacion de headers en Makefile (bloque actual):
+	- `42/C/libft/Makefile`
+	- `42/C/ft_printf/libft/Makefile`
+	- `42/C/currentLibft/libft/Makefile`
+	- objetivo: consistencia de mirror + politica de timestamps humanos.

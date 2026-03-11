@@ -77,3 +77,12 @@ the pending list.
 - Reason deferred: usuario prioriza ejecucion e integracion ahora; aprendizaje detallado despues
 - Suggested next action: preparar guia paso a paso con casos reales de `ft_printf` integrado y checklist para nuevos hijos
 - Status: pending
+
+## 2026-03-11
+
+- Task: Ejecutar barrido final de fechas de headers al llegar al proyecto actual para pulido global
+- Priority: importante
+- Context: headers `Created/Updated` en `42/C/libft`, `42/C/ft_printf`, `42/C/currentLibft` y futuros proyectos agregados
+- Reason deferred: se evita conflicto temporal ahora mientras faltan proyectos por integrar y ajustar
+- Suggested next action: cuando inicie el proyecto actual en foco, correr auditoria global de timestamps y normalizar solo los archivos realmente tocados
+- Status: pending

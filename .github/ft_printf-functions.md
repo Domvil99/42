@@ -26,6 +26,8 @@
 - Estado de headers (2026-03-11): bloque 42 validado en todo `ft_printf/*.c`,
   `ft_printf/*.h` y `ft_printf/libft/*.{c,h}` con alineacion de columnas.
 - Politica de validacion actual: no se aplican excepciones a `INVALID_HEADER`.
+- Nota de sincronizacion (2026-03-11): `ft_printf/libft` fue alineado con
+	`42/C/libft` para mantener headers equivalentes entre mirrors.
 - Reorganizacion mandatory aplicada en `42/C/ft_printf/`:
 		- `ft_printf.c` (dispatcher obligatorio simplificado)
 		- `print_char.c`, `print_string.c`, `print_decimal.c`,

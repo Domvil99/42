@@ -79,3 +79,7 @@
 3. No se detectan cambios de API en:
     - `42/C/libft/libft.h`
     - `42/C/libft/libft_bonus.h`
+4. Sincronizacion de mirrors (bloque actual):
+        - `42/C/libft/Makefile`, `42/C/ft_printf/libft/Makefile` y
+            `42/C/currentLibft/libft/Makefile` ahora comparten header 42 valido
+            con timestamps humanos coherentes del mismo bloque de edicion.

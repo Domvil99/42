@@ -85,3 +85,6 @@ Norminette se ejecuta sin excepciones de `INVALID_HEADER`.
 	- alcance: limpieza de comentarios de pruebas legacy y ajustes menores de formato.
 - No se detectan cambios pendientes de API en cabeceras publicas.
 - Referencia de uso se mantiene vigente para proyectos siguientes.
+- Nota de sincronizacion de mirrors (bloque actual):
+	- Makefile de `libft` y sus espejos en `ft_printf/libft` y
+	  `currentLibft/libft` alineados con header 42 y timestamps humanos.

@@ -9,6 +9,12 @@ Purpose: keep updates consistent and automatic across projects.
 - Default commit target for project work: `42/C/`
 - Workspace docs/tooling commits (`.github`, `.vscode`, `42/PDFs`, `42/testsLibf`, `42/testsCurrentLibft`, `42/tests_<project_name>`): `Raiz/`
 
+## Commit Message Policy (Active)
+
+- Commit messages must not mention user-change operations or metadata edits.
+- Forbidden themes in commit messages: username changes, date changes, email changes.
+- Use functional or structural summaries instead (build, sync, fix, docs, refactor).
+
 ## Inter-Chat Handoff File
 
 - Official relay file: `.github/chat-handoff.md`
@@ -127,6 +133,8 @@ Example: `2026-03-08_primera_libft.txt`
 	 - `rg -n "42/PDFs|42/C/libft|42/C/ft_printf" .github`
 4. Confirm git root before commit:
 	 - `git rev-parse --show-toplevel`
+5. Validate commit message policy before commit:
+	 - no references to user/date/email metadata changes
 5. Add a dated block in `.github/project-history.md`.
 
 ## Review Priority (All Projects)
@@ -184,3 +192,13 @@ When a new project is added under `42/C/<project_name>/`:
    - `.github/projects-index.md`
    - `.github/project-history.md`
    - `.github/QUICK_REFERENCE.md`
+
+## End-of-Block Pending Snapshot Rule
+
+- Before moving to the next topic/project, create or update a pending-status
+	file for the current block under `.github/reports/`.
+- The snapshot must include pending state split by repository:
+	- delivery repo (`42/C/`)
+	- workspace repo (`Raiz/`)
+- Remove completed items from that file on every update; keep only real
+	outstanding work.

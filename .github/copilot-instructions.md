@@ -75,6 +75,11 @@ Raiz/
   3. Run Norminette as the final closing step.
 - Do not start broad Norminette cleanup while functional/spec issues remain.
 
+## Commit Message Rule (Global)
+- Commit messages must never be about metadata-only changes such as user,
+  date, or email updates.
+- Use functional/structural intent in commit messages instead.
+
 ## Libft Official Counts (PDF v16.6)
 - Part 1: 23 functions.
 - Part 2: 11 functions.

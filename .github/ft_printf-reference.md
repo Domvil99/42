@@ -6,6 +6,8 @@ Nota actual (2026-03-11):
 - Base entregable consolidada en `42/C/ft_printf/`.
 - Arquitectura de headers separada (`ft_printf.h` mandatory,
     `ft_printf_bonus.h` bonus).
+- Mirror rule activa: `ft_printf/libft` debe mantenerse sincronizado con
+    `42/C/libft` para conservar consistencia de headers y fechas historicas.
 
 ## API requerida
 - `int ft_printf(char const *format, ...);`

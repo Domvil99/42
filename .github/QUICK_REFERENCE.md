@@ -67,6 +67,11 @@ Quick root check before commit:
 git rev-parse --show-toplevel
 ```
 
+Commit message guardrail:
+- Do not use commit messages about user changes or metadata changes.
+- Avoid references to username, date, or email updates in commit titles/bodies.
+- Prefer functional messages (example: `sync(currentLibft): align ft_printf integration headers`).
+
 ## Canonical Root Path (Default)
 
 - Primary Linux path (use by default):
@@ -86,6 +91,14 @@ realpath /home/domvil99/empresa/42/newLibft/Raiz
 
 ## Tracking Files You Must Keep Updated
 
+### End of Work Block (mandatory)
+- Before switching to a new topic/project, update pending snapshot file in:
+    - `.github/reports/workblock-pending-status.md`
+- Keep only still-pending items; delete lines for completed tasks.
+- Split the snapshot by repo:
+    - `Repo entrega C (42/C/)`
+    - `Repo workspace Raiz`
+
 ### When `42/C/libft` changes
 - `.github/libft-functions.md`
 - `.github/libft-progress.md`
@@ -104,6 +117,8 @@ realpath /home/domvil99/empresa/42/newLibft/Raiz
 - Integrated child projects (example: `ft_printf`) live under:
     - `42/C/currentLibft/libft/<project>`
 - Do not keep a nested child `libft` inside integrated projects.
+- Keep equivalent headers synchronized across mirrors and preserve legacy
+    `Created` timestamps for original libft files.
 
 ### When a new project is added under `42/C/`
 - `.github/projects-index.md`
