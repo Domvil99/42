@@ -92,6 +92,8 @@ realpath /home/domvil99/empresa/42/newLibft/Raiz
 - `.github/ft_printf-functions.md`
 - `.github/ft_printf-progress.md`
 - `.github/ft_printf-reference.md`
+- Note (2026-03-11): ft_printf tracking is in closure state.
+  Post-closure updates should be logged first in `.github/project-history.md`.
 
 ### When a new project is added under `42/C/`
 - `.github/projects-index.md`

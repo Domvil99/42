@@ -26,11 +26,7 @@ Nota actual (2026-03-11):
 - Corregir automaticamente errores claros; validar contigo casos ambiguos.
 
 ## Implementacion en curso (2026-03-11)
-- Orden de ejecucion activo (global):
-    1. estructura/scope segun spec,
-    2. correcciones y validacion funcional (matrices mandatory/bonus),
-    3. validacion de memoria/estabilidad,
-    4. cierre de build + Norminette.
+- Registro historico del ciclo de implementacion y validacion que llevo al cierre.
 - Caso validado: `%.0d` y `%.0u` con valor `0` coincide con `printf` en
     salida y valor de retorno.
 
@@ -173,3 +169,8 @@ Nota actual (2026-03-11):
     - el `Makefile` principal compila primero `libft` y luego `ft_printf`.
 - Cierre tecnico tras blindaje:
     - build/relink, norma, funcional y memoria en verde.
+
+## Cierre Definitivo Completado (2026-03-11)
+- Proyecto cerrado y publicado con tracking sincronizado.
+- Todas las validaciones quedaron en verde dentro del alcance de entrega.
+- Si aparece nuevo trabajo tecnico, se registra en `project-history.md` con nuevo bloque fechado antes de reabrir tracking.

@@ -573,3 +573,20 @@ Purpose: chronological log of important decisions, imports, and structure change
   - `.github/ft_printf-reference.md`
   - `42/testsLibf/README.md`
   - `42/tests_ft_printf/README.md`
+
+## 2026-03-11
+
+- Cierre definitivo documental de `ft_printf` y sincronizacion de continuidad:
+  - se promovio un bloque visible de cierre definitivo en tracking.
+  - se archivaron secciones historicas de pendientes para evitar ambiguedad.
+  - se cerro handoff explicito Chat2 -> Chat1 con confirmacion final (H-004).
+  - se actualizaron estados de carpetas de tests a `completed` con nota de regresion.
+- Archivos actualizados:
+  - `.github/ft_printf-progress.md`
+  - `.github/ft_printf-reference.md`
+  - `.github/chat-handoff.md`
+  - `.github/projects-index.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/workflow-rules.md`
+  - `42/tests_ft_printf/README.md`
+  - `.github/project-history.md`

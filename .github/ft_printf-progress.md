@@ -6,6 +6,17 @@
 - Estado actual: cierre tecnico completado y publicado.
 - Politica vigente: sin pendientes tecnicos abiertos para entrega.
 
+## Cierre Definitivo (2026-03-11)
+- ✅ Estructura/scope de entrega validado contra spec activa (`cspdiuxX%` + flags bonus).
+- ✅ Funcionalidad validada: mandatory `RET_TOTAL=212`, bonus `RET_TOTAL=146` (paridad con `printf`).
+- ✅ Memoria validada: valgrind sin leaks ni errores en casos frontera.
+- ✅ Build/relink validado: `make` y `make bonus` en verde, sin relink innecesario.
+- ✅ Norminette en cierre final segun politica vigente de proyecto.
+- Commits de publicacion:
+  - `42/C`: `79b2255`, `360f071`
+  - `Raiz`: `9ecbda6`, `b7bdcda`
+- Estado final: proyecto entregable, sin pendientes tecnicos abiertos.
+
 ## Cobertura Objetivo
 - Obligatorio: conversiones `cspdiuxX%`.
 - Bonus: flags indicadas en especificacion (si estan implementadas).
@@ -46,7 +57,7 @@
 	- `make` + `make bonus` OK.
 	- matrices obligatoria y bonus siguen sin diferencias contra `printf`.
 
-## Pendiente inmediato (registro historico)
+## Historico: Pendientes Iniciales (No Vigentes)
 1. Extender matriz funcional a todas las conversiones obligatorias.
 2. Barrido bonus de flags `-0.` + width + `# +` y espacio.
 3. Cierre de bloqueantes Norminette (exceptuando `INVALID_HEADER`).
@@ -102,7 +113,7 @@
 		- `print_hex.c` (31)
 		- `print_binary_bonus.c` (26)
 
-## Pendiente inmediato (actualizado, registro historico)
+## Historico: Micro-lotes Planificados (No Ejecutados)
 1. Micro-lote 5: `print_binary_bonus.c` (26).
 2. Micro-lote 6: `print_hex.c` (31).
 3. Micro-lote 7: `print_int.c` + `print_int_bonus.c` (39 + 39).

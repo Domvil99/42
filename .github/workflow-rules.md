@@ -41,6 +41,10 @@ When files in `42/C/ft_printf` change (`*.c`, `*.h`, `Makefile`), update:
 2. `.github/ft_printf-progress.md`
 3. `.github/ft_printf-reference.md`
 
+Note (2026-03-11): ft_printf tracking is in closure state.
+Future updates should be recorded in `.github/project-history.md` with a new
+dated block before reopening detailed tracking files.
+
 ## Multi-Project Trigger
 
 When a new project is added under `42/C/`, update:
