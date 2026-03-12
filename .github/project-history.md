@@ -12,6 +12,42 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 ## 2026-03-12
 
+- Change type: spec-txt
+- Paths changed:
+  - `42/PDFs/2026-03-12_get_next_line_actualizado.txt`
+  - `.github/project-history.md`
+  - `42/tests_get_next_line/README.md`
+- Tracking docs updated:
+  - `.github/project-history.md`
+  - `42/tests_get_next_line/README.md`
+- Notes:
+  - New corrected get_next_line baseline received and saved at
+    `42/PDFs/2026-03-12_get_next_line_actualizado.txt`.
+  - Diff against previous baseline (`42/PDFs/2026-03-12_get_next_line.txt`)
+    confirms normalization of index formatting with no functional normative
+    drift in mandatory/bonus requirements.
+
+- Change type: validation-report
+- Paths changed:
+  - `.github/project-history.md`
+  - `.github/metodos_de_estudio/overview.md`
+  - `.github/metodos_de_estudio/get_next_line/get_next_line.md`
+  - `.github/QUICK_REFERENCE.md`
+- Tracking docs updated:
+  - `.github/project-history.md`
+  - `.github/QUICK_REFERENCE.md`
+- Notes:
+  - Full revalidation executed for `42/C/get_next_line` against updated
+    baseline `42/PDFs/2026-03-12_get_next_line_actualizado.txt`.
+  - Mandatory behavior validated with `BUFFER_SIZE=1,42,9999` and stdin path.
+  - Bonus behavior validated with multi-fd alternation (`BUFFER_SIZE=1,42`).
+  - ASAN/UBSAN checks (`-fsanitize=address,undefined`) completed without
+    runtime/leak reports.
+  - Final norminette scan in `42/C/get_next_line/*.c` and
+    `42/C/get_next_line/*.h` completed OK.
+  - Study report initialized under
+    `.github/metodos_de_estudio/get_next_line/get_next_line.md`.
+
 - Change type: workflow
 - Paths changed:
   - `.github/copilot-instructions.md`

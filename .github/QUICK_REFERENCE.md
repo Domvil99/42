@@ -51,7 +51,8 @@ Raiz/
 │   │   └── currentLibft/
 │   ├── PDFs/
 │   │   ├── 2026-03-08_primera_libft.txt
-│   │   └── 2026-03-10_ft_printf.txt
+│   │   ├── 2026-03-10_ft_printf.txt
+│   │   └── 2026-03-12_get_next_line_actualizado.txt
 │   ├── testsLibf/
 │   │   └── README.md
 │   ├── testsCurrentLibft/
@@ -84,6 +85,8 @@ Raiz/
 │   │   │   └── libft.md
 │   │   ├── ft_printf/
 │   │   │   └── ft_printf.md
+│   │   ├── get_next_line/
+│   │   │   └── get_next_line.md
 │   │   └── overview.md
 │   └── workflow-rules.md
 ├── .tools/

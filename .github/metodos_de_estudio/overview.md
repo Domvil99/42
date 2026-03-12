@@ -14,6 +14,7 @@ cerrados con estado optimo.
 
 - `libft`
 - `ft_printf`
+- `get_next_line`
 
 ## Mandatory Structure Rules
 
@@ -58,3 +59,4 @@ Para considerar un reporte como "completo", debe incluir:
 
 - 2026-03-12: inicializacion de `metodos_de_estudio` con base para `libft` y
   `ft_printf`.
+- 2026-03-12: agregado reporte inicial para `get_next_line`.
