@@ -86,6 +86,26 @@ Raiz/
   3. Run Norminette as the final closing step.
 - Do not start broad Norminette cleanup while functional/spec issues remain.
 
+## Golden Rule: Project Preservation in /C
+- No project inside `42/C/` (including `currentLibft`) may lose functionality
+  or be altered after its full review/closure.
+- Each directory under `42/C/` is an autonomous project that must compile and
+  work correctly on its own.
+- Modifying source files (`*.c`, `*.h`, `Makefile`) of a closed project is
+  forbidden unless the user explicitly requests a correction.
+- Before closing any task that touches shared code, verify that all existing
+  projects in `42/C/` still compile and pass their tests.
+
+## Post-Closure Cleanup (mandatory after finishing any project)
+- Remove temporary files and binaries generated outside the project
+  (executables in `/tmp`, orphan `.o` files, etc.).
+- Run `make clean` / `make fclean` inside the project to keep only sources
+  and Makefile.
+- Verify no test scripts or files remain outside `42/tests_<project_name>/`.
+- Confirm `git status` is clean in both repos (`42/C/` and `Raiz/`).
+- Log the cleanup in `.github/project-history.md`.
+- Final `git add`, `commit`, `push` to version everything.
+
 ## Commit Message Rule (Global)
 - Commit messages must never be about metadata-only changes such as user,
   date, or email updates.

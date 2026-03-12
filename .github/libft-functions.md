@@ -3,7 +3,8 @@
 ## Estado
 - Cierre tecnico completado el 2026-03-09.
 - Cobertura total: 43/43 funciones implementadas y compilables.
-- Headers 42 normalizados y alineados en todo `42/C/libft`.
+- Base oficial activa: `42/C/currentLibft/libft`.
+- `42/C/libft` se mantiene como referencia historica.
 - Validacion vigente sin excepciones para `INVALID_HEADER`.
 
 ## 📚 Parte 1 - Libc Functions (23 funciones)
@@ -79,9 +80,10 @@
 
 ## ✅ Estado de Revisión
 - Inventario funcional completo: 43/43 funciones implementadas.
+- Inventario canónico sincronizado con `42/C/currentLibft/libft` (43/43).
 - Estructura de prueba interna normalizada: un `main` comentado por archivo `ft_*.c`.
 - Migracion de pruebas (2026-03-10):
-	- `main` de validacion mantenidos comentados en `42/C/libft/*.c`.
+	- `main` de validacion mantenidos comentados en `42/C/libft/*.c` (histórico).
 	- Casos extraidos a `42/testsLibf/test_<funcion>.c` (43 archivos).
 	- Validacion de compilacion por test contra `libft.a` completada (43/43).
 - Revalidación reciente completada tras ajustes manuales en archivos de

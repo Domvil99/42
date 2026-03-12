@@ -13,7 +13,8 @@
 - Cierre tecnico completado el 2026-03-09.
 - Headers normalizados y sincronizados desde `42/C/ft_printf/libft`.
 - Politica vigente: no se ignora `INVALID_HEADER`.
-- Libreria lista para reutilizacion como base del siguiente proyecto en `42/C/`.
+- Libreria oficial para reutilizacion: `42/C/currentLibft/libft`.
+- `42/C/libft` queda como referencia historica de cierre.
 
 ## ✅ Validación Ejecutada
 - Compilación por archivo con `-Wall -Wextra -Werror` sin errores.
@@ -72,13 +73,13 @@
 - Total con bonus: 43 funciones
 
 ## Estado de continuidad (2026-03-11)
-1. Baseline funcional de `libft` se mantiene estable (43/43).
+1. Baseline funcional de la base canónica `42/C/currentLibft/libft` se mantiene estable (43/43).
 2. Cierre aplicado en repo `42/C/`:
     - commit `bfe932d` con limpieza de bloques comentados de pruebas y
       normalizacion menor de formato en `libft/*.c`.
 3. No se detectan cambios de API en:
-    - `42/C/libft/libft.h`
-    - `42/C/libft/libft_bonus.h`
+    - `42/C/currentLibft/libft/libft.h`
+    - `42/C/currentLibft/libft/libft_bonus.h`
 4. Sincronizacion de mirrors (bloque actual):
         - `42/C/libft/Makefile`, `42/C/ft_printf/libft/Makefile` y
             `42/C/currentLibft/libft/Makefile` ahora comparten header 42 valido

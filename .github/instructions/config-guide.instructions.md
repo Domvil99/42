@@ -130,6 +130,14 @@ Coordina con el usuario para mantener limpia la separación de responsabilidades
 	- especificaciones disponibles en `42/PDFs/`
 	- pendientes diferidos que impacten el siguiente proyecto
 	Luego resumir el baseline actualizado y recien despues continuar.
+12. Si el usuario indica `haz el cierre definitivo`, ejecutar cierre completo
+	del proyecto activo antes de cualquier integración en `currentLibft`:
+	- validar scope/estructura segun `.txt`,
+	- validar funcionalidad,
+	- validar memoria/estabilidad,
+	- cerrar Norminette al final,
+	- actualizar tracking de cierre (`projects-index`, `project-history`,
+	  `tests_<project>/README.md`).
 
 ## Prioridad Global de Validacion (Todos los Proyectos)
 - Orden obligatorio:

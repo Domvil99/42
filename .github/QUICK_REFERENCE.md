@@ -1,3 +1,38 @@
+# Quick Reference: Cierre de proyectos 42
+
+## Protocolo de cierre
+
+### Cierre total (validación completa, cierre completo, etc.)
+- Validar funcionamiento según el .txt
+- Verificar memoria y estabilidad
+- Ejecutar Norminette
+- git add, commit, push
+- Actualizar .md y README
+- Evidencia de cierre en README y tracking
+
+### Cierre express (auditoría express)
+- Solo tras cierre total reciente
+- Revisión rápida, mínima batería
+- Actualizar README y tracking
+
+## Norminette
+ - Siempre después de validar funcionamiento
+
+## Git workflow
+ - Mensajes de commit funcionales
+
+## Regla de oro: preservación de proyectos en /C
+- Ningún proyecto en `42/C/` puede perder funcionamiento tras su cierre.
+- Cada directorio es autónomo: debe compilar y funcionar por separado.
+- Prohibido modificar fuentes de un proyecto cerrado sin solicitud explícita.
+
+## Limpieza post-cierre
+- Eliminar temporales y binarios fuera del proyecto.
+- `make fclean` dentro del proyecto.
+- Verificar `git status` limpio en ambos repos.
+- Registrar limpieza en `project-history.md`.
+- `git add`, `commit`, `push` final.
+
 ---
 name: quick-reference
 description: "Quick reference guide for C development in libft project with common commands, shortcuts, and validation tips."

@@ -3,8 +3,10 @@
 Estado: cierre tecnico completado (2026-03-09), obligatorio y bonus
 implementados, validado con compilacion `-Wall -Wextra -Werror`.
 
-Uso recomendado: base estable para los siguientes proyectos de `42/C/`.
-Headers 42 normalizados y validados en todo `42/C/libft`.
+Uso recomendado: base oficial estable para los siguientes proyectos de `42/C/`
+en `42/C/currentLibft/libft`.
+`42/C/libft` se conserva como referencia historica.
+Headers 42 normalizados y validados en `42/C/currentLibft/libft`.
 Norminette se ejecuta sin excepciones de `INVALID_HEADER`.
 
 ## 🔤 String Functions (Obligatorio Validado)
@@ -61,6 +63,8 @@ Norminette se ejecuta sin excepciones de `INVALID_HEADER`.
 	su espejo descomentado en `42/testsLibf/test_<funcion>.c`.
 - Validacion actual: `make` + `make bonus` en `42/C/libft` y compilacion
 	de 43/43 tests contra `libft.a`.
+- Sincronizacion canónica vigente: inventario 43/43 confirmado contra
+	`42/C/currentLibft/libft`.
 - Se agregó `main` de prueba comentado en `ft_bzero.c`.
 - Se corrigieron errores críticos detectados durante la revisión por lote.
 - Se agregó regla `bonus` en `Makefile` para integrar `_bonus.o` en `libft.a`.
@@ -83,7 +87,7 @@ Norminette se ejecuta sin excepciones de `INVALID_HEADER`.
 - Lote de limpieza de `42/C/libft/*.c` cerrado en commit:
 	- `bfe932d`.
 	- alcance: limpieza de comentarios de pruebas legacy y ajustes menores de formato.
-- No se detectan cambios pendientes de API en cabeceras publicas.
+- No se detectan cambios pendientes de API en cabeceras publicas de la base canónica.
 - Referencia de uso se mantiene vigente para proyectos siguientes.
 - Nota de sincronizacion de mirrors (bloque actual):
 	- Makefile de `libft` y sus espejos en `ft_printf/libft` y

@@ -4,16 +4,56 @@ Purpose: keep updates consistent and automatic across projects.
 
 ## Dual Git Operation
 
-- Delivery repo root: `42/C/`
-- Workspace repo root: `Raiz/`
-- Default commit target for project work: `42/C/`
-- Workspace docs/tooling commits (`.github`, `.vscode`, `42/PDFs`, `42/testsLibf`, `42/testsCurrentLibft`, `42/tests_<project_name>`): `Raiz/`
+
+## Protocolo de cierre de proyectos 42
+
+### Cierre total (validación completa, cierre completo, etc.)
+Activado por cualquier frase relacionada con cierre completo, validación total, cierre de oro, etc.
+Secuencia obligatoria:
+1. Validar funcionamiento según el .txt
+2. Verificar memoria y estabilidad
+3. Ejecutar Norminette
+4. git add, commit, push
+5. Actualizar todos los .md y README
+6. Dejar evidencia de cierre en README y tracking
+
+### Cierre express (auditoría express)
+Solo permitido tras cierre total exitoso y sin cambios funcionales
+Revisión rápida, mínima batería
+Actualizar README y tracking con nota de auditoría express
+
+## Regla de oro: preservación de proyectos en /C
+
+Ningún proyecto dentro de `42/C/` (incluyendo `currentLibft`) puede perder
+su funcionamiento ni verse alterado por cambios posteriores a su revisión
+completa. Cada directorio bajo `42/C/` es un proyecto autónomo que debe
+compilar y funcionar correctamente por separado.
+
+- Está prohibido modificar archivos fuente (`*.c`, `*.h`, `Makefile`) de un
+  proyecto ya cerrado salvo corrección explícita solicitada por el usuario.
+- Antes de cerrar cualquier tarea que toque código compartido, verificar que
+  todos los proyectos existentes en `42/C/` siguen compilando y pasando sus
+  pruebas.
+
+## Limpieza post-cierre (obligatoria al finalizar un proyecto)
+
+Al completar un cierre total de cualquier proyecto en `42/C/`:
+
+1. Eliminar archivos temporales y binarios generados fuera del proyecto
+   (ejecutables en `/tmp`, archivos `.o` huérfanos, etc.).
+2. Ejecutar `make clean` o `make fclean` dentro del proyecto para dejar solo
+   fuentes y Makefile.
+3. Verificar que no quedan scripts o archivos de pruebas fuera de
+   `42/tests_<project_name>/`.
+4. Confirmar `git status` limpio en ambos repositorios (`42/C/` y `Raiz/`).
+5. Registrar la limpieza en `.github/project-history.md`.
+6. Hacer `git add`, `commit` y `push` final para dejar todo versionado.
+
+Esta rutina nunca debe eliminar ni modificar archivos fuente, Makefiles ni
+configuraciones esenciales de ningún proyecto.
 
 ## Commit Message Policy (Active)
 
-- Commit messages must not mention user-change operations or metadata edits.
-- Forbidden themes in commit messages: username changes, date changes, email changes.
-- Use functional or structural summaries instead (build, sync, fix, docs, refactor).
 
 ## Inter-Chat Handoff File
 
@@ -159,6 +199,24 @@ When the user says `refrescar memoria` or `(refrescar memoria)`:
 	conversation.
 4. If new facts are confirmed, update repository memory with a short note.
 5. Only after this refresh, continue with implementation steps.
+
+## Definitive Closure Trigger
+
+When the user says `haz el cierre definitivo`:
+
+1. Execute full closure of the active project before any integration to libft.
+2. Mandatory sequence:
+	- scope/structure vs project `.txt`,
+	- functional behavior,
+	- memory/stability,
+	- Norminette as final step.
+3. Ensure project root is clean from temporary build artifacts (`*.o`, test binaries).
+4. Update tracking to closure state:
+	- `.github/projects-index.md` (project status to `completed` when applicable),
+	- `.github/project-history.md` (dated closure block with evidence summary),
+	- `42/tests_<project_name>/README.md` (closure evidence/status).
+5. Only after closure is explicitly complete, proceed to optional integration into
+	`42/C/currentLibft/libft`.
 
 ## Naming Convention for Imported Specs
 

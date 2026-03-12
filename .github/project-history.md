@@ -4,13 +4,94 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 ## Global Active Rules
 
-- Validation order (all projects):
   1. structure/scope against `.txt`,
   2. behavior against `.txt`,
   3. memory/stability,
   4. Norminette as final closing step.
-- Historical logs that mention a different order are kept as traceability,
   but are superseded by this active rule.
+
+## get_next_line
+Último cierre total: 12 de marzo de 2026
+Validación funcional, memoria y Norminette completadas
+Protocolo de cierre total aplicado
+Evidencia registrada en README de tests
+
+## Protocolo de cierre
+Cierre total: validación completa, cierre de oro, cierre completo, etc.
+Cierre express: auditoría express, revisión rápida
+
+## 2026-03-12
+
+  - `42/C/get_next_line/get_next_line.c`
+  - `42/C/get_next_line/get_next_line.h`
+  - `42/C/get_next_line/get_next_line_utils.c`
+  - `42/C/get_next_line/get_next_line_bonus.c`
+  - `42/C/get_next_line/get_next_line_bonus.h`
+  - `42/C/get_next_line/get_next_line_utils_bonus.c`
+  - `42/tests_get_next_line/README.md`
+  - `.github/projects-index.md`
+  - `.github/project-history.md`
+  - `.github/projects-index.md`
+  - `.github/project-history.md`
+  - `42/tests_get_next_line/README.md`
+  - Definitive closure completed for `42/C/get_next_line` before libft integration.
+  - Scope/structure validated against `42/PDFs/2026-03-12_get_next_line.txt`.
+  - Mandatory and bonus compile clean with `-Wall -Wextra -Werror`.
+  - Norminette final scan on all `*.c` and `*.h`: OK.
+  - Functional checks completed:
+    - mandatory with BUFFER_SIZE=1, 42, 9999,
+    - bonus multi-fd alternating reads with BUFFER_SIZE=42 and 1.
+  - Memory/stability checks with `-fsanitize=address,undefined`: no runtime issues observed.
+  - Naming collision rule applied in codebase for helper functions: `ft_` prefix.
+  - Integration to `42/C/currentLibft/libft` remains as a separate next step.
+
+- Change type: spec-txt
+- Paths changed:
+  - `42/PDFs/2026-03-12_get_next_line.txt`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/project-history.md`
+- Notes:
+  - Full transcription imported from provided source text for Get Next Line.
+  - Transcription policy applied: no summary and no normative detail omission.
+  - Source text replaced by user with corrected version; current file content is the active baseline.
+  - Updated baseline includes the revised chapter structure:
+    III Parte obligatoria, IV Parte bonus, V Entrega y evaluación.
+  - Canonical spec path for next validation cycle:
+    `42/PDFs/2026-03-12_get_next_line.txt`.
+
+- Change type: project
+- Paths changed:
+  - `42/C/get_next_line`
+  - `42/tests_get_next_line/README.md`
+  - `.github/projects-index.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/projects-index.md`
+  - `.github/project-history.md`
+- Notes:
+  - New deliverable project detected at `42/C/get_next_line`.
+  - Validation and closure sequence pending: scope/spec -> behavior -> memory -> Norminette.
+  - Integration into canonical libft (`42/C/currentLibft/libft`) remains deferred until standalone closure is complete.
+
+- Change type: project
+- Paths changed:
+  - `.github/libft-functions.md`
+  - `.github/libft-progress.md`
+  - `.github/libft-reference.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/libft-functions.md`
+  - `.github/libft-progress.md`
+  - `.github/libft-reference.md`
+  - `.github/project-history.md`
+- Notes:
+  - currentLibft base promoted to official canonical libft for future projects.
+  - Canonical path for bootstrap and continuity: `42/C/currentLibft/libft`.
+  - `42/C/libft` preserved as historical reference and closure traceability.
+  - Future modular growth rule confirmed for canonical libft:
+    integrate `ft_printf`, `get_next_line`, and following approved modules
+    inside the same evolutive base.
 
 ## 2026-03-11
 
