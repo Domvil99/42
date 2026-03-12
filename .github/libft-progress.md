@@ -39,6 +39,17 @@
         `42/C/currentLibft/libft` (current).
 
 ## ✅ Validación Ejecutada
+- Revalidacion integral de cierre (2026-03-12, ronda final estricta):
+    - baseline: `42/PDFs/2026-03-12_libft_v16_6_actualizado.txt`.
+    - alcance: `42/C/libft` (libft1).
+    - politica de cierre: sin ignorar errores (incluye `INVALID_HEADER`).
+    - estado de entorno al inicio: repos `Raiz/` y `42/C/` limpios.
+    - build obligatorio y bonus en verde (`make`, `make bonus`).
+    - verificacion de idempotencia de `make bonus` en verde (sin relink).
+    - suite `42/testsLibf` con `make run` en verde.
+    - corrida ASAN/UBSAN en `42/testsLibf` en verde.
+    - `norminette *.c *.h` en verde sin excepciones.
+    - resultado consolidado: GO sin hallazgos.
 - Compilación por archivo con `-Wall -Wextra -Werror` sin errores.
 - Compilación completa de librería obligatoria: `make` ✅
 - Compilación completa de bonus: `make bonus` ✅
@@ -88,7 +99,7 @@
 2. Aplicar la misma separacion estricta de headers en current (`42/C/currentLibft/libft`).
 3. Iniciar nuevo proyecto en `42/C/<project_name>/` con base validada.
 
-**Última actualización**: Marzo 11, 2026 (sync de orden global de validacion)
+**Última actualización**: Marzo 12, 2026 (validacion integral estricta GO)
 **Versión PDF**: 16.6
 
 ## 📝 Notas Importantes

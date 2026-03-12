@@ -12,6 +12,30 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 ## 2026-03-12
 
+- Change type: validation-report
+- Paths changed:
+  - `.github/project-history.md`
+  - `.github/libft-progress.md`
+- Tracking docs updated:
+  - `.github/project-history.md`
+  - `.github/libft-progress.md`
+- Notes:
+  - Validacion integral de `libft1` ejecutada sobre `42/C/libft` usando
+    baseline canonica `42/PDFs/2026-03-12_libft_v16_6_actualizado.txt`.
+  - Criterio aplicado: cierre estricto sin ignorar errores (incluye
+    `INVALID_HEADER`).
+  - Resultado global: GO (sin hallazgos criticos, altos, medios ni bajos).
+  - Evidencias tecnicas:
+    - repos `Raiz/` y `42/C/` limpios al iniciar validacion,
+    - build obligatorio y bonus OK,
+    - `make bonus` idempotente (sin relink),
+    - `make run` en `42/testsLibf` OK,
+    - ASAN/UBSAN en `42/testsLibf` OK,
+    - barrido final `norminette` en `42/C/libft/*.c` y
+      `42/C/libft/*.h` OK.
+  - No se aplicaron cambios en codigo fuente de `42/C/libft`; el reporte
+    persiste estado de validacion y trazabilidad de cierre.
+
 - Change type: header-fix
 - Paths changed:
   - `42/C/libft/libft.h`
