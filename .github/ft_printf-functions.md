@@ -32,6 +32,9 @@
 	- `norminette *.c *.h` en `42/C/ft_printf` OK.
 	- chequeo de paridad de headers entre `42/C/libft` y
 	  `42/C/ft_printf/libft`: solo diferencias de timestamp `Updated`.
+	- sync reforzado posterior: archivos base de `ft_printf/libft`
+	  (`*.c`, `*.h`, `Makefile`, `.gitignore`) alineados nuevamente con
+	  `42/C/libft` para mantener paridad estable entre mirrors.
 - Estado de headers (2026-03-11): bloque 42 validado en todo `ft_printf/*.c`,
   `ft_printf/*.h` y `ft_printf/libft/*.{c,h}` con alineacion de columnas.
 - Politica de validacion actual: no se aplican excepciones a `INVALID_HEADER`.

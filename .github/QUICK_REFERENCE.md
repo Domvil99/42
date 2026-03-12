@@ -80,6 +80,8 @@ Raiz/
 │   ├── projects-index.md
 │   ├── project-history.md
 │   ├── reports/
+│   ├── currentLibft/
+│   │   └── integration-manifest.md
 │   ├── metodos_de_estudio/
 │   │   ├── libft/
 │   │   │   └── libft.md

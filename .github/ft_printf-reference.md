@@ -13,6 +13,11 @@ Nota actual (2026-03-12):
 - Paridad de `libft2` (`42/C/ft_printf/libft`) contra `libft1` (`42/C/libft`):
     sin deriva funcional en headers; solo diferencia de fecha `Updated`.
 
+Nota de continuidad (2026-03-12):
+- Sincronizacion reforzada de mirror aplicada en `42/C/ft_printf/libft`
+    desde `42/C/libft` para mantener igualdad base de archivos y comportamiento
+    entre proyectos, preservando independencia de cada entregable en `42/C/`.
+
 Nota actual (2026-03-11):
 - Base entregable consolidada en `42/C/ft_printf/`.
 - Arquitectura de headers separada (`ft_printf.h` mandatory,
