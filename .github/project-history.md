@@ -12,6 +12,40 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 ## 2026-03-12
 
+- Change type: project
+- Paths changed:
+  - `42/C/currentLibft/libft/libft.h`
+  - `42/C/currentLibft/libft/libft_bonus.h`
+  - `42/C/currentLibft/libft/.gitignore`
+  - `42/C/ft_printf/libft/libft.h`
+  - `42/C/ft_printf/libft/libft_bonus.h`
+  - `.github/currentLibft/integration-manifest.md`
+  - `.github/projects-index.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/ft_printf-functions.md`
+  - `.github/ft_printf-progress.md`
+  - `.github/ft_printf-reference.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/currentLibft/integration-manifest.md`
+  - `.github/projects-index.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/ft_printf-functions.md`
+  - `.github/ft_printf-progress.md`
+  - `.github/ft_printf-reference.md`
+  - `.github/project-history.md`
+- Notes:
+  - Base libft synchronization applied from `42/C/libft` to mirror roots:
+    `42/C/currentLibft/libft` and `42/C/ft_printf/libft` for
+    `*.c`, `*.h`, `Makefile`, `.gitignore`.
+  - Scope preserved: integrated child modules under
+    `42/C/currentLibft/libft/ft_printf` and
+    `42/C/currentLibft/libft/get_next_line` were not moved or flattened.
+  - Independence gate validated by build checks in `42/C` projects:
+    `libft`, `ft_printf`, `get_next_line` (compile check), and `currentLibft`.
+  - Objective achieved: maintain equal base libft files/functionality across
+    projects while preserving autonomous project boundaries in `42/C/`.
+
 - Change type: spec-txt
 - Paths changed:
   - `42/PDFs/2026-03-12_get_next_line_actualizado.txt`

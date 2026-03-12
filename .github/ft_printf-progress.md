@@ -18,6 +18,12 @@
 - ✅ Paridad de mirrors `libft1`/`libft2`: headers sin drift funcional;
 	solo diferencia en metadata `Updated`.
 
+## Sync mirrors reforzado (2026-03-12)
+- ✅ `42/C/ft_printf/libft` resincronizado desde `42/C/libft` en archivos
+  base (`*.c`, `*.h`, `Makefile`, `.gitignore`).
+- ✅ Paridad de contenido confirmada byte a byte en archivos base.
+- ✅ Build de control post-sync en `42/C/ft_printf`: `make` y `make bonus`.
+
 ## Sync Mirrors (2026-03-11)
 - `42/C/ft_printf/libft/*.{c,h}` resincronizado contra `42/C/libft/*.{c,h}`.
 - Objetivo: mantener coincidencia de headers (autor/Created/Updated) entre
