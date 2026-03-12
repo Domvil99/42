@@ -112,3 +112,14 @@
 	- `42/C/ft_printf/libft/Makefile`
 	- `42/C/currentLibft/libft/Makefile`
 	- objetivo: consistencia de mirror + politica de timestamps humanos.
+
+## Corrección headers libft1 (2026-03-12)
+- `42/C/libft/libft.h` actualizado para incluir:
+	- `typedef struct s_list ... t_list;`
+	- prototipos `ft_lstnew` a `ft_lstmap`.
+- `42/C/libft/libft_bonus.h` convertido en wrapper compatible sin duplicar
+	declaraciones.
+- Validación de cierre del cambio:
+	- build obligatorio y bonus ✅
+	- tests `42/testsLibf` ✅
+	- Norminette final (`*.c`, `*.h`) ✅

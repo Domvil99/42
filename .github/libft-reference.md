@@ -79,9 +79,18 @@ Norminette se ejecuta sin excepciones de `INVALID_HEADER`.
 	- 43/43 `*.c` con un único `int main(void)` para prueba interna
 	  (en bloque comentado).
 - Ajuste de arquitectura `.h` + `Makefile`:
-	- `libft.h` expone solo API obligatoria/parte 2.
-	- `libft_bonus.h` concentra `t_list` y API `ft_lst*`.
+	- `libft.h` expone API obligatoria/parte 2 y bonus (`t_list` + `ft_lst*`).
+	- `libft_bonus.h` se mantiene como wrapper compatible de `libft.h`.
 	- `bonus` en `Makefile` sin relink innecesario en ejecuciones repetidas.
+
+## Corrección de headers (2026-03-12)
+- Alineado con spec corregida v16.6:
+	- estructura `t_list` y prototipos bonus declarados en `libft.h`.
+	- `libft_bonus.h` conserva compatibilidad sin duplicar declaraciones.
+- Validación posterior a la corrección:
+	- `make fclean && make && make bonus` en `42/C/libft` ✅
+	- `make run` en `42/testsLibf` ✅
+	- `norminette 42/C/libft/*.c 42/C/libft/*.h` ✅
 
 ## Estado actual de trabajo (2026-03-11)
 - Lote de limpieza de `42/C/libft/*.c` cerrado en commit:

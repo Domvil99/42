@@ -29,9 +29,10 @@
     - `42/testsLibf`: `make run` ✅
     - `42/testsLibf` con ASAN/UBSAN (`-fsanitize=address,undefined`) ✅
     - Norminette final sobre `*.c` y `*.h` ✅
-- Anomalia critica abierta:
-    - el bonus de listas se declara en `libft_bonus.h` y no en `libft.h`.
-    - la nueva spec indica anadir la declaracion del nodo en `libft.h`.
+- Correccion aplicada en libft1:
+    - `42/C/libft/libft.h` ahora declara `t_list` y toda la API `ft_lst*`.
+    - `42/C/libft/libft_bonus.h` queda como wrapper compatible incluyendo
+      `libft.h` sin duplicar typedefs/prototipos.
 - Riesgo de propagacion:
     - mismo patron detectado en `42/C/ft_printf/libft` (libft2) y
         `42/C/currentLibft/libft` (current).
@@ -82,8 +83,9 @@
     - Compilacion de 43/43 tests contra `42/C/libft/libft.a` validada ✅.
 
 ## 🎯 Siguiente Etapa
-1. Corregir headers Norminette cuando indiques el cierre formal de cabeceras.
-2. Iniciar nuevo proyecto en `42/C/<project_name>/` con `libft` como base reutilizable.
+1. Propagar la correccion de headers a libft2 (`42/C/ft_printf/libft`).
+2. Propagar la correccion de headers a current (`42/C/currentLibft/libft`).
+3. Iniciar nuevo proyecto en `42/C/<project_name>/` con base corregida.
 
 **Última actualización**: Marzo 11, 2026 (sync de orden global de validacion)
 **Versión PDF**: 16.6

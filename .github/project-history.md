@@ -12,6 +12,29 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 ## 2026-03-12
 
+- Change type: header-fix
+- Paths changed:
+  - `42/C/libft/libft.h`
+  - `42/C/libft/libft_bonus.h`
+  - `.github/libft-functions.md`
+  - `.github/libft-progress.md`
+  - `.github/libft-reference.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/libft-functions.md`
+  - `.github/libft-progress.md`
+  - `.github/libft-reference.md`
+  - `.github/project-history.md`
+- Notes:
+  - Header correction executed in libft1 according to corrected v16.6 spec.
+  - `t_list` and `ft_lst*` declarations moved to `libft.h`.
+  - `libft_bonus.h` kept as compatibility wrapper including `libft.h`.
+  - Validation executed after change:
+    - `make fclean && make && make bonus` in `42/C/libft` ✅
+    - `make run` in `42/testsLibf` ✅
+    - final `norminette 42/C/libft/*.c 42/C/libft/*.h` ✅
+  - Base ready to propagate same header fix to libft2 and current.
+
 - Change type: spec-txt
 - Paths changed:
   - `42/PDFs/2026-03-12_libft_v16_6_actualizado.txt`
