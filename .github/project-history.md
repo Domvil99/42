@@ -26,6 +26,30 @@ Purpose: chronological log of important decisions, imports, and structure change
   - `.github/libft-reference.md`
   - `.github/project-history.md`
 - Notes:
+  - Final header adjustment in libft1 aligned with strict separation rule.
+  - `libft.h` keeps mandatory + part2 only.
+  - `libft_bonus.h` keeps bonus declarations (`t_list` + `ft_lst*`).
+  - Full validation rerun after adjustment:
+    - `make fclean && make && make bonus` ✅
+    - `make run` in `42/testsLibf` ✅
+    - ASAN/UBSAN tests in `42/testsLibf` ✅
+    - final `norminette 42/C/libft/*.c 42/C/libft/*.h` ✅
+  - Session closure prepared with clean environment and dual-repo commits.
+
+- Change type: header-fix
+- Paths changed:
+  - `42/C/libft/libft.h`
+  - `42/C/libft/libft_bonus.h`
+  - `.github/libft-functions.md`
+  - `.github/libft-progress.md`
+  - `.github/libft-reference.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/libft-functions.md`
+  - `.github/libft-progress.md`
+  - `.github/libft-reference.md`
+  - `.github/project-history.md`
+- Notes:
   - Header correction executed in libft1 according to corrected v16.6 spec.
   - `t_list` and `ft_lst*` declarations moved to `libft.h`.
   - `libft_bonus.h` kept as compatibility wrapper including `libft.h`.

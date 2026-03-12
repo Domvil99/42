@@ -114,11 +114,9 @@
 	- objetivo: consistencia de mirror + politica de timestamps humanos.
 
 ## Corrección headers libft1 (2026-03-12)
-- `42/C/libft/libft.h` actualizado para incluir:
-	- `typedef struct s_list ... t_list;`
-	- prototipos `ft_lstnew` a `ft_lstmap`.
-- `42/C/libft/libft_bonus.h` convertido en wrapper compatible sin duplicar
-	declaraciones.
+- `42/C/libft/libft.h` mantiene solo API obligatoria + parte 2.
+- `42/C/libft/libft_bonus.h` contiene `t_list` y prototipos bonus `ft_lst*`.
+- Criterio aplicado: obligatoria y bonus corregidas/validadas por separado.
 - Validación de cierre del cambio:
 	- build obligatorio y bonus ✅
 	- tests `42/testsLibf` ✅

@@ -29,10 +29,11 @@
     - `42/testsLibf`: `make run` ✅
     - `42/testsLibf` con ASAN/UBSAN (`-fsanitize=address,undefined`) ✅
     - Norminette final sobre `*.c` y `*.h` ✅
-- Correccion aplicada en libft1:
-    - `42/C/libft/libft.h` ahora declara `t_list` y toda la API `ft_lst*`.
-    - `42/C/libft/libft_bonus.h` queda como wrapper compatible incluyendo
-      `libft.h` sin duplicar typedefs/prototipos.
+- Ajuste final aplicado en libft1 (separacion estricta obligatoria/bonus):
+        - `42/C/libft/libft.h` mantiene solo API obligatoria + parte 2.
+        - `42/C/libft/libft_bonus.h` concentra `t_list` y toda la API `ft_lst*`.
+        - regla operativa adoptada: validar y cerrar primero obligatoria; bonus
+            se valida y corrige por separado despues.
 - Riesgo de propagacion:
     - mismo patron detectado en `42/C/ft_printf/libft` (libft2) y
         `42/C/currentLibft/libft` (current).
@@ -83,9 +84,9 @@
     - Compilacion de 43/43 tests contra `42/C/libft/libft.a` validada ✅.
 
 ## 🎯 Siguiente Etapa
-1. Propagar la correccion de headers a libft2 (`42/C/ft_printf/libft`).
-2. Propagar la correccion de headers a current (`42/C/currentLibft/libft`).
-3. Iniciar nuevo proyecto en `42/C/<project_name>/` con base corregida.
+1. Aplicar la misma separacion estricta de headers en libft2 (`42/C/ft_printf/libft`).
+2. Aplicar la misma separacion estricta de headers en current (`42/C/currentLibft/libft`).
+3. Iniciar nuevo proyecto en `42/C/<project_name>/` con base validada.
 
 **Última actualización**: Marzo 11, 2026 (sync de orden global de validacion)
 **Versión PDF**: 16.6
