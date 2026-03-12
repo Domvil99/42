@@ -2,11 +2,21 @@
 
 ## Estado Actual
 - Proyecto detectado en `42/C/ft_printf`.
-- Especificacion registrada: `42/PDFs/2026-03-10_ft_printf.txt`.
+- Especificacion registrada: `42/PDFs/2026-03-12_ft_printf_actualizado.txt`.
 - Estado actual: cierre tecnico completado y publicado.
 - Politica vigente: sin pendientes tecnicos abiertos para entrega.
 - Headers: normalizados y alineados en 80 columnas en `*.c`/`*.h` (mandatory, bonus y `ft_printf/libft`).
 - Norma vigente: `INVALID_HEADER` ya no se ignora en checks de VS Code ni en autofix.
+
+## Revalidacion por baseline corregida (2026-03-12)
+- ✅ Baseline actualizada en `42/PDFs/2026-03-12_ft_printf_actualizado.txt`.
+- ✅ Build limpio: `make fclean && make && make bonus` en `42/C/ft_printf`.
+- ✅ Matriz mandatory: paridad con `printf` (`RET_TOTAL=212`).
+- ✅ Matriz bonus: paridad con `printf` (`RET_TOTAL=146`).
+- ✅ ASAN/UBSAN (`-fsanitize=address,undefined`): sin errores de runtime ni leaks reportados.
+- ✅ `norminette 42/C/ft_printf/*.c 42/C/ft_printf/*.h`: OK.
+- ✅ Paridad de mirrors `libft1`/`libft2`: headers sin drift funcional;
+	solo diferencia en metadata `Updated`.
 
 ## Sync Mirrors (2026-03-11)
 - `42/C/ft_printf/libft/*.{c,h}` resincronizado contra `42/C/libft/*.{c,h}`.

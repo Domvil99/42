@@ -23,6 +23,15 @@
 
 ## Estado
 - Baseline importado para revision.
+- Revalidacion por baseline corregida (2026-03-12):
+	- spec activa migrada a `42/PDFs/2026-03-12_ft_printf_actualizado.txt`.
+	- build mandatory/bonus OK.
+	- matrices mandatory/bonus en paridad con `printf`
+	  (`RET_TOTAL=212` y `RET_TOTAL=146`).
+	- ASAN/UBSAN sin hallazgos en matrices.
+	- `norminette *.c *.h` en `42/C/ft_printf` OK.
+	- chequeo de paridad de headers entre `42/C/libft` y
+	  `42/C/ft_printf/libft`: solo diferencias de timestamp `Updated`.
 - Estado de headers (2026-03-11): bloque 42 validado en todo `ft_printf/*.c`,
   `ft_printf/*.h` y `ft_printf/libft/*.{c,h}` con alineacion de columnas.
 - Politica de validacion actual: no se aplican excepciones a `INVALID_HEADER`.

@@ -12,6 +12,31 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 ## 2026-03-12
 
+- Change type: spec-txt
+- Paths changed:
+  - `42/PDFs/2026-03-12_ft_printf_actualizado.txt`
+  - `.github/project-history.md`
+  - `.github/ft_printf-progress.md`
+  - `.github/ft_printf-reference.md`
+  - `.github/ft_printf-functions.md`
+- Tracking docs updated:
+  - `.github/project-history.md`
+  - `.github/ft_printf-progress.md`
+  - `.github/ft_printf-reference.md`
+  - `.github/ft_printf-functions.md`
+- Notes:
+  - New corrected ft_printf baseline received and saved at
+    `42/PDFs/2026-03-12_ft_printf_actualizado.txt`.
+  - Full validation executed for `42/C/ft_printf` against updated baseline:
+    - `make fclean && make && make bonus` OK,
+    - mandatory matrix in `42/tests_ft_printf`: `RET_TOTAL=212` (parity with `printf`),
+    - bonus matrix in `42/tests_ft_printf`: `RET_TOTAL=146` (parity with `printf`),
+    - ASAN/UBSAN run (`-fsanitize=address,undefined`) on both matrices: no runtime/leak reports,
+    - final `norminette 42/C/ft_printf/*.c 42/C/ft_printf/*.h` OK.
+  - libft parity audit executed between `42/C/libft` and `42/C/ft_printf/libft` headers:
+    diff detected only in metadata `Updated` lines of `libft.h` and `libft_bonus.h`
+    (no API/prototype/content drift).
+
 - Change type: validation-report
 - Paths changed:
   - `.github/project-history.md`

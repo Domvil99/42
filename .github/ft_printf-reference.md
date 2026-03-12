@@ -1,6 +1,17 @@
 # Referencia Rapida ft_printf
 
-Estado: referencia operativa alineada a spec `42/PDFs/2026-03-10_ft_printf.txt`.
+Estado: referencia operativa alineada a spec `42/PDFs/2026-03-12_ft_printf_actualizado.txt`.
+
+Nota actual (2026-03-12):
+- Baseline corregida de ft_printf incorporada en `42/PDFs/2026-03-12_ft_printf_actualizado.txt`.
+- Revalidacion tecnica completa en `42/C/ft_printf`:
+    - build mandatory/bonus OK,
+    - matrices mandatory y bonus en paridad con `printf`
+        (`RET_TOTAL=212` y `RET_TOTAL=146`),
+    - corrida ASAN/UBSAN sin hallazgos,
+    - `norminette *.c *.h` OK.
+- Paridad de `libft2` (`42/C/ft_printf/libft`) contra `libft1` (`42/C/libft`):
+    sin deriva funcional en headers; solo diferencia de fecha `Updated`.
 
 Nota actual (2026-03-11):
 - Base entregable consolidada en `42/C/ft_printf/`.
