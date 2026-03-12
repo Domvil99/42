@@ -25,7 +25,7 @@ Purpose: central index for all projects under `42/` and their relation with `42/
 
 - Main C projects: `42/C/<project_name>/`
 - Per-project tests: `42/tests_<project_name>/`
-- Current libft integration tests: `42/testsCurrentLibft/` (mandatory gate)
+- Current libft integration tests: `42/tests_currentLibft/` (mandatory gate)
 - Shared test folders: `42/<tests_name>/` (example: `42/testsLibf/`)
 - Project reference docs: `.github/`
 - Incoming source instructions (.txt/.pdf exports): `42/PDFs/`

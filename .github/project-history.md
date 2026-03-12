@@ -12,6 +12,81 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 ## 2026-03-12
 
+- Change type: workflow
+- Paths changed:
+  - `.github/chat-handoff.md`
+  - `.github/reports/inter-chat-essential.md`
+  - `.github/workflow-rules.md`
+  - `.github/copilot-instructions.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/project-history.md`
+- Notes:
+  - Implemented inter-chat relay protocol to avoid manual user copy/paste when
+    request arrives in a non-corresponding specialist chat.
+  - Handoff `H-007` (`T-003`) moved from open state to `DONE` with ACK trace
+    and closure criteria satisfied.
+  - Governance now enforces specialist response format (scope reason,
+    practical solution, explicit redirection, minimal context block) and
+    Chat1 conversion to formal handoff for execution continuity.
+
+- Change type: workflow
+- Paths changed:
+  - `.github/metodos_de_estudio/global-dictionary.md`
+  - `.github/metodos_de_estudio/overview.md`
+  - `.github/metodos_de_estudio/libft/dictionary.md`
+  - `.github/metodos_de_estudio/ft_printf/dictionary.md`
+  - `.github/metodos_de_estudio/get_next_line/dictionary.md`
+  - `.github/metodos_de_estudio/currentLibft/currentLibft.md`
+  - `.github/metodos_de_estudio/currentLibft/dictionary.md`
+  - `.github/copilot-instructions.md`
+  - `.github/workflow-rules.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/project-history.md`
+  - `.github/QUICK_REFERENCE.md`
+- Notes:
+  - Implemented mandatory study dictionary rule with two layers:
+    - global dictionary at `.github/metodos_de_estudio/global-dictionary.md`,
+    - project dictionary at `.github/metodos_de_estudio/<project>/dictionary.md`.
+  - Added project dictionaries for `libft`, `ft_printf`, `get_next_line`
+    and `currentLibft` using unified format (technical glossary + mini examples).
+  - Created independent study module for `currentLibft` with:
+    - `.github/metodos_de_estudio/currentLibft/currentLibft.md`,
+    - `.github/metodos_de_estudio/currentLibft/dictionary.md`.
+  - Updated governance/tracking docs to make the rule auditable in future
+    study updates (`overview`, `workflow-rules`, `copilot-instructions`,
+    `QUICK_REFERENCE`).
+
+- Change type: validation-report
+- Paths changed:
+  - `.github/reports/currentLibft-validation-2026-03-12.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/project-history.md`
+- Notes:
+  - Full integrated validation executed for `42/C/currentLibft` using
+    canonical updated specs for `libft`, `ft_printf`, and `get_next_line`.
+  - Structural rule confirmed: single parent `libft` under `currentLibft`,
+    with integrated grandchildren modules under `libft/<project_name>`.
+  - Build flow validated end-to-end (`make`, relink check, `bonus`,
+    `clean`, `fclean`, `re`) without errors.
+  - Functional checks passed:
+    - `ft_printf` mandatory and bonus matrices,
+    - `get_next_line` mandatory (`BUFFER_SIZE=1,42,9999`) and
+      bonus multi-fd.
+  - Memory/stability checks with ASAN/UBSAN completed without runtime
+    errors in representative runs.
+  - Final Norminette scans in:
+    - `42/C/currentLibft/libft`,
+    - `42/C/currentLibft/libft/ft_printf`,
+    - `42/C/currentLibft/libft/get_next_line`,
+    all OK.
+  - Final cleanup completed with no residual build artifacts in
+    `42/C/currentLibft` and clean git status in both `Raiz` and `42/C`.
+  - Semaforo final: all validation layers GREEN.
+
 - Change type: project
 - Paths changed:
   - `42/C/currentLibft/libft/libft.h`

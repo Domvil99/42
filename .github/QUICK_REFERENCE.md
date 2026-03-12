@@ -55,8 +55,6 @@ Raiz/
 │   │   └── 2026-03-12_get_next_line_actualizado.txt
 │   ├── testsLibf/
 │   │   └── README.md
-│   ├── testsCurrentLibft/
-│   │   └── README.md
 │   ├── tests_ft_printf/
 │   │   └── README.md
 │   ├── tests_currentLibft/
@@ -83,12 +81,19 @@ Raiz/
 │   ├── currentLibft/
 │   │   └── integration-manifest.md
 │   ├── metodos_de_estudio/
+│   │   ├── global-dictionary.md
 │   │   ├── libft/
 │   │   │   └── libft.md
+│   │   │   └── dictionary.md
 │   │   ├── ft_printf/
 │   │   │   └── ft_printf.md
+│   │   │   └── dictionary.md
 │   │   ├── get_next_line/
 │   │   │   └── get_next_line.md
+│   │   │   └── dictionary.md
+│   │   ├── currentLibft/
+│   │   │   └── currentLibft.md
+│   │   │   └── dictionary.md
 │   │   └── overview.md
 │   └── workflow-rules.md
 ├── .tools/
@@ -115,7 +120,7 @@ Regla rápida:
     - If you are coding a deliverable project (`libft` and next ones), run
         `git add`, `git commit`, `git push` inside `42/C/`.
     - If you are updating workflow/docs/tooling (`.github`, `.vscode`, `42/PDFs`,
-        `42/testsLibf`, `42/testsCurrentLibft`, `42/tests_ft_printf`,
+        `42/testsLibf`, `42/tests_currentLibft`, `42/tests_ft_printf`,
         `42/tests_<project_name>`), run
         git in `Raiz/`.
 
@@ -207,6 +212,12 @@ realpath /home/domvil99/empresa/42/newLibft/Raiz
 ### When `.github/metodos_de_estudio/` changes
 - `.github/project-history.md`
 - `.github/QUICK_REFERENCE.md`
+
+Mandatory study dictionary policy:
+- Keep one global dictionary at `.github/metodos_de_estudio/global-dictionary.md`.
+- Keep one project dictionary at
+    `.github/metodos_de_estudio/<project>/dictionary.md`.
+- Dictionary format baseline: technical glossary + mini examples.
 
 ### When a new instruction `.txt` is received
 - Save into `42/PDFs/`
@@ -493,7 +504,7 @@ re: fclean all
     git push
 
     # Workspace docs/tooling (desde Raiz/)
-    git add .github .vscode 42/PDFs 42/testsLibf 42/testsCurrentLibft
+    git add .github .vscode 42/PDFs 42/testsLibf 42/tests_currentLibft
     git commit -m "docs: update tracking and workflow"
     git push
    ```
@@ -508,7 +519,7 @@ re: fclean all
 - Add `README.md` with compile/run commands
 - Register in `.github/projects-index.md`
 - Log in `.github/project-history.md`
-- Re-run `42/testsCurrentLibft/` before integrating into libft
+- Re-run `42/tests_currentLibft/` before integrating into libft
 
 ## Inter-Chat Handoff (Chat1 <-> Chat2+)
 

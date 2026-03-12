@@ -24,7 +24,7 @@ Raiz/
 │   │   └── 2026-03-10_ft_printf.txt
 │   ├── testsLibf/
 │   │   └── README.md
-│   ├── testsCurrentLibft/
+│   ├── tests_currentLibft/
 │   │   └── README.md
 │   └── tests_<project_name>/
 │       └── README.md
@@ -172,6 +172,12 @@ Raiz/
 - Closing notes in `DONE` or `BLOCKED` must include brief outcome and next
   suggested action.
 - The handoff file is the canonical source for cross-chat continuity.
+- Relay no-copy/paste policy:
+  - If a specialist chat receives an out-of-scope request, it must provide
+    clear redirection + minimal reusable context block.
+  - Chat1 must create/update the formal handoff entry and continue execution
+    flow without asking the user to manually copy/paste between chats.
+  - ACK (`TODO` -> `WIP`) remains mandatory before execution.
 
 ### Chat 1 (Config and Workflow)
 - VS Code setup and tooling.
@@ -236,13 +242,17 @@ Raiz/
 - If a new project appears under `42/C/`, also ensure:
   - `42/tests_<project_name>/` exists
   - `42/tests_<project_name>/README.md` exists
-  - `42/testsCurrentLibft/` remains available as integration gate
+  - `42/tests_currentLibft/` remains available as integration gate
 - If a project under `42/C/` is validated and closed with optimal status,
   create or update study material under `.github/metodos_de_estudio/`:
   - use project folder names in English (`libft`, `ft_printf`, etc.),
   - keep file names in English (`<project>.md`, `overview.md`, etc.),
   - keep explanatory content in Spanish with project technical terms,
-  - maintain an evolutive structure (one or more files per project as needed).
+  - maintain an evolutive structure (one or more files per project as needed),
+  - keep mandatory dictionaries:
+    - global: `.github/metodos_de_estudio/global-dictionary.md`,
+    - by project: `.github/metodos_de_estudio/<project>/dictionary.md`
+  - dictionary baseline must be: technical glossary + mini examples.
 
 ## References
 - Norminette: https://github.com/42School/norminette

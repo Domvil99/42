@@ -179,6 +179,7 @@ When study structure changes under `.github/metodos_de_estudio/`, update:
 
 1. `.github/project-history.md`
 2. `.github/QUICK_REFERENCE.md`
+3. `.github/metodos_de_estudio/overview.md` (si cambia estructura canonica)
 
 Study structure rule:
 
@@ -186,6 +187,10 @@ Study structure rule:
 2. Use English file names (`<project>.md`, `overview.md`, etc.).
 3. Keep explanatory content in Spanish with project technical terminology.
 4. Treat study content as evolutive and update it on future revalidations.
+5. Keep mandatory dictionaries:
+	- global dictionary: `.github/metodos_de_estudio/global-dictionary.md`
+	- project dictionary: `.github/metodos_de_estudio/<project>/dictionary.md`
+6. Dictionary baseline format: technical glossary + mini examples.
 
 ## External Instruction Trigger
 
@@ -315,7 +320,7 @@ When a new project is added under `42/C/<project_name>/`:
 
 1. Ensure test folder exists: `42/tests_<project_name>/`
 2. Ensure `42/tests_<project_name>/README.md` exists with run instructions
-3. Keep `42/testsCurrentLibft/` as permanent integration gate
+3. Keep `42/tests_currentLibft/` as permanent integration gate
 4. Update:
    - `.github/projects-index.md`
    - `.github/project-history.md`
@@ -342,6 +347,23 @@ When a new project is added under `42/C/<project_name>/`:
 	4. Chat2 (or future chats) requests a communication/process adjustment.
 - Every logged item should reference `Topic ID` and/or `H-xxx` when available.
 - Keep only actionable open items in the active improvement table.
+
+## Out-of-Scope Relay Rule (No Copy/Paste)
+
+When a specialist chat receives an out-of-scope request:
+
+1. The specialist chat must return:
+	- concrete scope limitation reason,
+	- practical solution,
+	- explicit redirection to the correct chat,
+	- minimal reusable context block.
+2. Chat1 must convert that context into a formal handoff entry in
+	`.github/chat-handoff.md` with `Topic ID`, success criteria, files and next
+	action.
+3. User should not be required to manually copy/paste context between chats.
+4. ACK flow remains mandatory (`TODO` -> `WIP`) before execution.
+5. Closure must be recorded as `DONE`/`BLOCKED` with short outcome and next
+	suggested action.
 
 ## Chat2 Validation Intake Rule
 
