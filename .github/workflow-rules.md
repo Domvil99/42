@@ -1,4 +1,4 @@
-# Workflow Rules (Chat1 and Chat2)
+# Workflow Rules (Chat1, Chat2, Chat3 and Chat4)
 
 Purpose: keep updates consistent and automatic across projects.
 
@@ -60,13 +60,18 @@ configuraciones esenciales de ningún proyecto.
 
 - Official relay file: `.github/chat-handoff.md`
 - Chat1 registers delegations (owner chat, objective, scope, priority).
-- Specialist chats update progress and final status in the same entry.
+- Specialist chats (`Chat2`, `Chat3`, `Chat4`) update progress and final
+  status in the same entry.
 - Allowed status values: `TODO`, `WIP`, `BLOCKED`, `DONE`, `DEFERRED`.
 - If out of scope, specialist chat must set `BLOCKED` and add redirection.
 - Every handoff must include a shared topic identifier (`Topic ID`) to keep
 	traceability across related tasks.
 - Receiver must ACK by moving entry to `WIP` with a short acceptance note
 	before execution.
+- Scope by specialist chat:
+	- `Chat2`: C implementation, refactor and debugging.
+	- `Chat3`: pending work (`to-do`), prioritization and backlog hygiene.
+	- `Chat4`: study methods, project explanations and review reports.
 
 ## Continuous Communication Optimization (Chat1)
 
@@ -169,6 +174,18 @@ When a support directory is added under `42/` (outside `42/C/`), update:
 1. `.github/projects-index.md`
 2. `.github/project-history.md`
 3. `.github/QUICK_REFERENCE.md`
+
+When study structure changes under `.github/metodos_de_estudio/`, update:
+
+1. `.github/project-history.md`
+2. `.github/QUICK_REFERENCE.md`
+
+Study structure rule:
+
+1. Use English names for project folders (`libft`, `ft_printf`, etc.).
+2. Use English file names (`<project>.md`, `overview.md`, etc.).
+3. Keep explanatory content in Spanish with project technical terminology.
+4. Treat study content as evolutive and update it on future revalidations.
 
 ## External Instruction Trigger
 

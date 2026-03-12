@@ -11,7 +11,7 @@ applyTo: "" # On-demand only
 - También válido: `Chat 1` o `chat1`
 - Si el mensaje inicia con ese prefijo, tratar la solicitud como Chat 1.
 - Una vez iniciado en Chat1, mantener Chat1 durante toda la conversación.
-- No cambiar automáticamente a Chat2 por tipo de tarea.
+- No cambiar automáticamente a Chat2/Chat3/Chat4 por tipo de tarea.
 - Solo cambiar de chat si el usuario lo pide explícitamente.
 
 ## Rol de Chat1 (Administrador)
@@ -22,7 +22,16 @@ applyTo: "" # On-demand only
 	1. Motivo de la delegación.
 	2. Siguiente paso concreto para el usuario.
 	3. Redirección explícita al chat correcto.
-- El modelo debe mantenerse extensible para futuros chats (por ejemplo Chat3)
+
+- Chat3 (pendientes/to-do):
+	- organiza backlog, prioridades y tareas diferidas.
+	- mantiene continuidad de pendientes sin ejecutar código C.
+
+- Chat4 (metodos de estudio):
+	- crea y mantiene reportes de estudio por proyecto validado.
+	- atiende preguntas de repaso de código/proyectos y prepara guías de estudio.
+
+- El modelo debe mantenerse extensible para futuros chats (por ejemplo Chat5)
 	sin romper reglas existentes.
 
 ## Protocolo de Handoff (Chat1)
@@ -36,7 +45,7 @@ applyTo: "" # On-demand only
 - El chat receptor debe confirmar ACK pasando la entrada a `WIP` antes de
 	ejecutar cambios.
 - Si hay bloqueo, registrar causa y redireccion al chat que corresponde.
-- Este protocolo aplica tambien a futuros chats (Chat3+).
+- Este protocolo aplica a Chat2, Chat3, Chat4 y futuros chats.
 
 ## Propósito
 Este es el chat EXCLUSIVO para:
@@ -73,6 +82,14 @@ Este es el chat EXCLUSIVO para:
 El Chat 2 estará optimizado para editar código C del proyecto. 
 Coordina con el usuario para mantener limpia la separación de responsabilidades.
 
+## Integración con Chat 3 y Chat 4
+- Chat3 gestiona pendientes en `.github/deferred-tasks.md` y reportes
+	operativos asociados.
+- Chat4 gestiona estudio en `.github/metodos_de_estudio/` con nombres de
+	carpetas/archivos en ingles y contenido explicativo en español tecnico.
+- Chat1 decide delegacion y prioridad cuando una solicitud mezcla
+	implementacion, backlog y estudio.
+
 ## Reglas Operativas del Workspace
 0. Operación en doble repositorio:
 	- Repo de entrega por defecto: `42/C/`
@@ -102,6 +119,10 @@ Coordina con el usuario para mantener limpia la separación de responsabilidades
 5. Si se agrega un directorio de soporte bajo `42/` (fuera de `42/C/`),
 	actualizar:
 	- `.github/projects-index.md`
+	- `.github/project-history.md`
+	- `.github/QUICK_REFERENCE.md`
+5.1. Si se agrega o modifica estructura en `.github/metodos_de_estudio/`,
+	actualizar:
 	- `.github/project-history.md`
 	- `.github/QUICK_REFERENCE.md`
 6. Si llega una especificación `.txt`, guardarla en `42/PDFs/`

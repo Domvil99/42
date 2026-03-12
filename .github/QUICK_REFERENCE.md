@@ -79,10 +79,28 @@ Raiz/
 │   ├── projects-index.md
 │   ├── project-history.md
 │   ├── reports/
+│   ├── metodos_de_estudio/
+│   │   ├── libft/
+│   │   │   └── libft.md
+│   │   ├── ft_printf/
+│   │   │   └── ft_printf.md
+│   │   └── overview.md
 │   └── workflow-rules.md
 ├── .tools/
 └── .vscode/
 ```
+
+## Chat Map
+
+- Chat1: administración de flujo, coordinación, reglas y tracking.
+- Chat2: implementación/refactor/debug de C.
+- Chat3: gestión de pendientes (`to-do`), prioridades y backlog.
+- Chat4: métodos de estudio, repaso técnico y reportes de aprendizaje.
+
+Regla rápida:
+- Si es código C ejecutable -> Chat2.
+- Si es organización de pendientes -> Chat3.
+- Si es explicación/repaso/estudio -> Chat4.
 
 ## Git Layout (Dual Repo)
 
@@ -178,6 +196,10 @@ realpath /home/domvil99/empresa/42/newLibft/Raiz
 
 ### When a support directory is added under `42/` (outside `42/C/`)
 - `.github/projects-index.md`
+- `.github/project-history.md`
+- `.github/QUICK_REFERENCE.md`
+
+### When `.github/metodos_de_estudio/` changes
 - `.github/project-history.md`
 - `.github/QUICK_REFERENCE.md`
 

@@ -2,7 +2,7 @@
 
 ## Purpose
 Registro de coordinacion entre Chat1 (admin) y chats especialistas
-(Chat2 y futuros Chat3+). Este archivo permite pasar contexto, tareas,
+(Chat2, Chat3 y Chat4). Este archivo permite pasar contexto, tareas,
 bloqueos y resultados sin perder continuidad.
 
 ## Status
@@ -15,7 +15,7 @@ bloqueos y resultados sin perder continuidad.
 ## Entry Template
 | Date | ID | Topic | From -> To | Status | Task | Files | Notes |
 |---|---|---|---|---|---|---|---|
-| YYYY-MM-DD | H-000 | T-000 | Chat1 -> Chat2 | TODO | Short action | `path/a`, `path/b` | Context + success criteria + ACK pending |
+| YYYY-MM-DD | H-000 | T-000 | Chat1 -> Chat2/3/4 | TODO | Short action | `path/a`, `path/b` | Context + success criteria + ACK pending |
 
 ## Active Handoffs
 | Date | ID | Topic | From -> To | Status | Task | Files | Notes |
@@ -59,3 +59,7 @@ entre tareas relacionadas y chats distintos.
    `Shared Topics` y todos los handoffs relacionados reutilizan ese `Topic ID`.
 9. Cada nota de cierre (`DONE` o `BLOCKED`) debe incluir resultado corto y
    siguiente accion sugerida para mantener continuidad operativa.
+10. Rutas sugeridas de delegacion:
+   - Chat1 -> Chat2: implementacion/refactor/debug C.
+   - Chat1 -> Chat3: backlog, pendientes y priorizacion.
+   - Chat1 -> Chat4: estudio, repaso y reportes pedagogicos.

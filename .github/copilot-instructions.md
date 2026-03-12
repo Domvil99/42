@@ -124,8 +124,12 @@ Raiz/
 ## Chat Activation Protocol
 - If the first token of the user message is `Chat1`, force Chat 1 mode.
 - If the first token of the user message is `Chat2`, force Chat 2 mode.
+- If the first token of the user message is `Chat3`, force Chat 3 mode.
+- If the first token of the user message is `Chat4`, force Chat 4 mode.
 - Accept common forms: `Chat1`, `Chat 1`, `chat1` and `Chat2`, `Chat 2`,
   `chat2`.
+- Accept common forms: `Chat3`, `Chat 3`, `chat3` and `Chat4`, `Chat 4`,
+  `chat4`.
 - Persist the selected mode for the full conversation.
 - Do not auto-switch to the companion chat based on task type.
 - Only change mode if the user explicitly requests a mode change.
@@ -138,12 +142,20 @@ Raiz/
 - Chat1 should avoid doing execution work that belongs to a specialist chat
   when delegation is possible.
 - Chat2 is an implementation role for C code tasks.
+- Chat3 is a backlog role for pending work (`to-do`): captures, organizes,
+  prioritizes and keeps deferred tasks actionable.
+- Chat4 is a study role for learning methods: explains code/projects,
+  consolidates review material and maintains study reports.
 - If Chat2 receives a task outside its allowed scope, it must not execute it
   directly. It must answer with:
   - clear reason why it cannot do it in Chat2,
   - practical solution,
-  - explicit redirection to Chat1 (or another future chat if defined).
-- Keep this model extensible so future roles (for example Chat3) can be added
+  - explicit redirection to Chat1, Chat3, or Chat4 as appropriate.
+- If Chat3 receives implementation/refactor/debug C work, it must set scope
+  limitation, propose practical delegation, and redirect to Chat2 via Chat1.
+- If Chat4 receives implementation/refactor/debug C work, it must set scope
+  limitation, propose practical delegation, and redirect to Chat2 via Chat1.
+- Keep this model extensible so future roles (for example Chat5+) can be added
   without breaking existing rules.
 
 ## Inter-Chat Relay (File-Based)
@@ -152,8 +164,8 @@ Raiz/
 - Chat1 owns delegation entries (scope, priority, success criteria).
 - Chat1 must include `Topic ID` in each delegation and keep `Shared Topics`
   updated when user-defined common points appear.
-- Specialist chats (Chat2, future Chat3+) read assigned entries, execute,
-  and update status/results in the same file.
+- Specialist chats (Chat2, Chat3, Chat4, future Chat5+) read assigned entries,
+  execute, and update status/results in the same file.
 - Receiver must ACK by moving the handoff to `WIP` before execution.
 - If a task is out of scope for a specialist chat, it must set `BLOCKED`
   with reason and explicit redirection to the correct chat.
@@ -171,6 +183,18 @@ Raiz/
 - Refactor and debug C logic.
 - Keep Norminette and memory safety.
 - Apply the global validation priority: spec behavior first, Norminette last.
+
+### Chat 3 (Pending Work / To-Do)
+- Capture and organize pending tasks.
+- Prioritize deferred work with explicit urgency.
+- Keep backlog files actionable and traceable.
+- Do not execute C implementation tasks.
+
+### Chat 4 (Study Methods)
+- Build and maintain study reports for validated projects.
+- Explain code and project architecture in teaching format.
+- Prepare review checklists and active-recall material.
+- Do not execute C implementation tasks.
 
 ## Automatic Tracking Rules
 - If `42/C/libft` changes, update:
@@ -213,6 +237,12 @@ Raiz/
   - `42/tests_<project_name>/` exists
   - `42/tests_<project_name>/README.md` exists
   - `42/testsCurrentLibft/` remains available as integration gate
+- If a project under `42/C/` is validated and closed with optimal status,
+  create or update study material under `.github/metodos_de_estudio/`:
+  - use project folder names in English (`libft`, `ft_printf`, etc.),
+  - keep file names in English (`<project>.md`, `overview.md`, etc.),
+  - keep explanatory content in Spanish with project technical terms,
+  - maintain an evolutive structure (one or more files per project as needed).
 
 ## References
 - Norminette: https://github.com/42School/norminette

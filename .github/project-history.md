@@ -12,6 +12,34 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 ## 2026-03-12
 
+- Change type: workflow
+- Paths changed:
+  - `.github/copilot-instructions.md`
+  - `.github/chat-handoff.md`
+  - `.github/workflow-rules.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/instructions/config-guide.instructions.md`
+  - `.github/instructions/c-coding.instructions.md`
+  - `.github/metodos_de_estudio/overview.md`
+  - `.github/metodos_de_estudio/libft/libft.md`
+  - `.github/metodos_de_estudio/ft_printf/ft_printf.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/project-history.md`
+  - `.github/QUICK_REFERENCE.md`
+- Notes:
+  - Chat governance expanded with explicit roles for Chat3 and Chat4.
+  - Chat activation now supports `Chat3`/`Chat 3`/`chat3` and
+    `Chat4`/`Chat 4`/`chat4`.
+  - Inter-chat relay standardized for Chat2, Chat3 and Chat4 with
+    explicit delegation routes from Chat1.
+  - New study structure initialized at `.github/metodos_de_estudio/` with:
+    - project folders in English (`libft`, `ft_printf`),
+    - file names in English (`overview.md`, `<project>.md`),
+    - explanatory content in Spanish with technical terminology.
+  - Initial complete study reports created for validated projects:
+    `libft` and `ft_printf`.
+
 - Change type: spec-txt
 - Paths changed:
   - `42/PDFs/2026-03-12_ft_printf_actualizado.txt`
