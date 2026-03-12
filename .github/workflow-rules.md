@@ -16,6 +16,7 @@ Secuencia obligatoria:
 4. git add, commit, push
 5. Actualizar todos los .md y README
 6. Dejar evidencia de cierre en README y tracking
+7. Ejecutar limpieza post-cierre (ver sección abajo) — siempre como paso final
 
 ### Cierre express (auditoría express)
 Solo permitido tras cierre total exitoso y sin cambios funcionales

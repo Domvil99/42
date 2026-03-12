@@ -96,7 +96,9 @@ Raiz/
 - Before closing any task that touches shared code, verify that all existing
   projects in `42/C/` still compile and pass their tests.
 
-## Post-Closure Cleanup (mandatory after finishing any project)
+## Post-Closure Cleanup (mandatory — always runs after finishing any project)
+- This cleanup is the final step of every completed project closure, without
+  exception. It executes automatically after the cierre total sequence.
 - Remove temporary files and binaries generated outside the project
   (executables in `/tmp`, orphan `.o` files, etc.).
 - Run `make clean` / `make fclean` inside the project to keep only sources
