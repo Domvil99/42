@@ -8,8 +8,8 @@ Purpose: central index for all projects under `42/` and their relation with `42/
 |---|---|---|---|---|
 | libft | 42/C/libft | completed | base | Core library reused by future C projects |
 | ft_printf | 42/C/ft_printf | completed | yes | Standalone deliverable project (coexists by design with integrated copy inside currentLibft) |
-| get_next_line | 42/C/get_next_line | completed | no | Standalone deliverable project closed (spec/behavior/memory/norminette) and ready for optional integration into canonical currentLibft |
-| currentLibft | 42/C/currentLibft | in-progress | base | Integrated base: single parent libft + child ft_printf under `currentLibft/libft/ft_printf`; no `currentLibft/ft_printf` path allowed |
+| get_next_line | 42/C/get_next_line | completed | no | Standalone deliverable; also integrated into currentLibft as child module |
+| currentLibft | 42/C/currentLibft | in-progress | base | Integrated base: libft + ft_printf + get_next_line under `currentLibft/libft/` |
 | testsLibf | 42/testsLibf | completed | yes | Manual test programs for libft validation (maintained for regression) |
 | tests_ft_printf | 42/tests_ft_printf | completed | yes | Manual test harnesses for ft_printf validation (maintained for regression) |
 | tests_currentLibft | 42/tests_currentLibft | in-progress | yes | Integration gate for currentLibft build/link/norminette checks |

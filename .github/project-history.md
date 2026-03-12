@@ -15,6 +15,12 @@ Purpose: chronological log of important decisions, imports, and structure change
 Validación funcional, memoria y Norminette completadas
 Protocolo de cierre total aplicado
 Evidencia registrada en README de tests
+Integrado en currentLibft/libft/get_next_line: 12 de marzo de 2026
+- Compilación mandatory y bonus OK
+- Pruebas funcionales (BUFFER_SIZE=1,42,9999) + bonus multi-fd OK
+- ASAN/UBSAN sin errores
+- Norminette 6/6 archivos OK
+- Resto de currentLibft (libft + ft_printf) sin regresiones
 
 ## Protocolo de cierre
 Cierre total: validación completa, cierre de oro, cierre completo, etc.
