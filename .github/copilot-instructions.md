@@ -185,6 +185,12 @@ Raiz/
   - `.github/projects-index.md`
   - `.github/project-history.md`
   - `.github/QUICK_REFERENCE.md`
+  - For each newly integrated module: generate or update
+    `<module>-functions.md`, `<module>-reference.md`, `<module>-progress.md`.
+  - Update `.github/currentLibft/integration-manifest.md` (consolidated index
+    of all modules, function counts, and public entry points).
+  - These tracking updates are mandatory and execute as part of the cierre
+    total sequence, after validation and before limpieza post-cierre.
 - If a new project appears under `42/C/`, update:
   - `.github/projects-index.md`
   - `.github/project-history.md`

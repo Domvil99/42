@@ -117,6 +117,18 @@ Note (2026-03-11): ft_printf tracking is in closure state.
 Future updates should be recorded in `.github/project-history.md` with a new
 dated block before reopening detailed tracking files.
 
+When `42/C/currentLibft` is updated (new module integrated, functions added
+or modified):
+
+1. Generate or update `<module>-functions.md`, `<module>-reference.md` and
+   `<module>-progress.md` for each newly integrated module.
+2. Update `.github/currentLibft/integration-manifest.md` with the consolidated
+   index of all modules, function counts and public entry points.
+3. Update `.github/projects-index.md` and `.github/project-history.md`.
+4. These tracking updates are part of the cierre total sequence (after
+   validation, Norminette, and git workflow) and must execute before the
+   limpieza post-cierre.
+
 ## Multi-Project Trigger
 
 When a new project is added under `42/C/`, update:

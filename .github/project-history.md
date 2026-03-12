@@ -10,6 +10,38 @@ Purpose: chronological log of important decisions, imports, and structure change
   4. Norminette as final closing step.
   but are superseded by this active rule.
 
+## 2026-03-12
+
+- Change type: spec-txt
+- Paths changed:
+  - `42/PDFs/2026-03-12_libft_v16_6_actualizado.txt`
+  - `.github/project-history.md`
+  - `.github/libft-progress.md`
+- Tracking docs updated:
+  - `.github/project-history.md`
+  - `.github/libft-progress.md`
+- Notes:
+  - New corrected Libft v16.6 baseline received and saved at
+    `42/PDFs/2026-03-12_libft_v16_6_actualizado.txt`.
+  - Diff against old baseline `42/PDFs/2026-03-08_primera_libft.txt`
+    confirmed missing normative points in old conversion.
+  - Relevant normative deltas identified:
+    - explicit prohibition of `restrict` in custom prototypes,
+    - explicit prohibition of compiling with `-std=c99`,
+    - explicit calloc behavior note for `nmemb == 0 || size == 0`,
+    - explicit rule that bonus is evaluated only if mandatory part is perfect.
+  - Full revalidation executed for `42/C/libft` against corrected spec:
+    - `make fclean && make && make bonus` ✅
+    - full tests run in `42/testsLibf` (`make run`) ✅
+    - ASAN/UBSAN tests run (`-fsanitize=address,undefined`) ✅
+    - `norminette 42/C/libft/*.c 42/C/libft/*.h` ✅
+  - Critical anomaly detected:
+    - spec indicates list structure declaration in `libft.h` for bonus,
+      but current implementation keeps bonus API in `libft_bonus.h`.
+  - Propagation risk confirmed:
+    - same header split pattern exists in `42/C/ft_printf/libft` and
+      `42/C/currentLibft/libft`.
+
 ## get_next_line
 Último cierre total: 12 de marzo de 2026
 Validación funcional, memoria y Norminette completadas

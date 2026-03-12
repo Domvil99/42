@@ -16,6 +16,26 @@
 - Libreria oficial para reutilizacion: `42/C/currentLibft/libft`.
 - `42/C/libft` queda como referencia historica de cierre.
 
+## 🔎 Auditoría de Spec Corregida (2026-03-12)
+- Baseline antigua comparada: `42/PDFs/2026-03-08_primera_libft.txt`.
+- Baseline canonica nueva: `42/PDFs/2026-03-12_libft_v16_6_actualizado.txt`.
+- Diferencias normativas relevantes detectadas en la conversion antigua:
+    - prohibicion explicita de `restrict` en prototipos propios,
+    - prohibicion explicita de compilar con `-std=c99`,
+    - aclaracion de `calloc` para `nmemb == 0 || size == 0`,
+    - condicion explicita de evaluacion bonus: mandatory debe estar perfecta.
+- Revalidacion completa de `42/C/libft` contra spec corregida:
+    - `make fclean && make && make bonus` ✅
+    - `42/testsLibf`: `make run` ✅
+    - `42/testsLibf` con ASAN/UBSAN (`-fsanitize=address,undefined`) ✅
+    - Norminette final sobre `*.c` y `*.h` ✅
+- Anomalia critica abierta:
+    - el bonus de listas se declara en `libft_bonus.h` y no en `libft.h`.
+    - la nueva spec indica anadir la declaracion del nodo en `libft.h`.
+- Riesgo de propagacion:
+    - mismo patron detectado en `42/C/ft_printf/libft` (libft2) y
+        `42/C/currentLibft/libft` (current).
+
 ## ✅ Validación Ejecutada
 - Compilación por archivo con `-Wall -Wextra -Werror` sin errores.
 - Compilación completa de librería obligatoria: `make` ✅
