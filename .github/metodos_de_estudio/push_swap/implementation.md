@@ -135,8 +135,8 @@ Para `n = 500`, el coste de radix domina y suele ser competitivo.
 
 1. `has_duplicates` O(n^2): puede optimizarse con ordenado previo/hash.
 2. `find_pos` lineal por nodo: se puede acelerar con mapeo si se permite.
-3. Falta bonus checker en estado actual.
-4. Falta regla `bonus` en Makefile actual.
+3. Mantener sincronia entre mandatory y bonus en `42/C/push_swap` para evitar drift.
+4. En `42/C/push_swap_mandatory`, no existe regla `bonus` por diseno (scope mandatory-only).
 
 ## 9. Checklist de calidad por módulo
 
@@ -181,7 +181,18 @@ Resultados observados:
 - Parse de string única validado tanto en éxito como en rechazo.
 - Sin argumentos no genera salida.
 
+## 11. Actualizacion de mantenimiento (mandatory-only split)
+
+Fecha: 2026-03-13
+
+- Se confirma proyecto paralelo `42/C/push_swap_mandatory` dedicado solo a mandatory.
+- Se corrige ruta de memoria en retorno temprano (`count <= 1`) para evitar fuga en
+	casos como `./push_swap "5"`.
+- Evidencia de memoria posterior al fix: `in use at exit: 0 bytes in 0 blocks`
+	y `ERROR SUMMARY: 0 errors` con Valgrind.
+
 ## Change Log
 
 - 2026-03-13: mapeo técnico inicial basado en implementación actual.
 - 2026-03-13: agregado bloque de evidencia real para Checkpoint 1.
+- 2026-03-13: actualizado estado bonus/mandatory split y corrección de memoria en `push_swap_mandatory`.

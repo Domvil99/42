@@ -163,12 +163,9 @@ Atajo de reconstrucción total (`fclean` + `all`).
 
 #### Regla bonus
 
-Actualmente no existe en el Makefile del proyecto.
-Para cumplir bonus de subject, se recomienda agregar:
-
-- `BONUS_NAME = checker`
-- `bonus: $(BONUS_NAME)`
-- Fuentes específicas de checker y enlace contra libft.
+En `42/C/push_swap` existe regla `bonus` y binario `checker`.
+Adicionalmente, `42/C/push_swap_mandatory` convive como variante
+mandatory-only y no incluye `bonus` por diseño.
 
 ## 7. Errores Frecuentes y Prevención
 
@@ -226,3 +223,4 @@ Para cumplir bonus de subject, se recomienda agregar:
 ## Change Log
 
 - 2026-03-13: versión inicial integral para estudio en paralelo a implementación.
+- 2026-03-13: ajuste de documentación para reflejar bonus activo en `push_swap` y split `push_swap_mandatory`.

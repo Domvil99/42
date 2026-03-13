@@ -96,7 +96,12 @@ En VS Code puedes usar:
 4. Cifra extrema válida: `INT_MIN`, `INT_MAX`.
 5. String única con múltiples espacios.
 
-## 8. Validación del bonus checker (cuando se implemente)
+## 8. Validación del bonus checker (proyecto push_swap)
+
+Nota de alcance:
+
+- `42/C/push_swap` incluye checker bonus.
+- `42/C/push_swap_mandatory` es mandatory-only y no debe incluir checker.
 
 ### 8.1 Flujo válido
 
@@ -127,3 +132,4 @@ Guardar por iteración:
 ## Change Log
 
 - 2026-03-13: guía inicial de validación funcional, memoria y rendimiento.
+- 2026-03-13: actualización de alcance para bonus activo en `push_swap` y variante `push_swap_mandatory`.

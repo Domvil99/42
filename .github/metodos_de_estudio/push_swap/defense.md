@@ -41,8 +41,8 @@ recursos reservados en la ruta de fallo correspondiente.
 ### 2.2 Limitaciones honestas
 
 - Detección de duplicados O(n^2).
-- No está implementado `checker` bonus todavía.
-- Falta regla `bonus` en Makefile actual.
+- El bonus (`checker`) exige validación continua para mantener paridad con mandatory.
+- `push_swap_mandatory` no incluye regla `bonus` por decisión de alcance.
 
 ## 3. Preguntas de evaluador para practicar
 
@@ -71,3 +71,4 @@ recursos reservados en la ruta de fallo correspondiente.
 ## Change Log
 
 - 2026-03-13: banco inicial de defensa técnica para evaluación 42.
+- 2026-03-13: actualización de limitaciones según estado real (bonus activo en push_swap y split mandatory-only).
