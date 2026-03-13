@@ -144,6 +144,10 @@ Raiz/
 - Chat1 should avoid doing execution work that belongs to a specialist chat
   when delegation is possible.
 - Chat2 is an implementation role for C code tasks.
+- Chat2 may execute a technical memory refresh when the request is strictly
+  tied to one active C project and needed for implementation/validation
+  readiness (structure, prior foundations, currentLibft baseline, existing
+  functions/tests, algorithm optimization context).
 - Chat3 is a backlog role for pending work (`to-do`): captures, organizes,
   prioritizes and keeps deferred tasks actionable.
 - Chat4 is a study role for learning methods: explains code/projects,
@@ -159,6 +163,12 @@ Raiz/
     - files/paths involved,
     - prerequisite (if any),
     - suggested target chat.
+- Scope exception for Chat2:
+  - `refrescar memoria` is allowed in technical mode when limited to one C
+    project and used to proceed with implementation/refactor/debug/validation.
+  - It is not allowed for administrative governance tasks (cross-chat
+    approvals, handoff decisions, workflow prioritization), which remain
+    Chat1-only.
 - If Chat3 receives implementation/refactor/debug C work, it must set scope
   limitation, propose practical delegation, and redirect to Chat2 via Chat1.
 - If Chat4 receives implementation/refactor/debug C work, it must set scope
@@ -216,6 +226,11 @@ Raiz/
 - Refactor and debug C logic.
 - Keep Norminette and memory safety.
 - Apply the global validation priority: spec behavior first, Norminette last.
+- Technical Memory Refresh (allowed scope):
+  - Refresh technical baseline for one C project (project structure, existing
+    functions, tests, currentLibft state, available specs, pending technical
+    prerequisites) to improve implementation quality.
+  - Do not modify handoffs or perform Chat1 governance decisions.
 
 ### Chat 3 (Pending Work / To-Do)
 - Capture and organize pending tasks.
@@ -262,9 +277,15 @@ Raiz/
   - Log it in `.github/project-history.md`
   - Apply any required updates to tracking files
 - If the user says `refrescar memoria` or `(refrescar memoria)`:
-  - refresh full workspace baseline (git status, tracking docs, available specs,
-    deferred tasks)
-  - summarize current state before starting implementation
+  - determine context before execution:
+    - Technical context (single C project; implementation/refactor/debug/
+      validation/optimization readiness): Chat2 may execute refresh.
+    - Administrative context (cross-chat priorities/approvals/workflow
+      governance): must be executed by Chat1.
+  - for technical context, refresh project baseline (git status, relevant
+    tracking docs, available specs, existing functions/tests, currentLibft
+    references used by that project)
+  - summarize refreshed technical state before starting implementation
   - then proceed with the requested project work
 - If a new project appears under `42/C/`, also ensure:
   - `42/tests_<project_name>/` exists

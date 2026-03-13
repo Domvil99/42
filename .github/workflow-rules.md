@@ -233,17 +233,33 @@ When the user says `guardalo para despues`:
 
 When the user says `refrescar memoria` or `(refrescar memoria)`:
 
-1. Run a full context refresh before starting a new project:
-	- current repo status (`Raiz/` and `42/C/`)
-	- current project index/history state
-	- current instruction/spec files available in `42/PDFs/`
-	- active deferred tasks that could impact next work
-2. Summarize the refreshed state in concise bullets (what is ready, what is
-	pending, what is blocked).
-3. Store a short session note with the refreshed baseline for the current
-	conversation.
-4. If new facts are confirmed, update repository memory with a short note.
-5. Only after this refresh, continue with implementation steps.
+1. Determine refresh scope before execution:
+	- Technical variant (single C project for implementation/refactor/debug/
+	  validation/optimization): Chat2 may execute.
+	- Administrative variant (cross-chat approvals, handoffs, prioritization,
+	  workflow governance): only Chat1 may execute.
+2. For technical variant, refresh project baseline:
+	- project structure and active scope
+	- existing functions/tests and relevant specs in `42/PDFs/`
+	- currentLibft references usable for the target project
+	- git status relevant to that project scope
+3. Summarize refreshed technical state in concise bullets.
+4. Continue directly with technical implementation steps.
+5. If scope is ambiguous or multi-project governance-related, escalate to Chat1.
+
+## Technical Memory Refresh Variant (Chat2)
+
+Definition:
+- Technical refresh by Chat2 is allowed only to improve execution quality inside
+	one active C project.
+- It does not include governance decisions or inter-chat coordination.
+
+Boundaries:
+1. Allowed: technical baseline reconstruction, function/test/spec review,
+	currentLibft reference checks, pre-validation context.
+2. Not allowed: handoff approvals/rejections, cross-chat priority decisions,
+	global workflow governance changes.
+3. Safety rule: if in doubt, redirect to Chat1 with concise intake context.
 
 ## Definitive Closure Trigger
 

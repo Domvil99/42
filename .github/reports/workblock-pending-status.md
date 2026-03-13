@@ -107,3 +107,31 @@ Pending changes:
 - Delivery repo commit: not required in this block
 - Workspace repo commit: pending
 
+---
+
+Date: 2026-03-13
+Block: Habilitacion de refresco tecnico de memoria en Chat2
+
+## Repo entrega C (42/C/)
+
+Pending changes:
+- None.
+
+## Repo workspace Raiz
+
+Pending changes:
+- `.github/copilot-instructions.md`
+- `.github/instructions/c-coding.instructions.md`
+- `.github/workflow-rules.md`
+- `.github/project-history.md`
+- `.github/reports/workblock-pending-status.md`
+
+## Closure
+
+- Scope: autorizar `refrescar memoria` en Chat2 solo en contexto tecnico de un
+	proyecto C, preservando gobernanza exclusiva de Chat1.
+- Validation: reglas alineadas en politica central, instruccion especializada
+	y workflow con desambiguacion tecnico/admin.
+- Delivery repo commit: not required in this block
+- Workspace repo commit: pending
+

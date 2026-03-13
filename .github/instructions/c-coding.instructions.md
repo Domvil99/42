@@ -26,6 +26,31 @@ applyTo: "**/*.c|**/*.h"
 	2. Solución práctica o alternativa viable.
 	3. Indicación explícita del chat correcto al que debe dirigirse el usuario.
 
+## Autorizacion de Refrescar Memoria en Chat2 (Variante Tecnica)
+
+Chat2 puede ejecutar `refrescar memoria` SOLO en contexto tecnico.
+
+Permitido en Chat2:
+- Revisar estructura y estado de un proyecto C activo.
+- Revisar fundamentos y bases tecnicas de proyectos previos reutilizables.
+- Revisar estado de `42/C/currentLibft/libft` cuando el subject permita su uso.
+- Revisar funciones existentes, tests y specs para preparar implementacion,
+	validacion, analisis de funciones u optimizacion de algoritmos.
+- Consolidar baseline tecnico previo a editar codigo C.
+
+No permitido en Chat2 (requiere Chat1):
+- Aprobar/rechazar handoffs (`APPROVED`/`REJECTED`).
+- Coordinar prioridades cross-chat o gobernanza del workflow.
+- Cambiar reglas operativas globales fuera del contexto tecnico de ejecucion.
+
+Procedimiento operativo:
+1. Detectar si `refrescar memoria` es tecnico o administrativo.
+2. Si es tecnico (un proyecto C, objetivo de implementacion/validacion),
+	ejecutar refresh y resumir baseline.
+3. Si es administrativo (priorizacion, aprobaciones, relay), redirigir a Chat1
+	con motivo y siguiente accion.
+4. Tras refresh tecnico, continuar directamente con la tarea de C solicitada.
+
 ## Protocolo de Handoff (Chat2)
 - Chat2 usa `.github/chat-handoff.md` como entrada/salida de trabajo delegado.
 - Al iniciar una tarea delegada: validar `Topic ID`, alcance, archivos y

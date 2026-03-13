@@ -12,6 +12,26 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 ## 2026-03-13
 
+- Change type: workflow
+- Paths changed:
+  - `.github/copilot-instructions.md`
+  - `.github/instructions/c-coding.instructions.md`
+  - `.github/workflow-rules.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/copilot-instructions.md`
+  - `.github/instructions/c-coding.instructions.md`
+  - `.github/workflow-rules.md`
+  - `.github/project-history.md`
+- Notes:
+  - Se habilita oficialmente variante tecnica de `refrescar memoria` en Chat2
+    para un proyecto C activo.
+  - Alcance permitido: estructura, bases previas, currentLibft utilizable,
+    funciones/tests/specs para implementacion/validacion/optimizacion.
+  - Limite mantenido: gobernanza cross-chat, decisiones `APPROVED/REJECTED` y
+    priorizacion siguen siendo Chat1-only.
+  - Regla de seguridad: contexto ambiguo o administrativo se escala a Chat1.
+
 - Change type: closure
 - Paths changed:
   - `.github/chat-handoff.md`
