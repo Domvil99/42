@@ -48,6 +48,8 @@ Raiz/
 │   ├── C/
 │   │   ├── libft/
 │   │   ├── ft_printf/
+│   │   ├── push_swap/
+│   │   ├── push_swap_mandatory/
 │   │   └── currentLibft/
 │   ├── PDFs/
 │   │   ├── 2026-03-08_primera_libft.txt
@@ -60,6 +62,8 @@ Raiz/
 │   ├── tests_currentLibft/
 │   │   └── README.md
 │   ├── tests_push_swap/
+│   │   └── README.md
+│   ├── tests_push_swap_mandatory/
 │   │   └── README.md
 │   └── tests_<project_name>/
 │       └── README.md
@@ -77,6 +81,9 @@ Raiz/
 │   ├── ft_printf-functions.md
 │   ├── ft_printf-progress.md
 │   ├── ft_printf-reference.md
+│   ├── push_swap-functions.md
+│   ├── push_swap-progress.md
+│   ├── push_swap-reference.md
 │   ├── projects-index.md
 │   ├── project-history.md
 │   ├── reports/
@@ -95,6 +102,13 @@ Raiz/
 │   │   │   └── dictionary.md
 │   │   ├── currentLibft/
 │   │   │   └── currentLibft.md
+│   │   │   └── dictionary.md
+│   │   ├── push_swap/
+│   │   │   └── push_swap.md
+│   │   │   └── implementation.md
+│   │   │   └── validation.md
+│   │   │   └── defense.md
+│   │   │   └── case-studies.md
 │   │   │   └── dictionary.md
 │   │   └── overview.md
 │   └── workflow-rules.md
@@ -175,6 +189,13 @@ realpath /home/domvil99/empresa/42/newLibft/Raiz
 - `.github/ft_printf-reference.md`
 - Note (2026-03-11): ft_printf tracking is in closure state.
   Post-closure updates should be logged first in `.github/project-history.md`.
+
+### When `42/C/push_swap` changes
+- `.github/push_swap-functions.md`
+- `.github/push_swap-progress.md`
+- `.github/push_swap-reference.md`
+- `.github/metodos_de_estudio/push_swap/push_swap.md` (si hay cambios de arquitectura
+    o estrategia)
 
 ### currentLibft Integration Rule
 - `42/C/currentLibft` must keep a single parent `libft` at:

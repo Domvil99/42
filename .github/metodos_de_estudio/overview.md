@@ -3,6 +3,11 @@
 Este directorio centraliza el material de estudio de proyectos validados y
 cerrados con estado optimo.
 
+Excepcion operativa activa:
+
+- `push_swap` puede documentarse en paralelo a su implementacion cuando Chat1
+   lo autoriza explicitamente por prioridad de estudio.
+
 ## Scope
 
 - Cada proyecto cerrado en `42/C/` puede tener su carpeta propia.
@@ -16,6 +21,7 @@ cerrados con estado optimo.
 - `ft_printf`
 - `get_next_line`
 - `currentLibft`
+- `push_swap` (parallel-study mode)
 
 ## Mandatory Structure Rules
 
@@ -66,3 +72,5 @@ Para considerar un reporte como "completo", debe incluir:
 - 2026-03-12: agregado reporte inicial para `get_next_line`.
 - 2026-03-12: incorporada regla de diccionario global y diccionario por
    proyecto; agregado scope de `currentLibft`.
+- 2026-03-13: agregado `push_swap` en modo de estudio paralelo con handoff
+   formal de sincronizacion Chat1 -> Chat2/Chat4.

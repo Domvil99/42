@@ -135,3 +135,34 @@ Pending changes:
 - Delivery repo commit: not required in this block
 - Workspace repo commit: pending
 
+---
+
+Date: 2026-03-13
+Block: Inicio de implementacion documental de push_swap (estudio paralelo)
+
+## Repo entrega C (42/C/)
+
+Pending changes:
+- None.
+
+## Repo workspace Raiz
+
+Pending changes:
+- `.github/chat-handoff.md`
+- `.github/project-history.md`
+- `.github/reports/workblock-pending-status.md`
+- `.github/metodos_de_estudio/push_swap/push_swap.md`
+- `.github/metodos_de_estudio/push_swap/implementation.md`
+- `.github/metodos_de_estudio/push_swap/case-studies.md`
+- `.github/push_swap-progress.md`
+
+## Closure
+
+- Scope: crear informe de estudio completo de `push_swap` en modo incremental,
+  sincronizado con implementacion activa.
+- Validation: handoff formal Chat1 -> Chat2/Chat4 creado (`H-013`, `H-014`),
+	`H-013` en `WIP` con Checkpoint 1 validado (parsing + errores) y evidencia
+	documentada en progreso/implementation/case-studies.
+- Delivery repo commit: not required in this block
+- Workspace repo commit: pending
+

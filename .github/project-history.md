@@ -12,6 +12,134 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 ## 2026-03-13
 
+- Change type: project
+- Paths changed:
+  - `42/C/push_swap_mandatory/Makefile`
+  - `42/C/push_swap_mandatory/push_swap.c`
+  - `42/C/push_swap_mandatory/push_swap.h`
+  - `42/C/push_swap_mandatory/parse.c`
+  - `42/C/push_swap_mandatory/parse_utils.c`
+  - `42/C/push_swap_mandatory/stack_build.c`
+  - `42/C/push_swap_mandatory/stack_utils.c`
+  - `42/C/push_swap_mandatory/ops_swap.c`
+  - `42/C/push_swap_mandatory/ops_push.c`
+  - `42/C/push_swap_mandatory/ops_rotate.c`
+  - `42/C/push_swap_mandatory/ops_reverse_rotate.c`
+  - `42/C/push_swap_mandatory/free_utils.c`
+  - `42/C/push_swap_mandatory/sort_small.c`
+  - `42/C/push_swap_mandatory/sort_chunk.c`
+  - `42/C/push_swap_mandatory/sort_radix.c`
+  - `42/C/push_swap_mandatory/libft/Makefile`
+  - `42/C/push_swap_mandatory/libft/ft_printf/Makefile`
+  - `42/C/push_swap_mandatory/libft/get_next_line/Makefile`
+  - `42/tests_push_swap_mandatory/README.md`
+  - `.github/projects-index.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/projects-index.md`
+  - `.github/project-history.md`
+- Notes:
+  - Se crea `push_swap_mandatory` como proyecto independiente solo mandatory.
+  - Se define Makefile exclusivo mandatory (sin target bonus en la raiz).
+  - Se eliminan residuos `_bonus` en archivos y referencias de build dentro del arbol copiado.
+  - Verificacion final: compilacion de `push_swap_mandatory` OK, Norminette top-level OK, y busqueda `_bonus` sin coincidencias.
+
+- Change type: validation-report
+- Paths changed:
+  - `.github/push_swap-progress.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/push_swap-progress.md`
+  - `.github/project-history.md`
+- Notes:
+  - Checkpoint 2 de `push_swap` ejecutado con validación por lotes y estabilidad.
+  - Benchmark repetido con `checker_linux`:
+    - 20 muestras de 100 números -> `20/20 OK`, `max_ops100=631`.
+    - 10 muestras de 500 números -> `10/10 OK`, `max_ops500=5260`.
+  - Validación de errores en `push_swap`:
+    - `duplicado`, `overflow` y `string vacía` -> `Error` + exit `1`.
+  - `checker` propio validado:
+    - instrucción inválida -> `Error` + exit `1`,
+    - secuencia válida no ordenada -> `KO`,
+    - sin argumentos -> salida vacía.
+  - ASAN/UBSAN en `push_swap` y `checker` sin hallazgos.
+
+- Change type: project
+- Paths changed:
+  - `42/C/push_swap/Makefile`
+  - `42/C/push_swap/checker_bonus.c`
+  - `42/C/push_swap/main.c`
+  - `42/C/push_swap/sort_chunk.c`
+  - `42/C/push_swap/push_swap.h`
+  - `.github/projects-index.md`
+  - `.github/push_swap-progress.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/projects-index.md`
+  - `.github/push_swap-progress.md`
+  - `.github/project-history.md`
+- Notes:
+  - `push_swap` pasa a implementación técnica activa con ACK de Chat2 en H-009.
+  - Se integra estrategia `chunk sort` para tamaños medios (`<=500`) manteniendo
+    `small sort` y `radix` como soporte.
+  - Evidencia funcional consolidada con `checker_linux`:
+    - caso base de control: `OK`,
+    - errores críticos (`duplicado`, `overflow`, `string vacía`) -> `Error`.
+  - Benchmark de muestra tras optimización:
+    - 100 números: `602` operaciones (`OK`),
+    - 500 números: `5182` operaciones (`OK`).
+  - Bonus iniciado con `checker_bonus.c` y regla `bonus` en Makefile.
+
+- Change type: validation-report
+- Paths changed:
+  - `.github/chat-handoff.md`
+  - `.github/push_swap-progress.md`
+  - `.github/metodos_de_estudio/push_swap/implementation.md`
+  - `.github/metodos_de_estudio/push_swap/case-studies.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/chat-handoff.md`
+  - `.github/push_swap-progress.md`
+  - `.github/project-history.md`
+- Notes:
+  - Se ejecuta Checkpoint 1 de `push_swap` (parsing + validacion de errores)
+    con evidencia real en terminal.
+  - Handoff `H-013` pasa a `WIP` con ACK y prueba de sincronizacion activa
+    entre implementacion y estudio incremental.
+  - Se registran resultados verificados en material de estudio para evitar
+    drift entre codigo y documentacion.
+
+- Change type: study
+- Paths changed:
+  - `.github/metodos_de_estudio/push_swap/push_swap.md`
+  - `.github/metodos_de_estudio/push_swap/implementation.md`
+  - `.github/metodos_de_estudio/push_swap/validation.md`
+  - `.github/metodos_de_estudio/push_swap/defense.md`
+  - `.github/metodos_de_estudio/push_swap/case-studies.md`
+  - `.github/metodos_de_estudio/push_swap/dictionary.md`
+  - `.github/push_swap-functions.md`
+  - `.github/push_swap-progress.md`
+  - `.github/push_swap-reference.md`
+  - `.github/chat-handoff.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/chat-handoff.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/project-history.md`
+  - `.github/push_swap-functions.md`
+  - `.github/push_swap-progress.md`
+  - `.github/push_swap-reference.md`
+- Notes:
+  - Se inicia informe de estudio integral de `push_swap` en modo paralelo a la
+    implementacion activa, con estructura modular ampliable.
+  - Se crean anexos de implementacion, validacion, defensa y casos de estudio
+    para aprendizaje progresivo tipo humano.
+  - Se documentan exclusivamente las funciones de libft usadas por `push_swap`:
+    `ft_split` y `ft_memcpy`.
+  - Se activa sincronizacion formal en handoff con `H-013` (Chat2) y `H-014`
+    (Chat4) bajo `T-007` para mantener desarrollo + estudio en paralelo.
+
 - Change type: workflow
 - Paths changed:
   - `.github/copilot-instructions.md`
