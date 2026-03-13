@@ -139,6 +139,8 @@ Raiz/
 ## Chat Governance Model (User Rule)
 - Chat1 is the admin role ("jefe"): coordinates work, decides workflow,
   and delegates execution to the appropriate chat.
+- Chat1 is the only control point for cross-chat approvals: every out-of-scope
+  request must be escalated to Chat1 for explicit `APPROVED` or `REJECTED`.
 - Chat1 should avoid doing execution work that belongs to a specialist chat
   when delegation is possible.
 - Chat2 is an implementation role for C code tasks.
@@ -150,7 +152,13 @@ Raiz/
   directly. It must answer with:
   - clear reason why it cannot do it in Chat2,
   - practical solution,
-  - explicit redirection to Chat1, Chat3, or Chat4 as appropriate.
+  - explicit redirection to Chat1 as approval authority,
+  - minimal reusable context block for relay intake:
+    - request summary,
+    - expected outcome,
+    - files/paths involved,
+    - prerequisite (if any),
+    - suggested target chat.
 - If Chat3 receives implementation/refactor/debug C work, it must set scope
   limitation, propose practical delegation, and redirect to Chat2 via Chat1.
 - If Chat4 receives implementation/refactor/debug C work, it must set scope
@@ -162,13 +170,29 @@ Raiz/
 - No direct chat-to-chat channel is available.
 - Coordination between chats is handled through `.github/chat-handoff.md`.
 - Chat1 owns delegation entries (scope, priority, success criteria).
+- Chat1 must explicitly decide each out-of-scope intake as `APPROVED` or
+  `REJECTED` and record that decision in the handoff entry notes.
+- If `REJECTED`, Chat1 must include concise reason and next action for the
+  user to address directly with Chat1.
+- If `APPROVED`, Chat1 must create or update the execution handoff and assign
+  it to the proper specialist chat (or Chat1 if admin execution applies).
 - Chat1 must include `Topic ID` in each delegation and keep `Shared Topics`
   updated when user-defined common points appear.
 - Specialist chats (Chat2, Chat3, Chat4, future Chat5+) read assigned entries,
   execute, and update status/results in the same file.
+- Status model for relay execution:
+  - `TODO`: registered, not started.
+  - `WAITING_FOR_PREREQUISITE`: blocked by missing prerequisite or gate.
+  - `WIP`: active execution after ACK.
+  - `REVIEW_PENDING`: execution done, waiting validation (user/admin gate).
+  - `BLOCKED`: blocked by scope/dependency issue.
+  - `DONE`: validated closure.
+  - `DEFERRED`: delayed by priority.
 - Receiver must ACK by moving the handoff to `WIP` before execution.
 - If a task is out of scope for a specialist chat, it must set `BLOCKED`
   with reason and explicit redirection to the correct chat.
+- Mandatory prerequisite gate: no implementation handoff can move to `WIP`
+  until its `Prerequisite` is `DONE` and its `Gate` is unlocked.
 - Closing notes in `DONE` or `BLOCKED` must include brief outcome and next
   suggested action.
 - The handoff file is the canonical source for cross-chat continuity.
@@ -177,6 +201,9 @@ Raiz/
     clear redirection + minimal reusable context block.
   - Chat1 must create/update the formal handoff entry and continue execution
     flow without asking the user to manually copy/paste between chats.
+  - Chat1 must return a decision outcome to requester:
+    - `REJECTED`: reason + next step with Chat1.
+    - `APPROVED`: concise go-ahead and assignment info.
   - ACK (`TODO` -> `WIP`) remains mandatory before execution.
 
 ### Chat 1 (Config and Workflow)

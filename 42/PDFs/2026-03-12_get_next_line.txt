@@ -5,11 +5,11 @@ Resumen: El objetivo de este proyecto es simple: programar una función que devu
 Versión: ?
 
 Índice general
-I. Objetivos	2
-II. Instrucciones generales	3
-III. Parte obligatoria	4
-IV. Parte bonus	7
-V. Entrega y evaluación	8
+I. Objetivos
+II. Instrucciones generales
+III. Parte obligatoria
+IV. Parte bonus
+V. Entrega y evaluación
 
 Capítulo I Objetivos
 Este proyecto no solo te permitirá añadir una función bastante práctica a tu colección, también te hará aprender el increíble concepto de las variables estáticas en C.

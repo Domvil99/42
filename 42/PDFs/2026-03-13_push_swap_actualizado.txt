@@ -1,0 +1,376 @@
+Push_swap
+Porque Swap_push no suena tan natural
+
+
+
+Resumen:
+En este proyecto, ordenarás datos en una pila usando un conjunto limitado de instrucciones, con el objetivo de alcanzar el menor número posible de acciones. Para lograrlo, deberás trabajar con distintos algoritmos y elegir el más adecuado para ordenar los datos de forma optimizada.
+Versión: 10.0
+
+
+Contenidos
+I Prólogo
+II Introducción
+III Objetivos
+IV Instrucciones Comunes
+V Parte Obligatoria
+  V.1 Las reglas
+  V.2 Ejemplo
+  V.3 El programa "push_swap"
+  V.4 Benchmark
+VI Parte Bonus
+  VI.1 El programa "checker"
+VII Entrega y evaluación entre pares
+
+
+
+Capítulo I Prólogo
+□ C
+#include <stdio.h>
+
+int main(void)
+{
+	printf("hello, world\n");
+	return 0;
+}
+
+□ ASM
+cseg segment
+assume cs:cseg, ds:cseg
+org 100h
+main proc
+jmp debut
+mess db 'Hello world!$'
+debut:
+mov dx, offset mess
+mov ah, 9
+int 21h
+ret
+main endp
+cseg ends
+end main
+
+□ LOLCODE
+HAI
+CAN HAS STDIO?
+VISIBLE "HELLO WORLD!"
+KTHXBYE
+
+□ PHP
+<?php
+echo "Hello world!";
+?>
+
+□ BrainFuck
+++++++++++[>+++++++>++++++++++>+++>+<<<<-]
+>++.>+.+++++++..+++.>++.
+<<+++++++++++++++.>.+++.------.--------.>+.>.
+
+
+□ C#
+using System;
+
+public class HelloWorld {
+	public static void Main () {
+		Console.WriteLine("Hello world!");
+	}
+}
+
+□ HTML5
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hello world !</title>
+	</head>
+	<body>
+		<p>Hello World !</p>
+	</body>
+</html>
+
+□ YASL
+"Hello world!"
+print
+
+□ OCaml
+let main () =
+	print_endline "Hello world !"
+
+let _ = main ()
+
+
+
+Capítulo II Introducción
+El proyecto Push swap es un desafío algorítmico simple pero muy estructurado: tienes que ordenar datos.
+Dispones de un conjunto de valores enteros, 2 pilas y un conjunto de instrucciones para manipular ambas pilas.
+   ¿Tu objetivo? Escribir un programa en C llamado push_swap que calcule y muestre la secuencia más corta de instrucciones de Push_swap necesaria para ordenar los enteros dados.
+¿Fácil?
+Ya veremos...
+
+
+Capítulo III Objetivos
+Escribir un algoritmo de ordenación es siempre un paso crucial en el camino de un desarrollador. A menudo es el primer encuentro con el concepto de complejidad.
+Los algoritmos de ordenación y sus complejidades son temas habituales en entrevistas de trabajo. Es un buen momento para explorar estos conceptos, ya que probablemente los encontrarás en el futuro.
+Los objetivos de aprendizaje de este proyecto son el rigor, la destreza en C y la aplicación de algoritmos básicos, con especial atención a su complejidad.
+Ordenar valores es sencillo, pero encontrar la manera más rápida de hacerlo es más desafiante. El método de ordenación más eficiente puede variar según la disposición de los enteros.
+
+
+
+Capítulo IV
+Instrucciones Comunes
+
+□ Tu proyecto debe estar escrito en C.
+□ Tu proyecto debe estar escrito conforme a la Norma. Si tienes archivos/funciones de bonus, se incluyen en la verificación de norma, y recibirás un 0 si hay algún error de norma.
+□ Tus funciones no deben terminar de forma inesperada (fallo de segmentación, error de bus, doble liberación de memoria, etc.) salvo por comportamiento indefinido. Si esto ocurre, tu proyecto se considerará no funcional y recibirá un 0 durante la evaluación.
+□ Toda la memoria asignada en el heap debe liberarse correctamente cuando sea necesario. No se tolerarán fugas de memoria.
+□ Si el subject lo requiere, debes entregar un Makefile que compile tus archivos fuente hacia la salida requerida con los flags -Wall, -Wextra y -Werror, usando cc. Además, tu Makefile no debe realizar relinks innecesarios.
+□ Tu Makefile debe contener al menos las reglas $(NAME), all, clean, fclean y re.
+□ Para entregar los bonus de tu proyecto, debes incluir una regla bonus en el Makefile, que añadirá todas las cabeceras, librerías o funciones que no están permitidas en la parte principal del proyecto. Los bonus deben colocarse en archivos _bonus.{c/h}, salvo que el subject indique otra cosa. La evaluación de la parte obligatoria y la de bonus se realiza por separado.
+□ Si tu proyecto permite el uso de tu libft, debes copiar sus fuentes y su Makefile asociado en una carpeta libft. El Makefile de tu proyecto debe compilar la librería usando su Makefile y luego compilar el proyecto.
+□ Te animamos a crear programas de prueba para tu proyecto, aunque este trabajo no debe entregarse y no será evaluado. Te dará la oportunidad de probar fácilmente tu trabajo y el de tus compañeros. Estos tests te serán especialmente útiles durante la defensa. De hecho, durante la defensa eres libre de usar tus tests y/o los del compañero que estás evaluando.
+□ Entrega tu trabajo en el repositorio Git asignado. Solo el trabajo en el repositorio Git será evaluado. Si Deepthought está asignado para evaluar tu trabajo, lo hará después de tus evaluaciones entre pares. Si ocurre algún error en cualquier sección de tu trabajo durante la evaluación de Deepthought, la evaluación se detendrá.
+
+
+
+Capítulo V Parte Obligatoria
+V.1 Las reglas
+□ Tienes 2 pilas llamadas a y b.
+□ Al inicio:
+  La pila a contiene un número aleatorio de enteros negativos y/o positivos únicos.
+  La pila b está vacía.
+  El objetivo es ordenar los números de la pila a en orden ascendente. Para lograrlo, dispones de las siguientes operaciones:
+  sa (swap a): Intercambia los 2 primeros elementos en la cima de la pila a.
+  No hace nada si hay un solo elemento o ninguno.
+  sb (swap b): Intercambia los 2 primeros elementos en la cima de la pila b.
+  No hace nada si hay un solo elemento o ninguno.
+  ss : sa y sb al mismo tiempo.
+  pa (push a): Toma el primer elemento en la cima de b y lo coloca en la cima de a.
+  No hace nada si b está vacía.
+  pb (push b): Toma el primer elemento en la cima de a y lo coloca en la cima de b.
+  No hace nada si a está vacía.
+  ra (rotate a): Desplaza hacia arriba todos los elementos de la pila a en 1.
+  El primer elemento pasa a ser el último.
+  rb (rotate b): Desplaza hacia arriba todos los elementos de la pila b en 1.
+  El primer elemento pasa a ser el último.
+  rr : ra y rb al mismo tiempo.
+  rra (reverse rotate a): Desplaza hacia abajo todos los elementos de la pila a en 1.
+  El último elemento pasa a ser el primero.
+  rrb (reverse rotate b): Desplaza hacia abajo todos los elementos de la pila b en 1.
+  El último elemento pasa a ser el primero.
+  rrr : rra y rrb al mismo tiempo.
+
+
+V.2 Ejemplo
+Para ilustrar el efecto de algunas de estas instrucciones, ordenemos una lista aleatoria de enteros. En este ejemplo, consideramos que ambas pilas crecen por la derecha.
+
+
+----------------------------------------------------------------------------------------------------------
+Init a and b:
+2136
+58_
+_
+a b
+----------------------------------------------------------------------------------------------------------
+Exec sa:
+1236
+58_
+_
+a b
+----------------------------------------------------------------------------------------------------------
+Exec pb pb pb:
+6 3
+5 2
+8 1
+_ _
+a b
+----------------------------------------------------------------------------------------------------------
+Exec ra rb (equiv. to rr):
+5 2
+8 1
+6 3
+_ _
+a b
+----------------------------------------------------------------------------------------------------------
+Exec rra rrb (equiv. to rrr):
+6 3
+5 2
+8 1
+_ _
+a b
+----------------------------------------------------------------------------------------------------------
+Exec sa:
+5 3
+6 2
+8 1
+_ _
+a b
+----------------------------------------------------------------------------------------------------------
+Exec pa pa pa:
+12356
+8_
+_
+a b
+----------------------------------------------------------------------------------------------------------
+
+
+Los enteros en la pila a se ordenan en 12 instrucciones. ¿Puedes hacerlo mejor?
+
+
+
+
+V.3 El programa "push_swap"
+
+
+Nombre del programa:
+  push_swap
+Archivos a entregar:
+  Makefile, *.h, *.c
+Makefile:
+  NAME, all, clean, fclean, re
+Argumentos:
+  pila a:	Una lista de enteros
+Funciones externas:
+  □ read, write, malloc, free, exit
+  □ ft_printf o cualquier equivalente que TÚ hayas programado
+Libft autorizada:
+  Sí
+Descripción:
+  Ordenar pilas.
+
+Tu proyecto debe cumplir las siguientes reglas:
+□ Debes entregar un Makefile que compile tus archivos fuente. No debe hacer relink.
+□ Las variables globales están prohibidas.
+□ Debes escribir un programa llamado push_swap que recibe como argumento la pila a formateada como una lista de enteros. El primer argumento debe estar en la cima de la pila (cuidado con el orden).
+□ El programa debe mostrar la secuencia más corta de instrucciones necesaria para ordenar la pila a, con el número menor en la cima.
+□ Las instrucciones deben estar separadas por un '\n' y nada más.
+□ El objetivo es ordenar la pila con el menor número posible de operaciones. Durante el proceso de evaluación, el número de instrucciones encontradas por tu programa se comparará con un límite: el número máximo de operaciones tolerado. Si tu programa muestra una lista más larga o los números no están ordenados correctamente, tu nota será 0.
+□ Si no se especifican parámetros, el programa no debe mostrar nada y debe volver al prompt.
+□ En caso de error, debe mostrar "Error" seguido de un '\n' en el error estándar. Los errores incluyen, por ejemplo: algunos argumentos que no son enteros, algunos argumentos que superan los límites del tipo entero y/o la presencia de duplicados.
+
+$>./push_swap 2 1 3 6 5 8
+sa
+pb
+pb
+pb
+sa
+pa
+pa
+pa
+$>./push_swap 0 one 2 3
+Error
+$>
+
+   Durante el proceso de evaluación, se proporcionará un binario para comprobar correctamente tu programa.
+ Funcionará de la siguiente manera:
+
+$>ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l
+6
+$>ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_OS $ARG
+OK
+$>
+
+   Si el programa checker_OS muestra "KO", significa que tu push_swap generó una lista de instrucciones que no ordena los números.
+
+	El programa checker_OS está disponible en los recursos del proyecto
+	en la intranet.
+	Puedes encontrar una descripción de su funcionamiento en la Parte
+	Bonus de este documento.
+
+V.4 Benchmark
+Para validar este proyecto, debes realizar ciertas ordenaciones con un número mínimo de operaciones:
+
+□ Para la validación máxima del proyecto (100%) y elegibilidad para bonuses, debes:
+  Ordenar 100 números aleatorios en menos de 700 operaciones.
+  Ordenar 500 números aleatorios en no más de 5500 operaciones.
+□ Para la validación mínima del proyecto (lo que implica una nota mínima del 80%), puedes lograrlo con distintos promedios:
+  100 números en menos de 1100 operaciones y 500 números en menos de 8500 operaciones
+  100 números en menos de 700 operaciones y 500 números en menos de 11500 operaciones
+  100 números en menos de 1300 operaciones y 500 números en menos de 5500 operaciones
+...
+Todo esto se verificará durante tu evaluación.
+
+	Si deseas completar la parte bonus, debes validar exhaustivamente
+	el proyecto con cada paso del benchmark alcanzando la puntuación
+	más alta posible.
+
+
+Capítulo VI Parte Bonus
+Dada su simplicidad, este proyecto ofrece pocas oportunidades de funcionalidades adicionales. Sin embargo, ¿por qué no crear tu propio checker?
+
+
+
+	Gracias al programa checker, podrás verificar si la lista de
+	instrucciones generada por el programa push_swap ordena
+	correctamente la pila.
+
+
+	La parte bonus solo se evaluará si la parte obligatoria es
+	perfecta. Perfecta significa que la parte obligatoria ha sido
+	completada en su totalidad y funciona sin errores. En este
+	proyecto, esto implica validar todos los benchmarks sin excepción.
+	Si no has superado TODOS los requisitos obligatorios, tu parte
+	bonus no se evaluará en absoluto.
+
+
+
+VI.1 El programa "checker"
+
+
+Nombre del programa:
+  checker
+Archivos a entregar:
+  *.h, *.c
+Makefile:
+  bonus
+Argumentos:
+  pila a:	Una lista de enteros
+Funciones externas:
+  □ read, write, malloc, free, exit
+  □ ft_printf o cualquier equivalente que TÚ hayas programado
+Libft autorizada:
+  Sí
+Descripción:
+  Ejecutar las instrucciones de ordenación
+
+
+□ Escribe un programa llamado checker que recibe como argumento la pila a formateada como una lista de enteros. El primer argumento debe estar en la cima de la pila (cuidado con el orden). Si no se da ningún argumento, se detiene y no muestra nada.
+□ Luego esperará y leerá instrucciones desde la entrada estándar, con cada instrucción seguida de '\n'. Una vez leídas todas las instrucciones, el programa debe ejecutarlas sobre la pila recibida como argumento.
+□ Si tras ejecutar esas instrucciones la pila a está realmente ordenada y la pila b está vacía, el programa debe mostrar "OK" seguido de '\n' en la salida estándar.
+□ En cualquier otro caso, debe mostrar "KO" seguido de '\n' en la salida estándar.
+□ En caso de error, debes mostrar "Error" seguido de '\n' en el error estándar. Los errores incluyen, por ejemplo: algunos argumentos que no son enteros, algunos argumentos que superan el límite de un entero, hay duplicados, una instrucción no existe y/o está mal formateada.
+
+$>./checker 3 2 1 0
+rra
+pb
+sa
+rra
+pa
+OK
+$>./checker 3 2 1 0
+sa
+rra
+pb
+KO
+$>./checker 3 2 one 0
+Error
+$>./checker "" 1
+Error
+$>
+
+	NO tienes que reproducir exactamente el mismo comportamiento que
+	el binario proporcionado. Es obligatorio gestionar los errores,
+	pero depende de ti decidir cómo quieres parsear los argumentos.
+
+
+
+Capítulo VII
+Entrega y evaluación entre pares
+
+Entrega tu trabajo en tu repositorio Git como de costumbre. Solo el trabajo dentro de tu repositorio será evaluado durante la defensa. No dudes en verificar los nombres de tus archivos para asegurarte de que son correctos.
+   Como estas entregas no son verificadas por un programa, siéntete libre de organizar tus archivos como desees, siempre que entregues los archivos obligatorios y cumplas con los requisitos.
+
+Durante la evaluación, en ocasiones puede solicitarse una breve modificación del proyecto. Esto podría implicar un pequeño cambio de comportamiento, algunas líneas de código que escribir o reescribir, o una funcionalidad sencilla de añadir.
+Aunque este paso puede que no aplique a todos los proyectos, debes estar preparado si se menciona en las directrices de evaluación.
+Este paso tiene como objetivo verificar tu comprensión real de una parte específica del proyecto. La modificación puede realizarse en cualquier entorno de desarrollo que elijas (por ejemplo, tu configuración habitual), y debería ser factible en pocos minutos, a menos que se defina un tiempo específico como parte de la evaluación.
+Puedes, por ejemplo, que te pidan hacer una pequeña actualización en una función o script, modificar una visualización, o ajustar una estructura de datos para almacenar nueva información, etc.
+Los detalles (alcance, objetivo, etc.) se especificarán en las directrices de evaluación y pueden variar de una evaluación a otra para el mismo proyecto.

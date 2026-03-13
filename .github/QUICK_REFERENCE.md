@@ -59,6 +59,8 @@ Raiz/
 │   │   └── README.md
 │   ├── tests_currentLibft/
 │   │   └── README.md
+│   ├── tests_push_swap/
+│   │   └── README.md
 │   └── tests_<project_name>/
 │       └── README.md
 ├── .github/
@@ -504,7 +506,7 @@ re: fclean all
     git push
 
     # Workspace docs/tooling (desde Raiz/)
-    git add .github .vscode 42/PDFs 42/testsLibf 42/tests_currentLibft
+    git add .github .vscode 42/PDFs 42/testsLibf 42/tests_currentLibft 42/tests_push_swap
     git commit -m "docs: update tracking and workflow"
     git push
    ```

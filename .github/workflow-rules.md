@@ -62,12 +62,18 @@ configuraciones esenciales de ningún proyecto.
 - Chat1 registers delegations (owner chat, objective, scope, priority).
 - Specialist chats (`Chat2`, `Chat3`, `Chat4`) update progress and final
   status in the same entry.
-- Allowed status values: `TODO`, `WIP`, `BLOCKED`, `DONE`, `DEFERRED`.
+- Allowed status values: `TODO`, `WAITING_FOR_PREREQUISITE`, `WIP`,
+  `REVIEW_PENDING`, `BLOCKED`, `DONE`, `DEFERRED`.
 - If out of scope, specialist chat must set `BLOCKED` and add redirection.
+- All out-of-scope requests must be escalated to Chat1 for explicit
+  `APPROVED` or `REJECTED` decision before any reassignment or execution.
 - Every handoff must include a shared topic identifier (`Topic ID`) to keep
 	traceability across related tasks.
 - Receiver must ACK by moving entry to `WIP` with a short acceptance note
 	before execution.
+- No implementation handoff can move to `WIP` if prerequisite gate is pending.
+- If a handoff requires user/admin validation, use `REVIEW_PENDING` until
+  approval is explicitly recorded, then move to `DONE`.
 - Scope by specialist chat:
 	- `Chat2`: C implementation, refactor and debugging.
 	- `Chat3`: pending work (`to-do`), prioritization and backlog hygiene.
@@ -79,20 +85,24 @@ Chat1 applies this loop automatically in every conversation:
 
 1. Detect shared user themes and register/update them in
 	`.github/chat-handoff.md` under `Shared Topics`.
-2. Normalize handoff entries to include `Topic`, clear scope, closure criteria,
-	and explicit next action.
-3. Enforce ACK on delegated tasks before execution starts.
-4. On completion or block, record one-line outcome and coordination lesson.
-5. If a recurring friction appears, update workflow docs in the workspace repo
+2. Detect out-of-scope intake from specialist chats, convert it into formal
+	handoff intake, and decide `APPROVED` or `REJECTED`.
+3. Normalize handoff entries to include `Topic`, scope, closure criteria,
+	decision, prerequisite gate, and explicit next action.
+4. Enforce prerequisite unlock + ACK before execution starts.
+5. On completion, block, or rejection, record one-line outcome and lesson.
+6. If a recurring friction appears, update workflow docs in the workspace repo
 	to prevent repetition in future cycles.
 
 Definition of optimal communication flow:
 
 1. Shared theme is explicit (`Topic ID`).
 2. Ownership is explicit (`From -> To`).
-3. Status transition is explicit (`TODO` -> `WIP` -> `DONE/BLOCKED`).
-4. Handoff note is actionable (what/where/how to close).
-5. Closure leaves reusable context for next tasks.
+3. Decision is explicit (`APPROVED`/`REJECTED`).
+4. Status transition is explicit (`TODO` -> `WAITING_FOR_PREREQUISITE` ->
+	`WIP` -> `REVIEW_PENDING` -> `DONE/BLOCKED`).
+5. Handoff note is actionable (what/where/how to close).
+6. Closure leaves reusable context for next tasks.
 
 ## Canonical Workspace Root Rule
 
