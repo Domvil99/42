@@ -10,6 +10,128 @@ Purpose: chronological log of important decisions, imports, and structure change
   4. Norminette as final closing step.
   but are superseded by this active rule.
 
+## 2026-03-13
+
+- Change type: closure
+- Paths changed:
+  - `.github/chat-handoff.md`
+  - `.github/reports/pdfs-canonical-inventory.md`
+  - `.github/reports/workblock-pending-status.md`
+  - `.github/reports/inter-chat-essential.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/chat-handoff.md`
+  - `.github/reports/pdfs-canonical-inventory.md`
+  - `.github/reports/workblock-pending-status.md`
+  - `.github/reports/inter-chat-essential.md`
+  - `.github/project-history.md`
+- Notes:
+  - Validacion explicita de usuario recibida: "la traduccion es la correcta".
+  - H-008 y H-012 cerrados en `DONE`.
+  - H-009 y H-011 desbloqueados y movidos a `TODO` para ACK de Chat2.
+  - Inventario canonico de PDFs actualizado: push_swap en estado `DONE`.
+
+- Change type: spec-import
+- Paths changed:
+  - `42/PDFs/2026-03-13_push_swap.txt`
+  - `42/PDFs/2026-03-13_push_swap_actualizado.txt`
+  - `.github/reports/pdfs-canonical-inventory.md`
+  - `.github/chat-handoff.md`
+- Tracking docs updated:
+  - `.github/reports/pdfs-canonical-inventory.md`
+  - `.github/chat-handoff.md`
+  - `.github/project-history.md`
+- Notes:
+  - Source oficial del subject `push_swap` v10.0 recibido del usuario
+    y guardado en `42/PDFs/2026-03-13_push_swap.txt`.
+  - Traduccion completa al espanol generada en
+    `42/PDFs/2026-03-13_push_swap_actualizado.txt`.
+  - Prerequisito de H-008 cumplido. H-008 y H-012 pasados a
+    `REVIEW_PENDING`. Pendiente aprobacion del usuario para cerrar
+    y desbloquear H-009 y H-011.
+  - Inventario canonico actualizado: `push_swap` pasa de `BLOCKED`
+    a `REVIEW_PENDING`.
+
+- Change type: workflow
+- Paths changed:
+  - `.github/chat-handoff.md`
+  - `.github/reports/inter-chat-essential.md`
+  - `.github/reports/workblock-pending-status.md`
+  - `.github/reports/pdfs-canonical-inventory.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/chat-handoff.md`
+  - `.github/reports/inter-chat-essential.md`
+  - `.github/reports/workblock-pending-status.md`
+  - `.github/reports/pdfs-canonical-inventory.md`
+  - `.github/project-history.md`
+- Notes:
+  - Handoff `H-012` (`T-006`) accepted by Chat1 (`APPROVED`) and moved to
+    `WIP` with ACK, per user instruction.
+  - Execution performed together with `H-008`: canonical PDFs consolidation
+    started and documented in `.github/reports/pdfs-canonical-inventory.md`.
+  - `H-008` normalized to `WAITING_FOR_PREREQUISITE` due to missing source
+    spec file for `push_swap` in workspace; unblock condition recorded.
+  - Gate integrity revalidated with audit script (no `WIP` violations).
+
+- Change type: validation-report
+- Paths changed:
+  - `.github/chat-handoff.md`
+  - `.github/reports/inter-chat-essential.md`
+  - `.github/reports/workblock-pending-status.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/project-history.md`
+  - `.github/reports/inter-chat-essential.md`
+  - `.github/reports/workblock-pending-status.md`
+- Notes:
+  - E2E relay test instantiated with two explicit scenarios:
+    - `H-010`: `REJECTED` + `BLOCKED` for out-of-scope governance request.
+    - `H-011`: `APPROVED` + `WAITING_FOR_PREREQUISITE` gated by `H-008:DONE`.
+  - Prerequisite audit rerun with pass result:
+    `OK: no WIP handoff violates prerequisite gates.`
+
+- Change type: support-dir
+- Paths changed:
+  - `42/tests_push_swap/README.md`
+  - `.github/projects-index.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/projects-index.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/project-history.md`
+- Notes:
+  - Included support test directory `42/tests_push_swap/` in workspace
+    tracking as requested.
+  - Registered initial README for push_swap test area and updated references
+    so future validation flow is traceable.
+
+- Change type: workflow
+- Paths changed:
+  - `.github/copilot-instructions.md`
+  - `.github/workflow-rules.md`
+  - `.github/chat-handoff.md`
+  - `.github/reports/inter-chat-essential.md`
+  - `.github/reports/workblock-pending-status.md`
+  - `.tools/audit-handoff-prerequisites.sh`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/project-history.md`
+  - `.github/reports/inter-chat-essential.md`
+  - `.github/reports/workblock-pending-status.md`
+- Notes:
+  - Inter-chat relay upgraded to enforce Chat1 as single approval authority
+    for out-of-scope requests with explicit decision `APPROVED`/`REJECTED`.
+  - Handoff schema extended with `Prerequisite`, `Gate`, `Decision` and new
+    statuses `WAITING_FOR_PREREQUISITE` + `REVIEW_PENDING`.
+  - Hard gate activated: implementation cannot move to `WIP` until its
+    prerequisite handoff is `DONE`.
+  - Pilot flow initialized with `H-008` (translation path) and `H-009`
+    (implementation path blocked by prerequisite).
+  - Added audit script `.tools/audit-handoff-prerequisites.sh` and validated
+    pass result (`OK: no WIP handoff violates prerequisite gates.`).
+
 ## 2026-03-12
 
 - Change type: workflow

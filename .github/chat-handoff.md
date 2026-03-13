@@ -7,19 +7,26 @@ bloqueos y resultados sin perder continuidad.
 
 ## Status
 - `TODO`: tarea registrada, aun no iniciada.
+- `WAITING_FOR_PREREQUISITE`: bloqueada hasta cumplir prerequisito/gate.
 - `WIP`: tarea en ejecucion por el chat asignado.
+- `REVIEW_PENDING`: ejecutada, esperando validacion de usuario/admin.
 - `BLOCKED`: bloqueada por dependencia o fuera de alcance.
 - `DONE`: completada y validada por el chat ejecutor.
 - `DEFERRED`: aplazada por prioridad.
 
 ## Entry Template
-| Date | ID | Topic | From -> To | Status | Task | Files | Notes |
-|---|---|---|---|---|---|---|---|
-| YYYY-MM-DD | H-000 | T-000 | Chat1 -> Chat2/3/4 | TODO | Short action | `path/a`, `path/b` | Context + success criteria + ACK pending |
+| Date | ID | Topic | From -> To | Prerequisite | Gate | Decision | Status | Task | Files | Notes |
+|---|---|---|---|---|---|---|---|---|---|---|
+| YYYY-MM-DD | H-000 | T-000 | Chat1 -> Chat2/3/4 | none | none | APPROVED | TODO | Short action | `path/a`, `path/b` | Context + closure criteria + ACK pending |
 
 ## Active Handoffs
-| Date | ID | Topic | From -> To | Status | Task | Files | Notes |
-|---|---|---|---|---|---|---|---|
+| Date | ID | Topic | From -> To | Prerequisite | Gate | Decision | Status | Task | Files | Notes |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 2026-03-13 | H-008 | T-004 | Chat2 -> Chat1 | push_swap_source_available | source_push_swap_txt | APPROVED | DONE | Ejecutar traduccion oficial de `push_swap` a espanol y aplicar tracking/memoria sin copy/paste del usuario | `42/PDFs/2026-03-13_push_swap.txt`, `42/PDFs/2026-03-13_push_swap_actualizado.txt`, `.github/project-history.md`, `.github/projects-index.md`, `.github/QUICK_REFERENCE.md` | CIERRE: usuario confirma que la traduccion es correcta. Prerequisito cumplido, handoff validado y cerrado. H-009 y H-011 quedan desbloqueados para ACK de Chat2. |
+| 2026-03-13 | H-009 | T-004 | Chat1 -> Chat2 | H-008:DONE | gate_h008_done | APPROVED | TODO | Iniciar implementacion tecnica de `push_swap` solo tras aprobacion del `.txt` traducido | `42/C/push_swap/`, `42/PDFs/2026-03-13_push_swap_actualizado.txt` | Desbloqueada: H-008 ya esta `DONE`. Siguiente paso: ACK de Chat2 (`TODO` -> `WIP`) para iniciar implementacion tecnica. |
+| 2026-03-13 | H-010 | T-005 | Chat2 -> Chat1 | none | none | REJECTED | BLOCKED | Prueba E2E: solicitud fuera de alcance a Chat2 (cambio de reglas globales) | `.github/copilot-instructions.md`, `.github/workflow-rules.md` | Decision Chat1: REJECTED. Motivo: cambios de gobernanza solo por Chat1. Siguiente accion: tratar ajuste de reglas directamente con Chat1. |
+| 2026-03-13 | H-011 | T-005 | Chat1 -> Chat2 | H-008:DONE | gate_h008_done | APPROVED | TODO | Prueba E2E: iniciar implementacion solo tras prerequisito aprobado | `42/C/push_swap/`, `42/PDFs/2026-03-13_push_swap_actualizado.txt` | Decision Chat1: APPROVED. Desbloqueada al cerrar H-008. Queda pendiente ACK de Chat2 para pasar a `WIP`. |
+| 2026-03-13 | H-012 | T-006 | Chat2 -> Chat1 | none | user_review_txt | APPROVED | DONE | Ejecutar politica canonica de specs: traduccion exhaustiva de `push_swap` + consolidacion de `42/PDFs` a una version correcta por proyecto | `42/PDFs/2026-03-13_push_swap.txt`, `42/PDFs/2026-03-13_push_swap_actualizado.txt`, `42/PDFs/`, `.github/reports/pdfs-canonical-inventory.md`, `.github/project-history.md`, `.github/QUICK_REFERENCE.md`, `.github/workflow-rules.md` | CIERRE: validacion de usuario confirmada ("la traduccion es la correcta"). Consolidacion canonica completada y handoff cerrado. |
 
 
 ## Closed Handoffs
@@ -44,23 +51,36 @@ entre tareas relacionadas y chats distintos.
 | T-001 | Cierre y consolidacion de `ft_printf` | Chat1 | CLOSED | Usado por H-003 y H-004 |
 | T-002 | Automatizacion y validacion de Norminette | Chat1 | ACTIVE | Usado por H-000, H-001, H-002 |
 | T-003 | Plantilla operativa de coordinacion inter-chat | Chat1 | ACTIVE | Usado por H-005 y H-006 para estandarizar nuevas delegaciones |
+| T-004 | Relay sin copy/paste para traduccion de specs | Chat1 | ACTIVE | Usado por H-008 para escalar traducciones fuera de alcance de Chat2 |
+| T-005 | Prueba E2E de decision y gates | Chat1 | ACTIVE | Usado por H-010 y H-011 para validar REJECTED/APPROVED + prerequisitos |
+| T-006 | Politica canónica de traduccion y consolidacion de PDFs | Chat1 | ACTIVE | Usado por H-012 para estandarizar specs actuales/futuras |
 
 ## Operating Rules
 1. Chat1 crea y prioriza entradas; chats especialistas actualizan progreso.
 2. Cada cambio de estado debe mantener una nota breve accionable.
 3. Si una tarea esta fuera de alcance, marcar `BLOCKED` con motivo y
    redireccion explicita al chat correcto.
-4. Al cerrar una tarea, mover o reflejar el estado final en `Closed Handoffs`.
-5. Este archivo es el puente oficial de coordinacion inter-chat del workspace.
-6. Toda entrada nueva debe incluir `Topic` y enlazar un `Topic ID` existente
+4. Toda tarea fuera de alcance debe escalarse a Chat1 para decision explicita
+   `APPROVED` o `REJECTED` antes de cualquier reasignacion/ejecucion.
+5. Si `REJECTED`, la nota debe incluir motivo corto y siguiente accion para
+   tratarlo con Chat1.
+6. Si `APPROVED`, Chat1 crea/actualiza handoff ejecutable con `Prerequisite`,
+   `Gate`, `Decision` y chat destino.
+7. Ningun handoff de implementacion puede pasar a `WIP` si su prerequisito no
+   esta en `DONE` y su gate no esta desbloqueado.
+8. Si una tarea depende de validacion de usuario/admin, usar
+   `REVIEW_PENDING` hasta confirmacion explicita.
+9. Al cerrar una tarea, mover o reflejar el estado final en `Closed Handoffs`.
+10. Este archivo es el puente oficial de coordinacion inter-chat del workspace.
+11. Toda entrada nueva debe incluir `Topic` y enlazar un `Topic ID` existente
    o crear uno nuevo en `Shared Topics`.
-7. Acuse de recibo obligatorio (ACK): el chat receptor debe actualizar la
+12. Acuse de recibo obligatorio (ACK): el chat receptor debe actualizar la
    entrada a `WIP` con nota de ACK antes de ejecutar cambios.
-8. Cuando el usuario defina puntos en comun, Chat1 los registra como tema en
+13. Cuando el usuario defina puntos en comun, Chat1 los registra como tema en
    `Shared Topics` y todos los handoffs relacionados reutilizan ese `Topic ID`.
-9. Cada nota de cierre (`DONE` o `BLOCKED`) debe incluir resultado corto y
+14. Cada nota de cierre (`DONE` o `BLOCKED`) debe incluir resultado corto y
    siguiente accion sugerida para mantener continuidad operativa.
-10. Rutas sugeridas de delegacion:
+15. Rutas sugeridas de delegacion:
    - Chat1 -> Chat2: implementacion/refactor/debug C.
    - Chat1 -> Chat3: backlog, pendientes y priorizacion.
    - Chat1 -> Chat4: estudio, repaso y reportes pedagogicos.
