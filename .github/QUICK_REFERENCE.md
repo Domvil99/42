@@ -89,7 +89,7 @@ Raiz/
 │   ├── reports/
 │   ├── currentLibft/
 │   │   └── integration-manifest.md
-│   ├── metodos_de_estudio/
+│   ├── study_methods/
 │   │   ├── global-dictionary.md
 │   │   ├── libft/
 │   │   │   └── libft.md
@@ -105,6 +105,13 @@ Raiz/
 │   │   │   └── dictionary.md
 │   │   ├── push_swap/
 │   │   │   └── push_swap.md
+│   │   │   └── implementation.md
+│   │   │   └── validation.md
+│   │   │   └── defense.md
+│   │   │   └── case-studies.md
+│   │   │   └── dictionary.md
+│   │   ├── push_swap_mandatory/
+│   │   │   └── push_swap_mandatory.md
 │   │   │   └── implementation.md
 │   │   │   └── validation.md
 │   │   │   └── defense.md
@@ -194,7 +201,7 @@ realpath /home/domvil99/empresa/42/newLibft/Raiz
 - `.github/push_swap-functions.md`
 - `.github/push_swap-progress.md`
 - `.github/push_swap-reference.md`
-- `.github/metodos_de_estudio/push_swap/push_swap.md` (si hay cambios de arquitectura
+- `.github/study_methods/push_swap/push_swap.md` (si hay cambios de arquitectura
     o estrategia)
 
 ### currentLibft Integration Rule
@@ -232,14 +239,14 @@ realpath /home/domvil99/empresa/42/newLibft/Raiz
 - `.github/project-history.md`
 - `.github/QUICK_REFERENCE.md`
 
-### When `.github/metodos_de_estudio/` changes
+### When `.github/study_methods/` changes
 - `.github/project-history.md`
 - `.github/QUICK_REFERENCE.md`
 
 Mandatory study dictionary policy:
-- Keep one global dictionary at `.github/metodos_de_estudio/global-dictionary.md`.
+- Keep one global dictionary at `.github/study_methods/global-dictionary.md`.
 - Keep one project dictionary at
-    `.github/metodos_de_estudio/<project>/dictionary.md`.
+    `.github/study_methods/<project>/dictionary.md`.
 - Dictionary format baseline: technical glossary + mini examples.
 
 ### When a new instruction `.txt` is received

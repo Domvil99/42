@@ -12,6 +12,68 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 ## 2026-03-13
 
+## 2026-03-15
+
+- Change type: workflow-docs
+- Paths changed:
+  - `.github/instructions/config-guide.instructions.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/project-history.md`
+- Notes:
+  - Normalizacion terminologica minima en Chat4:
+    `metodos de estudio` -> `study methods`.
+  - Verificacion de consistencia en `.github`:
+    no se detectan referencias antiguas de ruta y se mantiene
+    la ruta canonica `.github/study_methods/`.
+
+## 2026-03-14
+
+- Change type: workflow
+- Paths changed:
+  - `.github/copilot-instructions.md`
+  - `.github/instructions/config-guide.instructions.md`
+  - `.github/instructions/c-coding.instructions.md`
+  - `.github/workflow-rules.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/project-history.md`
+- Notes:
+  - Se oficializa el mapeo de aliases por chat:
+    - Chat1 = AdminChat/Admin
+    - Chat2 = codeEditorChat/codeEditor/Code/Editor
+    - Chat4 = StudyChat/Study
+  - Se activa regla global de inmutabilidad por conversación:
+    si una conversación inicia en ChatX, debe permanecer en ChatX.
+  - Queda prohibido cambiar de chat dentro de la misma conversación;
+    para usar otro chat se debe abrir una conversación nueva.
+
+- Change type: study
+- Paths changed:
+  - `.github/study_methods/push_swap_mandatory/push_swap_mandatory.md`
+  - `.github/study_methods/push_swap_mandatory/implementation.md`
+  - `.github/study_methods/push_swap_mandatory/validation.md`
+  - `.github/study_methods/push_swap_mandatory/defense.md`
+  - `.github/study_methods/push_swap_mandatory/case-studies.md`
+  - `.github/study_methods/push_swap_mandatory/dictionary.md`
+  - `.github/study_methods/overview.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/study_methods/overview.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/project-history.md`
+- Notes:
+  - Se crea paquete dedicado y completo de estudio para
+    `push_swap_mandatory`, separado del modulo general `push_swap`.
+  - El contenido incluye cobertura total de arquitectura, parsing,
+    operaciones, algoritmos, validacion, defensa y glosario especifico.
+  - Se incorporan evidencias reales ejecutadas en fecha 2026-03-14:
+    build OK, casos funcionales, benchmark de muestra (`OPS100=594`,
+    `OPS500=4961`) y memoria limpia en Valgrind.
+
+## 2026-03-13
+
 - Change type: project
 - Paths changed:
   - `42/C/push_swap_mandatory/Makefile`
@@ -94,8 +156,8 @@ Purpose: chronological log of important decisions, imports, and structure change
 - Paths changed:
   - `.github/chat-handoff.md`
   - `.github/push_swap-progress.md`
-  - `.github/metodos_de_estudio/push_swap/implementation.md`
-  - `.github/metodos_de_estudio/push_swap/case-studies.md`
+  - `.github/study_methods/push_swap/implementation.md`
+  - `.github/study_methods/push_swap/case-studies.md`
   - `.github/project-history.md`
 - Tracking docs updated:
   - `.github/chat-handoff.md`
@@ -111,12 +173,12 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 - Change type: study
 - Paths changed:
-  - `.github/metodos_de_estudio/push_swap/push_swap.md`
-  - `.github/metodos_de_estudio/push_swap/implementation.md`
-  - `.github/metodos_de_estudio/push_swap/validation.md`
-  - `.github/metodos_de_estudio/push_swap/defense.md`
-  - `.github/metodos_de_estudio/push_swap/case-studies.md`
-  - `.github/metodos_de_estudio/push_swap/dictionary.md`
+  - `.github/study_methods/push_swap/push_swap.md`
+  - `.github/study_methods/push_swap/implementation.md`
+  - `.github/study_methods/push_swap/validation.md`
+  - `.github/study_methods/push_swap/defense.md`
+  - `.github/study_methods/push_swap/case-studies.md`
+  - `.github/study_methods/push_swap/dictionary.md`
   - `.github/push_swap-functions.md`
   - `.github/push_swap-progress.md`
   - `.github/push_swap-reference.md`
@@ -302,13 +364,13 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 - Change type: workflow
 - Paths changed:
-  - `.github/metodos_de_estudio/global-dictionary.md`
-  - `.github/metodos_de_estudio/overview.md`
-  - `.github/metodos_de_estudio/libft/dictionary.md`
-  - `.github/metodos_de_estudio/ft_printf/dictionary.md`
-  - `.github/metodos_de_estudio/get_next_line/dictionary.md`
-  - `.github/metodos_de_estudio/currentLibft/currentLibft.md`
-  - `.github/metodos_de_estudio/currentLibft/dictionary.md`
+  - `.github/study_methods/global-dictionary.md`
+  - `.github/study_methods/overview.md`
+  - `.github/study_methods/libft/dictionary.md`
+  - `.github/study_methods/ft_printf/dictionary.md`
+  - `.github/study_methods/get_next_line/dictionary.md`
+  - `.github/study_methods/currentLibft/currentLibft.md`
+  - `.github/study_methods/currentLibft/dictionary.md`
   - `.github/copilot-instructions.md`
   - `.github/workflow-rules.md`
   - `.github/QUICK_REFERENCE.md`
@@ -318,13 +380,13 @@ Purpose: chronological log of important decisions, imports, and structure change
   - `.github/QUICK_REFERENCE.md`
 - Notes:
   - Implemented mandatory study dictionary rule with two layers:
-    - global dictionary at `.github/metodos_de_estudio/global-dictionary.md`,
-    - project dictionary at `.github/metodos_de_estudio/<project>/dictionary.md`.
+    - global dictionary at `.github/study_methods/global-dictionary.md`,
+    - project dictionary at `.github/study_methods/<project>/dictionary.md`.
   - Added project dictionaries for `libft`, `ft_printf`, `get_next_line`
     and `currentLibft` using unified format (technical glossary + mini examples).
   - Created independent study module for `currentLibft` with:
-    - `.github/metodos_de_estudio/currentLibft/currentLibft.md`,
-    - `.github/metodos_de_estudio/currentLibft/dictionary.md`.
+    - `.github/study_methods/currentLibft/currentLibft.md`,
+    - `.github/study_methods/currentLibft/dictionary.md`.
   - Updated governance/tracking docs to make the rule auditable in future
     study updates (`overview`, `workflow-rules`, `copilot-instructions`,
     `QUICK_REFERENCE`).
@@ -409,8 +471,8 @@ Purpose: chronological log of important decisions, imports, and structure change
 - Change type: validation-report
 - Paths changed:
   - `.github/project-history.md`
-  - `.github/metodos_de_estudio/overview.md`
-  - `.github/metodos_de_estudio/get_next_line/get_next_line.md`
+  - `.github/study_methods/overview.md`
+  - `.github/study_methods/get_next_line/get_next_line.md`
   - `.github/QUICK_REFERENCE.md`
 - Tracking docs updated:
   - `.github/project-history.md`
@@ -425,7 +487,7 @@ Purpose: chronological log of important decisions, imports, and structure change
   - Final norminette scan in `42/C/get_next_line/*.c` and
     `42/C/get_next_line/*.h` completed OK.
   - Study report initialized under
-    `.github/metodos_de_estudio/get_next_line/get_next_line.md`.
+    `.github/study_methods/get_next_line/get_next_line.md`.
 
 - Change type: workflow
 - Paths changed:
@@ -435,9 +497,9 @@ Purpose: chronological log of important decisions, imports, and structure change
   - `.github/QUICK_REFERENCE.md`
   - `.github/instructions/config-guide.instructions.md`
   - `.github/instructions/c-coding.instructions.md`
-  - `.github/metodos_de_estudio/overview.md`
-  - `.github/metodos_de_estudio/libft/libft.md`
-  - `.github/metodos_de_estudio/ft_printf/ft_printf.md`
+  - `.github/study_methods/overview.md`
+  - `.github/study_methods/libft/libft.md`
+  - `.github/study_methods/ft_printf/ft_printf.md`
   - `.github/project-history.md`
 - Tracking docs updated:
   - `.github/project-history.md`
@@ -448,7 +510,7 @@ Purpose: chronological log of important decisions, imports, and structure change
     `Chat4`/`Chat 4`/`chat4`.
   - Inter-chat relay standardized for Chat2, Chat3 and Chat4 with
     explicit delegation routes from Chat1.
-  - New study structure initialized at `.github/metodos_de_estudio/` with:
+  - New study structure initialized at `.github/study_methods/` with:
     - project folders in English (`libft`, `ft_printf`),
     - file names in English (`overview.md`, `<project>.md`),
     - explanatory content in Spanish with technical terminology.

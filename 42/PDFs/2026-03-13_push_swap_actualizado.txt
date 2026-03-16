@@ -136,28 +136,28 @@ Capítulo V Parte Obligatoria
 V.1 Las reglas
 □ Tienes 2 pilas llamadas a y b.
 □ Al inicio:
-  La pila a contiene un número aleatorio de enteros negativos y/o positivos únicos.
-  La pila b está vacía.
+    La pila a contiene un número aleatorio de enteros negativos y/o positivos únicos.
+    La pila b está vacía.
   El objetivo es ordenar los números de la pila a en orden ascendente. Para lograrlo, dispones de las siguientes operaciones:
-  sa (swap a): Intercambia los 2 primeros elementos en la cima de la pila a.
-  No hace nada si hay un solo elemento o ninguno.
-  sb (swap b): Intercambia los 2 primeros elementos en la cima de la pila b.
-  No hace nada si hay un solo elemento o ninguno.
-  ss : sa y sb al mismo tiempo.
-  pa (push a): Toma el primer elemento en la cima de b y lo coloca en la cima de a.
-  No hace nada si b está vacía.
-  pb (push b): Toma el primer elemento en la cima de a y lo coloca en la cima de b.
-  No hace nada si a está vacía.
-  ra (rotate a): Desplaza hacia arriba todos los elementos de la pila a en 1.
-  El primer elemento pasa a ser el último.
-  rb (rotate b): Desplaza hacia arriba todos los elementos de la pila b en 1.
-  El primer elemento pasa a ser el último.
-  rr : ra y rb al mismo tiempo.
-  rra (reverse rotate a): Desplaza hacia abajo todos los elementos de la pila a en 1.
-  El último elemento pasa a ser el primero.
-  rrb (reverse rotate b): Desplaza hacia abajo todos los elementos de la pila b en 1.
-  El último elemento pasa a ser el primero.
-  rrr : rra y rrb al mismo tiempo.
+    sa (swap a): Intercambia los 2 primeros elementos en la cima de la pila a.
+        No hace nada si hay un solo elemento o ninguno.
+    sb (swap b): Intercambia los 2 primeros elementos en la cima de la pila b.
+      No hace nada si hay un solo elemento o ninguno.
+    ss : sa y sb al mismo tiempo.
+    pa (push a): Toma el primer elemento en la cima de b y lo coloca en la cima de a.
+      No hace nada si b está vacía.
+    pb (push b): Toma el primer elemento en la cima de a y lo coloca en la cima de b.
+      No hace nada si a está vacía.
+    ra (rotate a): Desplaza hacia arriba todos los elementos de la pila a en 1.
+      El primer elemento pasa a ser el último.
+    rb (rotate b): Desplaza hacia arriba todos los elementos de la pila b en 1.
+      El primer elemento pasa a ser el último.
+    rr : ra y rb al mismo tiempo.
+    rra (reverse rotate a): Desplaza hacia abajo todos los elementos de la pila a en 1.
+      El último elemento pasa a ser el primero.
+    rrb (reverse rotate b): Desplaza hacia abajo todos los elementos de la pila b en 1.
+      El último elemento pasa a ser el primero.
+    rrr : rra y rrb al mismo tiempo.
 
 
 V.2 Ejemplo
@@ -166,15 +166,23 @@ Para ilustrar el efecto de algunas de estas instrucciones, ordenemos una lista a
 
 ----------------------------------------------------------------------------------------------------------
 Init a and b:
-2136
-58_
-_
+2
+1
+3
+6
+5
+8
+_ _
 a b
 ----------------------------------------------------------------------------------------------------------
 Exec sa:
-1236
-58_
-_
+1
+2
+3
+6
+5
+8
+_ _
 a b
 ----------------------------------------------------------------------------------------------------------
 Exec pb pb pb:
@@ -206,9 +214,13 @@ _ _
 a b
 ----------------------------------------------------------------------------------------------------------
 Exec pa pa pa:
-12356
-8_
-_
+1
+2
+3
+5
+6
+8
+_ _
 a b
 ----------------------------------------------------------------------------------------------------------
 

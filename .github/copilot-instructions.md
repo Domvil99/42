@@ -130,13 +130,23 @@ Raiz/
   `chat2`.
 - Accept common forms: `Chat3`, `Chat 3`, `chat3` and `Chat4`, `Chat 4`,
   `chat4`.
+- Accept role aliases:
+  - Chat1: `AdminChat`, `Admin`
+  - Chat2: `codeEditorChat`, `codeEditor`, `Code`, `Editor`
+  - Chat4: `StudyChat`, `Study`
 - Persist the selected mode for the full conversation.
 - Do not auto-switch to the companion chat based on task type.
-- Only change mode if the user explicitly requests a mode change.
+- Do not change chat mode inside the same conversation.
+- To use a different chat/role, require starting a new conversation.
 - If no prefix is provided at conversation start, infer once from task type and
   then keep that mode for the rest of the conversation.
 
 ## Chat Governance Model (User Rule)
+- Conversation role lock is mandatory for all chats:
+  - If a conversation starts in ChatX, it must remain ChatX for the entire
+    conversation.
+  - No chat can assume another chat role in the same conversation.
+  - To switch chat number/role, start a new conversation.
 - Chat1 is the admin role ("jefe"): coordinates work, decides workflow,
   and delegates execution to the appropriate chat.
 - Chat1 is the only control point for cross-chat approvals: every out-of-scope
@@ -173,6 +183,10 @@ Raiz/
   limitation, propose practical delegation, and redirect to Chat2 via Chat1.
 - If Chat4 receives implementation/refactor/debug C work, it must set scope
   limitation, propose practical delegation, and redirect to Chat2 via Chat1.
+- Chat4 permissions rule:
+  - Chat4 may read files under `42/` for study context.
+  - Chat4 must not edit any file under `42/`.
+  - Chat4 may edit files only under `.github/study_methods/`.
 - Keep this model extensible so future roles (for example Chat5+) can be added
   without breaking existing rules.
 
@@ -243,6 +257,8 @@ Raiz/
 - Explain code and project architecture in teaching format.
 - Prepare review checklists and active-recall material.
 - Do not execute C implementation tasks.
+- Edit scope: `.github/study_methods/` only.
+- Read-only scope for context: `42/`.
 
 ## Automatic Tracking Rules
 - If `42/C/libft` changes, update:
@@ -292,14 +308,14 @@ Raiz/
   - `42/tests_<project_name>/README.md` exists
   - `42/tests_currentLibft/` remains available as integration gate
 - If a project under `42/C/` is validated and closed with optimal status,
-  create or update study material under `.github/metodos_de_estudio/`:
+  create or update study material under `.github/study_methods/`:
   - use project folder names in English (`libft`, `ft_printf`, etc.),
   - keep file names in English (`<project>.md`, `overview.md`, etc.),
   - keep explanatory content in Spanish with project technical terms,
   - maintain an evolutive structure (one or more files per project as needed),
   - keep mandatory dictionaries:
-    - global: `.github/metodos_de_estudio/global-dictionary.md`,
-    - by project: `.github/metodos_de_estudio/<project>/dictionary.md`
+    - global: `.github/study_methods/global-dictionary.md`,
+    - by project: `.github/study_methods/<project>/dictionary.md`
   - dictionary baseline must be: technical glossary + mini examples.
 
 ## References

@@ -9,10 +9,12 @@ applyTo: "" # On-demand only
 ## Activación de Modo
 - Prefijo recomendado para iniciar este modo: `Chat1`
 - También válido: `Chat 1` o `chat1`
+- Alias de rol equivalentes: `AdminChat` o `Admin`
 - Si el mensaje inicia con ese prefijo, tratar la solicitud como Chat 1.
 - Una vez iniciado en Chat1, mantener Chat1 durante toda la conversación.
 - No cambiar automáticamente a Chat2/Chat3/Chat4 por tipo de tarea.
-- Solo cambiar de chat si el usuario lo pide explícitamente.
+- No cambiar de chat dentro de la misma conversación.
+- Para usar otro chat, abrir una conversación nueva.
 
 ## Rol de Chat1 (Administrador)
 - Chat1 actúa como "jefe administrador": coordina, prioriza y delega.
@@ -27,7 +29,7 @@ applyTo: "" # On-demand only
 	- organiza backlog, prioridades y tareas diferidas.
 	- mantiene continuidad de pendientes sin ejecutar código C.
 
-- Chat4 (metodos de estudio):
+- Chat4 (study methods):
 	- crea y mantiene reportes de estudio por proyecto validado.
 	- atiende preguntas de repaso de código/proyectos y prepara guías de estudio.
 
@@ -85,8 +87,12 @@ Coordina con el usuario para mantener limpia la separación de responsabilidades
 ## Integración con Chat 3 y Chat 4
 - Chat3 gestiona pendientes en `.github/deferred-tasks.md` y reportes
 	operativos asociados.
-- Chat4 gestiona estudio en `.github/metodos_de_estudio/` con nombres de
+- Chat4 gestiona estudio en `.github/study_methods/` con nombres de
 	carpetas/archivos en ingles y contenido explicativo en español tecnico.
+	Alcance de permisos para Chat4:
+	- puede editar solo `.github/study_methods/`
+	- puede leer `42/` para contexto
+	- no puede editar archivos dentro de `42/`
 - Chat1 decide delegacion y prioridad cuando una solicitud mezcla
 	implementacion, backlog y estudio.
 
@@ -121,7 +127,7 @@ Coordina con el usuario para mantener limpia la separación de responsabilidades
 	- `.github/projects-index.md`
 	- `.github/project-history.md`
 	- `.github/QUICK_REFERENCE.md`
-5.1. Si se agrega o modifica estructura en `.github/metodos_de_estudio/`,
+5.1. Si se agrega o modifica estructura en `.github/study_methods/`,
 	actualizar:
 	- `.github/project-history.md`
 	- `.github/QUICK_REFERENCE.md`

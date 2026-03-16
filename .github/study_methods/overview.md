@@ -22,18 +22,21 @@ Excepcion operativa activa:
 - `get_next_line`
 - `currentLibft`
 - `push_swap` (parallel-study mode)
+- `push_swap_mandatory` (dedicated-study mode)
 
 ## Mandatory Structure Rules
 
-1. Carpeta por proyecto: `.github/metodos_de_estudio/<project>/`.
+1. Carpeta por proyecto: `.github/study_methods/<project>/`.
 2. Archivo nucleo por proyecto: `<project>.md`.
 3. Diccionario por proyecto obligatorio: `dictionary.md`.
-4. Diccionario global obligatorio: `.github/metodos_de_estudio/global-dictionary.md`.
+4. Diccionario global obligatorio: `.github/study_methods/global-dictionary.md`.
 5. Si crece el contenido, se permiten archivos complementarios:
    - `overview.md`
+   - `foundations-nodes-lists.md`
    - `implementation.md`
    - `validation.md`
    - `defense.md`
+   - `study-session-01.md`
 6. Cada actualizacion de estudio debe registrar:
    - fecha,
    - motivo (revalidacion, correccion de spec, mejora didactica),
@@ -67,10 +70,17 @@ Para considerar un reporte como "completo", debe incluir:
 
 ## Change Log
 
-- 2026-03-12: inicializacion de `metodos_de_estudio` con base para `libft` y
+- 2026-03-12: inicializacion de `study_methods` con base para `libft` y
   `ft_printf`.
 - 2026-03-12: agregado reporte inicial para `get_next_line`.
 - 2026-03-12: incorporada regla de diccionario global y diccionario por
    proyecto; agregado scope de `currentLibft`.
 - 2026-03-13: agregado `push_swap` en modo de estudio paralelo con handoff
    formal de sincronizacion Chat1 -> Chat2/Chat4.
+- 2026-03-14: agregado modulo dedicado `push_swap_mandatory` con paquete
+   completo de estudio (reporte, implementacion, validacion, defensa,
+   casos y diccionario).
+- 2026-03-15: agregada sesion guiada `study-session-01.md` para inicio
+   inmediato de estudio en `push_swap_mandatory`.
+- 2026-03-16: agregado soporte de arranque desde base cero con archivo
+   `foundations-nodes-lists.md` para proyectos con listas enlazadas.

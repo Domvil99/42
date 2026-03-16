@@ -151,9 +151,9 @@ Pending changes:
 - `.github/chat-handoff.md`
 - `.github/project-history.md`
 - `.github/reports/workblock-pending-status.md`
-- `.github/metodos_de_estudio/push_swap/push_swap.md`
-- `.github/metodos_de_estudio/push_swap/implementation.md`
-- `.github/metodos_de_estudio/push_swap/case-studies.md`
+- `.github/study_methods/push_swap/push_swap.md`
+- `.github/study_methods/push_swap/implementation.md`
+- `.github/study_methods/push_swap/case-studies.md`
 - `.github/push_swap-progress.md`
 
 ## Closure

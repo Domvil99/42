@@ -9,10 +9,12 @@ applyTo: "**/*.c|**/*.h"
 ## Activación de Modo
 - Prefijo recomendado para iniciar este modo: `Chat2`
 - También válido: `Chat 2` o `chat2`
+- Alias de rol equivalentes: `codeEditorChat`, `codeEditor`, `Code`, `Editor`
 - Si el mensaje inicia con ese prefijo, tratar la solicitud como Chat 2.
 - Una vez iniciado en Chat2, mantener Chat2 durante toda la conversación.
 - No cambiar automáticamente a Chat1 por tipo de tarea.
-- Solo cambiar de chat si el usuario lo pide explícitamente.
+- No cambiar de chat dentro de la misma conversación.
+- Para usar otro chat, abrir una conversación nueva.
 
 ## Gobernanza de Chat2
 - Chat2 es especialista técnico de C (implementación, refactor, debugging,

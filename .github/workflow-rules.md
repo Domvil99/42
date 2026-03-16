@@ -2,6 +2,22 @@
 
 Purpose: keep updates consistent and automatic across projects.
 
+## Chat Role Lock (Global)
+
+Conversation chat mode is immutable:
+
+1. If a conversation starts as ChatX, it must stay ChatX until that
+	conversation ends.
+2. No chat can assume another chat role in the same conversation.
+3. To switch to another chat role/number, start a new conversation.
+
+Official aliases:
+
+- Chat1 = `AdminChat` / `Admin`
+- Chat2 = `codeEditorChat` / `codeEditor` / `Code` / `Editor`
+- Chat4 = `StudyChat` / `Study`
+- Chat3 = pending alias specification
+
 ## Dual Git Operation
 
 
@@ -78,6 +94,9 @@ configuraciones esenciales de ningún proyecto.
 	- `Chat2`: C implementation, refactor and debugging.
 	- `Chat3`: pending work (`to-do`), prioritization and backlog hygiene.
 	- `Chat4`: study methods, project explanations and review reports.
+	  - edit allowed only in `.github/study_methods/`
+	  - read-only access allowed in `42/`
+	  - edit forbidden in `42/`
 
 ## Continuous Communication Optimization (Chat1)
 
@@ -185,11 +204,11 @@ When a support directory is added under `42/` (outside `42/C/`), update:
 2. `.github/project-history.md`
 3. `.github/QUICK_REFERENCE.md`
 
-When study structure changes under `.github/metodos_de_estudio/`, update:
+When study structure changes under `.github/study_methods/`, update:
 
 1. `.github/project-history.md`
 2. `.github/QUICK_REFERENCE.md`
-3. `.github/metodos_de_estudio/overview.md` (si cambia estructura canonica)
+3. `.github/study_methods/overview.md` (si cambia estructura canonica)
 
 Study structure rule:
 
@@ -198,8 +217,8 @@ Study structure rule:
 3. Keep explanatory content in Spanish with project technical terminology.
 4. Treat study content as evolutive and update it on future revalidations.
 5. Keep mandatory dictionaries:
-	- global dictionary: `.github/metodos_de_estudio/global-dictionary.md`
-	- project dictionary: `.github/metodos_de_estudio/<project>/dictionary.md`
+	- global dictionary: `.github/study_methods/global-dictionary.md`
+	- project dictionary: `.github/study_methods/<project>/dictionary.md`
 6. Dictionary baseline format: technical glossary + mini examples.
 
 ## External Instruction Trigger
