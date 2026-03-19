@@ -1,4 +1,4 @@
-# Sesion 01 - Inicio Guiado de push_swap_mandatory
+# Sesion 01 - Inicio Guiado de push_swap
 
 ## Objetivo de la sesion
 
@@ -16,12 +16,12 @@ Duracion objetivo: 75 minutos (rango 60-90).
 
 ## Material a abrir
 
-1. `.github/study_methods/push_swap_mandatory/push_swap_mandatory.md`
-2. `.github/study_methods/push_swap_mandatory/dictionary.md`
-3. `.github/study_methods/push_swap_mandatory/implementation.md`
-4. `.github/study_methods/push_swap_mandatory/case-studies.md`
-5. `.github/study_methods/push_swap_mandatory/validation.md`
-6. `.github/study_methods/push_swap_mandatory/defense.md`
+1. `.github/study_methods/push_swap/push_swap.md`
+2. `.github/study_methods/push_swap/dictionary.md`
+3. `.github/study_methods/push_swap/implementation.md`
+4. `.github/study_methods/push_swap/case-studies.md`
+5. `.github/study_methods/push_swap/validation.md`
+6. `.github/study_methods/push_swap/defense.md`
 
 ## Flujo de sesion (75 min)
 
@@ -38,7 +38,7 @@ Checkpoint:
 
 ### Bloque A - Mapa de arquitectura (15 min)
 
-Leer secciones 1-6 de `push_swap_mandatory.md` y memorizar este mapa:
+Leer secciones 1-6 de `push_swap.md` y memorizar este mapa:
 
 1. leer argumentos (`argc/argv`)
 2. parsear numeros (`parse_numbers`)
@@ -65,7 +65,7 @@ Checkpoint:
 
 ### Bloque C - Estrategia y complejidad (10 min)
 
-Con `push_swap_mandatory.md` + `implementation.md` responder:
+Con `push_swap.md` + `implementation.md` responder:
 
 1. por que se normaliza a indices,
 2. por que hay estrategias por tamano,

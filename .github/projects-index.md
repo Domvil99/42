@@ -9,14 +9,12 @@ Purpose: central index for all projects under `42/` and their relation with `42/
 | libft | 42/C/libft | completed | base | Core library reused by future C projects |
 | ft_printf | 42/C/ft_printf | completed | yes | Standalone deliverable project (coexists by design with integrated copy inside currentLibft); libft mirror synced with libft1 on 2026-03-12 |
 | get_next_line | 42/C/get_next_line | completed | no | Standalone deliverable; also integrated into currentLibft as child module |
-| push_swap | 42/C/push_swap | in-progress | yes | Mandatory implemented with small/chunk/radix strategies; checker bonus scaffold added |
-| push_swap_mandatory | 42/C/push_swap_mandatory | in-progress | yes | Mandatory-only split from push_swap; excludes bonus files by design |
+| push_swap | 42/C/push_swap | in-progress | yes | Proyecto mandatory-only con small/chunk/radix |
 | currentLibft | 42/C/currentLibft | in-progress | base | Integrated base: libft + ft_printf + get_next_line under `currentLibft/libft/`; base libft parity synced with libft1 on 2026-03-12 |
 | testsLibf | 42/testsLibf | completed | yes | Manual test programs for libft validation (maintained for regression) |
 | tests_ft_printf | 42/tests_ft_printf | completed | yes | Manual test harnesses for ft_printf validation (maintained for regression) |
 | tests_currentLibft | 42/tests_currentLibft | in-progress | yes | Integration gate for currentLibft build/link/norminette checks |
-| tests_push_swap | 42/tests_push_swap | in-progress | yes | Initial test space for push_swap validation flow |
-| tests_push_swap_mandatory | 42/tests_push_swap_mandatory | in-progress | yes | Test space dedicated to mandatory-only split project |
+| tests_push_swap | 42/tests_push_swap | in-progress | yes | Espacio de pruebas para push_swap |
 
 ## Update Rules
 

@@ -49,7 +49,6 @@ Raiz/
 │   │   ├── libft/
 │   │   ├── ft_printf/
 │   │   ├── push_swap/
-│   │   ├── push_swap_mandatory/
 │   │   └── currentLibft/
 │   ├── PDFs/
 │   │   ├── 2026-03-08_primera_libft.txt
@@ -62,8 +61,6 @@ Raiz/
 │   ├── tests_currentLibft/
 │   │   └── README.md
 │   ├── tests_push_swap/
-│   │   └── README.md
-│   ├── tests_push_swap_mandatory/
 │   │   └── README.md
 │   └── tests_<project_name>/
 │       └── README.md
@@ -105,13 +102,6 @@ Raiz/
 │   │   │   └── dictionary.md
 │   │   ├── push_swap/
 │   │   │   └── push_swap.md
-│   │   │   └── implementation.md
-│   │   │   └── validation.md
-│   │   │   └── defense.md
-│   │   │   └── case-studies.md
-│   │   │   └── dictionary.md
-│   │   ├── push_swap_mandatory/
-│   │   │   └── push_swap_mandatory.md
 │   │   │   └── implementation.md
 │   │   │   └── validation.md
 │   │   │   └── defense.md

@@ -7,10 +7,6 @@ Mandatory:
 - `push_swap` binary.
 - `Makefile`, `*.h`, `*.c`.
 
-Bonus:
-
-- `checker` binary + regla `bonus`.
-
 ## 2. Input/Output Contract
 
 ### Input
@@ -44,7 +40,8 @@ Secuencia de operaciones válidas separadas por `\n`.
 - `n == 2`: swap condicional.
 - `n == 3`: casos específicos.
 - `n <= 5`: extracción de mínimos.
-- `n > 5`: radix por bits.
+- `n <= 500`: chunk sort.
+- `n > 500`: radix por bits.
 
 ## 6. Complexity Snapshot
 
@@ -70,16 +67,12 @@ Secuencia de operaciones válidas separadas por `\n`.
 - `fclean`: limpia binario + limpieza total libft.
 - `re`: reconstrucción total.
 
-### Bonus Rule (recommended)
-
-Añadir objetivo `bonus` para compilar `checker` según subject.
-
 ## 8. Validation Commands
 
 ```bash
 make
 ./push_swap 2 1
-ARG="3 2 5 1 4" && ./push_swap $ARG | ./checker_OS $ARG
+ARG="3 2 5 1 4" && ./push_swap $ARG | wc -l
 valgrind --leak-check=full ./push_swap 3 2 1
 norminette *.c *.h
 ```

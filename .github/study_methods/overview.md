@@ -21,8 +21,7 @@ Excepcion operativa activa:
 - `ft_printf`
 - `get_next_line`
 - `currentLibft`
-- `push_swap` (parallel-study mode)
-- `push_swap_mandatory` (dedicated-study mode)
+- `push_swap`
 
 ## Mandatory Structure Rules
 
@@ -77,10 +76,10 @@ Para considerar un reporte como "completo", debe incluir:
    proyecto; agregado scope de `currentLibft`.
 - 2026-03-13: agregado `push_swap` en modo de estudio paralelo con handoff
    formal de sincronizacion Chat1 -> Chat2/Chat4.
-- 2026-03-14: agregado modulo dedicado `push_swap_mandatory` con paquete
+- 2026-03-14: agregado modulo dedicado `push_swap` con paquete
    completo de estudio (reporte, implementacion, validacion, defensa,
    casos y diccionario).
 - 2026-03-15: agregada sesion guiada `study-session-01.md` para inicio
-   inmediato de estudio en `push_swap_mandatory`.
+   inmediato de estudio en `push_swap`.
 - 2026-03-16: agregado soporte de arranque desde base cero con archivo
    `foundations-nodes-lists.md` para proyectos con listas enlazadas.

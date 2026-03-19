@@ -1,198 +1,278 @@
 # push_swap Implementation Guide
 
-## 1. Arquitectura Real del Código Actual
+## 1. Mapa real de archivos
 
-Ruta base: `42/C/push_swap/`.
+Ruta base del modulo:
 
-### 1.1 Módulos
+- `42/C/push_swap`
 
-- `main.c`: orquestación general.
-- `parse.c`, `parse_utils.c`: parsing + validación.
-- `stack_build.c`, `stack_utils.c`: construcción y utilidades de stack.
-- `ops_*.c`: primitivas del lenguaje de operaciones.
-- `sort_small.c`: lógica para tamaños pequeños.
-- `sort_radix.c`: estrategia para tamaños grandes.
-- `free_utils.c`: utilidades de liberación y error.
+Archivos y rol:
 
-### 1.2 Flujo de ejecución
+- `push_swap.c`: entrypoint, setup y dispatch.
+- `push_swap.h`: modelo de datos y prototipos.
+- `parse.c`: parsing en dos formatos + deteccion de duplicados.
+- `parse_utils.c`: validez lexical y conversion con control de overflow.
+- `stack_build.c`: build de lista y asignacion de indices.
+- `stack_utils.c`: utilidades basicas de lista/stack.
+- `ops_swap.c`: `sa/sb/ss`.
+- `ops_push.c`: `pa/pb`.
+- `ops_rotate.c`: `ra/rb/rr`.
+- `ops_reverse_rotate.c`: `rra/rrb/rrr`.
+- `sort_small.c`: `sort_three` y `sort_five`.
+- `sort_chunk.c`: estrategia por chunks para tamano medio.
+- `sort_radix.c`: estrategia bitwise para tamano grande.
+- `free_utils.c`: manejo de errores y liberacion.
+- `Makefile`: build mandatory-only + dependencia `libft/libft.a`.
 
-1. `main` llama `setup_stacks`.
-2. `parse_numbers` produce array de enteros.
-3. `build_stack` crea lista enlazada.
-4. `assign_indices` normaliza valores a ranking [0..n-1].
-5. `sort_dispatch` selecciona algoritmo.
-6. Se liberan `arr`, `a`, `b`.
+## 2. Flujo de control exacto
 
-## 2. Estructura de Datos
+### 2.1 main
 
-```c
-typedef struct s_node
-{
-	int				value;
-	int				index;
-	struct s_node	*next;
-} t_node;
-```
+`main` inicializa:
 
-### 2.1 Rol de cada campo
+- `a = NULL`
+- `b = NULL`
+- `arr = NULL`
 
-- `value`: entero original de entrada.
-- `index`: posición en orden ascendente global.
-- `next`: enlace al siguiente nodo.
+Luego ejecuta `setup_stacks` y segun retorno:
 
-Beneficio de `index`:
+- `< 0`: error, return 1.
+- `== 0`: no trabajo (0 o 1 elemento), return 0.
+- `> 0`: ejecuta sort + cleanup final.
 
-- Radix trabaja sobre rango compacto no negativo.
-- Evita complicaciones de signos en ordenación por bits.
+### 2.2 setup_stacks
 
-## 3. Parsing y Validación
+Secuencia:
 
-### 3.1 Modos de entrada soportados
+1. `parse_numbers(argc, argv, &arr)`.
+2. Si parse falla (`<0`), imprime `Error`.
+3. Si count `<=1`, libera `arr` y termina limpio.
+4. `build_stack(arr, count)`.
+5. `assign_indices(a, arr, count)`.
+6. Si falla build/index, libera y reporta error.
 
-- Argumentos separados: `./push_swap 3 2 1`.
-- String única: `./push_swap "3 2 1"`.
+### 2.3 sort_dispatch
 
-### 3.2 Validaciones activas
+Evalua `size = stack_size(*a)` y `is_sorted_stack(*a)`.
 
-- `is_valid_number`: formato entero opcionalmente con signo.
-- `ps_atol`: conversión con control de overflow int.
-- `has_duplicates`: rechazo de repetidos.
+Branching:
 
-### 3.3 Política de error
+- `size <= 1` o ya ordenado: return.
+- `size == 2`: posible `op_sa`.
+- `size == 3`: `sort_three`.
+- `size <= 5`: `sort_five`.
+- `size <= 500`: `sort_chunk`.
+- else: `sort_radix`.
 
-- Si hay fallo: `Error\n` a stderr y salida con código de error.
+## 3. Parsing completo y validacion
 
-## 4. Primitivas de Operación
+## 3.1 parse_numbers
 
-Cada operación tiene protección para stacks vacíos o de tamaño insuficiente.
+Soporta dos modos:
 
-### 4.1 Swap
+- `argc == 2`: `parse_single_string(argv[1], out)`.
+- `argc > 2`: usa `&argv[1]` como tabla de tokens.
 
-- `op_sa`, `op_sb`, `op_ss`.
-- Intercambian top 2 cuando aplica.
+Si `argc == 1`, retorna 0 y no hay salida.
 
-### 4.2 Push
+## 3.2 parse_single_string
 
-- `op_pa`, `op_pb`.
-- Mueven nodo top de una pila a otra.
+Pasos:
 
-### 4.3 Rotate
+1. Rechaza string nula o vacia.
+2. Tokeniza con `ft_split(arg, ' ')`.
+3. Cuenta tokens.
+4. Reserva `arr`.
+5. Llama `fill_array`.
+6. Libera split siempre.
 
-- `op_ra`, `op_rb`, `op_rr`.
-- Primer nodo pasa al final.
+Control de errores consistente:
 
-### 4.4 Reverse rotate
+- Si falla split/reserva/validacion, retorna -1 y limpia memoria.
 
-- `op_rra`, `op_rrb`, `op_rrr`.
-- Último nodo pasa al inicio.
+## 3.3 fill_array
 
-## 5. Estrategias Algorítmicas Implementadas
+Por cada token:
 
-### 5.1 sort_three
+1. `is_valid_number` (solo signo opcional + digitos).
+2. `ps_atol` con flag `ok`.
+3. Guarda en `arr`.
 
-Tabla condicional de casos por comparación entre `f`, `s`, `t` (índices).
+Finaliza con `has_duplicates(arr, i)`.
 
-### 5.2 sort_five
+## 3.4 parse_utils
 
-- Encontrar mínimo.
-- Elegir rotación óptima (`ra` vs `rra`) según posición.
-- Enviar mínimo a `b`.
-- Repetir hasta dejar 3 en `a`.
-- Ordenar 3 y recuperar `b`.
+- `is_valid_number`: rechaza `+`, `-`, vacios y alpha mix.
+- `ps_atol`: acumula en `long`, revisa overflow en cada paso.
+- `is_overflow`: compara contra `INT_MAX/INT_MIN` segun signo.
 
-### 5.3 sort_radix
+## 4. Data model e indexacion
 
-- Calcular `bits` necesarios para `n - 1`.
-- Por cada bit:
-  - bit = 1: `ra`.
-  - bit = 0: `pb`.
-- Restaurar `b` con `pa`.
+## 4.1 value e index
 
-## 6. Complejidad Realista
+Cada nodo mantiene:
 
-- Duplicados: O(n^2) en parse actual.
-- Ranking (find_pos lineal por nodo): O(n^2).
-- Radix principal: O(n * log n) en iteraciones de bit.
+- `value`: entero original.
+- `index`: posicion en orden total ascendente.
 
-Para `n = 500`, el coste de radix domina y suele ser competitivo.
+Beneficio: el algoritmo trabaja con valores compactos y no negativos,
+perfecto para logica bitwise.
 
-## 7. Gestión de Memoria
+## 4.2 assign_indices
 
-### 7.1 Reservas principales
+Pasos exactos:
 
-- Array de enteros (`malloc`).
-- Nodos de stack (`new_node`).
-- Array temporal para ordenado (`assign_indices`).
-- Tabla de tokens de `ft_split` en modo string única.
+1. Reserva `sorted[count]`.
+2. Copia `arr` con `ft_memcpy`.
+3. Ordena `sorted` con bubble sort (`sort_array`).
+4. Para cada nodo de `a`, busca su posicion (`find_pos`).
+5. Asigna `tmp->index`.
 
-### 7.2 Liberación
+Si algo falla, retorna 0 para que caller maneje cleanup.
 
-- `free(arr)` en flujo normal y en fallos específicos.
-- `free_stack(&a)` y `free_stack(&b)`.
-- `free_strtab(split)` tras parse.
+## 5. Operaciones primitivas
 
-## 8. Riesgos Técnicos y Mejora
+Todas tienen bandera `print` para reutilizacion futura.
 
-1. `has_duplicates` O(n^2): puede optimizarse con ordenado previo/hash.
-2. `find_pos` lineal por nodo: se puede acelerar con mapeo si se permite.
-3. Mantener sincronia entre mandatory y bonus en `42/C/push_swap` para evitar drift.
-4. En `42/C/push_swap_mandatory`, no existe regla `bonus` por diseno (scope mandatory-only).
+- `op_sa/op_sb/op_ss`: swap del top.
+- `op_pa/op_pb`: mover top entre pilas.
+- `op_ra/op_rb/op_rr`: rotate (head -> tail).
+- `op_rra/op_rrb/op_rrr`: reverse rotate (tail -> head).
 
-## 9. Checklist de calidad por módulo
+Todas validan estructura antes de tocar punteros.
 
-### Parsing
+## 6. sort_small.c
 
-- Rechaza vacíos, signos sin dígitos, overflow, repetidos.
+## 6.1 sort_three
 
-### Operaciones
+Trabaja con `f,s,t` (indices de top, segundo, tercero) y cubre
+las 5 configuraciones no ordenadas.
 
-- No rompen punteros en tamaños 0/1.
+Patrones usados:
 
-### Sorting
+- `sa`
+- `sa + rra`
+- `ra`
+- `sa + ra`
+- `rra`
 
-- Emite solo instrucciones válidas.
-- Deja `a` ordenada y `b` vacía.
+## 6.2 sort_five
 
-### Memoria
+Estrategia:
 
-- Sin leaks en éxito ni en fallo.
+1. Mientras size `> 3`, mover minimo de `a` a `b`.
+2. Para mover minimo, calcula posicion y elige `ra` o `rra` segun
+   distancia minima al top.
+3. Ordena los 3 restantes con `sort_three`.
+4. Reintegra desde `b` con `pa`.
 
-## 10. Evidencia Ejecutada (Checkpoint 1)
+## 7. sort_chunk.c (6..500)
 
-Fecha: 2026-03-13
+## 7.1 choose_chunk_size
 
-Comandos de verificación ejecutados en `42/C/push_swap`:
+Regla actual:
 
-- Build: `make`.
-- Caso válido 2 elementos: `./push_swap 2 1`.
-- Caso ya ordenado: `./push_swap 1 2 3`.
-- Error por token inválido: `./push_swap 1 a 3`.
-- Error por duplicado: `./push_swap 1 2 1`.
-- Error por overflow: `./push_swap 2147483648`.
-- String única válida: `./push_swap "3 2 1"`.
-- String única con duplicado: `./push_swap "10 4 10"`.
-- Sin argumentos: `./push_swap`.
+- `<=100` -> 14
+- `<=500` -> 30
+- `>500` -> 60
 
-Resultados observados:
+En mandatory, el dispatcher usa chunk hasta 500.
 
-- Build completado correctamente.
-- Comportamiento correcto en casos válidos y en entrada ya ordenada.
-- `Error` emitido correctamente en alpha/duplicado/overflow.
-- Parse de string única validado tanto en éxito como en rechazo.
-- Sin argumentos no genera salida.
+## 7.2 fase A->B por ventana
 
-## 11. Actualizacion de mantenimiento (mandatory-only split)
+Variables:
 
-Fecha: 2026-03-13
+- `chunk`: ventana actual.
+- `current`: frontera de indices ya tratados.
 
-- Se confirma proyecto paralelo `42/C/push_swap_mandatory` dedicado solo a mandatory.
-- Se corrige ruta de memoria en retorno temprano (`count <= 1`) para evitar fuga en
-	casos como `./push_swap "5"`.
-- Evidencia de memoria posterior al fix: `in use at exit: 0 bytes in 0 blocks`
-	y `ERROR SUMMARY: 0 errors` con Valgrind.
+Si `(*a)->index <= current`:
+
+- `pb`, luego `rb` para dejar pequenos abajo en `b`.
+
+Si `<= current + chunk`:
+
+- `pb` y aumenta frontera.
+
+Si no entra en ventana:
+
+- `ra` para buscar candidato.
+
+## 7.3 fase B->A ordenada
+
+`push_back_sorted` repite:
+
+1. Detecta max de `b`.
+2. Calcula posicion.
+3. Elige `rb` o `rrb` segun distancia minima.
+4. Ejecuta `pa`.
+
+Resultado: `a` termina en orden ascendente por indices.
+
+## 8. sort_radix.c (>500)
+
+## 8.1 calculo de bits
+
+`bits` se calcula con:
+
+- while `((size - 1) >> bits)` -> `bits++`
+
+## 8.2 pasada por bit i
+
+Para cada elemento de `a`:
+
+- Si bit i es 1: `ra`.
+- Si bit i es 0: `pb`.
+
+Al final del bit:
+
+- vaciar `b` con `pa`.
+
+Despues del ultimo bit, `a` queda ordenada.
+
+## 9. Gestion de memoria
+
+Reservas principales:
+
+- `arr` (parse).
+- nodos `t_node`.
+- `sorted` para indexacion.
+- tabla de tokens de `ft_split`.
+
+Liberaciones:
+
+- `free(arr)` en salida normal y rutas tempranas.
+- `free_stack(&a)` / `free_stack(&b)`.
+- `free_strtab(split)`.
+
+Evidencia de estabilidad (2026-03-14):
+
+- Valgrind en `./push_swap 3 2 1` sin leaks ni invalid access.
+
+## 10. Makefile mandatory-only
+
+Puntos importantes:
+
+- `NAME = push_swap`.
+- Targets disponibles: `all`, `clean`, `fclean`, `re`.
+- Linka con `libft/libft.a`.
+- `clean/fclean` propagan a `libft`.
+- `%.o` depende de `push_swap.h`.
+
+## 11. Trade-offs reales de esta implementacion
+
+Fortalezas:
+
+- Codigo modular y legible.
+- Manejo de errores consistente.
+- Buen rendimiento practico en 100 y 500.
+
+Costes aceptados:
+
+- Duplicados O(n^2).
+- Indexacion O(n^2).
+- `sort_chunk` usa varias rotaciones, sensible a distribucion.
 
 ## Change Log
 
-- 2026-03-13: mapeo técnico inicial basado en implementación actual.
-- 2026-03-13: agregado bloque de evidencia real para Checkpoint 1.
-- 2026-03-13: actualizado estado bonus/mandatory split y corrección de memoria en `push_swap_mandatory`.
+- 2026-03-14: guia de implementacion mandatory completa y trazable,
+  alineada con los archivos reales del proyecto.

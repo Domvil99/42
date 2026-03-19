@@ -12,15 +12,13 @@ Estado: in-progress
 3. Parser y operaciones implementadas.
 4. Estrategias de ordenación (small + radix) implementadas.
 5. Optimización por `chunk sort` integrada para mejorar benchmark 100/500.
-6. Bonus `checker` implementado en `checker_bonus.c` y regla `bonus` añadida al Makefile.
-7. Informe de estudio creado en paralelo (núcleo + anexos).
+6. Informe de estudio creado para soporte técnico y defensa.
 
 ## Quality Gates
 
 ### Gate 1: Scope/spec
 
-- Mandatory `push_swap`: implementado.
-- Bonus `checker`: pendiente.
+- Scope actual `push_swap`: implementado.
 
 ### Gate 2: Functional
 
@@ -32,17 +30,12 @@ Estado: in-progress
 ### Gate 3: Memory/stability
 
 - Rutas de liberación presentes.
-- ASAN/UBSAN ejecutado en `push_swap` y `checker` con casos válidos e inválidos,
+- ASAN/UBSAN ejecutado en `push_swap` con casos válidos e inválidos,
   sin reportes de `AddressSanitizer`, `LeakSanitizer` ni `runtime error`.
 
 ### Gate 4: Norminette (final)
 
 - Aplicar cuando funcional + memoria estén cerrados.
-
-### Gate Bonus: checker
-
-- `checker_bonus.c` implementado y conectado por regla `bonus` en Makefile.
-- Pendiente: validación exhaustiva de instrucciones inválidas y cierre final con norma.
 
 ## Study Sync (parallel mode)
 
@@ -73,7 +66,7 @@ Resultado del checkpoint:
 
 ## Next Technical Steps
 
-1. Consolidar cierre de obligatorio y bonus con una última corrida de benchmark.
+1. Consolidar cierre del proyecto con una última corrida de benchmark.
 2. Cierre final de norma al final del ciclo.
 
 ## Change Log
@@ -81,7 +74,6 @@ Resultado del checkpoint:
 - 2026-03-13: baseline inicial de progreso + modo estudio paralelo.
 - 2026-03-13: Checkpoint 1 validado con evidencia real de parsing y errores.
 - 2026-03-13: Integración de `chunk sort` y mejora de benchmark (`602/5182`, ambos `OK`).
-- 2026-03-13: Bonus `checker` añadido (`checker_bonus.c`) y Makefile con regla `bonus`.
 - 2026-03-13: Validación por lotes (20x100 y 10x500): `max_ops100=631`,
   `max_ops500=5260`, todos los lotes `OK` con checker.
-- 2026-03-13: Checkpoint ASAN/UBSAN en `push_swap` y `checker` completado sin hallazgos.
+- 2026-03-13: Checkpoint ASAN/UBSAN en `push_swap` completado sin hallazgos.

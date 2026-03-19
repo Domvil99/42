@@ -10,6 +10,41 @@ Purpose: chronological log of important decisions, imports, and structure change
   4. Norminette as final closing step.
   but are superseded by this active rule.
 
+## 2026-03-19
+
+- Change type: project-structure
+- Paths changed:
+  - `42/C/push_swap`
+  - `42/tests_push_swap`
+  - `.github/study_methods/push_swap`
+  - `.github/study_methods/push_swap/push_swap.md`
+  - `.github/projects-index.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/projects-index.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/project-history.md`
+- Notes:
+  - Actualizacion estructural y documental del modulo `push_swap`.
+  - Referencias en markdown alineadas con el estado vigente del proyecto.
+
+- Change type: project-fix
+- Paths changed:
+  - `42/C/push_swap/parse.c`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/project-history.md`
+- Notes:
+  - Fix aplicado en parsing para uso correcto de libft integrada:
+    `ft_spcoe .lit` -> `ft_split` en `parse_single_string`.
+  - Validacion posterior completa en `push_swap`:
+    - build `make`: OK
+    - funcional basico: OK (`2 1`, `3 2 1`, ordenado, invalido alpha)
+    - memoria (Valgrind): 0 leaks, 0 errors
+    - benchmark muestra: `OPS100=594`, `OPS500=5083`
+    - Norminette final: OK en `*.c` y `*.h`
+
 ## 2026-03-13
 
 ## 2026-03-15
@@ -50,12 +85,12 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 - Change type: study
 - Paths changed:
-  - `.github/study_methods/push_swap_mandatory/push_swap_mandatory.md`
-  - `.github/study_methods/push_swap_mandatory/implementation.md`
-  - `.github/study_methods/push_swap_mandatory/validation.md`
-  - `.github/study_methods/push_swap_mandatory/defense.md`
-  - `.github/study_methods/push_swap_mandatory/case-studies.md`
-  - `.github/study_methods/push_swap_mandatory/dictionary.md`
+  - `.github/study_methods/push_swap/push_swap.md`
+  - `.github/study_methods/push_swap/implementation.md`
+  - `.github/study_methods/push_swap/validation.md`
+  - `.github/study_methods/push_swap/defense.md`
+  - `.github/study_methods/push_swap/case-studies.md`
+  - `.github/study_methods/push_swap/dictionary.md`
   - `.github/study_methods/overview.md`
   - `.github/QUICK_REFERENCE.md`
   - `.github/project-history.md`
@@ -65,7 +100,7 @@ Purpose: chronological log of important decisions, imports, and structure change
   - `.github/project-history.md`
 - Notes:
   - Se crea paquete dedicado y completo de estudio para
-    `push_swap_mandatory`, separado del modulo general `push_swap`.
+    `push_swap` en modalidad dedicada.
   - El contenido incluye cobertura total de arquitectura, parsing,
     operaciones, algoritmos, validacion, defensa y glosario especifico.
   - Se incorporan evidencias reales ejecutadas en fecha 2026-03-14:
@@ -76,35 +111,34 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 - Change type: project
 - Paths changed:
-  - `42/C/push_swap_mandatory/Makefile`
-  - `42/C/push_swap_mandatory/push_swap.c`
-  - `42/C/push_swap_mandatory/push_swap.h`
-  - `42/C/push_swap_mandatory/parse.c`
-  - `42/C/push_swap_mandatory/parse_utils.c`
-  - `42/C/push_swap_mandatory/stack_build.c`
-  - `42/C/push_swap_mandatory/stack_utils.c`
-  - `42/C/push_swap_mandatory/ops_swap.c`
-  - `42/C/push_swap_mandatory/ops_push.c`
-  - `42/C/push_swap_mandatory/ops_rotate.c`
-  - `42/C/push_swap_mandatory/ops_reverse_rotate.c`
-  - `42/C/push_swap_mandatory/free_utils.c`
-  - `42/C/push_swap_mandatory/sort_small.c`
-  - `42/C/push_swap_mandatory/sort_chunk.c`
-  - `42/C/push_swap_mandatory/sort_radix.c`
-  - `42/C/push_swap_mandatory/libft/Makefile`
-  - `42/C/push_swap_mandatory/libft/ft_printf/Makefile`
-  - `42/C/push_swap_mandatory/libft/get_next_line/Makefile`
-  - `42/tests_push_swap_mandatory/README.md`
+  - `42/C/push_swap/Makefile`
+  - `42/C/push_swap/push_swap.c`
+  - `42/C/push_swap/push_swap.h`
+  - `42/C/push_swap/parse.c`
+  - `42/C/push_swap/parse_utils.c`
+  - `42/C/push_swap/stack_build.c`
+  - `42/C/push_swap/stack_utils.c`
+  - `42/C/push_swap/ops_swap.c`
+  - `42/C/push_swap/ops_push.c`
+  - `42/C/push_swap/ops_rotate.c`
+  - `42/C/push_swap/ops_reverse_rotate.c`
+  - `42/C/push_swap/free_utils.c`
+  - `42/C/push_swap/sort_small.c`
+  - `42/C/push_swap/sort_chunk.c`
+  - `42/C/push_swap/sort_radix.c`
+  - `42/C/push_swap/libft/Makefile`
+  - `42/C/push_swap/libft/ft_printf/Makefile`
+  - `42/C/push_swap/libft/get_next_line/Makefile`
+  - `42/tests_push_swap/README.md`
   - `.github/projects-index.md`
   - `.github/project-history.md`
 - Tracking docs updated:
   - `.github/projects-index.md`
   - `.github/project-history.md`
 - Notes:
-  - Se crea `push_swap_mandatory` como proyecto independiente solo mandatory.
-  - Se define Makefile exclusivo mandatory (sin target bonus en la raiz).
-  - Se eliminan residuos `_bonus` en archivos y referencias de build dentro del arbol copiado.
-  - Verificacion final: compilacion de `push_swap_mandatory` OK, Norminette top-level OK, y busqueda `_bonus` sin coincidencias.
+  - Se crea `push_swap` como proyecto independiente solo mandatory.
+  - Se define Makefile exclusivo del alcance actual del proyecto.
+  - Verificacion final: compilacion de `push_swap` OK y Norminette top-level OK.
 
 - Change type: validation-report
 - Paths changed:
@@ -115,22 +149,17 @@ Purpose: chronological log of important decisions, imports, and structure change
   - `.github/project-history.md`
 - Notes:
   - Checkpoint 2 de `push_swap` ejecutado con validación por lotes y estabilidad.
-  - Benchmark repetido con `checker_linux`:
+  - Benchmark repetido con checker externo:
     - 20 muestras de 100 números -> `20/20 OK`, `max_ops100=631`.
     - 10 muestras de 500 números -> `10/10 OK`, `max_ops500=5260`.
   - Validación de errores en `push_swap`:
     - `duplicado`, `overflow` y `string vacía` -> `Error` + exit `1`.
-  - `checker` propio validado:
-    - instrucción inválida -> `Error` + exit `1`,
-    - secuencia válida no ordenada -> `KO`,
-    - sin argumentos -> salida vacía.
-  - ASAN/UBSAN en `push_swap` y `checker` sin hallazgos.
+  - ASAN/UBSAN en `push_swap` sin hallazgos.
 
 - Change type: project
 - Paths changed:
   - `42/C/push_swap/Makefile`
-  - `42/C/push_swap/checker_bonus.c`
-  - `42/C/push_swap/main.c`
+  - `42/C/push_swap/push_swap.c`
   - `42/C/push_swap/sort_chunk.c`
   - `42/C/push_swap/push_swap.h`
   - `.github/projects-index.md`
@@ -144,13 +173,12 @@ Purpose: chronological log of important decisions, imports, and structure change
   - `push_swap` pasa a implementación técnica activa con ACK de Chat2 en H-009.
   - Se integra estrategia `chunk sort` para tamaños medios (`<=500`) manteniendo
     `small sort` y `radix` como soporte.
-  - Evidencia funcional consolidada con `checker_linux`:
+  - Evidencia funcional consolidada con checker externo:
     - caso base de control: `OK`,
     - errores críticos (`duplicado`, `overflow`, `string vacía`) -> `Error`.
   - Benchmark de muestra tras optimización:
     - 100 números: `602` operaciones (`OK`),
     - 500 números: `5182` operaciones (`OK`).
-  - Bonus iniciado con `checker_bonus.c` y regla `bonus` en Makefile.
 
 - Change type: validation-report
 - Paths changed:

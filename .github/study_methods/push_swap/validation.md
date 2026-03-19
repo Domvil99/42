@@ -1,135 +1,150 @@
 # push_swap Validation Guide
 
-## 1. Estrategia de Validación (Orden obligatorio)
+## 1. Orden obligatorio de validacion
 
 1. Validar comportamiento contra subject.
-2. Validar memoria/estabilidad.
+2. Validar memoria y estabilidad.
 3. Ejecutar Norminette al final.
 
-## 2. Tests Funcionales Base
+Este orden evita cerrar estilo cuando aun hay desvio funcional.
 
-### 2.1 Sin argumentos
+## 2. Build y smoke tests
+
+Desde `42/C/push_swap`:
 
 ```bash
-./push_swap
+make
+./push_swap 2 1
+./push_swap 3 2 1
+./push_swap 1 2 3
 ```
 
-Esperado: sin salida.
+Esperado:
 
-### 2.2 Casos mínimos
+- Build sin errores.
+- Para `2 1`: salida no vacia (`sa`).
+- Para `3 2 1`: secuencia valida (`sa` + `rra` observada).
+- Para ya ordenado: salida vacia.
+
+## 3. Matriz minima funcional (mandatory)
+
+Casos validos:
 
 ```bash
 ./push_swap 2 1
-./push_swap 2 1 3
-./push_swap 3 2 1
+./push_swap 4 1 5 2 3
+./push_swap "3 2 1"
 ```
 
-Esperado: salida de instrucciones válidas y orden final correcto.
-
-### 2.3 Entradas inválidas
+Casos invalidos:
 
 ```bash
-./push_swap 1 a 3
+./push_swap 1 a 2
 ./push_swap 1 1 2
 ./push_swap 2147483648
 ./push_swap +
+./push_swap ""
 ```
 
-Esperado: `Error` en stderr.
+Esperado en invalidos:
 
-## 3. Validación con checker externo (mandatory)
+- `Error` en stderr.
+- exit code de error.
 
-Si tienes `checker_OS`:
+## 4. Validacion con checker externo
+
+Si dispones de checker externo:
 
 ```bash
 ARG="3 2 5 1 4"
-./push_swap $ARG | ./checker_OS $ARG
+./push_swap $ARG | <checker_externo> $ARG
 ```
 
 Esperado: `OK`.
 
-## 4. Benchmarks de rendimiento
+Nota: este proyecto es mandatory-only; checker no vive en este arbol.
 
-### 4.1 100 números
+## 5. Rendimiento (benchmarks subject)
 
-```bash
-ARG=$(python3 -c "import random;print(' '.join(map(str, random.sample(range(-10000,10000),100))))")
-./push_swap $ARG | wc -l
-```
+Referencia de subject:
 
-Objetivo de referencia del subject: < 700.
+- 100 numeros: objetivo alto `< 700`.
+- 500 numeros: objetivo alto `<= 5500`.
 
-### 4.2 500 números
+Script corto de muestra:
 
 ```bash
-ARG=$(python3 -c "import random;print(' '.join(map(str, random.sample(range(-100000,100000),500))))")
-./push_swap $ARG | wc -l
+ARG100=$(python3 -c "import random;print(' '.join(map(str, random.sample(range(-10000,10000),100))))")
+./push_swap $ARG100 | wc -l
+
+ARG500=$(python3 -c "import random;print(' '.join(map(str, random.sample(range(-100000,100000),500))))")
+./push_swap $ARG500 | wc -l
 ```
 
-Objetivo de referencia del subject: <= 5500.
+Evidencia real registrada (2026-03-14):
 
-## 5. Validación de memoria y estabilidad
+- `OPS100=594`
+- `OPS500=4961`
+
+## 6. Memoria y estabilidad
+
+Comando recomendado:
 
 ```bash
 valgrind --leak-check=full --show-leak-kinds=all ./push_swap 3 2 1
 valgrind --leak-check=full --show-leak-kinds=all ./push_swap 1 a 2
 ```
 
-Esperado: sin leaks, sin invalid reads/writes.
+Resultados esperados:
 
-## 6. Norminette (cierre)
+- `in use at exit: 0 bytes in 0 blocks`
+- `ERROR SUMMARY: 0 errors`
+
+Evidencia capturada en exito (2026-03-14):
+
+- 0 bytes in use at exit.
+- 0 errors.
+
+## 7. Casos borde obligatorios
+
+- Sin args: `./push_swap` -> salida vacia.
+- Ya ordenado: `./push_swap 1 2 3 4` -> salida vacia.
+- Reverso: `./push_swap 5 4 3 2 1` -> secuencia valida.
+- Negativos y cero: `./push_swap -3 10 0 -1 2`.
+- Limites de int: `-2147483648` y `2147483647`.
+
+## 8. Cierre de norma
+
+Desde el proyecto:
 
 ```bash
 norminette *.c *.h
 ```
 
-En VS Code puedes usar:
+En VS Code tambien puedes usar tareas de check por archivo/proyecto.
 
-- Task `Normi Autofix: Active File`
-- Task `Normi Check: Project All`
+## 9. Plantilla de evidencia por ronda
 
-## 7. Casos límite obligatorios
+Para cada ronda de validacion guarda:
 
-1. Ya ordenado: `./push_swap 1 2 3 4`.
-2. Reverso total: `./push_swap 5 4 3 2 1`.
-3. Mixto con negativos: `./push_swap -3 10 0 -1 2`.
-4. Cifra extrema válida: `INT_MIN`, `INT_MAX`.
-5. String única con múltiples espacios.
+- fecha
+- commit o hash de trabajo
+- resultados funcionales
+- ops en 100/500
+- resumen de memoria
+- estado de norminette
 
-## 8. Validación del bonus checker (proyecto push_swap)
+## 10. Criterio de "mandatory listo"
 
-Nota de alcance:
+Un estado se considera listo cuando se cumple todo:
 
-- `42/C/push_swap` incluye checker bonus.
-- `42/C/push_swap_mandatory` es mandatory-only y no debe incluir checker.
-
-### 8.1 Flujo válido
-
-```bash
-./push_swap 3 2 1 | ./checker 3 2 1
-```
-
-Esperado: `OK`.
-
-### 8.2 Instrucción inválida
-
-```bash
-echo "xx" | ./checker 1 2 3
-```
-
-Esperado: `Error`.
-
-## 9. Matriz de evidencia recomendada
-
-Guardar por iteración:
-
-- Commit/hash.
-- Resultado funcional (OK/KO/Error).
-- Conteo de operaciones 100/500.
-- Resultado valgrind/asan.
-- Resultado norminette.
+- Contracto del subject respetado.
+- Errores invalidos bien manejados.
+- Rendimiento dentro de objetivo de evaluacion.
+- Memoria limpia.
+- Norminette en verde.
 
 ## Change Log
 
-- 2026-03-13: guía inicial de validación funcional, memoria y rendimiento.
-- 2026-03-13: actualización de alcance para bonus activo en `push_swap` y variante `push_swap_mandatory`.
+- 2026-03-14: guia de validacion mandatory completa con evidencia real
+  de build, funcional, benchmark y memoria.

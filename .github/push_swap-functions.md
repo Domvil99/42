@@ -6,7 +6,7 @@ Mapa funcional del proyecto `42/C/push_swap` para seguimiento técnico y estudio
 
 ## 1. Core Flow
 
-- `main.c`
+- `push_swap.c`
   - `main`
   - `setup_stacks` (static)
   - `sort_dispatch` (static)
@@ -104,8 +104,7 @@ No se documentan funciones de libft que no se usan en este proyecto.
 
 ## 9. Pending Functional Gaps
 
-- Bonus `checker`: no implementado aún en estado actual.
-- Regla `bonus` en Makefile: pendiente.
+- Ningún gap funcional abierto registrado en el alcance actual.
 
 ## Change Log
 

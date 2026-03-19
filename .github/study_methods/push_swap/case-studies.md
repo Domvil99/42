@@ -1,6 +1,6 @@
 # push_swap Case Studies
 
-## 1. Caso básico: 2 números
+## 1. Caso 2 numeros
 
 Entrada:
 
@@ -8,17 +8,19 @@ Entrada:
 2 1
 ```
 
-Ejecución esperada:
+Flujo:
 
-- Detecta `size == 2`.
-- Compara índices.
-- Emite `sa`.
+1. `size == 2`.
+2. `index(top) > index(next)`.
+3. `op_sa`.
 
-Ejecución verificada (2026-03-13):
+Salida observada:
 
-- Salida observada: `sa`.
+```text
+sa
+```
 
-## 2. Caso 3 números (reverso)
+## 2. Caso 3 numeros en reverso
 
 Entrada:
 
@@ -26,14 +28,38 @@ Entrada:
 3 2 1
 ```
 
-Trazado conceptual:
+Normalizacion esperada:
 
-1. Índices esperados: 2, 1, 0.
-2. En `sort_three`: cae en caso `f > s && s > t`.
-3. Emite `sa` + `rra`.
-4. Resultado ordenado ascendente.
+- `3 -> 2`
+- `2 -> 1`
+- `1 -> 0`
 
-## 3. Caso 5 números
+Topologia inicial en `a`:
+
+- `2 1 0`
+
+Regla de `sort_three` que aplica:
+
+- `f > s && s > t`
+
+Secuencia:
+
+1. `sa`
+2. `rra`
+
+Salida observada:
+
+```text
+sa
+rra
+```
+
+Estado final:
+
+- `a`: `0 1 2` (ordenado)
+- `b`: vacia
+
+## 3. Caso 5 numeros (traza manual completa)
 
 Entrada:
 
@@ -41,98 +67,152 @@ Entrada:
 4 1 5 2 3
 ```
 
-Trazado conceptual:
+Indices:
 
-1. Buscar mínimo y acercarlo al top con `ra` o `rra`.
-2. `pb` para enviarlo a `b`.
-3. Repetir hasta dejar 3 en `a`.
-4. Ordenar 3 con `sort_three`.
-5. `pa` hasta vaciar `b`.
+- `4->3, 1->0, 5->4, 2->1, 3->2`
+- estado inicial `a`: `3 0 4 1 2`
 
-## 4. Caso radix pequeño
+Paso A: extraer minimos hasta dejar 3 nodos
+
+1. minimo actual `0` en posicion 1 (size 5) -> conviene `ra` una vez.
+2. `pb` manda `0` a `b`.
+3. nuevo minimo `1` en `a` (segun estado) -> rotar corto y `pb`.
+
+Paso B: ordenar trio restante en `a` con `sort_three`.
+
+Paso C: reintegrar `b` con `pa` dos veces.
+
+Invariante:
+
+- Al terminar, `b` vacia y `a` ascendente por `index`.
+
+## 4. Caso 100 numeros (comportamiento de chunk)
+
+Contexto:
+
+- En este rango se ejecuta `sort_chunk`.
+- `chunk_size = 14`.
+
+Fase 1 (A->B):
+
+- Se hace barrido por ventana `current..current+chunk`.
+- Muy pequenos (`<= current`) se empujan y luego `rb` para enterrarlos.
+- Ventana media (`<= current+chunk`) se empuja directo.
+- Fuera de ventana: `ra` para buscar candidato.
+
+Fase 2 (B->A):
+
+- Se recupera siempre el maximo de `b`.
+- Se elige `rb` o `rrb` por menor distancia.
+- `pa` reconstruye `a` en orden.
+
+Muestra real (2026-03-14):
+
+- `OPS100=594`.
+
+Lectura tecnica:
+
+- Cumple objetivo alto de subject (<700).
+- Indica que chunk para 100 esta bien calibrado en esta version.
+
+## 5. Caso 500 numeros (comportamiento de chunk)
+
+Contexto:
+
+- Tambien ejecuta `sort_chunk` por el corte `<=500`.
+- `chunk_size = 30`.
+
+Efecto esperado:
+
+- Mas fases que en 100.
+- Coste mayor en rotaciones de busqueda y recuperacion de maximos.
+
+Muestra real (2026-03-14):
+
+- `OPS500=4961`.
+
+Lectura tecnica:
+
+- Cumple objetivo alto de subject (<=5500).
+- Margen razonable para variaciones de muestra.
+
+## 6. Caso invalido por overflow
 
 Entrada:
 
 ```text
-7 3 5 1 4 2 6 0
+2147483648
 ```
 
-Trazado por bit 0:
+Flujo:
 
-- Bit 0 = 0 -> `pb`.
-- Bit 0 = 1 -> `ra`.
-- Al final del ciclo, `pa` hasta vaciar `b`.
-
-Trazado por bits siguientes:
-
-- Repetir para bit 1, bit 2...
-- Invariante: tras cada bit, todos los elementos vuelven a `a`.
-
-## 5. Caso inválido crítico
-
-Entrada:
-
-```text
-1 2 2147483648
-```
+1. `is_valid_number` la acepta lexicalmente.
+2. `ps_atol` detecta overflow contra `INT_MAX`.
+3. Parse falla y se imprime `Error`.
 
 Resultado esperado:
 
-- `ps_atol` marca overflow.
-- Se imprime `Error` en stderr.
-- No se emiten operaciones.
+- Sin instrucciones de sort.
+- Error controlado.
 
-Ejecución verificada (2026-03-13):
-
-- Salida observada: `Error`.
-
-## 6. Caso de duplicados ocultos en string única
+## 7. Caso invalido por token no numerico
 
 Entrada:
 
 ```text
-"10 4 10"
+1 a 2
 ```
 
-Resultado esperado:
+Flujo:
 
-- `ft_split` tokeniza.
-- `has_duplicates` detecta repetido.
-- `Error`.
+1. `is_valid_number("a") == 0`.
+2. `fill_array` retorna -1.
+3. setup imprime `Error`.
 
-Ejecución verificada (2026-03-13):
+Salida observada:
 
-- Salida observada: `Error`.
+```text
+Error
+```
 
-## 7. Caso ya ordenado
+## 8. Caso ya ordenado
 
 Entrada:
 
 ```text
-1 2 3 4 5
+1 2 3
 ```
 
-Resultado esperado:
+Flujo:
 
-- `is_sorted_stack` devuelve verdadero.
-- No se imprime ninguna operación.
+1. `is_sorted_stack(a) == 1`.
+2. dispatch retorna sin operaciones.
 
-Ejecución verificada (2026-03-13):
+Salida observada:
 
-- Salida observada: 0 bytes.
+- vacia.
 
-## 8. Caso de stress para benchmark
+## 9. Caso memoria (estabilidad)
 
-Entrada:
+Comando:
 
-- 100 y 500 enteros aleatorios sin repetición.
+```bash
+valgrind --leak-check=full --show-leak-kinds=all ./push_swap 3 2 1
+```
 
-Objetivo:
+Resumen observado:
 
-- Medir `wc -l` sobre salida.
-- Registrar si cumple límites de evaluación del subject.
+- 0 bytes in use at exit.
+- 0 errors.
+
+## 10. Mini ejercicios de repaso activo
+
+- Traza a mano `5 1 4 2 3` indicando cada op.
+- Explica por que en chunk se hace `pb + rb` para indices pequenos.
+- Describe una pasada completa de bit 0 en radix.
+- Justifica por que `find_pos_of_index` no rompe si no encuentra target.
 
 ## Change Log
 
-- 2026-03-13: casos iniciales para estudio guiado y trazas manuales.
-- 2026-03-13: agregadas verificaciones ejecutadas para casos 2, 5, 6 y 7.
+- 2026-03-14: casos mandatory completos con trazas de 2/3/5,
+  comportamiento de 100/500, errores y memoria.

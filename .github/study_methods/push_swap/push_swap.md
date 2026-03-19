@@ -1,226 +1,142 @@
 # push_swap Study Report
 
-## 1. Vision del Proyecto
+## 1. Vision del proyecto
 
-`push_swap` es un proyecto de algoritmia aplicada con restricciones severas.
-No basta con ordenar: hay que ordenar con un lenguaje de operaciones limitado,
-minimizando movimientos y manteniendo robustez de parsing, memoria y errores.
+La meta no es solo ordenar enteros, sino hacerlo con un set cerrado de operaciones sobre dos stacks enlazados y con control estricto de errores.
 
-Objetivo real de aprendizaje:
+## 2. Alcance exacto de este informe
 
-- Modelar datos en estructuras simples y fiables (stacks enlazados).
-- Diseñar estrategia algorítmica por escala de entrada.
-- Defender complejidad y decisiones técnicas ante evaluación oral.
-- Implementar flujo de validación profesional: spec -> memoria -> norma.
+- Proyecto cubierto: `42/C/push_swap`.
+- Alcance del proyecto: `push_swap` (mandatory).
+- Cobertura tecnica: parsing, data model, operaciones, dispatch de algoritmos,
+  small sort, chunk sort, radix, memoria, build y validacion.
+- Cobertura pedagogica: ruta de lectura, preguntas de defensa, trazas manuales,
+  errores tipicos y criterios de calidad.
 
-## 2. Subject y Reglas Obligatorias
+## 3. Subject y reglas obligatorias
 
-Fuente canónica usada para este informe:
-`42/PDFs/2026-03-13_push_swap_actualizado.txt`.
+Referencia de especificacion:
 
-### 2.1 Programas esperados
+- `42/PDFs/2026-03-13_push_swap_actualizado.txt`
 
-- Mandatory: `push_swap`.
-- Bonus: `checker`.
+Reglas que gobiernan mandatory:
 
-### 2.2 Operaciones permitidas
-
-- `sa`, `sb`, `ss`
-- `pa`, `pb`
-- `ra`, `rb`, `rr`
-- `rra`, `rrb`, `rrr`
-
-### 2.3 Restricciones críticas
-
+- Ejecutable esperado: `push_swap`.
+- Operaciones permitidas: `sa sb ss pa pb ra rb rr rra rrb rrr`.
 - Sin variables globales.
-- Compilación con `-Wall -Wextra -Werror`.
-- Manejo de errores obligatorio (`Error\n` en stderr para entradas inválidas).
-- Entrada vacía: no imprimir nada y salir limpio.
+- Compilacion con `-Wall -Wextra -Werror`.
+- Entrada invalida: `Error\n` en stderr.
+- Entrada vacia: salida vacia, fin limpio.
 
-### 2.4 Benchmarks de evaluación (referencia del subject)
+## 4. Arquitectura mental completa
 
-- 100 números: objetivo alto < 700 operaciones.
-- 500 números: objetivo alto <= 5500 operaciones.
+Pipeline real implementado:
 
-## 3. Arquitectura Mental Recomendada
+1. Leer argumentos (`argc/argv`).
+2. Parsear a array de int (`parse_numbers`).
+3. Validar formato numerico, overflow y duplicados.
+4. Construir stack `a` (lista enlazada).
+5. Asignar indice normalizado por ranking (`0..n-1`).
+6. Elegir algoritmo por tamano (`sort_dispatch`).
+7. Emitir instrucciones.
+8. Liberar memoria (`arr`, `a`, `b`).
 
-### 3.1 Pipeline completo
+## 5. Contrato de entrada y salida
 
-1. Parseo de entrada.
-2. Validación (sintaxis numérica, rango int, duplicados).
-3. Construcción de stack `a`.
-4. Normalización por índices (ranking).
-5. Selección de estrategia según tamaño.
-6. Emisión de instrucciones.
-7. Liberación total de memoria.
+Entrada soportada:
 
-### 3.2 Invariantes de seguridad
+- Formato multi-arg: `./push_swap 3 2 1`
+- Formato string unica: `./push_swap "3 2 1"`
 
-- `a` y `b` siempre son listas enlazadas válidas.
-- Ninguna operación debe romper punteros aun en casos de tamaño 0/1.
-- El parser no acepta tokens ambiguos o fuera de rango int.
-- Toda reserva tiene ruta de liberación.
+Salida del programa:
 
-## 4. Estrategias de Ordenación por Tamaño
+- Secuencia de operaciones, una por linea.
+- O nada, si ya esta ordenado o no hay datos.
+- `Error` por entrada invalida.
 
-### 4.1 n <= 1
+## 6. Estrategia de ordenacion por escala
 
-No hacer nada.
+- `n <= 1`: no hacer nada.
+- `n == 2`: swap si estan invertidos.
+- `n == 3`: `sort_three` con tabla de casos.
+- `4 <= n <= 5`: `sort_five` (extraer minimos a `b`, ordenar 3, reintegrar).
+- `6 <= n <= 500`: `sort_chunk`.
+- `n > 500`: `sort_radix`.
 
-### 4.2 n == 2
+Decision clave: se usa `sort_chunk` en rango medio porque reduce operaciones
+respecto a radix puro en este codigo para casos tipicos de 100 y 500.
 
-Un `sa` si están invertidos.
+## 7. Datos y complejidad
 
-### 4.3 n == 3
+Estructura principal:
 
-Resolver con tabla corta de casos (comparando índices).
+```c
+typedef struct s_node
+{
+    int             value;
+    int             index;
+    struct s_node   *next;
+}   t_node;
+```
 
-### 4.4 4 <= n <= 5
+Resumen de costes en la implementacion actual:
 
-- Extraer mínimos a `b`.
-- Ordenar 3 en `a`.
-- Reintegrar con `pa`.
+- Duplicados: O(n^2).
+- Asignacion de indices: O(n^2) (bubble sort + busqueda lineal por nodo).
+- `sort_three` / `sort_five`: coste pequeno y acotado.
+- `sort_chunk`: dependiente de distribucion y chunk size.
+- `sort_radix`: O(n * bits), con `bits ~= log2(n)`.
 
-### 4.5 n > 5
+## 8. Evidencia real capturada (2026-03-14)
 
-Radix binario sobre `index` normalizado:
+Build:
 
-- Recorrer bits de menor a mayor.
-- Bit 0 -> `pb`.
-- Bit 1 -> `ra`.
-- Vaciar `b` con `pa` al final de cada bit.
+- `make` en `42/C/push_swap`: OK.
 
-## 5. Complejidad y Justificación
+Funcional:
 
-### 5.1 Parsing y validación
+- `./push_swap 2 1` -> `sa`
+- `./push_swap 3 2 1` -> `sa` + `rra`
+- `./push_swap 1 2 3` -> salida vacia
+- `./push_swap 1 a 2` -> `Error`
 
-- Sintaxis/rango: O(n * k) donde `k` es longitud media de token.
-- Duplicados en implementación actual: O(n^2).
+Rendimiento (muestra unica de referencia):
 
-### 5.2 Sort small
+- 100 enteros aleatorios: `OPS100=594`
+- 500 enteros aleatorios: `OPS500=4961`
 
-- Coste constante (n <= 5).
+Memoria:
 
-### 5.3 Sort radix
+- Valgrind (caso `3 2 1`):
+  - `in use at exit: 0 bytes in 0 blocks`
+  - `ERROR SUMMARY: 0 errors`
 
-- O(n * bits).
-- Como `bits ~= log2(n)`, el coste es O(n log n) en términos de pasos de bit.
+## 9. Como leer este paquete completo
 
-## 6. Makefile: Guía Completa
+Orden recomendado para entender todo:
 
-### 6.1 De un Makefile básico (estilo libft1) a push_swap
+1. `foundations-nodes-lists.md`: base de estructuras, nodos y listas.
+2. `push_swap.md` (este archivo): marco global.
+3. `implementation.md`: anatomia exacta archivo por archivo.
+4. `case-studies.md`: trazas manuales paso a paso.
+5. `validation.md`: como verificar funcional, memoria y norma.
+6. `defense.md`: como justificar decisiones en oral.
+7. `dictionary.md`: glosario de terminos del modulo mandatory.
 
-Estructura mínima heredada:
+## 10. Checklist de comprension total
 
-- Variables (`NAME`, `CC`, `CFLAGS`, `RM`).
-- Reglas estándar (`all`, `clean`, `fclean`, `re`).
-- Regla de objetos (`%.o: %.c`).
-
-Adaptación para push_swap:
-
-- Añadir lista de fuentes del proyecto (`SRC`).
-- Añadir dependencia con `libft/libft.a`.
-- Enlazar objetos + libft para generar ejecutable final.
-
-### 6.2 Adaptación para funcionar en current/base evolutiva
-
-Principio operativo:
-
-- Mantener `libft` como submódulo compilable con `make -C libft`.
-- Evitar rutas absolutas.
-- Mantener regla de no relink: recompilar solo cuando cambian dependencias.
-
-### 6.3 Explicación de reglas
-
-#### `NAME`
-
-Nombre del binario final (`push_swap`).
-
-#### `all`
-
-Objetivo por defecto. Debe construir `$(NAME)`.
-
-#### `clean`
-
-Elimina objetos locales y ejecuta `make clean -C libft`.
-
-#### `fclean`
-
-Incluye `clean` + elimina binario final + `make fclean -C libft`.
-
-#### `re`
-
-Atajo de reconstrucción total (`fclean` + `all`).
-
-#### Reglas de compilación
-
-- `%.o: %.c push_swap.h` compila cada fuente con cabecera como dependencia.
-
-#### Reglas de dependencias
-
-- `$(NAME)` depende de `$(OBJ)` y `$(LIBFT)`.
-- `$(LIBFT)` dispara compilación de libft.
-
-#### Regla bonus
-
-En `42/C/push_swap` existe regla `bonus` y binario `checker`.
-Adicionalmente, `42/C/push_swap_mandatory` convive como variante
-mandatory-only y no incluye `bonus` por diseño.
-
-## 7. Errores Frecuentes y Prevención
-
-1. Aceptar tokens inválidos (`--1`, `1a`, `+`).
-2. No detectar overflow int.
-3. Duplicados silenciosos.
-4. Operaciones que escriben instrucción aunque no cambien estado esperado.
-5. Leaks en rutas de fallo de parseo.
-6. Olvidar validar rendimiento en 100/500.
-
-## 8. Ruta para Rehacer push_swap desde Cero
-
-1. Diseñar `t_node` y helpers de lista.
-2. Implementar operaciones primitivas (sin print y luego con print flag).
-3. Implementar parser robusto + errores.
-4. Construir stack e índice normalizado.
-5. Implementar sort para 2/3/5.
-6. Implementar radix para grandes.
-7. Montar Makefile y tests manuales.
-8. Validar contra checker y benchmarks.
-9. Cerrar memoria y Norminette.
-
-## 9. Plan de Estudio por Etapas
-
-### Etapa A: Fundamentos
-
-- Entender cada operación sobre ejemplos de 3 elementos.
-
-### Etapa B: Parsing y robustez
-
-- Practicar entradas válidas/invalidas y rutas de error.
-
-### Etapa C: Algoritmos
-
-- Trazar a mano `sort_three`, `sort_five`, `sort_radix`.
-
-### Etapa D: Defensa técnica
-
-- Responder preguntas de complejidad, decisiones y edge cases.
-
-## 10. Integración con Chat2 y Chat4
-
-- Chat2: documentar cada módulo implementado en paralelo (incremental).
-- Chat4: convertir avances en material pedagógico ampliable.
-- Este archivo es núcleo; los anexos contienen profundidad por tema.
-
-## 11. Mapa de Anexos
-
-- `implementation.md`: arquitectura y código real.
-- `validation.md`: pruebas funcionales, memoria y rendimiento.
-- `defense.md`: banco de preguntas para evaluación.
-- `case-studies.md`: trazas paso a paso.
-- `dictionary.md`: glosario técnico.
+Puedes decir que entiendes el proyecto cuando puedes:
+
+- Explicar por que se normaliza a indices.
+- Dibujar mentalmente cada operacion sobre `a` y `b`.
+- Justificar por que `sort_dispatch` elige cada estrategia.
+- Reproducir al menos una traza de 3, 5, 100 y 500.
+- Defender coste y trade-offs sin mirar codigo.
+- Probar errores de parsing y leer su salida esperada.
 
 ## Change Log
 
-- 2026-03-13: versión inicial integral para estudio en paralelo a implementación.
-- 2026-03-13: ajuste de documentación para reflejar bonus activo en `push_swap` y split `push_swap_mandatory`.
+- 2026-03-14: version inicial completa del informe dedicated para
+  `push_swap` con evidencia real de build/funcional/rendimiento/memoria.
+- 2026-03-16: actualizado orden de lectura para arrancar desde fundamentos de
+  nodos/listas antes del analisis de implementacion.

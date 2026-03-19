@@ -1,69 +1,69 @@
 # push_swap Dictionary
 
-Glosario técnico de `push_swap` para repaso rápido y defensa.
+Glosario tecnico del modulo mandatory con ejemplos cortos.
 
 ## Entradas
 
 ### Stack
-- Definición: estructura LIFO (Last In, First Out).
-- Mini ejemplo: `pb` toma el top de `a` y lo coloca como top de `b`.
+- Definicion: estructura LIFO sobre lista enlazada.
+- Mini ejemplo: `pb` mueve top de `a` a top de `b`.
 
 ### Top
-- Definición: primer nodo visible de una pila enlazada.
-- Mini ejemplo: en `sa`, se intercambian los dos nodos del top.
+- Definicion: primer nodo de una pila.
+- Mini ejemplo: `sa` intercambia top y segundo.
 
 ### Operation set
-- Definición: conjunto cerrado de instrucciones permitidas por el subject.
+- Definicion: conjunto cerrado de instrucciones permitidas por subject.
 - Mini ejemplo: `sa`, `pb`, `ra`, `rra`.
 
 ### Normalization by index
-- Definición: mapear cada valor a su posición ordenada global.
-- Mini ejemplo: `-42 -> 0`, `10 -> 1`, `500 -> 2`.
+- Definicion: mapear cada valor a su ranking ascendente.
+- Mini ejemplo: `-5 -> 0`, `7 -> 1`, `30 -> 2`.
 
-### Radix sort (bitwise)
-- Definición: clasificación por bits de menor a mayor peso.
-- Mini ejemplo: bit 0 decide entre `pb` (0) y `ra` (1).
+### Dispatch
+- Definicion: seleccion de estrategia por tamano de entrada.
+- Mini ejemplo: `size <= 5` usa `sort_five`.
 
-### Small sort
-- Definición: estrategias manuales para tamaños pequeños (2/3/5).
-- Mini ejemplo: para 3 elementos, tabla de casos en `sort_three`.
+### Chunk window
+- Definicion: rango `current..current+chunk` usado para decidir push/rotate.
+- Mini ejemplo: en 100 elementos, chunk inicial es 14.
+
+### Current frontier
+- Definicion: indice maximo ya procesado en fase A->B de chunk.
+- Mini ejemplo: cuando `(*a)->index <= current`, hace `pb` y `rb`.
+
+### Max recovery
+- Definicion: fase B->A que recupera siempre el mayor indice visible.
+- Mini ejemplo: buscar max, girar corto (`rb/rrb`) y `pa`.
+
+### Radix pass
+- Definicion: una iteracion completa sobre un bit especifico.
+- Mini ejemplo: bit 0 separa elementos por paridad del index.
 
 ### Invariant
-- Definición: propiedad que debe mantenerse siempre durante el algoritmo.
-- Mini ejemplo: no perder nodos al mover entre `a` y `b`.
-
-### Parsing
-- Definición: proceso de leer y validar argumentos de entrada.
-- Mini ejemplo: aceptar `"3 2 1"` y `3 2 1`.
+- Definicion: propiedad que debe mantenerse siempre.
+- Mini ejemplo: no perder nodos y terminar con `b` vacia.
 
 ### Overflow
-- Definición: valor fuera del rango representable por `int`.
-- Mini ejemplo: `2147483648` debe producir `Error`.
+- Definicion: valor fuera de rango de `int`.
+- Mini ejemplo: `2147483648`.
 
 ### Duplicate
-- Definición: número repetido no permitido por el subject.
-- Mini ejemplo: `1 2 3 2`.
-
-### Stability (runtime)
-- Definición: ausencia de crashes y comportamientos indefinidos.
-- Mini ejemplo: operaciones sobre stack vacía no deben segfaultear.
-
-### Benchmark
-- Definición: métrica de rendimiento en número de operaciones.
-- Mini ejemplo: contar líneas con `wc -l` para 100/500 entradas.
-
-### Checker
-- Definición: programa bonus que verifica secuencia de instrucciones.
-- Mini ejemplo: lee stdin y devuelve `OK`, `KO` o `Error`.
-
-### Relink
-- Definición: relink innecesario cuando no hubo cambios de dependencias.
-- Mini ejemplo: `make` consecutivo no debería reconstruir el binario.
+- Definicion: repeticion de valor en entrada.
+- Mini ejemplo: `1 2 1`.
 
 ### Teardown
-- Definición: fase final de liberación de memoria y cierre limpio.
+- Definicion: limpieza final de recursos.
 - Mini ejemplo: `free(arr)`, `free_stack(&a)`, `free_stack(&b)`.
+
+### Mandatory-only scope
+- Definicion: el proyecto entrega un unico binario `push_swap` con operaciones permitidas por subject.
+- Mini ejemplo: el Makefile de este modulo construye `push_swap` y no incluye otros ejecutables.
+
+### Benchmark
+- Definicion: medida de operaciones para 100/500 entradas.
+- Mini ejemplo: contar lineas con `wc -l`.
 
 ## Change Log
 
-- 2026-03-13: versión inicial de diccionario específico de push_swap.
+- 2026-03-14: glosario inicial especifico para push_swap.
