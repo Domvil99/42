@@ -4,11 +4,63 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 ## Global Active Rules
 
-  1. structure/scope against `.txt`,
-  2. behavior against `.txt`,
-  3. memory/stability,
-  4. Norminette as final closing step.
-  but are superseded by this active rule.
+Validation order for all projects:
+
+1. structure/scope against `.txt`.
+2. behavior against `.txt`.
+3. memory/stability.
+4. Norminette as final closing step.
+
+## 2026-03-20
+
+- Change type: workflow-docs
+- Paths changed:
+  - `.github/projects-index.md`
+  - `.github/copilot-instructions.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/workflow-rules.md`
+  - `.github/reports/workblock-pending-status.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/projects-index.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/project-history.md`
+  - `.github/reports/workblock-pending-status.md`
+- Notes:
+  - Normalizacion de mapas de estructura y secciones de gobierno para
+    reflejar el estado real de `42/C/`.
+  - Eliminadas inconsistencias de alcance en `copilot-instructions` y
+    secciones vacias en `workflow-rules`.
+  - `workblock-pending-status` simplificado a snapshot actual con solo
+    pendientes reales del bloque activo.
+
+- Change type: docs-consistency
+- Paths changed:
+  - `.github/chat-handoff.md`
+  - `.github/projects-index.md`
+  - `.github/get_next_line-functions.md`
+  - `.github/get_next_line-progress.md`
+  - `.github/get_next_line-reference.md`
+  - `.github/currentLibft-functions.md`
+  - `.github/currentLibft-progress.md`
+  - `.github/currentLibft-reference.md`
+  - `.github/study_methods/overview.md`
+  - `.github/study_methods/push_swap/push_swap.md`
+  - `.github/study_methods/get_next_line/get_next_line.md`
+  - `.github/study_methods/currentLibft/currentLibft.md`
+  - `42/testsLibf/README.md`
+  - `42/tests_currentLibft/README.md`
+  - `42/tests_ft_printf/README.md`
+- Tracking docs updated:
+  - `.github/project-history.md`
+  - `.github/projects-index.md`
+  - `.github/QUICK_REFERENCE.md`
+- Notes:
+  - Correccion de inconsistencias factuales en rutas, estado y cobertura de
+    tracking de markdown respecto al workspace real.
+  - Creado tracking faltante para `get_next_line` y `currentLibft`
+    (functions/progress/reference).
+  - README de tests alineados a specs canonicas y rutas reales de compilacion.
 
 ## 2026-03-19
 
@@ -37,16 +89,13 @@ Purpose: chronological log of important decisions, imports, and structure change
   - `.github/project-history.md`
 - Notes:
   - Fix aplicado en parsing para uso correcto de libft integrada:
-    `ft_spcoe .lit` -> `ft_split` en `parse_single_string`.
+    `ft_split` aplicado en `parse_single_string` para tokenizar argumentos.
   - Validacion posterior completa en `push_swap`:
     - build `make`: OK
     - funcional basico: OK (`2 1`, `3 2 1`, ordenado, invalido alpha)
     - memoria (Valgrind): 0 leaks, 0 errors
     - benchmark muestra: `OPS100=594`, `OPS500=5083`
     - Norminette final: OK en `*.c` y `*.h`
-
-## 2026-03-13
-
 ## 2026-03-15
 
 - Change type: workflow-docs
@@ -483,7 +532,7 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 - Change type: spec-txt
 - Paths changed:
-  - `42/PDFs/2026-03-12_get_next_line_actualizado.txt`
+  - `42/PDFs/2026-03-12_get_next_line.txt`
   - `.github/project-history.md`
   - `42/tests_get_next_line/README.md`
 - Tracking docs updated:
@@ -491,9 +540,9 @@ Purpose: chronological log of important decisions, imports, and structure change
   - `42/tests_get_next_line/README.md`
 - Notes:
   - New corrected get_next_line baseline received and saved at
-    `42/PDFs/2026-03-12_get_next_line_actualizado.txt`.
-  - Diff against previous baseline (`42/PDFs/2026-03-12_get_next_line.txt`)
-    confirms normalization of index formatting with no functional normative
+    `42/PDFs/2026-03-12_get_next_line.txt`.
+  - Diff against prior working draft confirms normalization of index
+    formatting with no functional normative
     drift in mandatory/bonus requirements.
 
 - Change type: validation-report
@@ -507,7 +556,7 @@ Purpose: chronological log of important decisions, imports, and structure change
   - `.github/QUICK_REFERENCE.md`
 - Notes:
   - Full revalidation executed for `42/C/get_next_line` against updated
-    baseline `42/PDFs/2026-03-12_get_next_line_actualizado.txt`.
+    baseline `42/PDFs/2026-03-12_get_next_line.txt`.
   - Mandatory behavior validated with `BUFFER_SIZE=1,42,9999` and stdin path.
   - Bonus behavior validated with multi-fd alternation (`BUFFER_SIZE=1,42`).
   - ASAN/UBSAN checks (`-fsanitize=address,undefined`) completed without
@@ -547,7 +596,7 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 - Change type: spec-txt
 - Paths changed:
-  - `42/PDFs/2026-03-12_ft_printf_actualizado.txt`
+  - `42/PDFs/2026-03-12_ft_printf.txt`
   - `.github/project-history.md`
   - `.github/ft_printf-progress.md`
   - `.github/ft_printf-reference.md`
@@ -559,7 +608,7 @@ Purpose: chronological log of important decisions, imports, and structure change
   - `.github/ft_printf-functions.md`
 - Notes:
   - New corrected ft_printf baseline received and saved at
-    `42/PDFs/2026-03-12_ft_printf_actualizado.txt`.
+    `42/PDFs/2026-03-12_ft_printf.txt`.
   - Full validation executed for `42/C/ft_printf` against updated baseline:
     - `make fclean && make && make bonus` OK,
     - mandatory matrix in `42/tests_ft_printf`: `RET_TOTAL=212` (parity with `printf`),
@@ -579,7 +628,7 @@ Purpose: chronological log of important decisions, imports, and structure change
   - `.github/libft-progress.md`
 - Notes:
   - Validacion integral de `libft1` ejecutada sobre `42/C/libft` usando
-    baseline canonica `42/PDFs/2026-03-12_libft_v16_6_actualizado.txt`.
+    baseline canonica `42/PDFs/2026-03-12_libft_v16_6.txt`.
   - Criterio aplicado: cierre estricto sin ignorar errores (incluye
     `INVALID_HEADER`).
   - Resultado global: GO (sin hallazgos criticos, altos, medios ni bajos).
@@ -643,7 +692,7 @@ Purpose: chronological log of important decisions, imports, and structure change
 
 - Change type: spec-txt
 - Paths changed:
-  - `42/PDFs/2026-03-12_libft_v16_6_actualizado.txt`
+  - `42/PDFs/2026-03-12_libft_v16_6.txt`
   - `.github/project-history.md`
   - `.github/libft-progress.md`
 - Tracking docs updated:
@@ -651,8 +700,8 @@ Purpose: chronological log of important decisions, imports, and structure change
   - `.github/libft-progress.md`
 - Notes:
   - New corrected Libft v16.6 baseline received and saved at
-    `42/PDFs/2026-03-12_libft_v16_6_actualizado.txt`.
-  - Diff against old baseline `42/PDFs/2026-03-08_primera_libft.txt`
+    `42/PDFs/2026-03-12_libft_v16_6.txt`.
+  - Diff against previous non-canonical conversion
     confirmed missing normative points in old conversion.
   - Relevant normative deltas identified:
     - explicit prohibition of `restrict` in custom prototypes,
@@ -826,7 +875,7 @@ Cierre express: auditoría express, revisión rápida
   - moved `libft` to `C/libft`
   - created `42/PDFs`
 - Saved official reference text as:
-  - `42/PDFs/2026-03-08_primera_libft.txt`
+  - `42/PDFs/2026-03-12_libft_v16_6.txt`
 - Corrected official function counts from the PDF:
   - Part 1: 23
   - Part 2: 11
@@ -966,7 +1015,7 @@ Cierre express: auditoría express, revisión rápida
 
 - Auditoría completa de cumplimiento contra la especificación:
   - referencia usada:
-    - `42/PDFs/2026-03-08_primera_libft.txt`
+    - `42/PDFs/2026-03-12_libft_v16_6.txt`
   - verificaciones ejecutadas en `42/C/libft`:
     - `make fclean && make && make bonus` ✅
     - `norminette *.c *.h` revisado con exclusión temporal de
@@ -1040,7 +1089,7 @@ Cierre express: auditoría express, revisión rápida
 
 - Onboarding de especificacion `ft_printf`:
   - spec agregada en:
-    - `42/PDFs/2026-03-10_ft_printf.txt`
+    - `42/PDFs/2026-03-12_ft_printf.txt`
   - referencia base para validacion/correccion:
     - conversiones obligatorias `cspdiuxX%`
     - Makefile con `-Wall -Wextra -Werror` y sin relink
@@ -1091,7 +1140,7 @@ Cierre express: auditoría express, revisión rápida
   - se elimino la version previa importada por error y se reemplazo por el
     `.txt` correcto compartido por el usuario.
   - archivo final mantenido:
-    - `42/PDFs/2026-03-10_ft_printf.txt`
+    - `42/PDFs/2026-03-12_ft_printf.txt`
   - se limpiaron referencias de version anterior en tracking:
     - `.github/ft_printf-progress.md`
     - `.github/ft_printf-functions.md`
@@ -1132,7 +1181,7 @@ Cierre express: auditoría express, revisión rápida
 
 - Retranscripcion completa de especificacion `ft_printf`:
   - se regenero el contenido de:
-    - `42/PDFs/2026-03-10_ft_printf.txt`
+    - `42/PDFs/2026-03-12_ft_printf.txt`
   - criterio aplicado:
     - sin resumen, sin recortes, preservando semantica de secciones
       (titulo, resumen, indice, capitulos, requisitos, bonus,
@@ -1150,7 +1199,7 @@ Cierre express: auditoría express, revisión rápida
   - estrategia activada: micro-lotes (`editar -> norminette archivo`).
   - micro-lote 1 completado en:
     - `42/C/ft_printf/ft_printf.c`
-    - `42/C/ft_printf/parse_format.c`
+    - `42/C/ft_printf/handle_format_bonus.c`
     - `42/C/ft_printf/parse_format_bonus.c`
   - resultado del lote:
     - en esos archivos, solo `INVALID_HEADER`.
@@ -1180,9 +1229,9 @@ Cierre express: auditoría express, revisión rápida
 
 - Inicio de implementacion `ft_printf` (ciclo 1):
   - cambios en codigo:
-    - `42/C/ft_printf/handle_format.c`
+    - `42/C/ft_printf/ft_printf.c`
     - `42/C/ft_printf/handle_format_bonus.c`
-    - `42/C/ft_printf/print_int.c`
+    - `42/C/ft_printf/print_decimal.c`
     - `42/C/ft_printf/print_int_bonus.c`
     - `42/C/ft_printf/print_unsigned_bonus.c`
   - ajustes aplicados:
@@ -1213,7 +1262,7 @@ Cierre express: auditoría express, revisión rápida
 
 - Continuacion implementacion `ft_printf` (ciclo 3):
   - cambios en codigo:
-    - `42/C/ft_printf/handle_format.c`
+    - `42/C/ft_printf/ft_printf.c`
     - `42/C/ft_printf/handle_format_bonus.c`
   - objetivo:
     - limpieza incremental de Norminette en dispatchers sin alterar
@@ -1250,7 +1299,7 @@ Cierre express: auditoría express, revisión rápida
   - snapshot de deuda Norminette accionable (sin `INVALID_HEADER`):
     - total `286` errores.
     - distribucion: `print_unsigned.c` (151), `print_int_bonus.c` (39),
-      `print_int.c` (39), `print_hex.c` (31), `print_binary_bonus.c` (26).
+      `print_decimal.c` (39), `print_hex.c` (31), `print_binary_bonus.c` (26).
   - docs de tracking sincronizadas a este baseline:
     - `.github/ft_printf-functions.md`
     - `.github/ft_printf-progress.md`

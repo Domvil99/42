@@ -1,43 +1,3 @@
-# Quick Reference: Cierre de proyectos 42
-
-## Protocolo de cierre
-
-### Cierre total (validación completa, cierre completo, etc.)
-- Validar funcionamiento según el .txt
-- Verificar memoria y estabilidad
-- Ejecutar Norminette
-- git add, commit, push
-- Actualizar .md y README
-- Evidencia de cierre en README y tracking
-
-### Cierre express (auditoría express)
-- Solo tras cierre total reciente
-- Revisión rápida, mínima batería
-- Actualizar README y tracking
-
-## Norminette
- - Siempre después de validar funcionamiento
-
-## Git workflow
- - Mensajes de commit funcionales
-
-## Regla de oro: preservación de proyectos en /C
-- Ningún proyecto en `42/C/` puede perder funcionamiento tras su cierre.
-- Cada directorio es autónomo: debe compilar y funcionar por separado.
-- Prohibido modificar fuentes de un proyecto cerrado sin solicitud explícita.
-
-## Limpieza post-cierre
-- Eliminar temporales y binarios fuera del proyecto.
-- `make fclean` dentro del proyecto.
-- Verificar `git status` limpio en ambos repos.
-- Registrar limpieza en `project-history.md`.
-- `git add`, `commit`, `push` final.
-
----
-name: quick-reference
-description: "Quick reference guide for C development in libft project with common commands, shortcuts, and validation tips."
----
-
 # 📖 Quick Reference: Libft C Development
 
 ## Workspace Map (Current)
@@ -48,15 +8,20 @@ Raiz/
 │   ├── C/
 │   │   ├── libft/
 │   │   ├── ft_printf/
+│   │   ├── get_next_line/
 │   │   ├── push_swap/
 │   │   └── currentLibft/
 │   ├── PDFs/
-│   │   ├── 2026-03-08_primera_libft.txt
-│   │   ├── 2026-03-10_ft_printf.txt
-│   │   └── 2026-03-12_get_next_line_actualizado.txt
+│   │   ├── 2026-03-12_libft_v16_6.txt
+│   │   ├── 2026-03-12_ft_printf.txt
+│   │   ├── 2026-03-12_get_next_line.txt
+│   │   ├── 2026-03-13_push_swap.txt
+│   │   └── 2026-03-13_push_swap_actualizado.txt
 │   ├── testsLibf/
 │   │   └── README.md
 │   ├── tests_ft_printf/
+│   │   └── README.md
+│   ├── tests_get_next_line/
 │   │   └── README.md
 │   ├── tests_currentLibft/
 │   │   └── README.md
@@ -78,9 +43,15 @@ Raiz/
 │   ├── ft_printf-functions.md
 │   ├── ft_printf-progress.md
 │   ├── ft_printf-reference.md
+│   ├── get_next_line-functions.md
+│   ├── get_next_line-progress.md
+│   ├── get_next_line-reference.md
 │   ├── push_swap-functions.md
 │   ├── push_swap-progress.md
 │   ├── push_swap-reference.md
+│   ├── currentLibft-functions.md
+│   ├── currentLibft-progress.md
+│   ├── currentLibft-reference.md
 │   ├── projects-index.md
 │   ├── project-history.md
 │   ├── reports/
@@ -89,23 +60,23 @@ Raiz/
 │   ├── study_methods/
 │   │   ├── global-dictionary.md
 │   │   ├── libft/
-│   │   │   └── libft.md
+│   │   │   ├── libft.md
 │   │   │   └── dictionary.md
 │   │   ├── ft_printf/
-│   │   │   └── ft_printf.md
+│   │   │   ├── ft_printf.md
 │   │   │   └── dictionary.md
 │   │   ├── get_next_line/
-│   │   │   └── get_next_line.md
+│   │   │   ├── get_next_line.md
 │   │   │   └── dictionary.md
 │   │   ├── currentLibft/
-│   │   │   └── currentLibft.md
+│   │   │   ├── currentLibft.md
 │   │   │   └── dictionary.md
 │   │   ├── push_swap/
-│   │   │   └── push_swap.md
-│   │   │   └── implementation.md
-│   │   │   └── validation.md
-│   │   │   └── defense.md
-│   │   │   └── case-studies.md
+│   │   │   ├── push_swap.md
+│   │   │   ├── implementation.md
+│   │   │   ├── validation.md
+│   │   │   ├── defense.md
+│   │   │   ├── case-studies.md
 │   │   │   └── dictionary.md
 │   │   └── overview.md
 │   └── workflow-rules.md
@@ -186,6 +157,20 @@ realpath /home/domvil99/empresa/42/newLibft/Raiz
 - `.github/ft_printf-reference.md`
 - Note (2026-03-11): ft_printf tracking is in closure state.
   Post-closure updates should be logged first in `.github/project-history.md`.
+
+### When `42/C/get_next_line` changes
+- `.github/get_next_line-functions.md`
+- `.github/get_next_line-progress.md`
+- `.github/get_next_line-reference.md`
+
+### When `42/C/currentLibft` changes
+- `.github/currentLibft-functions.md`
+- `.github/currentLibft-progress.md`
+- `.github/currentLibft-reference.md`
+- `.github/currentLibft/integration-manifest.md`
+- `.github/projects-index.md`
+- `.github/project-history.md`
+- `.github/QUICK_REFERENCE.md`
 
 ### When `42/C/push_swap` changes
 - `.github/push_swap-functions.md`

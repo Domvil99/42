@@ -1,27 +1,7 @@
 # Workblock Pending Status
 
-Date: 2026-03-11
-Block: Continuacion de validacion Chat2 + consolidacion de arquitectura/documentacion
-
-## Repo entrega C (42/C/)
-
-Pending changes:
-- None.
-
-## Repo workspace Raiz
-
-Pending changes:
-- None.
-
-## Closure
-
-- Delivery repo commit: not required in this block
-- Workspace repo commits: test fix + documentation sync completed
-
----
-
-Date: 2026-03-12
-Block: Auditoria admin de Markdown + normalizacion de rutas tests
+Date: 2026-03-20
+Block: Auditoria final de coherencia Markdown (estructura + tracking)
 
 ## Repo entrega C (42/C/)
 
@@ -32,137 +12,44 @@ Pending changes:
 
 Pending changes:
 - `.github/projects-index.md`
-- `.github/workflow-rules.md`
-- `.github/QUICK_REFERENCE.md`
-- `.github/copilot-instructions.md`
-- `.github/reports/workblock-pending-status.md`
-
-## Closure
-
-- Scope: revision global de `.md` del workspace
-- Functional fix: unificacion de `42/tests_currentLibft/` en documentacion
-- Validation: sin referencias `testsCurrentLibft` y sin enlaces Markdown locales rotos
-- Delivery repo commit: not required in this block
-- Workspace repo commit: completed (`05b1718`)
-
----
-
-Date: 2026-03-12
-Block: Cierre de diccionarios de estudio + relay inter-chat
-
-## Repo entrega C (42/C/)
-
-Pending changes:
-- None.
-
-## Repo workspace Raiz
-
-Pending changes:
-- None.
-
-## Closure
-
-- Scope: diccionario global + diccionarios por proyecto + protocolo relay no-copy/paste
-- Evidence: commit `05b1718`
-- Delivery repo commit: not required in this block
-- Workspace repo commit: completed
-
----
-
-Date: 2026-03-13
-Block: Implementacion sistema base relay con gates y decision Chat1
-
-## Repo entrega C (42/C/)
-
-Pending changes:
-- None.
-
-## Repo workspace Raiz
-
-Pending changes:
-- `.github/copilot-instructions.md`
-- `.github/workflow-rules.md`
 - `.github/chat-handoff.md`
-- `.github/projects-index.md`
+- `.github/copilot-instructions.md`
 - `.github/QUICK_REFERENCE.md`
-- `.github/reports/inter-chat-essential.md`
+- `.github/ft_printf-functions.md`
+- `.github/ft_printf-progress.md`
+- `.github/ft_printf-reference.md`
+- `.github/get_next_line-functions.md`
+- `.github/get_next_line-progress.md`
+- `.github/get_next_line-reference.md`
+- `.github/libft-functions.md`
+- `.github/libft-progress.md`
+- `.github/push_swap-progress.md`
+- `.github/currentLibft-functions.md`
+- `.github/currentLibft-progress.md`
+- `.github/currentLibft-reference.md`
+- `.github/workflow-rules.md`
+- `.github/project-history.md`
+- `.github/reports/currentLibft-validation-2026-03-12.md`
 - `.github/reports/pdfs-canonical-inventory.md`
 - `.github/reports/workblock-pending-status.md`
-- `.tools/audit-handoff-prerequisites.sh`
-- `42/tests_push_swap/README.md`
-- `42/PDFs/2026-03-13_push_swap.txt`
-- `42/PDFs/2026-03-13_push_swap_actualizado.txt`
-
-## Prerequisite Gates
-
-- H-008: `DONE` — traduccion validada por el usuario.
-- H-009: `TODO` — prerequisito cumplido; pendiente ACK de Chat2.
-- H-011: `TODO` — prerequisito cumplido; pendiente ACK de Chat2.
-- H-012: `DONE` (decision `APPROVED`) — consolidacion canonica cerrada tras validacion del usuario.
-
-## Closure
-
-- Scope: hardening del flujo out-of-scope -> Chat1 -> decision -> handoff ejecutable
-- Validation: estados extendidos + fields de gate activos + auditoria automatica de prerequisitos
-- Delivery repo commit: not required in this block
-- Workspace repo commit: pending
-
----
-
-Date: 2026-03-13
-Block: Habilitacion de refresco tecnico de memoria en Chat2
-
-## Repo entrega C (42/C/)
-
-Pending changes:
-- None.
-
-## Repo workspace Raiz
-
-Pending changes:
-- `.github/copilot-instructions.md`
-- `.github/instructions/c-coding.instructions.md`
-- `.github/workflow-rules.md`
-- `.github/project-history.md`
-- `.github/reports/workblock-pending-status.md`
-
-## Closure
-
-- Scope: autorizar `refrescar memoria` en Chat2 solo en contexto tecnico de un
-	proyecto C, preservando gobernanza exclusiva de Chat1.
-- Validation: reglas alineadas en politica central, instruccion especializada
-	y workflow con desambiguacion tecnico/admin.
-- Delivery repo commit: not required in this block
-- Workspace repo commit: pending
-
----
-
-Date: 2026-03-13
-Block: Inicio de implementacion documental de push_swap (estudio paralelo)
-
-## Repo entrega C (42/C/)
-
-Pending changes:
-- None.
-
-## Repo workspace Raiz
-
-Pending changes:
-- `.github/chat-handoff.md`
-- `.github/project-history.md`
-- `.github/reports/workblock-pending-status.md`
+- `.github/study_methods/currentLibft/currentLibft.md`
+- `.github/study_methods/get_next_line/get_next_line.md`
+- `.github/study_methods/overview.md`
 - `.github/study_methods/push_swap/push_swap.md`
-- `.github/study_methods/push_swap/implementation.md`
-- `.github/study_methods/push_swap/case-studies.md`
-- `.github/push_swap-progress.md`
+- `42/testsLibf/README.md`
+- `42/tests_currentLibft/README.md`
+- `42/tests_ft_printf/README.md`
+- `42/tests_get_next_line/README.md`
+- `42/tests_push_swap/README.md`
 
 ## Closure
 
-- Scope: crear informe de estudio completo de `push_swap` en modo incremental,
-  sincronizado con implementacion activa.
-- Validation: handoff formal Chat1 -> Chat2/Chat4 creado (`H-013`, `H-014`),
-	`H-013` en `WIP` con Checkpoint 1 validado (parsing + errores) y evidencia
-	documentada en progreso/implementation/case-studies.
-- Delivery repo commit: not required in this block
-- Workspace repo commit: pending
+- Scope: alinear markdown de gobierno con el estado real de `42/C/` y
+	estructura actual del workspace.
+- Validation:
+	- sin referencias activas legacy de `ft_printf` en tracking,
+	- sin residuos `push_swap_mandatory` en `.github/*.md`,
+	- mapas de estructura reparados en docs principales.
+- Delivery repo commit: not required in this block.
+- Workspace repo commit: pending.
 

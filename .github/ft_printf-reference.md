@@ -1,9 +1,9 @@
 # Referencia Rapida ft_printf
 
-Estado: referencia operativa alineada a spec `42/PDFs/2026-03-12_ft_printf_actualizado.txt`.
+Estado: referencia operativa alineada a spec `42/PDFs/2026-03-12_ft_printf.txt`.
 
 Nota actual (2026-03-12):
-- Baseline corregida de ft_printf incorporada en `42/PDFs/2026-03-12_ft_printf_actualizado.txt`.
+- Baseline corregida de ft_printf incorporada en `42/PDFs/2026-03-12_ft_printf.txt`.
 - Revalidacion tecnica completa en `42/C/ft_printf`:
     - build mandatory/bonus OK,
     - matrices mandatory y bonus en paridad con `printf`
@@ -63,7 +63,7 @@ Nota actual (2026-03-11):
 ## Ronda de correccion activa (micro-lote 1)
 - Archivos limpiados de errores no-header:
     - `42/C/ft_printf/ft_printf.c`
-    - `42/C/ft_printf/parse_format.c`
+    - `42/C/ft_printf/handle_format_bonus.c`
     - `42/C/ft_printf/parse_format_bonus.c`
 - Estado actual del micro-lote:
     - `norminette` muestra solo `INVALID_HEADER` en esos 3 archivos.
@@ -77,13 +77,11 @@ Nota actual (2026-03-11):
 
 ## Ronda de correccion activa (micro-lote 3)
 - Archivos limpiados de errores no-header:
-    - `42/C/ft_printf/print_str.c`
+    - `42/C/ft_printf/print_string.c`
     - `42/C/ft_printf/print_str_bonus.c`
-    - `42/C/ft_printf/print_reverse_bonus.c`
-    - `42/C/ft_printf/print_n_bonus.c`
     - `42/C/ft_printf/ft_printf.h`
 - Estado actual del micro-lote:
-    - `norminette` muestra solo `INVALID_HEADER` en estos 5 archivos.
+    - `norminette` muestra solo `INVALID_HEADER` en estos 3 archivos.
 
 ## Ronda de correccion activa (micro-lote 4)
 - Archivos limpiados de errores no-header:
@@ -99,7 +97,7 @@ Nota actual (2026-03-11):
     - total: `286`
     - `print_unsigned.c`: 151
     - `print_int_bonus.c`: 39
-    - `print_int.c`: 39
+    - `print_decimal.c`: 39
     - `print_hex.c`: 31
     - `print_binary_bonus.c`: 26
 

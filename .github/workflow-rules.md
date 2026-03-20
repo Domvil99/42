@@ -20,6 +20,15 @@ Official aliases:
 
 ## Dual Git Operation
 
+- Delivery repo root: `42/C/`.
+- Workspace repo root: `Raiz/`.
+- Regla operativa:
+	- cambios en codigo entregable (`42/C/<project>`): commitear en `42/C/`.
+	- cambios de tracking/tooling (`.github`, `.vscode`, `42/PDFs`, `42/tests_*`):
+		commitear en `Raiz/`.
+- Verificacion obligatoria antes de commit:
+	- `git rev-parse --show-toplevel`.
+
 
 ## Protocolo de cierre de proyectos 42
 
@@ -70,6 +79,10 @@ Esta rutina nunca debe eliminar ni modificar archivos fuente, Makefiles ni
 configuraciones esenciales de ningún proyecto.
 
 ## Commit Message Policy (Active)
+
+- Los mensajes de commit deben describir intencion funcional/estructural.
+- Prohibido usar mensajes sobre cambios de metadatos (usuario, fecha, correo).
+- Formato recomendado: `tipo(scope): accion concreta`.
 
 
 ## Inter-Chat Handoff File
@@ -146,6 +159,12 @@ When files in `42/C/ft_printf` change (`*.c`, `*.h`, `Makefile`), update:
 1. `.github/ft_printf-functions.md`
 2. `.github/ft_printf-progress.md`
 3. `.github/ft_printf-reference.md`
+
+When files in `42/C/get_next_line` change (`*.c`, `*.h`, `Makefile`), update:
+
+1. `.github/get_next_line-functions.md`
+2. `.github/get_next_line-progress.md`
+3. `.github/get_next_line-reference.md`
 
 Note (2026-03-11): ft_printf tracking is in closure state.
 Future updates should be recorded in `.github/project-history.md` with a new
@@ -301,7 +320,7 @@ When the user says `haz el cierre definitivo`:
 ## Naming Convention for Imported Specs
 
 Use: `YYYY-MM-DD_<topic>.txt`
-Example: `2026-03-08_primera_libft.txt`
+Example: `2026-03-12_libft_v16_6.txt`
 
 ## 30-Second Ops Checklist
 

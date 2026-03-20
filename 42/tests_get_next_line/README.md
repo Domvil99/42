@@ -5,7 +5,7 @@ Manual test harness directory for standalone get_next_line validation.
 Status: completed (2026-03-12).
 
 Validation order:
-1. Scope/spec alignment with 42/PDFs/2026-03-12_get_next_line_actualizado.txt
+1. Scope/spec alignment with 42/PDFs/2026-03-12_get_next_line.txt
 2. Functional behavior
 3. Memory and stability
 4. Norminette as final closing step

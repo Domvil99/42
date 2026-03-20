@@ -1,5 +1,12 @@
 # get_next_line Study Report
 
+Nota operativa (2026-03-20): este proyecto existe en dos formas activas:
+- Standalone completada: `42/C/get_next_line/`.
+- Integrada en base evolutiva: `42/C/currentLibft/libft/get_next_line/`.
+
+Este estudio cubre la base tecnica que aplica al standalone y a la copia
+integrada, manteniendo el foco principal en el entregable standalone.
+
 ## 1. Vision del Proyecto
 
 `get_next_line` entrena lectura incremental sobre file descriptors sin cargar

@@ -13,8 +13,22 @@ Purpose: central index for all projects under `42/` and their relation with `42/
 | currentLibft | 42/C/currentLibft | in-progress | base | Integrated base: libft + ft_printf + get_next_line under `currentLibft/libft/`; base libft parity synced with libft1 on 2026-03-12 |
 | testsLibf | 42/testsLibf | completed | yes | Manual test programs for libft validation (maintained for regression) |
 | tests_ft_printf | 42/tests_ft_printf | completed | yes | Manual test harnesses for ft_printf validation (maintained for regression) |
+| tests_get_next_line | 42/tests_get_next_line | completed | no | Manual test harnesses for get_next_line validation (maintained for regression) |
 | tests_currentLibft | 42/tests_currentLibft | in-progress | yes | Integration gate for currentLibft build/link/norminette checks |
 | tests_push_swap | 42/tests_push_swap | in-progress | yes | Espacio de pruebas para push_swap |
+
+## Libft Variants Reference
+
+Para seguimiento tecnico, el workspace mantiene tres variantes activas:
+
+| Alias | Ruta | Proposito | Status |
+|---|---|---|---|
+| libft1 (base) | 42/C/libft | Proyecto historico, referencia de cierre | completed |
+| libft2 (mirror) | 42/C/ft_printf/libft | Mirror integrado en ft_printf | completed |
+| current (evolutiva) | 42/C/currentLibft/libft | Base integrada con ft_printf + get_next_line | in-progress |
+
+Regla de sincronizacion: libft1 y libft2 comparten base de headers y
+funcionalidad; current replica la base de libft1 e integra modulos hijos.
 
 ## Update Rules
 

@@ -89,7 +89,7 @@
 - Revalidación reciente completada tras ajustes manuales en archivos de
 	memoria y bonus de listas, manteniendo 43/43 operativas.
 - Auditoría integral adicional (2026-03-09) basada en
-	`42/PDFs/2026-03-08_primera_libft.txt`:
+	`42/PDFs/2026-03-12_libft_v16_6.txt`:
 	- compilación obligatoria + bonus OK,
 	- sin errores no-header en Norminette,
 	- verificación de 43/43 archivos `*.c` con una sola firma

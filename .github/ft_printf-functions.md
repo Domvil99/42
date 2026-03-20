@@ -2,16 +2,16 @@
 
 ## Nucleo detectado (baseline)
 - `ft_printf.c`
-- `parse_format.c`
-- `handle_format.c`
 - `print_char.c`
-- `print_str.c`
-- `print_int.c`
+- `print_string.c`
+- `print_decimal.c`
 - `print_unsigned.c`
 - `print_hex.c`
 - `print_pointer.c`
+- `utils.c`
 
 ## Bonus detectado (baseline)
+- `ft_printf_bonus.c`
 - `parse_format_bonus.c`
 - `handle_format_bonus.c`
 - `print_char_bonus.c`
@@ -24,7 +24,7 @@
 ## Estado
 - Baseline importado para revision.
 - Revalidacion por baseline corregida (2026-03-12):
-	- spec activa migrada a `42/PDFs/2026-03-12_ft_printf_actualizado.txt`.
+	- spec activa migrada a `42/PDFs/2026-03-12_ft_printf.txt`.
 	- build mandatory/bonus OK.
 	- matrices mandatory/bonus en paridad con `printf`
 	  (`RET_TOTAL=212` y `RET_TOTAL=146`).
@@ -50,10 +50,10 @@
 		- `SRC` obligatorio nuevo.
 		- `BONUS_SRC` ahora usa `ft_printf_bonus.c`.
 - Implementacion iniciada (2026-03-11):
-	- `handle_format.c`: corregido avance de indice de parseo para no saltar
+	- `ft_printf.c`: corregido avance de indice de parseo para no saltar
 		caracteres tras conversion.
 	- `handle_format_bonus.c`: mismo ajuste de indice en flujo bonus.
-	- `print_int.c` y `print_int_bonus.c`: correccion de manejo de memoria en
+	- `print_decimal.c` y `print_int_bonus.c`: correccion de manejo de memoria en
 		caso `precision == 0 && n == 0` (`NULL` seguro en lugar de literal),
 		guardas de `malloc` fallido y `free` seguro.
 	- `print_unsigned_bonus.c`: guardas de `malloc`, caso `.0` con `0` seguro
@@ -69,10 +69,10 @@
 
 - Ronda Norminette (micro-lote 1) completada:
 	- `ft_printf.c`: ajuste de formato y estructura para norma.
-	- `parse_format.c`: refactor a helpers (`parse_flags`,
+	- `handle_format_bonus.c`: refactor de estructura para eliminar errores
+	  de linea y tabulacion en el flujo bonus.
+	- `parse_format_bonus.c`: refactor a helpers (`parse_flags`,
 	  `parse_width_precision`) para eliminar errores de linea/estructura.
-	- `parse_format_bonus.c`: refactor equivalente, reduciendo funciones por
-	  archivo y limpiando errores de formato.
 	- estado del lote: solo `INVALID_HEADER` en estos tres archivos.
 
 - Ronda Norminette (micro-lote 2) completada:
@@ -81,12 +81,9 @@
 	- estado del lote: solo `INVALID_HEADER` en ambos archivos.
 
 - Ronda Norminette (micro-lote 3) completada:
-	- `print_str.c` y `print_str_bonus.c`: helpers `static` para padding,
+	- `print_string.c` y `print_str_bonus.c`: helpers `static` para padding,
 	  eliminacion de ternarios y ajuste de estructura para limite de lineas.
-	- `print_reverse_bonus.c`: refactor completo a helpers `static`
-	  (`write_padding`/`write_reverse`) para cumplir limite de lineas y
-	  variables por funcion.
-	- `print_n_bonus.c` y `ft_printf.h`: correcciones menores de formato
+	- `ft_printf.h`: correcciones menores de formato
 	  (declaracion/asignacion, `return`, tabulacion de prototipo).
 	- estado del lote: solo `INVALID_HEADER` en estos archivos.
 
@@ -103,7 +100,7 @@
 		- `make` OK.
 		- `make bonus` OK.
 	- deuda Norminette accionable restante del proyecto: 286 errores
-	  distribuidos en `print_unsigned.c`, `print_int.c`,
+	  distribuidos en `print_unsigned.c`, `print_decimal.c`,
 	  `print_int_bonus.c`, `print_hex.c`, `print_binary_bonus.c`.
 
 - Actualizacion funcional-first (2026-03-11):

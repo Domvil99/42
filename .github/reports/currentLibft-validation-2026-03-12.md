@@ -3,9 +3,9 @@
 Date: 2026-03-12
 Scope: 42/C/currentLibft as integrated reusable base (parent libft + child modules ft_printf and get_next_line)
 Canonical specs:
-- 42/PDFs/2026-03-12_libft_v16_6_actualizado.txt
-- 42/PDFs/2026-03-12_ft_printf_actualizado.txt
-- 42/PDFs/2026-03-12_get_next_line_actualizado.txt
+- 42/PDFs/2026-03-12_libft_v16_6.txt
+- 42/PDFs/2026-03-12_ft_printf.txt
+- 42/PDFs/2026-03-12_get_next_line.txt
 
 ## Validation Summary
 - Structure check: OK

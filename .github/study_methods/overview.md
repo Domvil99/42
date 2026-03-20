@@ -10,18 +10,19 @@ Excepcion operativa activa:
 
 ## Scope
 
-- Cada proyecto cerrado en `42/C/` puede tener su carpeta propia.
+- Cada proyecto validado en `42/C/` (cerrado o en desarrollo con estudio
+   documentado) puede tener su carpeta propia.
 - Nombres de carpetas y archivos: en ingles.
 - Contenido explicativo: en español, manteniendo terminos tecnicos del proyecto.
 - Estructura evolutiva: se pueden agregar uno o varios archivos por proyecto.
 
 ## Current Projects
 
-- `libft`
-- `ft_printf`
-- `get_next_line`
-- `currentLibft`
-- `push_swap`
+- `libft` (closed)
+- `ft_printf` (closed)
+- `get_next_line` (closed)
+- `currentLibft` (in-progress)
+- `push_swap` (in-progress)
 
 ## Mandatory Structure Rules
 

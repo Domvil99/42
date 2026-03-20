@@ -1,5 +1,9 @@
 # push_swap Study Report
 
+Nota de estado (2026-03-20): `push_swap` sigue en `in-progress` en
+`42/C/push_swap`. Este reporte documenta validaciones y evidencia real, pero
+no sustituye el cierre formal definitivo del proyecto.
+
 ## 1. Vision del proyecto
 
 La meta no es solo ordenar enteros, sino hacerlo con un set cerrado de operaciones sobre dos stacks enlazados y con control estricto de errores.

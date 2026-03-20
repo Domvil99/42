@@ -19,6 +19,16 @@ biblioteca reutilizable y extensible con modulos integrados.
 - Capa integrada: modulos como `ft_printf` y `get_next_line`.
 - Capa de gobernanza: manifiestos, tracking y reglas de cierre.
 
+### Modulos integrados actuales (2026-03-20)
+
+Integrados bajo `42/C/currentLibft/libft/`:
+- `libft` (base)
+- `ft_printf` (child integrado)
+- `get_next_line` (child integrado)
+
+No integrado en currentLibft (mantiene standalone independiente):
+- `push_swap` (`42/C/push_swap`)
+
 ## 4. Riesgos Tipicos
 
 - Duplicar `libft` dentro de un modulo integrado.

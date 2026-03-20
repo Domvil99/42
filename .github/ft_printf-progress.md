@@ -2,14 +2,14 @@
 
 ## Estado Actual
 - Proyecto detectado en `42/C/ft_printf`.
-- Especificacion registrada: `42/PDFs/2026-03-12_ft_printf_actualizado.txt`.
+- Especificacion registrada: `42/PDFs/2026-03-12_ft_printf.txt`.
 - Estado actual: cierre tecnico completado y publicado.
 - Politica vigente: sin pendientes tecnicos abiertos para entrega.
 - Headers: normalizados y alineados en 80 columnas en `*.c`/`*.h` (mandatory, bonus y `ft_printf/libft`).
 - Norma vigente: `INVALID_HEADER` ya no se ignora en checks de VS Code ni en autofix.
 
 ## Revalidacion por baseline corregida (2026-03-12)
-- ✅ Baseline actualizada en `42/PDFs/2026-03-12_ft_printf_actualizado.txt`.
+- ✅ Baseline actualizada en `42/PDFs/2026-03-12_ft_printf.txt`.
 - ✅ Build limpio: `make fclean && make && make bonus` en `42/C/ft_printf`.
 - ✅ Matriz mandatory: paridad con `printf` (`RET_TOTAL=212`).
 - ✅ Matriz bonus: paridad con `printf` (`RET_TOTAL=146`).
@@ -74,7 +74,7 @@
 	- `Makefile` ahora recrea `libftprintf.a` en `all` y `bonus` para evitar
 	  mezcla de simbolos entre builds.
 9. Limpieza incremental de Norminette en dispatchers:
-	- `handle_format.c` y `handle_format_bonus.c` quedaron con unico hallazgo
+	- `ft_printf.c` y `handle_format_bonus.c` quedaron con unico hallazgo
 	  `INVALID_HEADER` (politica temporal permitida).
 10. Revalidacion post-refactor:
 	- `make` + `make bonus` OK.
@@ -91,7 +91,7 @@
 	  `TERNARY_FBIDDEN`, `EMPTY_LINE_FUNCTION`, `TOO_MANY_LINES`,
 	  `TOO_MANY_VARS_FUNC`, tabulacion/alineacion.
 2. Micro-lote 1 aplicado (estrategia incremental):
-	- Archivos: `ft_printf.c`, `parse_format.c`, `parse_format_bonus.c`.
+	- Archivos: `ft_printf.c`, `handle_format_bonus.c`, `parse_format_bonus.c`.
 	- Resultado: en esos archivos quedan solo hallazgos `INVALID_HEADER`.
 3. Revalidacion de build tras el lote:
 	- `make bonus` OK en `42/C/ft_printf`.
@@ -99,14 +99,13 @@
 	- Archivos: `print_char.c`, `print_char_bonus.c`.
 	- Resultado: en ambos quedan solo hallazgos `INVALID_HEADER`.
 5. Micro-lote 3 aplicado (normal + bonus + header):
-	- Archivos: `print_str.c`, `print_str_bonus.c`, `print_reverse_bonus.c`,
-	  `print_n_bonus.c`, `ft_printf.h`.
+	- Archivos: `print_string.c`, `print_str_bonus.c`, `ft_printf.h`.
 	- Resultado: en todos los archivos del lote quedan solo hallazgos
 	  `INVALID_HEADER`.
 6. Snapshot de deuda Norminette restante (sin `INVALID_HEADER`):
 	- `print_unsigned.c` (151)
 	- `print_unsigned_bonus.c` (39)
-	- `print_int.c` (39)
+	- `print_decimal.c` (39)
 	- `print_int_bonus.c` (39)
 	- `print_hex.c` (31)
 	- `print_binary_bonus.c` (26)
@@ -132,14 +131,14 @@
 	- distribucion por archivo:
 		- `print_unsigned.c` (151)
 		- `print_int_bonus.c` (39)
-		- `print_int.c` (39)
+		- `print_decimal.c` (39)
 		- `print_hex.c` (31)
 		- `print_binary_bonus.c` (26)
 
 ## Historico: Micro-lotes Planificados (No Ejecutados)
 1. Micro-lote 5: `print_binary_bonus.c` (26).
 2. Micro-lote 6: `print_hex.c` (31).
-3. Micro-lote 7: `print_int.c` + `print_int_bonus.c` (39 + 39).
+3. Micro-lote 7: `print_decimal.c` + `print_int_bonus.c` (39 + 39).
 4. Micro-lote 8: `print_unsigned.c` (151).
 
 ## Nota de continuidad (2026-03-11)
@@ -227,7 +226,7 @@
 
 ## Auditoria final contra subject (2026-03-11)
 1. Verificacion de spec fuente:
-	- `42/PDFs/2026-03-10_ft_printf.txt` y el `.txt` recibido en chat
+	- `42/PDFs/2026-03-12_ft_printf.txt` y el `.txt` recibido en chat
 	  coinciden en requisitos normativos.
 2. Makefile y build:
 	- `make` y `make bonus` OK.

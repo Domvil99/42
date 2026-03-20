@@ -7,9 +7,9 @@ evitar confusion entre versiones historicas y versiones vigentes.
 
 | Project | Canonical spec | Legacy files kept | Status | Notes |
 |---|---|---|---|---|
-| libft | `42/PDFs/2026-03-12_libft_v16_6_actualizado.txt` | `42/PDFs/2026-03-08_primera_libft.txt` | OK | Canonical actualizado v16.6.
-| ft_printf | `42/PDFs/2026-03-12_ft_printf_actualizado.txt` | `42/PDFs/2026-03-10_ft_printf.txt` | OK | Mantener legacy solo como historial.
-| get_next_line | `42/PDFs/2026-03-12_get_next_line_actualizado.txt` | `42/PDFs/2026-03-12_get_next_line.txt` | OK | Versión actualizada tomada como base oficial.
+| libft | `42/PDFs/2026-03-12_libft_v16_6.txt` | (none) | OK | Canonical v16.6 vigente.
+| ft_printf | `42/PDFs/2026-03-12_ft_printf.txt` | (none) | OK | Canonical vigente.
+| get_next_line | `42/PDFs/2026-03-12_get_next_line.txt` | (none) | OK | Canonical vigente.
 | push_swap | `42/PDFs/2026-03-13_push_swap_actualizado.txt` | `42/PDFs/2026-03-13_push_swap.txt` | DONE | Source recibido 2026-03-13. Traduccion validada por el usuario.
 
 ## Operational Rule

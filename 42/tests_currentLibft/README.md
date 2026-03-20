@@ -2,6 +2,8 @@
 
 Manual integration gate for currentLibft.
 
+Status: in-progress.
+
 ## Scope
 - Validate that currentLibft builds libft (parent) and integrated child projects.
 - Start with ft_printf integration checks.

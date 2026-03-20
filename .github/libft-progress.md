@@ -17,8 +17,8 @@
 - `42/C/libft` queda como referencia historica de cierre.
 
 ## 🔎 Auditoría de Spec Corregida (2026-03-12)
-- Baseline antigua comparada: `42/PDFs/2026-03-08_primera_libft.txt`.
-- Baseline canonica nueva: `42/PDFs/2026-03-12_libft_v16_6_actualizado.txt`.
+- Baseline antigua comparada: transcripcion previa no canonica (reemplazada).
+- Baseline canonica nueva: `42/PDFs/2026-03-12_libft_v16_6.txt`.
 - Diferencias normativas relevantes detectadas en la conversion antigua:
     - prohibicion explicita de `restrict` en prototipos propios,
     - prohibicion explicita de compilar con `-std=c99`,
@@ -40,7 +40,7 @@
 
 ## ✅ Validación Ejecutada
 - Revalidacion integral de cierre (2026-03-12, ronda final estricta):
-    - baseline: `42/PDFs/2026-03-12_libft_v16_6_actualizado.txt`.
+    - baseline: `42/PDFs/2026-03-12_libft_v16_6.txt`.
     - alcance: `42/C/libft` (libft1).
     - politica de cierre: sin ignorar errores (incluye `INVALID_HEADER`).
     - estado de entorno al inicio: repos `Raiz/` y `42/C/` limpios.
@@ -67,7 +67,7 @@
     `ft_split`, `ft_itoa`, `ft_substr`, `ft_strjoin`).
 - Normalización de `main` de prueba comentados: un único `main` por
     archivo `ft_*.c` en la librería.
-- Revisión integral contra especificación `42/PDFs/2026-03-08_primera_libft.txt`:
+- Revisión integral contra especificación `42/PDFs/2026-03-12_libft_v16_6.txt`:
     - `make fclean && make && make bonus` validado ✅.
     - `norminette *.c *.h` sin errores adicionales al ignorar
         `INVALID_HEADER` (según política temporal indicada por usuario).

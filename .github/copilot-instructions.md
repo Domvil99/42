@@ -7,7 +7,12 @@ description: "Global workspace instructions for C projects in 42, with libft as 
 
 ## Scope
 - Main language: C (no C++).
-- Current primary projects: `42/C/libft` (completed) and `42/C/ft_printf` (completed).
+- Current project status in `42/C/`:
+  - `libft` (completed)
+  - `ft_printf` (completed)
+  - `get_next_line` (completed)
+  - `push_swap` (in-progress)
+  - `currentLibft` (in-progress, evolutive base)
 - Workspace supports multiple projects under `42/C/`.
 - `libft` is reusable across future projects and can evolve over time.
 
@@ -17,19 +22,29 @@ Raiz/
 ├── 42/
 │   ├── C/
 │   │   ├── libft/
-│   │   └── ft_printf/
-- Integration base project: `42/C/currentLibft` (in-progress, evolutive).
+│   │   ├── ft_printf/
+│   │   ├── get_next_line/
+│   │   ├── push_swap/
+│   │   └── currentLibft/
 │   ├── PDFs/
-│   │   ├── 2026-03-08_primera_libft.txt
-│   │   └── 2026-03-10_ft_printf.txt
+│   │   ├── 2026-03-12_libft_v16_6.txt
+│   │   ├── 2026-03-12_ft_printf.txt
+│   │   ├── 2026-03-12_get_next_line.txt
+│   │   ├── 2026-03-13_push_swap.txt
+│   │   └── 2026-03-13_push_swap_actualizado.txt
 │   ├── testsLibf/
+│   │   └── README.md
+│   ├── tests_ft_printf/
+│   │   └── README.md
+│   ├── tests_get_next_line/
+│   │   └── README.md
+│   ├── tests_push_swap/
 │   │   └── README.md
 │   ├── tests_currentLibft/
 │   │   └── README.md
 │   └── tests_<project_name>/
 │       └── README.md
 ├── .github/
-│   │   └── currentLibft/
 │   ├── QUICK_REFERENCE.md
 │   ├── chat-handoff.md
 │   ├── copilot-instructions.md
@@ -41,9 +56,29 @@ Raiz/
 │   ├── libft-progress.md
 │   ├── libft-reference.md
 │   ├── ft_printf-functions.md
+│   ├── ft_printf-progress.md
 │   ├── ft_printf-reference.md
+│   ├── get_next_line-functions.md
+│   ├── get_next_line-progress.md
+│   ├── get_next_line-reference.md
+│   ├── push_swap-functions.md
+│   ├── push_swap-progress.md
+│   ├── push_swap-reference.md
+│   ├── currentLibft-functions.md
+│   ├── currentLibft-progress.md
+│   ├── currentLibft-reference.md
 │   ├── projects-index.md
 │   ├── project-history.md
+│   ├── reports/
+│   ├── study_methods/
+│   ├── currentLibft/
+│   │   └── integration-manifest.md
+│   └── workflow-rules.md
+├── .tools/
+└── .vscode/
+```
+
+- Integration base project: `42/C/currentLibft` (in-progress, evolutive).
 
 ## currentLibft Architecture Rule (Important)
 - `42/C/currentLibft` must contain a single parent `libft` at
@@ -64,10 +99,6 @@ Raiz/
   - For `42/C/<new_project>`, copy base from `42/C/currentLibft/libft` into
     `42/C/<new_project>/libft` while keeping project deliverables in root
     (`*.c`, `*.h`, `Makefile`).
-│   └── workflow-rules.md
-├── .tools/
-└── .vscode/
-```
 
 ## 42 Delivery Rule (Important)
 - For each deliverable project, files required by the subject must remain at that project's root.
@@ -97,16 +128,9 @@ Raiz/
   projects in `42/C/` still compile and pass their tests.
 
 ## Post-Closure Cleanup (mandatory — always runs after finishing any project)
-- This cleanup is the final step of every completed project closure, without
-  exception. It executes automatically after the cierre total sequence.
-- Remove temporary files and binaries generated outside the project
-  (executables in `/tmp`, orphan `.o` files, etc.).
-- Run `make clean` / `make fclean` inside the project to keep only sources
-  and Makefile.
-- Verify no test scripts or files remain outside `42/tests_<project_name>/`.
-- Confirm `git status` is clean in both repos (`42/C/` and `Raiz/`).
-- Log the cleanup in `.github/project-history.md`.
-- Final `git add`, `commit`, `push` to version everything.
+- Canonical policy is defined in `.github/workflow-rules.md`
+  (section `Limpieza post-cierre`).
+- This file keeps only the mandatory reference to avoid policy drift.
 
 ## Commit Message Rule (Global)
 - Commit messages must never be about metadata-only changes such as user,
@@ -269,7 +293,14 @@ Raiz/
   - `.github/ft_printf-functions.md`
   - `.github/ft_printf-progress.md`
   - `.github/ft_printf-reference.md`
+- If `42/C/get_next_line` changes, update:
+  - `.github/get_next_line-functions.md`
+  - `.github/get_next_line-progress.md`
+  - `.github/get_next_line-reference.md`
 - If `42/C/currentLibft` changes, update:
+  - `.github/currentLibft-functions.md`
+  - `.github/currentLibft-progress.md`
+  - `.github/currentLibft-reference.md`
   - `.github/projects-index.md`
   - `.github/project-history.md`
   - `.github/QUICK_REFERENCE.md`

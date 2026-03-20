@@ -22,7 +22,7 @@ Estado: in-progress
 
 ### Gate 2: Functional
 
-- Casos simples y edge cases: validados con checker (`OK`) y errores controlados.
+- Casos simples y edge cases: validados con verificación funcional y errores controlados.
 - Benchmarks 100/500: evidencia consolidada en muestra real:
 	- 100 números: `602` operaciones (`OK`).
 	- 500 números: `5182` operaciones (`OK`).
@@ -75,5 +75,5 @@ Resultado del checkpoint:
 - 2026-03-13: Checkpoint 1 validado con evidencia real de parsing y errores.
 - 2026-03-13: Integración de `chunk sort` y mejora de benchmark (`602/5182`, ambos `OK`).
 - 2026-03-13: Validación por lotes (20x100 y 10x500): `max_ops100=631`,
-  `max_ops500=5260`, todos los lotes `OK` con checker.
+	`max_ops500=5260`, todos los lotes `OK` en verificación externa.
 - 2026-03-13: Checkpoint ASAN/UBSAN en `push_swap` completado sin hallazgos.
