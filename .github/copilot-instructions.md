@@ -212,7 +212,7 @@ Raiz/
 - Chat4 permissions rule:
   - Chat4 may read files under `42/` for study context.
   - Chat4 must not edit any file under `42/`.
-  - Chat4 may edit files only under `.github/study_methods/`.
+  - Chat4 may edit files only under `.github/study/`.
 - Keep this model extensible so future roles (for example Chat5+) can be added
   without breaking existing rules.
 
@@ -283,32 +283,32 @@ Raiz/
 - Explain code and project architecture in teaching format.
 - Prepare review checklists and active-recall material.
 - Do not execute C implementation tasks.
-- Edit scope: `.github/study_methods/` only.
+- Edit scope: `.github/study/` only.
 - Read-only scope for context: `42/`.
 
 ## Automatic Tracking Rules
 - If `42/C/libft` changes, update:
-  - `.github/libft-functions.md`
-  - `.github/libft-progress.md`
-  - `.github/libft-reference.md`
+  - `.github/tracking/projects/libft/libft-functions.md`
+  - `.github/tracking/projects/libft/libft-progress.md`
+  - `.github/tracking/projects/libft/libft-reference.md`
 - If `42/C/ft_printf` changes, update:
-  - `.github/ft_printf-functions.md`
-  - `.github/ft_printf-progress.md`
-  - `.github/ft_printf-reference.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-functions.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-progress.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-reference.md`
 - If `42/C/get_next_line` changes, update:
-  - `.github/get_next_line-functions.md`
-  - `.github/get_next_line-progress.md`
-  - `.github/get_next_line-reference.md`
+  - `.github/tracking/projects/get_next_line/get_next_line-functions.md`
+  - `.github/tracking/projects/get_next_line/get_next_line-progress.md`
+  - `.github/tracking/projects/get_next_line/get_next_line-reference.md`
 - If `42/C/currentLibft` changes, update:
-  - `.github/currentLibft-functions.md`
-  - `.github/currentLibft-progress.md`
-  - `.github/currentLibft-reference.md`
+  - `.github/tracking/projects/currentLibft/currentLibft-functions.md`
+  - `.github/tracking/projects/currentLibft/currentLibft-progress.md`
+  - `.github/tracking/projects/currentLibft/currentLibft-reference.md`
   - `.github/projects-index.md`
   - `.github/project-history.md`
   - `.github/QUICK_REFERENCE.md`
   - For each newly integrated module: generate or update
     `<module>-functions.md`, `<module>-reference.md`, `<module>-progress.md`.
-  - Update `.github/currentLibft/integration-manifest.md` (consolidated index
+  - Update `.github/tracking/projects/currentLibft/integration-manifest.md` (consolidated index
     of all modules, function counts, and public entry points).
   - These tracking updates are mandatory and execute as part of the cierre
     total sequence, after validation and before limpieza post-cierre.
@@ -341,14 +341,14 @@ Raiz/
   - `42/tests/tests_<project_name>/README.md` exists
   - `42/tests/tests_currentLibft/` remains available as integration gate
 - If a project under `42/C/` is validated and closed with optimal status,
-  create or update study material under `.github/study_methods/`:
+  create or update study material under `.github/study/`:
   - use project folder names in English (`libft`, `ft_printf`, etc.),
   - keep file names in English (`<project>.md`, `overview.md`, etc.),
   - keep explanatory content in Spanish with project technical terms,
   - maintain an evolutive structure (one or more files per project as needed),
   - keep mandatory dictionaries:
-    - global: `.github/study_methods/global-dictionary.md`,
-    - by project: `.github/study_methods/<project>/dictionary.md`
+    - global: `.github/study/global-dictionary.md`,
+    - by project: `.github/study/<project>/dictionary.md`
   - dictionary baseline must be: technical glossary + mini examples.
 
 ## References

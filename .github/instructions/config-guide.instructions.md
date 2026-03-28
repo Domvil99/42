@@ -87,10 +87,10 @@ Coordina con el usuario para mantener limpia la separación de responsabilidades
 ## Integración con Chat 3 y Chat 4
 - Chat3 gestiona pendientes en `.github/deferred-tasks.md` y reportes
 	operativos asociados.
-- Chat4 gestiona estudio en `.github/study_methods/` con nombres de
+- Chat4 gestiona estudio en `.github/study/` con nombres de
 	carpetas/archivos en ingles y contenido explicativo en español tecnico.
 	Alcance de permisos para Chat4:
-	- puede editar solo `.github/study_methods/`
+	- puede editar solo `.github/study/`
 	- puede leer `42/` para contexto
 	- no puede editar archivos dentro de `42/`
 - Chat1 decide delegacion y prioridad cuando una solicitud mezcla
@@ -110,9 +110,9 @@ Coordina con el usuario para mantener limpia la separación de responsabilidades
 	- `.github/projects-index.md`
 	- `.github/project-history.md`
 4. Si hay cambios en `42/C/ft_printf`, actualizar:
-	- `.github/ft_printf-functions.md`
-	- `.github/ft_printf-progress.md`
-	- `.github/ft_printf-reference.md`
+	- `.github/tracking/projects/ft_printf/ft_printf-functions.md`
+	- `.github/tracking/projects/ft_printf/ft_printf-progress.md`
+	- `.github/tracking/projects/ft_printf/ft_printf-reference.md`
 4.1. Si hay cambios en `42/C/currentLibft`, actualizar:
 	- `.github/projects-index.md`
 	- `.github/project-history.md`
@@ -127,7 +127,7 @@ Coordina con el usuario para mantener limpia la separación de responsabilidades
 	- `.github/projects-index.md`
 	- `.github/project-history.md`
 	- `.github/QUICK_REFERENCE.md`
-5.1. Si se agrega o modifica estructura en `.github/study_methods/`,
+5.1. Si se agrega o modifica estructura en `.github/study/`,
 	actualizar:
 	- `.github/project-history.md`
 	- `.github/QUICK_REFERENCE.md`

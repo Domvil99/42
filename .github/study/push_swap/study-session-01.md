@@ -16,12 +16,12 @@ Duracion objetivo: 75 minutos (rango 60-90).
 
 ## Material a abrir
 
-1. `.github/study_methods/push_swap/push_swap.md`
-2. `.github/study_methods/push_swap/dictionary.md`
-3. `.github/study_methods/push_swap/implementation.md`
-4. `.github/study_methods/push_swap/case-studies.md`
-5. `.github/study_methods/push_swap/validation.md`
-6. `.github/study_methods/push_swap/defense.md`
+1. `.github/study/push_swap/push_swap.md`
+2. `.github/study/push_swap/dictionary.md`
+3. `.github/study/push_swap/implementation.md`
+4. `.github/study/push_swap/case-studies.md`
+5. `.github/study/push_swap/validation.md`
+6. `.github/study/push_swap/defense.md`
 
 ## Flujo de sesion (75 min)
 

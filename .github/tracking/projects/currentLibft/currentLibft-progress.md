@@ -26,7 +26,7 @@ Estado: in-progress (base evolutiva)
 - currentLibft no reemplaza entregables standalone; los complementa como base
   reusable para nuevos proyectos.
 - Integraciones nuevas deben registrarse en:
-  - `.github/currentLibft/integration-manifest.md`
+  - `.github/tracking/projects/currentLibft/integration-manifest.md`
   - `.github/projects-index.md`
   - `.github/project-history.md`
 

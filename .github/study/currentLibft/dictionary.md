@@ -22,7 +22,7 @@ Glosario tecnico para estudiar la base integradora `currentLibft`.
 
 ### Integration manifest
 - Definicion: indice consolidado de modulos, conteos y entry points.
-- Mini ejemplo: actualizar `.github/currentLibft/integration-manifest.md`.
+- Mini ejemplo: actualizar `.github/tracking/projects/currentLibft/integration-manifest.md`.
 
 ### Bootstrap base
 - Definicion: plantilla oficial para arrancar un proyecto nuevo.

@@ -44,7 +44,9 @@ funcionalidad; current replica la base de libft1 e integra modulos hijos.
 - Per-project tests: `42/tests/tests_<project_name>/`
 - Current libft integration tests: `42/tests/tests_currentLibft/` (mandatory gate)
 - Shared test folders: `42/tests/<tests_name>/` (example: `42/tests/testsLibf/`)
-- Project reference docs: `.github/`
+- Project tracking docs: `.github/tracking/projects/<project>/`
+- Study docs: `.github/study/<project>/` and `.github/study/overview.md`
+- Governance anchors and workspace indexes: `.github/`
 - Incoming source instructions (.txt/.pdf exports): `42/PDFs/`
 
 ## Git Convention

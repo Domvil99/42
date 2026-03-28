@@ -35,7 +35,7 @@ Headers base:
 
 ## Source of Truth
 
-- `.github/currentLibft/integration-manifest.md`
+- `.github/tracking/projects/currentLibft/integration-manifest.md`
 
 ## Change Log
 

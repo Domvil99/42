@@ -107,7 +107,7 @@ configuraciones esenciales de ningún proyecto.
 	- `Chat2`: C implementation, refactor and debugging.
 	- `Chat3`: pending work (`to-do`), prioritization and backlog hygiene.
 	- `Chat4`: study methods, project explanations and review reports.
-	  - edit allowed only in `.github/study_methods/`
+	  - edit allowed only in `.github/study/`
 	  - read-only access allowed in `42/`
 	  - edit forbidden in `42/`
 
@@ -150,21 +150,21 @@ Definition of optimal communication flow:
 
 When files in `42/C/libft` change (`*.c`, `*.h`, `Makefile`), update:
 
-1. `.github/libft-functions.md`
-2. `.github/libft-progress.md`
-3. `.github/libft-reference.md`
+1. `.github/tracking/projects/libft/libft-functions.md`
+2. `.github/tracking/projects/libft/libft-progress.md`
+3. `.github/tracking/projects/libft/libft-reference.md`
 
 When files in `42/C/ft_printf` change (`*.c`, `*.h`, `Makefile`), update:
 
-1. `.github/ft_printf-functions.md`
-2. `.github/ft_printf-progress.md`
-3. `.github/ft_printf-reference.md`
+1. `.github/tracking/projects/ft_printf/ft_printf-functions.md`
+2. `.github/tracking/projects/ft_printf/ft_printf-progress.md`
+3. `.github/tracking/projects/ft_printf/ft_printf-reference.md`
 
 When files in `42/C/get_next_line` change (`*.c`, `*.h`, `Makefile`), update:
 
-1. `.github/get_next_line-functions.md`
-2. `.github/get_next_line-progress.md`
-3. `.github/get_next_line-reference.md`
+1. `.github/tracking/projects/get_next_line/get_next_line-functions.md`
+2. `.github/tracking/projects/get_next_line/get_next_line-progress.md`
+3. `.github/tracking/projects/get_next_line/get_next_line-reference.md`
 
 Note (2026-03-11): ft_printf tracking is in closure state.
 Future updates should be recorded in `.github/project-history.md` with a new
@@ -175,7 +175,7 @@ or modified):
 
 1. Generate or update `<module>-functions.md`, `<module>-reference.md` and
    `<module>-progress.md` for each newly integrated module.
-2. Update `.github/currentLibft/integration-manifest.md` with the consolidated
+2. Update `.github/tracking/projects/currentLibft/integration-manifest.md` with the consolidated
    index of all modules, function counts and public entry points.
 3. Update `.github/projects-index.md` and `.github/project-history.md`.
 4. These tracking updates are part of the cierre total sequence (after
@@ -223,11 +223,11 @@ When a support directory is added under `42/` (outside `42/C/`), update:
 2. `.github/project-history.md`
 3. `.github/QUICK_REFERENCE.md`
 
-When study structure changes under `.github/study_methods/`, update:
+When study structure changes under `.github/study/`, update:
 
 1. `.github/project-history.md`
 2. `.github/QUICK_REFERENCE.md`
-3. `.github/study_methods/overview.md` (si cambia estructura canonica)
+3. `.github/study/overview.md` (si cambia estructura canonica)
 
 Study structure rule:
 
@@ -236,8 +236,8 @@ Study structure rule:
 3. Keep explanatory content in Spanish with project technical terminology.
 4. Treat study content as evolutive and update it on future revalidations.
 5. Keep mandatory dictionaries:
-	- global dictionary: `.github/study_methods/global-dictionary.md`
-	- project dictionary: `.github/study_methods/<project>/dictionary.md`
+	- global dictionary: `.github/study/global-dictionary.md`
+	- project dictionary: `.github/study/<project>/dictionary.md`
 6. Dictionary baseline format: technical glossary + mini examples.
 
 ## External Instruction Trigger

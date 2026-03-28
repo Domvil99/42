@@ -38,27 +38,33 @@ Raiz/
 │   ├── instructions/
 │   │   ├── c-coding.instructions.md
 │   │   └── config-guide.instructions.md
-│   ├── libft-functions.md
-│   ├── libft-progress.md
-│   ├── libft-reference.md
-│   ├── ft_printf-functions.md
-│   ├── ft_printf-progress.md
-│   ├── ft_printf-reference.md
-│   ├── get_next_line-functions.md
-│   ├── get_next_line-progress.md
-│   ├── get_next_line-reference.md
-│   ├── push_swap-functions.md
-│   ├── push_swap-progress.md
-│   ├── push_swap-reference.md
-│   ├── currentLibft-functions.md
-│   ├── currentLibft-progress.md
-│   ├── currentLibft-reference.md
 │   ├── projects-index.md
 │   ├── project-history.md
 │   ├── reports/
-│   ├── currentLibft/
-│   │   └── integration-manifest.md
-│   ├── study_methods/
+│   ├── tracking/
+│   │   └── projects/
+│   │       ├── libft/
+│   │       │   ├── libft-functions.md
+│   │       │   ├── libft-progress.md
+│   │       │   └── libft-reference.md
+│   │       ├── ft_printf/
+│   │       │   ├── ft_printf-functions.md
+│   │       │   ├── ft_printf-progress.md
+│   │       │   └── ft_printf-reference.md
+│   │       ├── get_next_line/
+│   │       │   ├── get_next_line-functions.md
+│   │       │   ├── get_next_line-progress.md
+│   │       │   └── get_next_line-reference.md
+│   │       ├── push_swap/
+│   │       │   ├── push_swap-functions.md
+│   │       │   ├── push_swap-progress.md
+│   │       │   └── push_swap-reference.md
+│   │       └── currentLibft/
+│   │           ├── currentLibft-functions.md
+│   │           ├── currentLibft-progress.md
+│   │           ├── currentLibft-reference.md
+│   │           └── integration-manifest.md
+│   ├── study/
 │   │   ├── global-dictionary.md
 │   │   ├── libft/
 │   │   │   ├── libft.md
@@ -148,36 +154,36 @@ realpath /home/domvil99/empresa/42/newLibft/Raiz
     - `Repo workspace Raiz`
 
 ### When `42/C/libft` changes
-- `.github/libft-functions.md`
-- `.github/libft-progress.md`
-- `.github/libft-reference.md`
+- `.github/tracking/projects/libft/libft-functions.md`
+- `.github/tracking/projects/libft/libft-progress.md`
+- `.github/tracking/projects/libft/libft-reference.md`
 
 ### When `42/C/ft_printf` changes
-- `.github/ft_printf-functions.md`
-- `.github/ft_printf-progress.md`
-- `.github/ft_printf-reference.md`
+- `.github/tracking/projects/ft_printf/ft_printf-functions.md`
+- `.github/tracking/projects/ft_printf/ft_printf-progress.md`
+- `.github/tracking/projects/ft_printf/ft_printf-reference.md`
 - Note (2026-03-11): ft_printf tracking is in closure state.
   Post-closure updates should be logged first in `.github/project-history.md`.
 
 ### When `42/C/get_next_line` changes
-- `.github/get_next_line-functions.md`
-- `.github/get_next_line-progress.md`
-- `.github/get_next_line-reference.md`
+- `.github/tracking/projects/get_next_line/get_next_line-functions.md`
+- `.github/tracking/projects/get_next_line/get_next_line-progress.md`
+- `.github/tracking/projects/get_next_line/get_next_line-reference.md`
 
 ### When `42/C/currentLibft` changes
-- `.github/currentLibft-functions.md`
-- `.github/currentLibft-progress.md`
-- `.github/currentLibft-reference.md`
-- `.github/currentLibft/integration-manifest.md`
+- `.github/tracking/projects/currentLibft/currentLibft-functions.md`
+- `.github/tracking/projects/currentLibft/currentLibft-progress.md`
+- `.github/tracking/projects/currentLibft/currentLibft-reference.md`
+- `.github/tracking/projects/currentLibft/integration-manifest.md`
 - `.github/projects-index.md`
 - `.github/project-history.md`
 - `.github/QUICK_REFERENCE.md`
 
 ### When `42/C/push_swap` changes
-- `.github/push_swap-functions.md`
-- `.github/push_swap-progress.md`
-- `.github/push_swap-reference.md`
-- `.github/study_methods/push_swap/push_swap.md` (si hay cambios de arquitectura
+- `.github/tracking/projects/push_swap/push_swap-functions.md`
+- `.github/tracking/projects/push_swap/push_swap-progress.md`
+- `.github/tracking/projects/push_swap/push_swap-reference.md`
+- `.github/study/push_swap/push_swap.md` (si hay cambios de arquitectura
     o estrategia)
 
 ### currentLibft Integration Rule
@@ -215,14 +221,14 @@ realpath /home/domvil99/empresa/42/newLibft/Raiz
 - `.github/project-history.md`
 - `.github/QUICK_REFERENCE.md`
 
-### When `.github/study_methods/` changes
+### When `.github/study/` changes
 - `.github/project-history.md`
 - `.github/QUICK_REFERENCE.md`
 
 Mandatory study dictionary policy:
-- Keep one global dictionary at `.github/study_methods/global-dictionary.md`.
+- Keep one global dictionary at `.github/study/global-dictionary.md`.
 - Keep one project dictionary at
-    `.github/study_methods/<project>/dictionary.md`.
+    `.github/study/<project>/dictionary.md`.
 - Dictionary format baseline: technical glossary + mini examples.
 
 ### When a new instruction `.txt` is received

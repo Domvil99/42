@@ -26,10 +26,10 @@ Excepcion operativa activa:
 
 ## Mandatory Structure Rules
 
-1. Carpeta por proyecto: `.github/study_methods/<project>/`.
+1. Carpeta por proyecto: `.github/study/<project>/`.
 2. Archivo nucleo por proyecto: `<project>.md`.
 3. Diccionario por proyecto obligatorio: `dictionary.md`.
-4. Diccionario global obligatorio: `.github/study_methods/global-dictionary.md`.
+4. Diccionario global obligatorio: `.github/study/global-dictionary.md`.
 5. Si crece el contenido, se permiten archivos complementarios:
    - `overview.md`
    - `foundations-nodes-lists.md`

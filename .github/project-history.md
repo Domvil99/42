@@ -11,6 +11,39 @@ Validation order for all projects:
 3. memory/stability.
 4. Norminette as final closing step.
 
+## 2026-03-29
+
+- Change type: docs-structure
+- Paths changed:
+  - `.github/tracking/projects/`
+  - `.github/study/`
+  - `.github/currentLibft/` (manifest moved)
+  - `.github/study_methods/` (renamed to `.github/study/`)
+- Tracking docs updated:
+  - `.github/copilot-instructions.md`
+  - `.github/workflow-rules.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/chat-handoff.md`
+  - `.github/instructions/c-coding.instructions.md`
+  - `.github/instructions/config-guide.instructions.md`
+  - `.github/project-history.md`
+  - `.github/reports/workblock-pending-status.md`
+- Notes:
+  - Se aplicó reorganización híbrida de markdown por temática, manteniendo
+    anclas canónicas en raíz de `.github`:
+    - `.github/copilot-instructions.md`
+    - `.github/workflow-rules.md`
+    - `.github/chat-handoff.md`
+    - `.github/projects-index.md`
+    - `.github/project-history.md`
+  - Triadas de tracking por proyecto movidas a
+    `.github/tracking/projects/<project>/`.
+  - `integration-manifest.md` de currentLibft movido a
+    `.github/tracking/projects/currentLibft/integration-manifest.md`.
+  - Material de estudio consolidado en `.github/study/`.
+  - Referencias cruzadas reescritas a nuevas rutas en documentación e
+    instrucciones.
+
 ## 2026-03-28
 
 - Change type: project-structure
@@ -34,12 +67,12 @@ Validation order for all projects:
   - `.github/project-history.md`
   - `.github/reports/workblock-pending-status.md`
   - `.github/instructions/config-guide.instructions.md`
-  - `.github/libft-functions.md`
-  - `.github/libft-progress.md`
-  - `.github/libft-reference.md`
-  - `.github/ft_printf-functions.md`
-  - `.github/ft_printf-progress.md`
-  - `.github/ft_printf-reference.md`
+  - `.github/tracking/projects/libft/libft-functions.md`
+  - `.github/tracking/projects/libft/libft-progress.md`
+  - `.github/tracking/projects/libft/libft-reference.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-functions.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-progress.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-reference.md`
 - Notes:
   - Se creó contenedor unificado `42/tests/` y se migraron las carpetas de
     pruebas manteniendo naming actual por proyecto (`testsLibf`,
@@ -86,16 +119,16 @@ Validation order for all projects:
 - Paths changed:
   - `.github/chat-handoff.md`
   - `.github/projects-index.md`
-  - `.github/get_next_line-functions.md`
-  - `.github/get_next_line-progress.md`
-  - `.github/get_next_line-reference.md`
-  - `.github/currentLibft-functions.md`
-  - `.github/currentLibft-progress.md`
-  - `.github/currentLibft-reference.md`
-  - `.github/study_methods/overview.md`
-  - `.github/study_methods/push_swap/push_swap.md`
-  - `.github/study_methods/get_next_line/get_next_line.md`
-  - `.github/study_methods/currentLibft/currentLibft.md`
+  - `.github/tracking/projects/get_next_line/get_next_line-functions.md`
+  - `.github/tracking/projects/get_next_line/get_next_line-progress.md`
+  - `.github/tracking/projects/get_next_line/get_next_line-reference.md`
+  - `.github/tracking/projects/currentLibft/currentLibft-functions.md`
+  - `.github/tracking/projects/currentLibft/currentLibft-progress.md`
+  - `.github/tracking/projects/currentLibft/currentLibft-reference.md`
+  - `.github/study/overview.md`
+  - `.github/study/push_swap/push_swap.md`
+  - `.github/study/get_next_line/get_next_line.md`
+  - `.github/study/currentLibft/currentLibft.md`
   - `42/tests/testsLibf/README.md`
   - `42/tests/tests_currentLibft/README.md`
   - `42/tests/tests_ft_printf/README.md`
@@ -113,7 +146,7 @@ Validation order for all projects:
 - Change type: docs-validation
 - Paths changed:
   - `.github/copilot-instructions.md`
-  - `.github/currentLibft/integration-manifest.md`
+  - `.github/tracking/projects/currentLibft/integration-manifest.md`
   - `.github/projects-index.md`
   - `.github/project-history.md`
 - Tracking docs updated:
@@ -137,8 +170,8 @@ Validation order for all projects:
 - Paths changed:
   - `42/C/push_swap`
   - `42/tests/tests_push_swap`
-  - `.github/study_methods/push_swap`
-  - `.github/study_methods/push_swap/push_swap.md`
+  - `.github/study/push_swap`
+  - `.github/study/push_swap/push_swap.md`
   - `.github/projects-index.md`
   - `.github/QUICK_REFERENCE.md`
   - `.github/project-history.md`
@@ -178,7 +211,7 @@ Validation order for all projects:
     `metodos de estudio` -> `study methods`.
   - Verificacion de consistencia en `.github`:
     no se detectan referencias antiguas de ruta y se mantiene
-    la ruta canonica `.github/study_methods/`.
+    la ruta canonica `.github/study/`.
 
 ## 2026-03-14
 
@@ -203,17 +236,17 @@ Validation order for all projects:
 
 - Change type: study
 - Paths changed:
-  - `.github/study_methods/push_swap/push_swap.md`
-  - `.github/study_methods/push_swap/implementation.md`
-  - `.github/study_methods/push_swap/validation.md`
-  - `.github/study_methods/push_swap/defense.md`
-  - `.github/study_methods/push_swap/case-studies.md`
-  - `.github/study_methods/push_swap/dictionary.md`
-  - `.github/study_methods/overview.md`
+  - `.github/study/push_swap/push_swap.md`
+  - `.github/study/push_swap/implementation.md`
+  - `.github/study/push_swap/validation.md`
+  - `.github/study/push_swap/defense.md`
+  - `.github/study/push_swap/case-studies.md`
+  - `.github/study/push_swap/dictionary.md`
+  - `.github/study/overview.md`
   - `.github/QUICK_REFERENCE.md`
   - `.github/project-history.md`
 - Tracking docs updated:
-  - `.github/study_methods/overview.md`
+  - `.github/study/overview.md`
   - `.github/QUICK_REFERENCE.md`
   - `.github/project-history.md`
 - Notes:
@@ -260,10 +293,10 @@ Validation order for all projects:
 
 - Change type: validation-report
 - Paths changed:
-  - `.github/push_swap-progress.md`
+  - `.github/tracking/projects/push_swap/push_swap-progress.md`
   - `.github/project-history.md`
 - Tracking docs updated:
-  - `.github/push_swap-progress.md`
+  - `.github/tracking/projects/push_swap/push_swap-progress.md`
   - `.github/project-history.md`
 - Notes:
   - Checkpoint 2 de `push_swap` ejecutado con validación por lotes y estabilidad.
@@ -281,11 +314,11 @@ Validation order for all projects:
   - `42/C/push_swap/sort_chunk.c`
   - `42/C/push_swap/push_swap.h`
   - `.github/projects-index.md`
-  - `.github/push_swap-progress.md`
+  - `.github/tracking/projects/push_swap/push_swap-progress.md`
   - `.github/project-history.md`
 - Tracking docs updated:
   - `.github/projects-index.md`
-  - `.github/push_swap-progress.md`
+  - `.github/tracking/projects/push_swap/push_swap-progress.md`
   - `.github/project-history.md`
 - Notes:
   - `push_swap` pasa a implementación técnica activa con ACK de Chat2 en H-009.
@@ -301,13 +334,13 @@ Validation order for all projects:
 - Change type: validation-report
 - Paths changed:
   - `.github/chat-handoff.md`
-  - `.github/push_swap-progress.md`
-  - `.github/study_methods/push_swap/implementation.md`
-  - `.github/study_methods/push_swap/case-studies.md`
+  - `.github/tracking/projects/push_swap/push_swap-progress.md`
+  - `.github/study/push_swap/implementation.md`
+  - `.github/study/push_swap/case-studies.md`
   - `.github/project-history.md`
 - Tracking docs updated:
   - `.github/chat-handoff.md`
-  - `.github/push_swap-progress.md`
+  - `.github/tracking/projects/push_swap/push_swap-progress.md`
   - `.github/project-history.md`
 - Notes:
   - Se ejecuta Checkpoint 1 de `push_swap` (parsing + validacion de errores)
@@ -319,15 +352,15 @@ Validation order for all projects:
 
 - Change type: study
 - Paths changed:
-  - `.github/study_methods/push_swap/push_swap.md`
-  - `.github/study_methods/push_swap/implementation.md`
-  - `.github/study_methods/push_swap/validation.md`
-  - `.github/study_methods/push_swap/defense.md`
-  - `.github/study_methods/push_swap/case-studies.md`
-  - `.github/study_methods/push_swap/dictionary.md`
-  - `.github/push_swap-functions.md`
-  - `.github/push_swap-progress.md`
-  - `.github/push_swap-reference.md`
+  - `.github/study/push_swap/push_swap.md`
+  - `.github/study/push_swap/implementation.md`
+  - `.github/study/push_swap/validation.md`
+  - `.github/study/push_swap/defense.md`
+  - `.github/study/push_swap/case-studies.md`
+  - `.github/study/push_swap/dictionary.md`
+  - `.github/tracking/projects/push_swap/push_swap-functions.md`
+  - `.github/tracking/projects/push_swap/push_swap-progress.md`
+  - `.github/tracking/projects/push_swap/push_swap-reference.md`
   - `.github/chat-handoff.md`
   - `.github/QUICK_REFERENCE.md`
   - `.github/project-history.md`
@@ -335,9 +368,9 @@ Validation order for all projects:
   - `.github/chat-handoff.md`
   - `.github/QUICK_REFERENCE.md`
   - `.github/project-history.md`
-  - `.github/push_swap-functions.md`
-  - `.github/push_swap-progress.md`
-  - `.github/push_swap-reference.md`
+  - `.github/tracking/projects/push_swap/push_swap-functions.md`
+  - `.github/tracking/projects/push_swap/push_swap-progress.md`
+  - `.github/tracking/projects/push_swap/push_swap-reference.md`
 - Notes:
   - Se inicia informe de estudio integral de `push_swap` en modo paralelo a la
     implementacion activa, con estructura modular ampliable.
@@ -510,13 +543,13 @@ Validation order for all projects:
 
 - Change type: workflow
 - Paths changed:
-  - `.github/study_methods/global-dictionary.md`
-  - `.github/study_methods/overview.md`
-  - `.github/study_methods/libft/dictionary.md`
-  - `.github/study_methods/ft_printf/dictionary.md`
-  - `.github/study_methods/get_next_line/dictionary.md`
-  - `.github/study_methods/currentLibft/currentLibft.md`
-  - `.github/study_methods/currentLibft/dictionary.md`
+  - `.github/study/global-dictionary.md`
+  - `.github/study/overview.md`
+  - `.github/study/libft/dictionary.md`
+  - `.github/study/ft_printf/dictionary.md`
+  - `.github/study/get_next_line/dictionary.md`
+  - `.github/study/currentLibft/currentLibft.md`
+  - `.github/study/currentLibft/dictionary.md`
   - `.github/copilot-instructions.md`
   - `.github/workflow-rules.md`
   - `.github/QUICK_REFERENCE.md`
@@ -526,13 +559,13 @@ Validation order for all projects:
   - `.github/QUICK_REFERENCE.md`
 - Notes:
   - Implemented mandatory study dictionary rule with two layers:
-    - global dictionary at `.github/study_methods/global-dictionary.md`,
-    - project dictionary at `.github/study_methods/<project>/dictionary.md`.
+    - global dictionary at `.github/study/global-dictionary.md`,
+    - project dictionary at `.github/study/<project>/dictionary.md`.
   - Added project dictionaries for `libft`, `ft_printf`, `get_next_line`
     and `currentLibft` using unified format (technical glossary + mini examples).
   - Created independent study module for `currentLibft` with:
-    - `.github/study_methods/currentLibft/currentLibft.md`,
-    - `.github/study_methods/currentLibft/dictionary.md`.
+    - `.github/study/currentLibft/currentLibft.md`,
+    - `.github/study/currentLibft/dictionary.md`.
   - Updated governance/tracking docs to make the rule auditable in future
     study updates (`overview`, `workflow-rules`, `copilot-instructions`,
     `QUICK_REFERENCE`).
@@ -572,20 +605,20 @@ Validation order for all projects:
   - `42/C/currentLibft/libft/.gitignore`
   - `42/C/ft_printf/libft/libft.h`
   - `42/C/ft_printf/libft/libft_bonus.h`
-  - `.github/currentLibft/integration-manifest.md`
+  - `.github/tracking/projects/currentLibft/integration-manifest.md`
   - `.github/projects-index.md`
   - `.github/QUICK_REFERENCE.md`
-  - `.github/ft_printf-functions.md`
-  - `.github/ft_printf-progress.md`
-  - `.github/ft_printf-reference.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-functions.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-progress.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-reference.md`
   - `.github/project-history.md`
 - Tracking docs updated:
-  - `.github/currentLibft/integration-manifest.md`
+  - `.github/tracking/projects/currentLibft/integration-manifest.md`
   - `.github/projects-index.md`
   - `.github/QUICK_REFERENCE.md`
-  - `.github/ft_printf-functions.md`
-  - `.github/ft_printf-progress.md`
-  - `.github/ft_printf-reference.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-functions.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-progress.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-reference.md`
   - `.github/project-history.md`
 - Notes:
   - Base libft synchronization applied from `42/C/libft` to mirror roots:
@@ -617,8 +650,8 @@ Validation order for all projects:
 - Change type: validation-report
 - Paths changed:
   - `.github/project-history.md`
-  - `.github/study_methods/overview.md`
-  - `.github/study_methods/get_next_line/get_next_line.md`
+  - `.github/study/overview.md`
+  - `.github/study/get_next_line/get_next_line.md`
   - `.github/QUICK_REFERENCE.md`
 - Tracking docs updated:
   - `.github/project-history.md`
@@ -633,7 +666,7 @@ Validation order for all projects:
   - Final norminette scan in `42/C/get_next_line/*.c` and
     `42/C/get_next_line/*.h` completed OK.
   - Study report initialized under
-    `.github/study_methods/get_next_line/get_next_line.md`.
+    `.github/study/get_next_line/get_next_line.md`.
 
 - Change type: workflow
 - Paths changed:
@@ -643,9 +676,9 @@ Validation order for all projects:
   - `.github/QUICK_REFERENCE.md`
   - `.github/instructions/config-guide.instructions.md`
   - `.github/instructions/c-coding.instructions.md`
-  - `.github/study_methods/overview.md`
-  - `.github/study_methods/libft/libft.md`
-  - `.github/study_methods/ft_printf/ft_printf.md`
+  - `.github/study/overview.md`
+  - `.github/study/libft/libft.md`
+  - `.github/study/ft_printf/ft_printf.md`
   - `.github/project-history.md`
 - Tracking docs updated:
   - `.github/project-history.md`
@@ -656,7 +689,7 @@ Validation order for all projects:
     `Chat4`/`Chat 4`/`chat4`.
   - Inter-chat relay standardized for Chat2, Chat3 and Chat4 with
     explicit delegation routes from Chat1.
-  - New study structure initialized at `.github/study_methods/` with:
+  - New study structure initialized at `.github/study/` with:
     - project folders in English (`libft`, `ft_printf`),
     - file names in English (`overview.md`, `<project>.md`),
     - explanatory content in Spanish with technical terminology.
@@ -667,14 +700,14 @@ Validation order for all projects:
 - Paths changed:
   - `42/PDFs/2026-03-12_ft_printf.txt`
   - `.github/project-history.md`
-  - `.github/ft_printf-progress.md`
-  - `.github/ft_printf-reference.md`
-  - `.github/ft_printf-functions.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-progress.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-reference.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-functions.md`
 - Tracking docs updated:
   - `.github/project-history.md`
-  - `.github/ft_printf-progress.md`
-  - `.github/ft_printf-reference.md`
-  - `.github/ft_printf-functions.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-progress.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-reference.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-functions.md`
 - Notes:
   - New corrected ft_printf baseline received and saved at
     `42/PDFs/2026-03-12_ft_printf.txt`.
@@ -691,10 +724,10 @@ Validation order for all projects:
 - Change type: validation-report
 - Paths changed:
   - `.github/project-history.md`
-  - `.github/libft-progress.md`
+  - `.github/tracking/projects/libft/libft-progress.md`
 - Tracking docs updated:
   - `.github/project-history.md`
-  - `.github/libft-progress.md`
+  - `.github/tracking/projects/libft/libft-progress.md`
 - Notes:
   - Validacion integral de `libft1` ejecutada sobre `42/C/libft` usando
     baseline canonica `42/PDFs/2026-03-12_libft_v16_6.txt`.
@@ -716,14 +749,14 @@ Validation order for all projects:
 - Paths changed:
   - `42/C/libft/libft.h`
   - `42/C/libft/libft_bonus.h`
-  - `.github/libft-functions.md`
-  - `.github/libft-progress.md`
-  - `.github/libft-reference.md`
+  - `.github/tracking/projects/libft/libft-functions.md`
+  - `.github/tracking/projects/libft/libft-progress.md`
+  - `.github/tracking/projects/libft/libft-reference.md`
   - `.github/project-history.md`
 - Tracking docs updated:
-  - `.github/libft-functions.md`
-  - `.github/libft-progress.md`
-  - `.github/libft-reference.md`
+  - `.github/tracking/projects/libft/libft-functions.md`
+  - `.github/tracking/projects/libft/libft-progress.md`
+  - `.github/tracking/projects/libft/libft-reference.md`
   - `.github/project-history.md`
 - Notes:
   - Final header adjustment in libft1 aligned with strict separation rule.
@@ -740,14 +773,14 @@ Validation order for all projects:
 - Paths changed:
   - `42/C/libft/libft.h`
   - `42/C/libft/libft_bonus.h`
-  - `.github/libft-functions.md`
-  - `.github/libft-progress.md`
-  - `.github/libft-reference.md`
+  - `.github/tracking/projects/libft/libft-functions.md`
+  - `.github/tracking/projects/libft/libft-progress.md`
+  - `.github/tracking/projects/libft/libft-reference.md`
   - `.github/project-history.md`
 - Tracking docs updated:
-  - `.github/libft-functions.md`
-  - `.github/libft-progress.md`
-  - `.github/libft-reference.md`
+  - `.github/tracking/projects/libft/libft-functions.md`
+  - `.github/tracking/projects/libft/libft-progress.md`
+  - `.github/tracking/projects/libft/libft-reference.md`
   - `.github/project-history.md`
 - Notes:
   - Header correction executed in libft1 according to corrected v16.6 spec.
@@ -763,10 +796,10 @@ Validation order for all projects:
 - Paths changed:
   - `42/PDFs/2026-03-12_libft_v16_6.txt`
   - `.github/project-history.md`
-  - `.github/libft-progress.md`
+  - `.github/tracking/projects/libft/libft-progress.md`
 - Tracking docs updated:
   - `.github/project-history.md`
-  - `.github/libft-progress.md`
+  - `.github/tracking/projects/libft/libft-progress.md`
 - Notes:
   - New corrected Libft v16.6 baseline received and saved at
     `42/PDFs/2026-03-12_libft_v16_6.txt`.
@@ -861,14 +894,14 @@ Cierre express: auditoría express, revisión rápida
 
 - Change type: project
 - Paths changed:
-  - `.github/libft-functions.md`
-  - `.github/libft-progress.md`
-  - `.github/libft-reference.md`
+  - `.github/tracking/projects/libft/libft-functions.md`
+  - `.github/tracking/projects/libft/libft-progress.md`
+  - `.github/tracking/projects/libft/libft-reference.md`
   - `.github/project-history.md`
 - Tracking docs updated:
-  - `.github/libft-functions.md`
-  - `.github/libft-progress.md`
-  - `.github/libft-reference.md`
+  - `.github/tracking/projects/libft/libft-functions.md`
+  - `.github/tracking/projects/libft/libft-progress.md`
+  - `.github/tracking/projects/libft/libft-reference.md`
   - `.github/project-history.md`
 - Notes:
   - currentLibft base promoted to official canonical libft for future projects.
@@ -937,9 +970,9 @@ Cierre express: auditoría express, revisión rápida
 ## 2026-03-08
 
 - Created base tracking docs:
-  - `.github/libft-functions.md`
-  - `.github/libft-progress.md`
-  - `.github/libft-reference.md`
+  - `.github/tracking/projects/libft/libft-functions.md`
+  - `.github/tracking/projects/libft/libft-progress.md`
+  - `.github/tracking/projects/libft/libft-reference.md`
 - Reorganized workspace structure:
   - moved `libft` to `C/libft`
   - created `42/PDFs`
@@ -995,7 +1028,7 @@ Cierre express: auditoría express, revisión rápida
 - Route consistency review completed after structure changes under `42/`.
 - Updated tracking docs to match current paths:
   - `.github/projects-index.md`
-  - `.github/libft-progress.md`
+  - `.github/tracking/projects/libft/libft-progress.md`
   - `.github/QUICK_REFERENCE.md`
   - `.github/instructions/config-guide.instructions.md`
 - Added fast tracking operations docs:
@@ -1135,9 +1168,9 @@ Cierre express: auditoría express, revisión rápida
     - `norminette *.c *.h` revisado: solo `INVALID_HEADER` ✅
     - smoke test externo de headers/biblioteca (`OK_HEADER_FLOW`) ✅
   - docs de cierre actualizadas:
-    - `.github/libft-progress.md`
-    - `.github/libft-functions.md`
-    - `.github/libft-reference.md`
+    - `.github/tracking/projects/libft/libft-progress.md`
+    - `.github/tracking/projects/libft/libft-functions.md`
+    - `.github/tracking/projects/libft/libft-reference.md`
     - `.github/projects-index.md`
   - estado consolidado:
     - `libft` marcado como `completed`.
@@ -1170,9 +1203,9 @@ Cierre express: auditoría express, revisión rápida
     - `.github/projects-index.md`
 
 - Se habilito tracking dedicado para `ft_printf`:
-  - `.github/ft_printf-functions.md`
-  - `.github/ft_printf-progress.md`
-  - `.github/ft_printf-reference.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-functions.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-progress.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-reference.md`
 
 - Se actualizaron reglas/instrucciones para escalar a siguientes proyectos:
   - `.github/copilot-instructions.md`
@@ -1211,8 +1244,8 @@ Cierre express: auditoría express, revisión rápida
   - archivo final mantenido:
     - `42/PDFs/2026-03-12_ft_printf.txt`
   - se limpiaron referencias de version anterior en tracking:
-    - `.github/ft_printf-progress.md`
-    - `.github/ft_printf-functions.md`
+    - `.github/tracking/projects/ft_printf/ft_printf-progress.md`
+    - `.github/tracking/projects/ft_printf/ft_printf-functions.md`
     - `.github/projects-index.md`
 
 ## 2026-03-11
@@ -1228,12 +1261,12 @@ Cierre express: auditoría express, revisión rápida
     - `7cf296d` `docs(ft_printf): record full subject audit and validation status`
 
 - Sincronizacion de tracking global actualizada en:
-  - `.github/ft_printf-functions.md`
-  - `.github/ft_printf-progress.md`
-  - `.github/ft_printf-reference.md`
-  - `.github/libft-functions.md`
-  - `.github/libft-progress.md`
-  - `.github/libft-reference.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-functions.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-progress.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-reference.md`
+  - `.github/tracking/projects/libft/libft-functions.md`
+  - `.github/tracking/projects/libft/libft-progress.md`
+  - `.github/tracking/projects/libft/libft-reference.md`
   - `.github/projects-index.md`
 
 - Estado pendiente detectado en repo de entrega (`42/C/`):
@@ -1370,9 +1403,9 @@ Cierre express: auditoría express, revisión rápida
     - distribucion: `print_unsigned.c` (151), `print_int_bonus.c` (39),
       `print_decimal.c` (39), `print_hex.c` (31), `print_binary_bonus.c` (26).
   - docs de tracking sincronizadas a este baseline:
-    - `.github/ft_printf-functions.md`
-    - `.github/ft_printf-progress.md`
-    - `.github/ft_printf-reference.md`
+    - `.github/tracking/projects/ft_printf/ft_printf-functions.md`
+    - `.github/tracking/projects/ft_printf/ft_printf-progress.md`
+    - `.github/tracking/projects/ft_printf/ft_printf-reference.md`
     - `.github/chat-handoff.md`
 
 - Inicio de migracion a nueva base de `ft_printf`:
@@ -1437,9 +1470,9 @@ Cierre express: auditoría express, revisión rápida
     - `42/C/ft_printf/parse_format_bonus.c` (56)
     - `42/C/ft_printf/handle_format_bonus.c` (28)
   - tracking sincronizado:
-    - `.github/ft_printf-progress.md`
-    - `.github/ft_printf-reference.md`
-    - `.github/ft_printf-functions.md`
+    - `.github/tracking/projects/ft_printf/ft_printf-progress.md`
+    - `.github/tracking/projects/ft_printf/ft_printf-reference.md`
+    - `.github/tracking/projects/ft_printf/ft_printf-functions.md`
 
 - Estructura/scope-first reforzado y ejecutado en `ft_printf`:
   - decision aplicada: validar estructura de entrega antes de norma para
@@ -1512,11 +1545,11 @@ Cierre express: auditoría express, revisión rápida
   - se armonizaron docs de tracking y README de tests para mantener
     el orden canonico: scope/spec -> funcionalidad -> memoria -> Norminette.
 - Archivos actualizados:
-  - `.github/libft-progress.md`
+  - `.github/tracking/projects/libft/libft-progress.md`
   - `.github/project-history.md`
-  - `.github/ft_printf-progress.md`
-  - `.github/ft_printf-functions.md`
-  - `.github/ft_printf-reference.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-progress.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-functions.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-reference.md`
   - `42/tests/testsLibf/README.md`
   - `42/tests/tests_ft_printf/README.md`
 
@@ -1528,8 +1561,8 @@ Cierre express: auditoría express, revisión rápida
   - se cerro handoff explicito Chat2 -> Chat1 con confirmacion final (H-004).
   - se actualizaron estados de carpetas de tests a `completed` con nota de regresion.
 - Archivos actualizados:
-  - `.github/ft_printf-progress.md`
-  - `.github/ft_printf-reference.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-progress.md`
+  - `.github/tracking/projects/ft_printf/ft_printf-reference.md`
   - `.github/chat-handoff.md`
   - `.github/projects-index.md`
   - `.github/QUICK_REFERENCE.md`

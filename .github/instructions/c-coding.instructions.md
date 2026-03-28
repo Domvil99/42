@@ -172,18 +172,18 @@ Regla operativa:
 
 ## Tracking Obligatorio al Cambiar `42/C/libft`
 Cada cambio en `*.c`, `*.h` o `Makefile` de `42/C/libft` debe reflejarse en:
-1. `.github/libft-functions.md` (funciones y estado)
-2. `.github/libft-progress.md` (conteos y porcentajes)
-3. `.github/libft-reference.md` (referencia de uso futuro)
+1. `.github/tracking/projects/libft/libft-functions.md` (funciones y estado)
+2. `.github/tracking/projects/libft/libft-progress.md` (conteos y porcentajes)
+3. `.github/tracking/projects/libft/libft-reference.md` (referencia de uso futuro)
 
 Si cambia el alcance del proyecto o una decision relevante, actualizar tambien:
 - `.github/project-history.md`
 
 ## Tracking Obligatorio al Cambiar `42/C/ft_printf`
 Cada cambio en `*.c`, `*.h` o `Makefile` de `42/C/ft_printf` debe reflejarse en:
-1. `.github/ft_printf-functions.md` (componentes y estado)
-2. `.github/ft_printf-progress.md` (avance y validaciones)
-3. `.github/ft_printf-reference.md` (resumen de requisitos/uso)
+1. `.github/tracking/projects/ft_printf/ft_printf-functions.md` (componentes y estado)
+2. `.github/tracking/projects/ft_printf/ft_printf-progress.md` (avance y validaciones)
+3. `.github/tracking/projects/ft_printf/ft_printf-reference.md` (resumen de requisitos/uso)
 
 Si cambia el alcance del proyecto o una decision relevante, actualizar tambien:
 - `.github/project-history.md`
