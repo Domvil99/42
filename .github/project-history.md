@@ -11,6 +11,54 @@ Validation order for all projects:
 3. memory/stability.
 4. Norminette as final closing step.
 
+## 2026-03-28
+
+- Change type: project-structure
+- Paths changed:
+  - `42/tests/`
+  - `42/tests/testsLibf/`
+  - `42/tests/tests_ft_printf/`
+  - `42/tests/tests_get_next_line/`
+  - `42/tests/tests_push_swap/`
+  - `42/tests/tests_currentLibft/`
+  - `42/testsLibf/` (migrated)
+  - `42/tests_ft_printf/` (migrated)
+  - `42/tests_get_next_line/` (migrated)
+  - `42/tests_push_swap/` (migrated)
+  - `42/tests_currentLibft/` (migrated)
+- Tracking docs updated:
+  - `.github/projects-index.md`
+  - `.github/copilot-instructions.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/workflow-rules.md`
+  - `.github/project-history.md`
+  - `.github/reports/workblock-pending-status.md`
+  - `.github/instructions/config-guide.instructions.md`
+  - `.github/libft-functions.md`
+  - `.github/libft-progress.md`
+  - `.github/libft-reference.md`
+  - `.github/ft_printf-functions.md`
+  - `.github/ft_printf-progress.md`
+  - `.github/ft_printf-reference.md`
+- Notes:
+  - Se creó contenedor unificado `42/tests/` y se migraron las carpetas de
+    pruebas manteniendo naming actual por proyecto (`testsLibf`,
+    `tests_ft_printf`, `tests_get_next_line`, `tests_push_swap`,
+    `tests_currentLibft`).
+  - Se actualizaron rutas en markdown e instrucciones al nuevo esquema
+    `42/tests/<tests_name>/`.
+  - Ajustes funcionales aplicados por migración:
+    - `42/tests/testsLibf/Makefile`: `LIBFT_DIR` actualizado a `../../C/libft`.
+    - `42/tests/tests_ft_printf/Makefile`: `FT_PRINTF_DIR` actualizado a
+      `../../C/ft_printf`.
+    - Includes de tests actualizados a nuevas rutas relativas.
+  - Validación post-migración:
+    - `42/tests/testsLibf`: `make bonus && make run` OK.
+    - `42/tests/tests_ft_printf`: matrices en verde
+      (`RET_TOTAL=212` y `RET_TOTAL=146`).
+    - `42/C/currentLibft`: `make fclean && make && make bonus` OK.
+    - `42/C/push_swap`: smoke y errores esperados (`Error`) en verde.
+
 ## 2026-03-20
 
 - Change type: workflow-docs
@@ -48,9 +96,9 @@ Validation order for all projects:
   - `.github/study_methods/push_swap/push_swap.md`
   - `.github/study_methods/get_next_line/get_next_line.md`
   - `.github/study_methods/currentLibft/currentLibft.md`
-  - `42/testsLibf/README.md`
-  - `42/tests_currentLibft/README.md`
-  - `42/tests_ft_printf/README.md`
+  - `42/tests/testsLibf/README.md`
+  - `42/tests/tests_currentLibft/README.md`
+  - `42/tests/tests_ft_printf/README.md`
 - Tracking docs updated:
   - `.github/project-history.md`
   - `.github/projects-index.md`
@@ -76,7 +124,7 @@ Validation order for all projects:
   - Revision exhaustiva adicional de `.md` con foco en claridad canónica y
     metadata de actualización.
   - Pruebas ejecutadas y validadas:
-    - `42/C/libft`: `make fclean && make && make bonus` + `42/testsLibf`.
+    - `42/C/libft`: `make fclean && make && make bonus` + `42/tests/testsLibf`.
     - `42/C/ft_printf`: build mandatory/bonus + matrices
       (`RET_TOTAL=212` y `RET_TOTAL=146`).
     - `42/C/currentLibft`: `make fclean && make && make bonus`.
@@ -88,7 +136,7 @@ Validation order for all projects:
 - Change type: project-structure
 - Paths changed:
   - `42/C/push_swap`
-  - `42/tests_push_swap`
+  - `42/tests/tests_push_swap`
   - `.github/study_methods/push_swap`
   - `.github/study_methods/push_swap/push_swap.md`
   - `.github/projects-index.md`
@@ -199,7 +247,7 @@ Validation order for all projects:
   - `42/C/push_swap/libft/Makefile`
   - `42/C/push_swap/libft/ft_printf/Makefile`
   - `42/C/push_swap/libft/get_next_line/Makefile`
-  - `42/tests_push_swap/README.md`
+  - `42/tests/tests_push_swap/README.md`
   - `.github/projects-index.md`
   - `.github/project-history.md`
 - Tracking docs updated:
@@ -401,7 +449,7 @@ Validation order for all projects:
 
 - Change type: support-dir
 - Paths changed:
-  - `42/tests_push_swap/README.md`
+  - `42/tests/tests_push_swap/README.md`
   - `.github/projects-index.md`
   - `.github/QUICK_REFERENCE.md`
   - `.github/project-history.md`
@@ -410,7 +458,7 @@ Validation order for all projects:
   - `.github/QUICK_REFERENCE.md`
   - `.github/project-history.md`
 - Notes:
-  - Included support test directory `42/tests_push_swap/` in workspace
+  - Included support test directory `42/tests/tests_push_swap/` in workspace
     tracking as requested.
   - Registered initial README for push_swap test area and updated references
     so future validation flow is traceable.
@@ -555,10 +603,10 @@ Validation order for all projects:
 - Paths changed:
   - `42/PDFs/2026-03-12_get_next_line.txt`
   - `.github/project-history.md`
-  - `42/tests_get_next_line/README.md`
+  - `42/tests/tests_get_next_line/README.md`
 - Tracking docs updated:
   - `.github/project-history.md`
-  - `42/tests_get_next_line/README.md`
+  - `42/tests/tests_get_next_line/README.md`
 - Notes:
   - New corrected get_next_line baseline received and saved at
     `42/PDFs/2026-03-12_get_next_line.txt`.
@@ -632,8 +680,8 @@ Validation order for all projects:
     `42/PDFs/2026-03-12_ft_printf.txt`.
   - Full validation executed for `42/C/ft_printf` against updated baseline:
     - `make fclean && make && make bonus` OK,
-    - mandatory matrix in `42/tests_ft_printf`: `RET_TOTAL=212` (parity with `printf`),
-    - bonus matrix in `42/tests_ft_printf`: `RET_TOTAL=146` (parity with `printf`),
+    - mandatory matrix in `42/tests/tests_ft_printf`: `RET_TOTAL=212` (parity with `printf`),
+    - bonus matrix in `42/tests/tests_ft_printf`: `RET_TOTAL=146` (parity with `printf`),
     - ASAN/UBSAN run (`-fsanitize=address,undefined`) on both matrices: no runtime/leak reports,
     - final `norminette 42/C/ft_printf/*.c 42/C/ft_printf/*.h` OK.
   - libft parity audit executed between `42/C/libft` and `42/C/ft_printf/libft` headers:
@@ -657,8 +705,8 @@ Validation order for all projects:
     - repos `Raiz/` y `42/C/` limpios al iniciar validacion,
     - build obligatorio y bonus OK,
     - `make bonus` idempotente (sin relink),
-    - `make run` en `42/testsLibf` OK,
-    - ASAN/UBSAN en `42/testsLibf` OK,
+    - `make run` en `42/tests/testsLibf` OK,
+    - ASAN/UBSAN en `42/tests/testsLibf` OK,
     - barrido final `norminette` en `42/C/libft/*.c` y
       `42/C/libft/*.h` OK.
   - No se aplicaron cambios en codigo fuente de `42/C/libft`; el reporte
@@ -683,8 +731,8 @@ Validation order for all projects:
   - `libft_bonus.h` keeps bonus declarations (`t_list` + `ft_lst*`).
   - Full validation rerun after adjustment:
     - `make fclean && make && make bonus` ✅
-    - `make run` in `42/testsLibf` ✅
-    - ASAN/UBSAN tests in `42/testsLibf` ✅
+    - `make run` in `42/tests/testsLibf` ✅
+    - ASAN/UBSAN tests in `42/tests/testsLibf` ✅
     - final `norminette 42/C/libft/*.c 42/C/libft/*.h` ✅
   - Session closure prepared with clean environment and dual-repo commits.
 
@@ -707,7 +755,7 @@ Validation order for all projects:
   - `libft_bonus.h` kept as compatibility wrapper including `libft.h`.
   - Validation executed after change:
     - `make fclean && make && make bonus` in `42/C/libft` ✅
-    - `make run` in `42/testsLibf` ✅
+    - `make run` in `42/tests/testsLibf` ✅
     - final `norminette 42/C/libft/*.c 42/C/libft/*.h` ✅
   - Base ready to propagate same header fix to libft2 and current.
 
@@ -731,7 +779,7 @@ Validation order for all projects:
     - explicit rule that bonus is evaluated only if mandatory part is perfect.
   - Full revalidation executed for `42/C/libft` against corrected spec:
     - `make fclean && make && make bonus` ✅
-    - full tests run in `42/testsLibf` (`make run`) ✅
+    - full tests run in `42/tests/testsLibf` (`make run`) ✅
     - ASAN/UBSAN tests run (`-fsanitize=address,undefined`) ✅
     - `norminette 42/C/libft/*.c 42/C/libft/*.h` ✅
   - Critical anomaly detected:
@@ -765,12 +813,12 @@ Cierre express: auditoría express, revisión rápida
   - `42/C/get_next_line/get_next_line_bonus.c`
   - `42/C/get_next_line/get_next_line_bonus.h`
   - `42/C/get_next_line/get_next_line_utils_bonus.c`
-  - `42/tests_get_next_line/README.md`
+  - `42/tests/tests_get_next_line/README.md`
   - `.github/projects-index.md`
   - `.github/project-history.md`
   - `.github/projects-index.md`
   - `.github/project-history.md`
-  - `42/tests_get_next_line/README.md`
+  - `42/tests/tests_get_next_line/README.md`
   - Definitive closure completed for `42/C/get_next_line` before libft integration.
   - Scope/structure validated against `42/PDFs/2026-03-12_get_next_line.txt`.
   - Mandatory and bonus compile clean with `-Wall -Wextra -Werror`.
@@ -800,7 +848,7 @@ Cierre express: auditoría express, revisión rápida
 - Change type: project
 - Paths changed:
   - `42/C/get_next_line`
-  - `42/tests_get_next_line/README.md`
+  - `42/tests/tests_get_next_line/README.md`
   - `.github/projects-index.md`
   - `.github/project-history.md`
 - Tracking docs updated:
@@ -943,7 +991,7 @@ Cierre express: auditoría express, revisión rápida
     unless the user explicitly asks for the pending list.
 
 - Added tests support directory:
-  - `42/testsLibf/` (manual test programs for libft)
+  - `42/tests/testsLibf/` (manual test programs for libft)
 - Route consistency review completed after structure changes under `42/`.
 - Updated tracking docs to match current paths:
   - `.github/projects-index.md`
@@ -1348,8 +1396,8 @@ Cierre express: auditoría express, revisión rápida
 
 - Nuevo directorio de soporte para pruebas de `ft_printf`:
   - creado:
-    - `42/tests_ft_printf/`
-    - `42/tests_ft_printf/README.md`
+    - `42/tests/tests_ft_printf/`
+    - `42/tests/tests_ft_printf/README.md`
   - tracking actualizado por regla `support-dir`:
     - `.github/projects-index.md`
     - `.github/project-history.md`
@@ -1415,7 +1463,7 @@ Cierre express: auditoría express, revisión rápida
     - `.github/instructions/c-coding.instructions.md`
 
 - Limpieza de residuos de pruebas y snapshot de cierre parcial:
-  - en `42/tests_ft_printf/` se eliminaron artefactos generados
+  - en `42/tests/tests_ft_printf/` se eliminaron artefactos generados
     (`*.out`, `*.err`, ejecutables) para mantener el directorio de tests
     en estado fuente.
   - verificacion post-limpieza en `42/C/ft_printf`:
@@ -1441,7 +1489,7 @@ Cierre express: auditoría express, revisión rápida
     - eliminado staging `42/C/ft_printf_new_base/` del scope tracked.
     - agregado ignore de artefactos locales en `42/C/ft_printf/.gitignore`.
   - limpieza final aplicada en workspace de tests:
-    - agregado ignore de binarios locales en `42/tests_ft_printf/.gitignore`.
+    - agregado ignore de binarios locales en `42/tests/tests_ft_printf/.gitignore`.
   - commits de cierre en `42/C/`:
     - `79b2255` `ft_printf: harden headers and keep makefile/spec compliance`
     - `360f071` `chore(ft_printf): ignore local build artifacts and drop staging base`
@@ -1469,8 +1517,8 @@ Cierre express: auditoría express, revisión rápida
   - `.github/ft_printf-progress.md`
   - `.github/ft_printf-functions.md`
   - `.github/ft_printf-reference.md`
-  - `42/testsLibf/README.md`
-  - `42/tests_ft_printf/README.md`
+  - `42/tests/testsLibf/README.md`
+  - `42/tests/tests_ft_printf/README.md`
 
 ## 2026-03-11
 
@@ -1486,7 +1534,7 @@ Cierre express: auditoría express, revisión rápida
   - `.github/projects-index.md`
   - `.github/QUICK_REFERENCE.md`
   - `.github/workflow-rules.md`
-  - `42/tests_ft_printf/README.md`
+  - `42/tests/tests_ft_printf/README.md`
   - `.github/project-history.md`
 
 ## 2026-03-11
@@ -1504,4 +1552,4 @@ Cierre express: auditoría express, revisión rápida
     via headers y Makefile.
   - Makefile raiz en `currentLibft` para orquestar `make`/`bonus`.
 - Gate de pruebas creado para continuidad:
-  - `42/tests_currentLibft/README.md`.
+  - `42/tests/tests_currentLibft/README.md`.

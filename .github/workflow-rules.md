@@ -24,7 +24,7 @@ Official aliases:
 - Workspace repo root: `Raiz/`.
 - Regla operativa:
 	- cambios en codigo entregable (`42/C/<project>`): commitear en `42/C/`.
-	- cambios de tracking/tooling (`.github`, `.vscode`, `42/PDFs`, `42/tests_*`):
+	- cambios de tracking/tooling (`.github`, `.vscode`, `42/PDFs`, `42/tests/tests_*`):
 		commitear en `Raiz/`.
 - Verificacion obligatoria antes de commit:
 	- `git rev-parse --show-toplevel`.
@@ -70,7 +70,7 @@ Al completar un cierre total de cualquier proyecto en `42/C/`:
 2. Ejecutar `make clean` o `make fclean` dentro del proyecto para dejar solo
    fuentes y Makefile.
 3. Verificar que no quedan scripts o archivos de pruebas fuera de
-   `42/tests_<project_name>/`.
+   `42/tests/tests_<project_name>/`.
 4. Confirmar `git status` limpio en ambos repositorios (`42/C/` y `Raiz/`).
 5. Registrar la limpieza en `.github/project-history.md`.
 6. Hacer `git add`, `commit` y `push` final para dejar todo versionado.
@@ -313,7 +313,7 @@ When the user says `haz el cierre definitivo`:
 4. Update tracking to closure state:
 	- `.github/projects-index.md` (project status to `completed` when applicable),
 	- `.github/project-history.md` (dated closure block with evidence summary),
-	- `42/tests_<project_name>/README.md` (closure evidence/status).
+	- `42/tests/tests_<project_name>/README.md` (closure evidence/status).
 5. Only after closure is explicitly complete, proceed to optional integration into
 	`42/C/currentLibft/libft`.
 
@@ -382,9 +382,9 @@ If structure/scope is not green, stop and fix structure first.
 
 When a new project is added under `42/C/<project_name>/`:
 
-1. Ensure test folder exists: `42/tests_<project_name>/`
-2. Ensure `42/tests_<project_name>/README.md` exists with run instructions
-3. Keep `42/tests_currentLibft/` as permanent integration gate
+1. Ensure test folder exists: `42/tests/tests_<project_name>/`
+2. Ensure `42/tests/tests_<project_name>/README.md` exists with run instructions
+3. Keep `42/tests/tests_currentLibft/` as permanent integration gate
 4. Update:
    - `.github/projects-index.md`
    - `.github/project-history.md`

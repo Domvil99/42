@@ -33,18 +33,19 @@ Raiz/
 │   │   ├── 2026-03-13_push_swap.txt
 │   │   └── 2026-03-13_push_swap_actualizado.txt
 │   │   (canonical push_swap spec: 2026-03-13_push_swap_actualizado.txt)
-│   ├── testsLibf/
-│   │   └── README.md
-│   ├── tests_ft_printf/
-│   │   └── README.md
-│   ├── tests_get_next_line/
-│   │   └── README.md
-│   ├── tests_push_swap/
-│   │   └── README.md
-│   ├── tests_currentLibft/
-│   │   └── README.md
-│   └── tests_<project_name>/
-│       └── README.md
+│   ├── tests/
+│   │   ├── testsLibf/
+│   │   │   └── README.md
+│   │   ├── tests_ft_printf/
+│   │   │   └── README.md
+│   │   ├── tests_get_next_line/
+│   │   │   └── README.md
+│   │   ├── tests_push_swap/
+│   │   │   └── README.md
+│   │   ├── tests_currentLibft/
+│   │   │   └── README.md
+│   │   └── tests_<project_name>/
+│   │       └── README.md
 ├── .github/
 │   ├── QUICK_REFERENCE.md
 │   ├── chat-handoff.md
@@ -336,9 +337,9 @@ Raiz/
   - summarize refreshed technical state before starting implementation
   - then proceed with the requested project work
 - If a new project appears under `42/C/`, also ensure:
-  - `42/tests_<project_name>/` exists
-  - `42/tests_<project_name>/README.md` exists
-  - `42/tests_currentLibft/` remains available as integration gate
+  - `42/tests/tests_<project_name>/` exists
+  - `42/tests/tests_<project_name>/README.md` exists
+  - `42/tests/tests_currentLibft/` remains available as integration gate
 - If a project under `42/C/` is validated and closed with optimal status,
   create or update study material under `.github/study_methods/`:
   - use project folder names in English (`libft`, `ft_printf`, etc.),

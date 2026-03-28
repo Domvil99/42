@@ -144,7 +144,7 @@
 ## Nota de continuidad (2026-03-11)
 1. Se descarto el staging de migracion y se mantiene solo la base final
 	entregable en `42/C/ft_printf`.
-2. El flujo de pruebas queda consolidado en `42/tests_ft_printf/`.
+2. El flujo de pruebas queda consolidado en `42/tests/tests_ft_printf/`.
 
 ## Actualizacion metodologia (2026-03-11)
 1. Cambio operativo aplicado por solicitud del usuario:
@@ -185,7 +185,7 @@
 	- valgrind frontera: `0` leaks y `0` errores.
 
 ## Cierre tecnico actual (2026-03-11)
-1. Limpieza de artefactos de prueba en `42/tests_ft_printf/`:
+1. Limpieza de artefactos de prueba en `42/tests/tests_ft_printf/`:
 	- eliminados binarios y outputs generados (`*.out`, `*.err`, ejecutables).
 	- set de pruebas queda en archivos fuente y `Makefile`/`README.md`.
 2. Revalidacion de build post-limpieza:
@@ -217,8 +217,8 @@
 	- normalizacion de bloque condicional `# ifndef FT_PRINTF_BONUS` en
 	  `ft_printf.h`.
 3. Revalidacion funcional y memoria:
-	- `42/tests_ft_printf/test_mandatory_matrix`: `RET_TOTAL=212`.
-	- `42/tests_ft_printf/test_bonus_matrix`: `RET_TOTAL=146`.
+	- `42/tests/tests_ft_printf/test_mandatory_matrix`: `RET_TOTAL=212`.
+	- `42/tests/tests_ft_printf/test_bonus_matrix`: `RET_TOTAL=146`.
 	- valgrind sobre matriz mandatory: `0` leaks, `0` errores.
 4. Estado de norma tras esta ronda:
 	- sin hallazgos accionables adicionales en los archivos tocados.

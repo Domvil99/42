@@ -134,7 +134,7 @@ Nota actual (2026-03-11):
     - preservar `libftprintf.a` como salida final.
 
 ## Estado de cierre (actual)
-- Limpieza de residuos de prueba completada en `42/tests_ft_printf/`:
+- Limpieza de residuos de prueba completada en `42/tests/tests_ft_printf/`:
     - removidos ejecutables y archivos de salida generados.
 - Build de control post-limpieza:
     - `make` OK.

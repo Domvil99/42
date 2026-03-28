@@ -60,7 +60,7 @@ Norminette se ejecuta sin excepciones de `INVALID_HEADER`.
 ## 🧪 Notas de Revisión
 - Todos los `main` de prueba quedaron comentados.
 - Migracion aplicada (2026-03-10): cada `main` de `42/C/libft/*.c` tiene
-	su espejo descomentado en `42/testsLibf/test_<funcion>.c`.
+	su espejo descomentado en `42/tests/testsLibf/test_<funcion>.c`.
 - Validacion actual: `make` + `make bonus` en `42/C/libft` y compilacion
 	de 43/43 tests contra `libft.a`.
 - Sincronizacion canónica vigente: inventario 43/43 confirmado contra
@@ -90,7 +90,7 @@ Norminette se ejecuta sin excepciones de `INVALID_HEADER`.
 	- `libft_bonus.h`: `t_list` + `ft_lst*`.
 - Validación posterior a la corrección:
 	- `make fclean && make && make bonus` en `42/C/libft` ✅
-	- `make run` en `42/testsLibf` ✅
+	- `make run` en `42/tests/testsLibf` ✅
 	- `norminette 42/C/libft/*.c 42/C/libft/*.h` ✅
 
 ## Estado actual de trabajo (2026-03-11)

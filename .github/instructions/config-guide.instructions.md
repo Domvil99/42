@@ -105,7 +105,7 @@ Coordina con el usuario para mantener limpia la separación de responsabilidades
 1. Para trabajo de entrega (`libft` y futuros proyectos en `42/C/`), usar git
 	desde `42/C/`.
 2. Para documentación/tracking/tooling (`.github`, `.vscode`, `42/PDFs/`,
-	`42/testsLibf/`), usar git desde `Raiz/`.
+	`42/tests/testsLibf/`), usar git desde `Raiz/`.
 3. Si se agrega un proyecto nuevo bajo `42/C/`, actualizar:
 	- `.github/projects-index.md`
 	- `.github/project-history.md`

@@ -84,7 +84,7 @@
 - Estructura de prueba interna normalizada: un `main` comentado por archivo `ft_*.c`.
 - Migracion de pruebas (2026-03-10):
 	- `main` de validacion mantenidos comentados en `42/C/libft/*.c` (histórico).
-	- Casos extraidos a `42/testsLibf/test_<funcion>.c` (43 archivos).
+	- Casos extraidos a `42/tests/testsLibf/test_<funcion>.c` (43 archivos).
 	- Validacion de compilacion por test contra `libft.a` completada (43/43).
 - Revalidación reciente completada tras ajustes manuales en archivos de
 	memoria y bonus de listas, manteniendo 43/43 operativas.
@@ -119,5 +119,5 @@
 - Criterio aplicado: obligatoria y bonus corregidas/validadas por separado.
 - Validación de cierre del cambio:
 	- build obligatorio y bonus ✅
-	- tests `42/testsLibf` ✅
+	- tests `42/tests/testsLibf` ✅
 	- Norminette final (`*.c`, `*.h`) ✅

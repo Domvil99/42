@@ -26,8 +26,8 @@
     - condicion explicita de evaluacion bonus: mandatory debe estar perfecta.
 - Revalidacion completa de `42/C/libft` contra spec corregida:
     - `make fclean && make && make bonus` ✅
-    - `42/testsLibf`: `make run` ✅
-    - `42/testsLibf` con ASAN/UBSAN (`-fsanitize=address,undefined`) ✅
+    - `42/tests/testsLibf`: `make run` ✅
+    - `42/tests/testsLibf` con ASAN/UBSAN (`-fsanitize=address,undefined`) ✅
     - Norminette final sobre `*.c` y `*.h` ✅
 - Ajuste final aplicado en libft1 (separacion estricta obligatoria/bonus):
         - `42/C/libft/libft.h` mantiene solo API obligatoria + parte 2.
@@ -46,8 +46,8 @@
     - estado de entorno al inicio: repos `Raiz/` y `42/C/` limpios.
     - build obligatorio y bonus en verde (`make`, `make bonus`).
     - verificacion de idempotencia de `make bonus` en verde (sin relink).
-    - suite `42/testsLibf` con `make run` en verde.
-    - corrida ASAN/UBSAN en `42/testsLibf` en verde.
+    - suite `42/tests/testsLibf` con `make run` en verde.
+    - corrida ASAN/UBSAN en `42/tests/testsLibf` en verde.
     - `norminette *.c *.h` en verde sin excepciones.
     - resultado consolidado: GO sin hallazgos.
 - Compilación por archivo con `-Wall -Wextra -Werror` sin errores.
@@ -87,9 +87,9 @@
     - `make fclean && make && make bonus` ✅
     - `norminette *.c *.h` revisado: solo `INVALID_HEADER` ✅
     - smoke test externo con `/tmp/check_headers.c` (`OK_HEADER_FLOW`) ✅
-- Migracion de `main` de pruebas a `42/testsLibf/` (`2026-03-10`):
+- Migracion de `main` de pruebas a `42/tests/testsLibf/` (`2026-03-10`):
     - 43 `main` detectados en `42/C/libft/*.c`.
-    - 43 archivos creados en `42/testsLibf/test_<funcion>.c`.
+    - 43 archivos creados en `42/tests/testsLibf/test_<funcion>.c`.
     - `make` en `42/C/libft` validado ✅.
     - `make bonus` en `42/C/libft` validado ✅.
     - Compilacion de 43/43 tests contra `42/C/libft/libft.a` validada ✅.

@@ -135,7 +135,7 @@
 		- valgrind frontera: `0` leaks, `0` errores.
 
 - Cierre de artefactos de test (2026-03-11):
-	- limpieza aplicada en `42/tests_ft_printf/` para retirar binarios y
+	- limpieza aplicada en `42/tests/tests_ft_printf/` para retirar binarios y
 	  outputs temporales de comparativas.
 	- estado funcional/build preservado tras limpieza:
 		- `make` OK.

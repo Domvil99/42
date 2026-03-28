@@ -17,18 +17,19 @@ Raiz/
 │   │   ├── 2026-03-12_get_next_line.txt
 │   │   ├── 2026-03-13_push_swap.txt
 │   │   └── 2026-03-13_push_swap_actualizado.txt
-│   ├── testsLibf/
-│   │   └── README.md
-│   ├── tests_ft_printf/
-│   │   └── README.md
-│   ├── tests_get_next_line/
-│   │   └── README.md
-│   ├── tests_currentLibft/
-│   │   └── README.md
-│   ├── tests_push_swap/
-│   │   └── README.md
-│   └── tests_<project_name>/
-│       └── README.md
+│   ├── tests/
+│   │   ├── testsLibf/
+│   │   │   └── README.md
+│   │   ├── tests_ft_printf/
+│   │   │   └── README.md
+│   │   ├── tests_get_next_line/
+│   │   │   └── README.md
+│   │   ├── tests_currentLibft/
+│   │   │   └── README.md
+│   │   ├── tests_push_swap/
+│   │   │   └── README.md
+│   │   └── tests_<project_name>/
+│   │       └── README.md
 ├── .github/
 │   ├── QUICK_REFERENCE.md
 │   ├── chat-handoff.md
@@ -104,8 +105,8 @@ Regla rápida:
     - If you are coding a deliverable project (`libft` and next ones), run
         `git add`, `git commit`, `git push` inside `42/C/`.
     - If you are updating workflow/docs/tooling (`.github`, `.vscode`, `42/PDFs`,
-        `42/testsLibf`, `42/tests_currentLibft`, `42/tests_ft_printf`,
-        `42/tests_<project_name>`), run
+        `42/tests/testsLibf`, `42/tests/tests_currentLibft`, `42/tests/tests_ft_printf`,
+        `42/tests/tests_<project_name>`), run
         git in `Raiz/`.
 
 Quick root check before commit:
@@ -509,7 +510,7 @@ re: fclean all
     git push
 
     # Workspace docs/tooling (desde Raiz/)
-    git add .github .vscode 42/PDFs 42/testsLibf 42/tests_currentLibft 42/tests_push_swap
+    git add .github .vscode 42/PDFs 42/tests/testsLibf 42/tests/tests_currentLibft 42/tests/tests_push_swap
     git commit -m "docs: update tracking and workflow"
     git push
    ```
@@ -520,11 +521,11 @@ re: fclean all
 **Versión**: 1.0 | **Actualizado**: Marzo 2026
 
 ### New Project Test Checklist
-- Create `42/tests_<project_name>/`
+- Create `42/tests/tests_<project_name>/`
 - Add `README.md` with compile/run commands
 - Register in `.github/projects-index.md`
 - Log in `.github/project-history.md`
-- Re-run `42/tests_currentLibft/` before integrating into libft
+- Re-run `42/tests/tests_currentLibft/` before integrating into libft
 
 ## Inter-Chat Handoff (Chat1 <-> Chat2+)
 

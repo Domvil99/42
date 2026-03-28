@@ -11,11 +11,12 @@ Purpose: central index for all projects under `42/` and their relation with `42/
 | get_next_line | 42/C/get_next_line | completed | no | Standalone deliverable; also integrated into currentLibft as child module |
 | push_swap | 42/C/push_swap | in-progress | yes | Proyecto mandatory-only con small/chunk sort/radix |
 | currentLibft | 42/C/currentLibft | in-progress | base | Integrated base: libft + ft_printf + get_next_line under `currentLibft/libft/`; base libft parity synced with libft1 on 2026-03-12 |
-| testsLibf | 42/testsLibf | completed | yes | Manual test programs for libft validation (maintained for regression) |
-| tests_ft_printf | 42/tests_ft_printf | completed | yes | Manual test harnesses for ft_printf validation (maintained for regression) |
-| tests_get_next_line | 42/tests_get_next_line | completed | no | Manual test harnesses for get_next_line validation (maintained for regression) |
-| tests_currentLibft | 42/tests_currentLibft | in-progress | yes | Integration gate for currentLibft build/link/norminette checks |
-| tests_push_swap | 42/tests_push_swap | in-progress | yes | Espacio de pruebas para push_swap |
+| tests | 42/tests | in-progress | no | Contenedor unificado de carpetas de pruebas por proyecto |
+| testsLibf | 42/tests/testsLibf | completed | yes | Manual test programs for libft validation (maintained for regression) |
+| tests_ft_printf | 42/tests/tests_ft_printf | completed | yes | Manual test harnesses for ft_printf validation (maintained for regression) |
+| tests_get_next_line | 42/tests/tests_get_next_line | completed | no | Manual test harnesses for get_next_line validation (maintained for regression) |
+| tests_currentLibft | 42/tests/tests_currentLibft | in-progress | yes | Integration gate for currentLibft build/link/norminette checks |
+| tests_push_swap | 42/tests/tests_push_swap | in-progress | yes | Espacio de pruebas para push_swap |
 
 ## Libft Variants Reference
 
@@ -40,9 +41,9 @@ funcionalidad; current replica la base de libft1 e integra modulos hijos.
 ## Directory Convention
 
 - Main C projects: `42/C/<project_name>/`
-- Per-project tests: `42/tests_<project_name>/`
-- Current libft integration tests: `42/tests_currentLibft/` (mandatory gate)
-- Shared test folders: `42/<tests_name>/` (example: `42/testsLibf/`)
+- Per-project tests: `42/tests/tests_<project_name>/`
+- Current libft integration tests: `42/tests/tests_currentLibft/` (mandatory gate)
+- Shared test folders: `42/tests/<tests_name>/` (example: `42/tests/testsLibf/`)
 - Project reference docs: `.github/`
 - Incoming source instructions (.txt/.pdf exports): `42/PDFs/`
 
