@@ -32,6 +32,7 @@ Raiz/
 │   │   ├── 2026-03-12_get_next_line.txt
 │   │   ├── 2026-03-13_push_swap.txt
 │   │   └── 2026-03-13_push_swap_actualizado.txt
+│   │   (canonical push_swap spec: 2026-03-13_push_swap_actualizado.txt)
 │   ├── testsLibf/
 │   │   └── README.md
 │   ├── tests_ft_printf/

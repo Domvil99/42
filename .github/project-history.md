@@ -62,6 +62,27 @@ Validation order for all projects:
     (functions/progress/reference).
   - README de tests alineados a specs canonicas y rutas reales de compilacion.
 
+- Change type: docs-validation
+- Paths changed:
+  - `.github/copilot-instructions.md`
+  - `.github/currentLibft/integration-manifest.md`
+  - `.github/projects-index.md`
+  - `.github/project-history.md`
+- Tracking docs updated:
+  - `.github/project-history.md`
+  - `.github/projects-index.md`
+  - `.github/copilot-instructions.md`
+- Notes:
+  - Revision exhaustiva adicional de `.md` con foco en claridad canónica y
+    metadata de actualización.
+  - Pruebas ejecutadas y validadas:
+    - `42/C/libft`: `make fclean && make && make bonus` + `42/testsLibf`.
+    - `42/C/ft_printf`: build mandatory/bonus + matrices
+      (`RET_TOTAL=212` y `RET_TOTAL=146`).
+    - `42/C/currentLibft`: `make fclean && make && make bonus`.
+    - `42/C/push_swap`: smoke tests (`2 1`, `3 2 1`, ordenado sin salida)
+      y errores esperados (`Error` en alpha/duplicado/overflow).
+
 ## 2026-03-19
 
 - Change type: project-structure

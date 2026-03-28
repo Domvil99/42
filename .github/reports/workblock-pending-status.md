@@ -32,6 +32,7 @@ Pending changes:
 - `.github/reports/currentLibft-validation-2026-03-12.md`
 - `.github/reports/pdfs-canonical-inventory.md`
 - `.github/reports/workblock-pending-status.md`
+- `.github/currentLibft/integration-manifest.md`
 - `.github/study_methods/currentLibft/currentLibft.md`
 - `.github/study_methods/get_next_line/get_next_line.md`
 - `.github/study_methods/overview.md`
