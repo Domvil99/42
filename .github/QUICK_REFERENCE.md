@@ -111,8 +111,8 @@ Regla rápida:
     - If you are coding a deliverable project (`libft` and next ones), run
         `git add`, `git commit`, `git push` inside `42/C/`.
     - If you are updating workflow/docs/tooling (`.github`, `.vscode`, `42/PDFs`,
-        `42/tests/testsLibf`, `42/tests/tests_currentLibft`, `42/tests/tests_ft_printf`,
-        `42/tests/tests_<project_name>`), run
+        `42/tests/testsLibf`, `42/tests/tests_ft_printf`, `42/tests/tests_get_next_line`,
+        `42/tests/tests_currentLibft`, `42/tests/tests_push_swap`), run
         git in `Raiz/`.
 
 Quick root check before commit:
@@ -516,7 +516,7 @@ re: fclean all
     git push
 
     # Workspace docs/tooling (desde Raiz/)
-    git add .github .vscode 42/PDFs 42/tests/testsLibf 42/tests/tests_currentLibft 42/tests/tests_push_swap
+    git add .github .vscode 42/PDFs 42/tests/testsLibf 42/tests/tests_ft_printf 42/tests/tests_get_next_line 42/tests/tests_currentLibft 42/tests/tests_push_swap
     git commit -m "docs: update tracking and workflow"
     git push
    ```

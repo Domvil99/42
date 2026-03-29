@@ -1,7 +1,7 @@
 # Workblock Pending Status
 
 Date: 2026-03-29
-Block: Ajuste final de coherencia markdown
+Block: Limpieza final de referencias push_swap
 
 ## Repo entrega C (42/C/)
 
@@ -11,20 +11,21 @@ Pending changes:
 ## Repo workspace Raiz
 
 Pending changes:
-- `.github/copilot-instructions.md`
-- `.github/instructions/config-guide.instructions.md`
-- `.github/workflow-rules.md`
-- `.github/study/overview.md`
+- `.github/QUICK_REFERENCE.md`
+- `.github/projects-index.md`
+- `.github/study/push_swap/dictionary.md`
+- `.github/study/push_swap/implementation.md`
+- `.github/study/push_swap/validation.md`
 - `.github/reports/workblock-pending-status.md`
 
 ## Closure
 
-- Scope: cerrar últimas incoherencias detectadas en revisión final de `.md`
-	(alias Chat3, árbol de rutas, naming de estudio y wording de workspace).
+- Scope: eliminar rastros narrativos de estructura antigua de push_swap y
+	completar segunda revisión exhaustiva de `.md`.
 - Validation:
-	- sin rutas legacy activas en documentación operativa,
-	- reglas y aliases sincronizados entre anclas de gobernanza,
-	- coherencia de estructura validada frente al filesystem actual.
+	- `push_swap_mandatory`: 0 coincidencias globales,
+	- `tests_push_swap_mandatory`: 0 coincidencias globales,
+	- `mandatory-only`: 0 coincidencias globales.
 - Delivery repo commit: not required in this block.
 - Workspace repo commit: pending.
 

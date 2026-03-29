@@ -62,7 +62,7 @@ ARG="3 2 5 1 4"
 
 Esperado: `OK`.
 
-Nota: este proyecto es mandatory-only; checker no vive en este arbol.
+Nota: este proyecto entrega un unico binario `push_swap`; checker no vive en este arbol.
 
 ## 5. Rendimiento (benchmarks subject)
 

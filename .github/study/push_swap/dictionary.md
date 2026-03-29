@@ -56,7 +56,7 @@ Glosario tecnico del modulo mandatory con ejemplos cortos.
 - Definicion: limpieza final de recursos.
 - Mini ejemplo: `free(arr)`, `free_stack(&a)`, `free_stack(&b)`.
 
-### Mandatory-only scope
+### Project scope
 - Definicion: el proyecto entrega un unico binario `push_swap` con operaciones permitidas por subject.
 - Mini ejemplo: el Makefile de este modulo construye `push_swap` y no incluye otros ejecutables.
 

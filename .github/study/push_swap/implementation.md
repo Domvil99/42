@@ -22,7 +22,7 @@ Archivos y rol:
 - `sort_chunk.c`: estrategia por chunks para tamano medio.
 - `sort_radix.c`: estrategia bitwise para tamano grande.
 - `free_utils.c`: manejo de errores y liberacion.
-- `Makefile`: build mandatory-only + dependencia `libft/libft.a`.
+- `Makefile`: build del proyecto + dependencia `libft/libft.a`.
 
 ## 2. Flujo de control exacto
 
@@ -248,7 +248,7 @@ Evidencia de estabilidad (2026-03-14):
 
 - Valgrind en `./push_swap 3 2 1` sin leaks ni invalid access.
 
-## 10. Makefile mandatory-only
+## 10. Makefile del proyecto
 
 Puntos importantes:
 
