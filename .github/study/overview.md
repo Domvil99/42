@@ -1,4 +1,4 @@
-# Study Methods Overview
+# Study Overview
 
 Este directorio centraliza el material de estudio de proyectos validados y
 cerrados con estado optimo.

@@ -51,31 +51,37 @@ Raiz/
 │   ├── chat-handoff.md
 │   ├── copilot-instructions.md
 │   ├── deferred-tasks.md
+│   ├── projects-index.md
+│   ├── project-history.md
+│   ├── workflow-rules.md
 │   ├── instructions/
 │   │   ├── c-coding.instructions.md
 │   │   └── config-guide.instructions.md
-│   ├── libft-functions.md
-│   ├── libft-progress.md
-│   ├── libft-reference.md
-│   ├── ft_printf-functions.md
-│   ├── ft_printf-progress.md
-│   ├── ft_printf-reference.md
-│   ├── get_next_line-functions.md
-│   ├── get_next_line-progress.md
-│   ├── get_next_line-reference.md
-│   ├── push_swap-functions.md
-│   ├── push_swap-progress.md
-│   ├── push_swap-reference.md
-│   ├── currentLibft-functions.md
-│   ├── currentLibft-progress.md
-│   ├── currentLibft-reference.md
-│   ├── projects-index.md
-│   ├── project-history.md
 │   ├── reports/
-│   ├── study_methods/
-│   ├── currentLibft/
-│   │   └── integration-manifest.md
-│   └── workflow-rules.md
+│   ├── tracking/
+│   │   └── projects/
+│   │       ├── libft/
+│   │       │   ├── libft-functions.md
+│   │       │   ├── libft-progress.md
+│   │       │   └── libft-reference.md
+│   │       ├── ft_printf/
+│   │       │   ├── ft_printf-functions.md
+│   │       │   ├── ft_printf-progress.md
+│   │       │   └── ft_printf-reference.md
+│   │       ├── get_next_line/
+│   │       │   ├── get_next_line-functions.md
+│   │       │   ├── get_next_line-progress.md
+│   │       │   └── get_next_line-reference.md
+│   │       ├── push_swap/
+│   │       │   ├── push_swap-functions.md
+│   │       │   ├── push_swap-progress.md
+│   │       │   └── push_swap-reference.md
+│   │       └── currentLibft/
+│   │           ├── currentLibft-functions.md
+│   │           ├── currentLibft-progress.md
+│   │           ├── currentLibft-reference.md
+│   │           └── integration-manifest.md
+│   └── study/
 ├── .tools/
 └── .vscode/
 ```
@@ -159,6 +165,7 @@ Raiz/
 - Accept role aliases:
   - Chat1: `AdminChat`, `Admin`
   - Chat2: `codeEditorChat`, `codeEditor`, `Code`, `Editor`
+  - Chat3: `BacklogChat`, `Backlog`
   - Chat4: `StudyChat`, `Study`
 - Persist the selected mode for the full conversation.
 - Do not auto-switch to the companion chat based on task type.

@@ -57,7 +57,7 @@ Este es el chat EXCLUSIVO para:
 - Guía y tutoriales de uso de herramientas
 - Optimización del flujo de trabajo
 - Debugging de configuraciones
-- Organización multi-proyecto del workspace `Raiz/42/`
+- Organización multi-proyecto del workspace `Raiz/` (estructura `42/C/`)
 - Mantenimiento de documentación de tracking (`.md`)
 - Gestión de especificaciones externas (`.txt` en `42/PDFs/`)
 

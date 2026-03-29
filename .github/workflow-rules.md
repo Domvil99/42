@@ -16,7 +16,7 @@ Official aliases:
 - Chat1 = `AdminChat` / `Admin`
 - Chat2 = `codeEditorChat` / `codeEditor` / `Code` / `Editor`
 - Chat4 = `StudyChat` / `Study`
-- Chat3 = pending alias specification
+- Chat3 = `BacklogChat` / `Backlog`
 
 ## Dual Git Operation
 
