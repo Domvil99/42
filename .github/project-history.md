@@ -40,6 +40,8 @@ Validation order for all projects:
     `.github/tracking/projects/<project>/`.
   - `integration-manifest.md` de currentLibft movido a
     `.github/tracking/projects/currentLibft/integration-manifest.md`.
+  - Limpieza post-migración: eliminada carpeta placeholder vacía
+    `.github/currentLibft/` tras mover su contenido al tracking canónico.
   - Material de estudio consolidado en `.github/study/`.
   - Referencias cruzadas reescritas a nuevas rutas en documentación e
     instrucciones.
