@@ -11,16 +11,20 @@ cantidad de operaciones. Las entradas deben validarse de forma estricta
 (tokens invalidos, duplicados y overflow/underflow de enteros deben devolver
 `Error` en stderr).
 
-Esta version mandatory compila unicamente el programa `push_swap`.
+Este proyecto se organiza en dos partes separadas:
 
-## Instructions
+- Mandatory: programa `push_swap`.
+- Bonus: programa `checker`.
+
+
+## Mandatory (push_swap)
 
 ### 1. Compile
 
 Desde la raiz del proyecto:
 
 ```bash
-cd 42/C/push_swap
+cd ../push_swap
 make
 ```
 
@@ -55,7 +59,7 @@ Una entrada invalida debe imprimir `Error` en stderr:
 
 ### 3. Validate sorting result
 
-Este proyecto mandatory no incluye checker. Puedes validar operaciones con un
+Este flujo mandatory no depende del bonus. Puedes validar operaciones con un
 checker externo compatible:
 
 ```bash
@@ -82,11 +86,41 @@ ARG=$(python3 -c "import random;print(' '.join(map(str, random.sample(range(-100
 ./push_swap $ARG | wc -l
 ```
 
+## Bonus (checker)
+
+### 1. Compile bonus
+
+```bash
+cd 42/C/push_swap
+make bonus
+```
+
+### 2. Run bonus
+
+El binario `checker` recibe los enteros por argumentos y las instrucciones por
+`stdin` (una por linea):
+
+```bash
+echo -e "sa\nrra" | ./checker 3 2 1
+```
+
+Resultados esperados:
+
+- `OK` si `a` queda ordenada y `b` vacia.
+- `KO` en cualquier otro caso.
+- `Error` en `stderr` para argumentos invalidos, duplicados, overflow o
+	instruccion invalida/mal formateada.
+
+### 3. Separacion mandatory vs bonus
+
+- `make` compila solo `push_swap`.
+- `make bonus` compila `checker`.
+- Los archivos bonus viven en `*_bonus.c` y `*_bonus.h`.
+
 ## Resources
 
 ### Classical references
 
-- Subject del proyecto 42 (actualizado): `42/PDFs/2026-03-13_push_swap_actualizado.txt`
 - Referencia del lenguaje C: https://en.cppreference.com/w/c
 - Documentacion de Valgrind: https://valgrind.org/docs/manual/
 - 42 Norminette: https://github.com/42School/norminette
