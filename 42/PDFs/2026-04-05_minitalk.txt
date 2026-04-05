@@ -1,0 +1,138 @@
+Minitalk
+
+
+
+Resumen: El propósito de este proyecto es crear un pequeño programa de intercambio de datos utilizando señales UNIX.
+Versión: 5.0
+
+
+
+
+Índice general
+I. Avance
+II. Instrucciones generales
+III. Instrucciones específicas
+IV. Parte obligatoria
+V. Requisitos del Readme
+VI. Extras
+VII. Entrega y evaluación de pares
+
+
+
+
+Capítulo I Avance
+   El cis-3-Hexen-1-ol, también conocido como (Z)-3-hexen-1-ol y alcohol de hojas, es un líquido aceitoso incoloro con un olor intenso a hierba y hojas verdes recién cortadas.
+
+   Se produce en pequeñas cantidades por la mayoría de las plantas y actúa como un atrayente para muchos insectos depredadores. El cis-3-hexen-1-ol es un compuesto de aroma muy importante que se utiliza en sabores de frutas y verduras y en perfumes.
+La producción anual es de alrededor de 30 toneladas.
+
+
+
+
+Capítulo II Instrucciones generales
+• El proyecto deberá estar escrito en C.
+• El proyecto debe estar escrito siguiendo la Norma. Si tienes archivos o funciones adicionales, estas deberán estar incluidas en la verificación de la Norma y tendrás un 0 si hay algún error de norma en cualquiera de ellos.
+• Las funciones no deben terminar de forma inesperada (segfault, bus error, double free, etc), excepto en el caso de comportamientos indefinidos. Si esto sucede, el proyecto será considerado no funcional y recibirás un 0 durante la evaluación.
+• Toda la memoria asignada en la pila (heap) deberá liberarse adecuadamente cuando sea necesario. No se permitirán leaks de memoria.
+• Si el enunciado lo requiere, se deberá entregar un Makefile que compilará tus archivos fuente a la salida requerida con las flags -Wall, -Werror y -Wextra. También se deberá utilizar cc y, por supuesto, el Makefile no debe hacer relink.
+• El Makefile entregado debe contener al menos las normas $(NAME), all, clean, fclean y re.
+• Para entregar los bonus del proyecto se deberá incluir una regla bonus en el Makefile, en la que se añadirán todos los headers, librerías o funciones que estén prohibidas en la parte principal del proyecto. Los bonus deben estar en archivos distintos
+_bonus.{c/h}. La parte obligatoria y los bonus se evalúan por separado.
+• Si el proyecto permite el uso de la libft, se deberá copiar su fuente y sus Makefile asociados en un directorio libft con su correspondiente Makefile. El Makefile del proyecto debe compilar primero la librería utilizando su Makefile, y después compilar el proyecto.
+• Es recomendable crear programas de prueba para el proyecto, aunque este trabajo no será entregado ni evaluado. Esto ofrece la oportunidad de verificar que el programa funciona correctamente durante las evaluaciones. Y sí, está permitido utilizar estas pruebas durante cualquier evaluación.
+• Entrega el trabajo en el repositorio Git asignado. Solo el trabajo de tu repositorio Git será evaluado. Si el proyecto tiene que ser evaluado por Deepthought, la evaluación se realizará después de las evaluaciones personales. Si, durante la evaluación de Deepthought, se encuentra un error se, se interrumpirá su evaluación.
+
+
+
+
+Capítulo III Instrucciones específicas
+• Los ejecutables deben llamarse client y server.
+• Deberás proporcionar un archivo Makefile que compilará los archivos fuente de tu programa. No deberá hacer relink.
+• Puedes usar tu libft.
+• Debes gestionar los errores con cuidado. Bajo ninguna circunstancia tu programa puede terminar inesperadamente (segfault, bus error, double free, etc).
+• Tu programa no puede tener fugas de memoria.
+• Puedes utilizar una variable global por programa (una para el cliente y otra para el servidor), pero tendrás que justificar su uso.
+• En la parte obligatoria se te permite utilizar las siguientes funciones:
+
+  write
+  ft_printf y cualquier equivalente que TÚ hayas programado
+  signal
+  sigemptyset
+  sigaddset
+  sigaction
+  kill
+  getpid
+  malloc
+  free
+  pause
+  sleep
+  usleep
+  exit
+
+
+
+
+Capítulo IV Parte obligatoria
+Debes crear un programa de comunicación en la forma de un cliente y un servidor.
+• El servidor debe lanzarse primero, tras lanzarse debe mostrar su PID.
+• El cliente tomará como parámetros:
+	El PID del servidor.
+	La string que debería mandarse.
+• El cliente debe comunicar la string pasada como parámetro al servidor. Una vez la string se haya recibido, el servidor debe mostrarla.
+• El servidor debe ser capaz de mostrar la string suficientemente rápido. Por rápido queremos decir que si piensas que está tardando mucho, probablemente es que está tardando demasiado.
+
+	1 segundo para mostrar 100 caracteres es ¡muchíiiiisimo!
+
+• Tu servidor debe poder recibir strings de distintos clientes consecutivamente, sin necesidad de reiniciar.
+• La comunicación entre tu cliente y tu servidor se hará EXCLUSIVAMENTE
+utilizando señales UNIX.
+• Solo puedes utilizar estas dos señales: SIGUSR1 y SIGUSR2.
+
+	Linux no pone en cola señales cuando ya tienes señales pendientes de
+	este tipo. ¿Hora de hacer bonus?
+
+
+
+
+Capítulo V
+Requisitos del Readme
+
+   Debe incluirse un archivo README.md en la raíz del repositorio Git. Su propósito es permitir que cualquier persona que no esté familiarizada con el proyecto (pares, personal, responsables de selección, etc.) pueda entender rápidamente de qué trata el proyecto, cómo ejecutarlo y dónde encontrar más información sobre el tema.
+El README.md debe incluir, como mínimo:
+• La primera línea debe estar en cursiva y decir: Este proyecto ha sido creado como parte del currículo de 42 por <login1>[, <login2>[, <login3>[...]]].
+• Una sección de "Descripción" que presente claramente el proyecto, incluyendo su objetivo y una breve visión general.
+• Una sección de "Instrucciones" que contenga cualquier información relevante sobre compilación, instalación y/o ejecución.
+• Una sección de "Recursos" que enumere referencias clásicas relacionadas con el tema (documentación, artículos, tutoriales, etc.), así como una descripción del uso de IA, especificando para qué tareas y en qué partes del proyecto se ha utilizado.
+
+Podrían requerirse secciones adicionales dependiendo del proyecto (por ejemplo, ejemplos de uso, lista de características, decisiones técnicas, etc.).
+
+Cualquier contenido extra requerida se listará explícitamente a continuación.
+
+	Se recomienda escribir el README.md en inglés, pero puedes redactarlo
+	en la lengua principal de tu campus.
+
+
+
+
+Capítulo VI Extras
+Lista de bonus:
+• El servidor confirma cada señal recibida mandando una señal al cliente.
+• Soporta los caracteres Unicode.
+
+	La parte extra solo será evaluada si la parte obligatoria está
+	PERFECTA. Perfecta significa que la parte ogligaria se ha completado
+	entera y funciona sin ningún error. Si no has alcanzado todos los
+	requisitos de la parte obligaroria, tu bonus no será evaluada de
+	ninguna manera.
+
+
+Capítulo VII
+Entrega y evaluación de pares
+
+   Como es habitual, entrega tu trabajo en el repositorio Git. Solo el trabajo en tu repositorio será evaluado. Comprueba dos veces que los nombres de tus archivos sean los correctos.
+Durante la evaluación, es posible que se solicite una ligera modificación del proyecto. Esto puede consistir en ajustar ligeramente el comportamiento, modificar unas cuantas líneas de código o incorporar una característica fácil de implementar.
+Puede que este paso no sea necesario en todos los proyectos, pero hay que tenerlo en cuenta si así se especifica en la hoja de evaluación.
+Este paso sirve para verificar la comprensión real de una parte específica del proyecto. La modificación se puede realizar en cualquier entorno de desarrollo que se elija (por ejemplo, la configuración habitual), y debería ser factible en unos pocos minutos, a menos que se defina un plazo específico como parte de la evaluación.
+Por ejemplo, se puede pedir hacer una pequeña actualización en una función o script, modificar lo que se vería en pantalla o ajustar una estructura de datos para almacenar nueva información, etc.
+Los detalles (alcance, objetivo, etc.) se especificarán cada hoja de evaluación y pueden variar de una evaluación a otra para el mismo proyecto.
+

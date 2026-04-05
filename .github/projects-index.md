@@ -10,11 +10,13 @@ Purpose: central index for all projects under `42/` and their relation with `42/
 | ft_printf | 42/C/ft_printf | completed | yes | Standalone deliverable project (coexists by design with integrated copy inside currentLibft); libft mirror synced with libft1 on 2026-03-12 |
 | get_next_line | 42/C/get_next_line | completed | no | Standalone deliverable; also integrated into currentLibft as child module |
 | push_swap | 42/C/push_swap | in-progress | yes | Proyecto standalone con estrategias small/chunk/radix |
+| minitalk | 42/C/minitalk | in-progress | yes | Comunicacion cliente-servidor por SIGUSR1/SIGUSR2; obligatorio primero, bonus en skeleton separado |
 | currentLibft | 42/C/currentLibft | in-progress | base | Integrated base: libft + ft_printf + get_next_line under `currentLibft/libft/`; base libft parity synced with libft1 on 2026-03-12 |
 | tests | 42/tests | in-progress | no | Contenedor unificado de carpetas de pruebas por proyecto |
 | testsLibf | 42/tests/testsLibf | completed | yes | Manual test programs for libft validation (maintained for regression) |
 | tests_ft_printf | 42/tests/tests_ft_printf | completed | yes | Manual test harnesses for ft_printf validation (maintained for regression) |
 | tests_get_next_line | 42/tests/tests_get_next_line | completed | no | Manual test harnesses for get_next_line validation (maintained for regression) |
+| tests_minitalk | 42/tests/tests_minitalk | in-progress | no | Pruebas C portables para validar obligatorio de minitalk en repos propios o de pares |
 | tests_currentLibft | 42/tests/tests_currentLibft | in-progress | yes | Integration gate for currentLibft build/link/norminette checks |
 | tests_push_swap | 42/tests/tests_push_swap | in-progress | yes | Espacio de pruebas para push_swap |
 

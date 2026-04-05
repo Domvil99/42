@@ -10,13 +10,15 @@ Raiz/
 │   │   ├── ft_printf/
 │   │   ├── get_next_line/
 │   │   ├── push_swap/
+│   │   ├── minitalk/
 │   │   └── currentLibft/
 │   ├── PDFs/
 │   │   ├── 2026-03-12_libft_v16_6.txt
 │   │   ├── 2026-03-12_ft_printf.txt
 │   │   ├── 2026-03-12_get_next_line.txt
 │   │   ├── 2026-03-13_push_swap.txt
-│   │   └── 2026-03-13_push_swap_actualizado.txt
+│   │   ├── 2026-03-13_push_swap_actualizado.txt
+│   │   └── 2026-04-05_minitalk.txt
 │   ├── tests/
 │   │   ├── testsLibf/
 │   │   │   └── README.md
@@ -27,6 +29,8 @@ Raiz/
 │   │   ├── tests_currentLibft/
 │   │   │   └── README.md
 │   │   ├── tests_push_swap/
+│   │   │   └── README.md
+│   │   ├── tests_minitalk/
 │   │   │   └── README.md
 │   │   └── tests_<project_name>/
 │   │       └── README.md
@@ -59,6 +63,10 @@ Raiz/
 │   │       │   ├── push_swap-functions.md
 │   │       │   ├── push_swap-progress.md
 │   │       │   └── push_swap-reference.md
+│   │       ├── minitalk/
+│   │       │   ├── minitalk-functions.md
+│   │       │   ├── minitalk-progress.md
+│   │       │   └── minitalk-reference.md
 │   │       └── currentLibft/
 │   │           ├── currentLibft-functions.md
 │   │           ├── currentLibft-progress.md
@@ -516,7 +524,7 @@ re: fclean all
     git push
 
     # Workspace docs/tooling (desde Raiz/)
-    git add .github .vscode 42/PDFs 42/tests/testsLibf 42/tests/tests_ft_printf 42/tests/tests_get_next_line 42/tests/tests_currentLibft 42/tests/tests_push_swap
+    git add .github .vscode 42/PDFs 42/tests/testsLibf 42/tests/tests_ft_printf 42/tests/tests_get_next_line 42/tests/tests_currentLibft 42/tests/tests_push_swap 42/tests/tests_minitalk
     git commit -m "docs: update tracking and workflow"
     git push
    ```

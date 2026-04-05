@@ -1,41 +1,35 @@
 # Workblock Pending Status
 
 Date: 2026-04-05
-Block: Tests C portables para revisión de pares
+Block: Minitalk obligatorio + integración libft current
 
 ## Repo entrega C (42/C/)
 
 Pending changes:
-- none (working tree clean)
+- `42/C/minitalk/*`
+- `42/C/minitalk/libft/*`
 
 ## Repo workspace Raiz
 
 Pending changes:
 - `.github/project-history.md`
+- `.github/projects-index.md`
+- `.github/QUICK_REFERENCE.md`
 - `.github/reports/workblock-pending-status.md`
-- `42/tests/testsLibf/README.md`
-- `42/tests/tests_ft_printf/README.md`
-- `42/tests/tests_get_next_line/README.md`
-- `42/tests/tests_push_swap/README.md`
-- `42/tests/tests_currentLibft/README.md`
-- `42/tests/PEER_REVIEW_30S.md`
-- `42/tests/test_bonus_autodetect_gate.c`
-- `42/tests/testsLibf/test_libft_portable_strict.c`
-- `42/tests/tests_ft_printf/test_mandatory_ref.c`
-- `42/tests/tests_ft_printf/test_bonus_ref.c`
-- `42/tests/tests_get_next_line/test_gnl_mandatory_strict.c`
-- `42/tests/tests_get_next_line/test_gnl_bonus_multifd_strict.c`
-- `42/tests/tests_push_swap/test_push_swap_portable_strict.c`
-- `42/tests/tests_currentLibft/test_current_libft_link_strict.c`
+- `.github/tracking/projects/minitalk/*`
+- `42/PDFs/2026-04-05_minitalk.txt`
+- `42/tests/tests_minitalk/*`
 
 ## Closure
 
-- Scope: habilitar batería de tests portables en C para validar proyectos
-	propios y de compañeros con rutas parametrizables.
+- Scope: implementar obligatorio de `minitalk` con `libft` de currentLibft,
+	pruebas C portables y tracking completo.
 - Validation:
-	- compilación/ejecución de tests C portables (`libft`, `ft_printf`,
-	  `get_next_line`, `push_swap`, `currentLibft`): OK.
-	- gate de autodetección bonus (`42/tests/test_bonus_autodetect_gate.c`): OK.
-- Delivery repo commit: none required.
+	- build `make` y smoke inicial server/client: OK.
+	- build `make bonus` skeleton separado: OK.
+	- tests C portables (`tests_minitalk`): OK.
+	- sanitizer (`address,undefined`) en flujo real: OK.
+	- norminette final en `42/C/minitalk/*.c` y `*.h`: OK.
+- Delivery repo commit: pending.
 - Workspace repo commit: pending.
 

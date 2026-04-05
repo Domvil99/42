@@ -13,6 +13,36 @@ Validation order for all projects:
 
 ## 2026-04-05
 
+- Change type: minitalk-spec-import
+- Paths changed:
+  - `42/PDFs/2026-04-05_minitalk.txt`
+- Notes:
+  - Se incorpora el subject de `minitalk` como referencia canonica para
+    implementacion y validacion.
+  - Se conserva estructura normativa completa del enunciado.
+  - Correccion aplicada: se rehace transcripcion literal 1:1 del original
+    tras detectar incompletitud en una version previa.
+
+- Change type: minitalk-bootstrap-mandatory
+- Paths changed:
+  - `42/C/minitalk/`
+  - `42/C/minitalk/libft/`
+  - `42/C/minitalk/README.md`
+  - `42/tests/tests_minitalk/`
+  - `.github/tracking/projects/minitalk/`
+  - `.github/projects-index.md`
+  - `.github/QUICK_REFERENCE.md`
+- Tracking docs updated:
+  - `.github/tracking/projects/minitalk/minitalk-functions.md`
+  - `.github/tracking/projects/minitalk/minitalk-progress.md`
+  - `.github/tracking/projects/minitalk/minitalk-reference.md`
+- Notes:
+  - Se crea nuevo proyecto `42/C/minitalk` con foco inicial en obligatorio.
+  - `libft` se integra copiando base desde `42/C/currentLibft/libft`.
+  - Se implementa comunicacion cliente-servidor por `SIGUSR1/SIGUSR2` para
+    obligatorio y se deja skeleton bonus separado en `*_bonus.c/h`.
+  - Se crean tests C portables para validacion local y evaluacion de pares.
+
 - Change type: tests-portable-c-peer-review
 - Paths changed:
   - `42/tests/testsLibf/README.md`
