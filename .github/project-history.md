@@ -11,6 +11,33 @@ Validation order for all projects:
 3. memory/stability.
 4. Norminette as final closing step.
 
+## 2026-04-05
+
+- Change type: integration-baseline-refresh
+- Paths changed:
+  - `.github/tracking/projects/currentLibft/`
+  - `.github/study/currentLibft/`
+  - `.github/tracking/projects/push_swap/`
+- Tracking docs updated:
+  - `.github/tracking/projects/currentLibft/currentLibft-functions.md`
+  - `.github/tracking/projects/currentLibft/currentLibft-reference.md`
+  - `.github/tracking/projects/currentLibft/currentLibft-progress.md`
+  - `.github/tracking/projects/currentLibft/integration-manifest.md`
+  - `.github/study/currentLibft/currentLibft.md`
+  - `.github/study/currentLibft/dictionary.md`
+  - `.github/tracking/projects/push_swap/push_swap-functions.md`
+  - `.github/tracking/projects/push_swap/push_swap-progress.md`
+  - `.github/tracking/projects/push_swap/push_swap-reference.md`
+- Notes:
+  - Se amplió la documentación de `currentLibft` con detalle de APIs
+    integradas (`ft_printf` y `get_next_line`) y constantes de configuración.
+  - Se sincronizó tracking de `push_swap` para reflejar la base `libft`
+    integrada completa (mandatory + bonus disponibles en árbol local).
+  - Validación técnica ejecutada en `42/C/push_swap`:
+    - `make fclean && make`: OK
+    - smoke tests obligatorios: OK
+    - norminette en árbol impactado (`push_swap` + `libft` integrada): OK
+
 ## 2026-03-29
 
 - Change type: docs-structure

@@ -20,11 +20,25 @@ Headers base:
 - `ft_printf`
   - Path: `42/C/currentLibft/libft/ft_printf/`
   - Entry point: `int ft_printf(const char *format, ...)`
+  - Source files: 17
+  - Mandatory files: `ft_printf.c`, `print_char.c`, `print_string.c`,
+    `print_pointer.c`, `print_decimal.c`, `print_unsigned.c`, `print_hex.c`,
+    `utils.c`
+  - Bonus files: `ft_printf_bonus.c`, `handle_format_bonus.c`,
+    `parse_format_bonus.c`, `print_char_bonus.c`, `print_str_bonus.c`,
+    `print_int_bonus.c`, `print_unsigned_bonus.c`, `print_hex_bonus.c`,
+    `print_pointer_bonus.c`
   - Estado: completed (integrado)
 
 - `get_next_line`
   - Path: `42/C/currentLibft/libft/get_next_line/`
   - Entry point: `char *get_next_line(int fd)`
+  - Source files: 4
+  - Mandatory files: `get_next_line.c`, `get_next_line_utils.c`
+  - Bonus files: `get_next_line_bonus.c`, `get_next_line_utils_bonus.c`
+  - Header constants:
+    - mandatory: `BUFFER_SIZE=1024`
+    - bonus: `BUFFER_SIZE=42`, `OPEN_MAX=1024`
   - Estado: completed (integrado)
 
 ## Integration Constraints
@@ -39,4 +53,5 @@ Headers base:
 
 ## Change Log
 
+- 2026-04-05: ampliado detalle de fuentes/APIs integradas para reutilizacion.
 - 2026-03-20: tracking inicial generado.

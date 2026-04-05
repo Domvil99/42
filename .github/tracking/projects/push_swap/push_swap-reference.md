@@ -67,6 +67,13 @@ Secuencia de operaciones válidas separadas por `\n`.
 - `fclean`: limpia binario + limpieza total libft.
 - `re`: reconstrucción total.
 
+Detalle de política actual de `push_swap/libft`:
+
+- `all` de la libft local compila base + bonus listas y deja el archivo
+	`libft.a` listo para link.
+- Además dispara build bonus de módulos hijos (`ft_printf`, `get_next_line`)
+	para mantener cobertura completa del baseline integrado.
+
 ## 8. Validation Commands
 
 ```bash

@@ -11,6 +11,11 @@ Estado: in-progress (base evolutiva)
 - ft_printf child: integrated and completed
 - get_next_line child: integrated and completed
 
+Cobertura funcional registrada (2026-04-05):
+- libft base: 43/43
+- ft_printf: mandatory + bonus disponibles en modulo integrado
+- get_next_line: mandatory + bonus disponibles en modulo integrado
+
 ## Integration Gates
 
 1. Build gate:
@@ -20,6 +25,8 @@ Estado: in-progress (base evolutiva)
    - base libft sincronizada con `42/C/libft`.
 3. Style gate:
    - norminette sobre archivos impactados al cerrar cambios.
+4. Documentation gate:
+   - tracking y manifest de currentLibft sincronizados con codigo real.
 
 ## Operational Notes
 
@@ -32,4 +39,5 @@ Estado: in-progress (base evolutiva)
 
 ## Change Log
 
+- 2026-04-05: progreso actualizado con cobertura integrada detallada.
 - 2026-03-20: tracking inicial de progreso creado.

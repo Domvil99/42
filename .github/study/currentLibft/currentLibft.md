@@ -54,3 +54,26 @@ No integrado en currentLibft (mantiene standalone independiente):
 - Por que `currentLibft` no reemplaza los entregables standalone.
 - Que invariantes estructurales nunca deben romperse.
 - Como detectar regresiones tras integrar un modulo nuevo.
+
+## 8. APIs Publicas Integradas (Referencia Rapida)
+
+### ft_printf
+
+- Entry: `int ft_printf(const char *format, ...)`
+- Mandatory soporta: `c s p d i u x X %`
+- Bonus añade: flags (`- 0 + space #`), width y precision
+
+### get_next_line
+
+- Entry: `char *get_next_line(int fd)`
+- Mandatory: lectura single-fd con `BUFFER_SIZE=1024`
+- Bonus: lectura multi-fd con `BUFFER_SIZE=42`, `OPEN_MAX=1024`
+
+## 9. Reutilizacion en Proyectos Nuevos
+
+Cuando el subject permita libft, la base recomendada es copiar la libreria
+desde `42/C/currentLibft/libft` para conservar:
+
+- base libft completa (43 funciones)
+- modulos integrados (`ft_printf`, `get_next_line`)
+- soporte mandatory + bonus disponible en codigo fuente

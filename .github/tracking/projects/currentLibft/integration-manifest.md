@@ -1,7 +1,7 @@
 # Integration Manifest - currentLibft
 
-Last Updated: 2026-03-20
-Consolidation Version: 1.0
+Last Updated: 2026-04-05
+Consolidation Version: 1.1
 
 ## Overview
 
@@ -22,6 +22,54 @@ Consolidated index of modules integrated into `42/C/currentLibft/libft`.
 - libft (official): 43 functions total (23 + 11 + 9)
 - ft_printf (integrated): 17 source files
 - get_next_line (integrated): 4 source files
+
+## API Detail (Integrated Modules)
+
+### ft_printf mandatory header (`ft_printf.h`)
+
+- `int ft_printf(const char *format, ...)`
+- `int print_char(int c)`
+- `int print_string(char *s)`
+- `int print_pointer(unsigned long long ptr)`
+- `int print_decimal(int n)`
+- `int print_unsigned(unsigned int n)`
+- `int print_hex(unsigned int n, const char format)`
+- `int print_percent(void)`
+- `int ft_putnbr_base(unsigned long long nbr, char *base)`
+
+### ft_printf bonus header (`ft_printf_bonus.h`)
+
+- `int ft_printf(const char *format, ...)`
+- `int handle_format(const char *format, va_list args, int *i)`
+- `int parse_format(const char *format, t_format *f)`
+- `int print_char(va_list args, t_format f)`
+- `int print_str(va_list args, t_format f)`
+- `int print_int(va_list args, t_format f)`
+- `int print_unsigned(va_list args, t_format f)`
+- `int print_hex(va_list args, t_format f)`
+- `int print_pointer(va_list args, t_format f)`
+
+### get_next_line mandatory header (`get_next_line.h`)
+
+- `char *get_next_line(int fd)`
+- `size_t ft_strlen(const char *s)`
+- `char *ft_strchr(const char *s, int c)`
+- `char *ft_strjoin(char *s1, char *s2)`
+- `char *ft_substr(char *s, unsigned int start, size_t len)`
+- `char *ft_strdup(const char *s)`
+
+### get_next_line bonus header (`get_next_line_bonus.h`)
+
+- `char *get_next_line(int fd)`
+- `char *ft_strjoin(char *s1, char *s2)`
+- `char *ft_strchr(const char *s, int c)`
+- `size_t ft_strlen(const char *s)`
+- `char *ft_substr(char *s, unsigned int start, size_t len)`
+
+### Runtime compile-time constants
+
+- get_next_line mandatory: `BUFFER_SIZE=1024` (default in header)
+- get_next_line bonus: `BUFFER_SIZE=42`, `OPEN_MAX=1024`
 
 ## Public Entry Points
 

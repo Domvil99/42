@@ -35,3 +35,19 @@ Glosario tecnico para estudiar la base integradora `currentLibft`.
 ### Sync without regression
 - Definicion: alinear base comun sin romper proyectos cerrados.
 - Mini ejemplo: tras sync, compilar standalone + integrado para verificar.
+
+### Integrated API surface
+- Definicion: conjunto de entry points y helpers expuestos por modulos hijos.
+- Mini ejemplo: `ft_printf` y `get_next_line` disponibles desde currentLibft.
+
+### Compile-all policy
+- Definicion: estrategia donde `make` puede preparar mandatory y bonus para
+	dejar la base lista para consumo en otros proyectos.
+- Mini ejemplo: en una libft integrada, `make` + `make bonus` garantizan
+	cobertura total antes de linkar el proyecto principal.
+
+### Header contract
+- Definicion: combinacion de headers publicos que define el uso correcto de la
+	libreria integrada.
+- Mini ejemplo: `libft.h`, `libft_bonus.h`, `ft_printf.h`,
+	`get_next_line.h`.

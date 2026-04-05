@@ -13,12 +13,16 @@ Estado: in-progress
 4. Estrategias de ordenación (small + radix) implementadas.
 5. Optimización por `chunk sort` integrada para mejorar benchmark 100/500.
 6. Informe de estudio creado para soporte técnico y defensa.
+7. Integración de base `libft` alineada con `currentLibft` (incluye bonus
+	listas + fuentes bonus de módulos hijos).
 
 ## Quality Gates
 
 ### Gate 1: Scope/spec
 
 - Scope actual `push_swap`: implementado.
+- Ejecutable obligatorio `push_swap` mantiene compilación y ejecución
+	conforme al subject.
 
 ### Gate 2: Functional
 
@@ -36,6 +40,16 @@ Estado: in-progress
 ### Gate 4: Norminette (final)
 
 - Aplicar cuando funcional + memoria estén cerrados.
+
+Checkpoint de validación técnica (2026-04-05):
+
+- `make fclean && make`: OK.
+- Casos smoke obligatorios:
+	- `./push_swap 2 1` -> `sa`
+	- `./push_swap 1 2 3` -> salida vacía
+	- `./push_swap 3 2 1` -> secuencia válida (`sa`, `rra`)
+- Norminette sobre `push_swap` + `libft` integrada (incluyendo submódulos):
+	`OK` en todos los archivos revisados.
 
 ## Study Sync (parallel mode)
 
@@ -71,6 +85,8 @@ Resultado del checkpoint:
 
 ## Change Log
 
+- 2026-04-05: integrado baseline currentLibft en `push_swap/libft` y
+	validado build + norminette de árbol completo.
 - 2026-03-13: baseline inicial de progreso + modo estudio paralelo.
 - 2026-03-13: Checkpoint 1 validado con evidencia real de parsing y errores.
 - 2026-03-13: Integración de `chunk sort` y mejora de benchmark (`602/5182`, ambos `OK`).

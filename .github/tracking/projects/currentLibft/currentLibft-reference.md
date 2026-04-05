@@ -25,6 +25,17 @@ Base evolutiva reusable para proyectos C en `42/C/`.
   - `int ft_printf(const char *format, ...)`
   - `char *get_next_line(int fd)`
 
+API complementaria disponible por headers integrados:
+- `ft_printf.h` (handlers mandatory)
+- `ft_printf_bonus.h` (handlers + parsing bonus)
+- `get_next_line.h` (entrada + helpers mandatory)
+- `get_next_line_bonus.h` (entrada + helpers bonus multi-fd)
+
+Configuracion relevante para reutilizacion:
+- get_next_line mandatory: `BUFFER_SIZE=1024`
+- get_next_line bonus: `BUFFER_SIZE=42`, `OPEN_MAX=1024`
+- Build base libft: `make` (mandatory) y `make bonus` (listas bonus)
+
 ## Validation Order
 
 1. Scope/spec
@@ -39,6 +50,14 @@ cd 42/C/currentLibft
 make && make bonus
 ```
 
+Chequeo recomendado de headers integrados:
+
+```bash
+cd 42/C/currentLibft/libft
+ls ft_printf/*.h get_next_line/*.h libft*.h
+```
+
 ## Change Log
 
+- 2026-04-05: ampliada referencia de API integrada y configuraciones runtime.
 - 2026-03-20: referencia inicial creada.

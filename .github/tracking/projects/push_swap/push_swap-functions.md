@@ -102,10 +102,25 @@ Estado: implementado.
 
 No se documentan funciones de libft que no se usan en este proyecto.
 
-## 9. Pending Functional Gaps
+## 9. currentLibft Integration Surface
+
+Estado actual de `42/C/push_swap/libft` alineado con base canónica:
+
+- libft base completa: 43 funciones (23 + 11 + 9 bonus listas).
+- `libft_bonus.h` presente y compilado.
+- Módulos hijos integrados disponibles en el árbol local:
+  - `libft/ft_printf` con mandatory + bonus source files.
+  - `libft/get_next_line` con mandatory + bonus source files.
+
+Disponibilidad no implica uso directo en algoritmo `push_swap`; el objetivo es
+tener una base reusable completa para proyectos que permitan `libft`.
+
+## 10. Pending Functional Gaps
 
 - Ningún gap funcional abierto registrado en el alcance actual.
 
 ## Change Log
 
+- 2026-04-05: actualizado mapa con superficie integrada de currentLibft
+  (base completa + módulos hijos con bonus disponibles).
 - 2026-03-13: baseline inicial de mapa funcional de push_swap.
