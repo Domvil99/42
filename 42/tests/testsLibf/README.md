@@ -1,30 +1,30 @@
-# Tests Directory
+# testsLibf
 
-Este directorio es para programas de prueba de la librería libft.
+Directorio de tests rígidos para validar `42/C/libft` en revisión propia o de terceros.
 
-## Uso recomendado (según PDF del proyecto):
-- Crea archivos .c para probar funciones individuales.
-- Compila con: `gcc -Wall -Wextra -Werror -I../../C/libft -L../../C/libft test_file.c -lft -o test`
-- Ejecuta: `./test`
-- Verifica leaks: `valgrind ./test`
+## Qué hay aquí
+- `test_ft_*.c`: mains de validación funcional por función.
+- `test_libft_portable_strict.c`: test compacto portable para revisión rápida.
 
-## Orden de validacion (global)
-1. Confirmar scope de entrega segun la spec `42/PDFs/2026-03-12_libft_v16_6.txt`.
-2. Ejecutar tests funcionales de `libft` (fase funcional).
-3. Verificar memoria y estabilidad.
-4. Ejecutar Norminette al final como cierre.
+## Uso portable solo con C (sin .sh)
+Ejemplo:
+`cc -Wall -Wextra -Werror test_libft_portable_strict.c -I<RUTA_LIBFT> <RUTA_LIBFT>/libft.a -o test_libft_portable && ./test_libft_portable`
 
-## Ejemplo de test básico:
-```c
-#include "../../C/libft/libft.h"
-#include <stdio.h>
+Donde `<RUTA_LIBFT>` lo decides tú (tu repo o el de un compañero).
 
-int main() {
-    char *str = ft_strdup("Hola");
-    printf("%s\n", str);
-    free(str);
-    return 0;
-}
-```
+## Regla de rigor
+- Cualquier binario de test que falle detiene la suite con salida no cero.
+- No se aceptan warnings de compilación (`-Wall -Wextra -Werror`).
+- Se recomienda pasar también valgrind en casos que usen memoria dinámica.
 
-Recuerda: Los tests no se entregan, pero ayudan en evaluaciones.
+## Orden de validación
+1. Scope/spec (`42/PDFs/2026-03-12_libft_v16_6.txt`).
+2. Comportamiento funcional (esta carpeta).
+3. Memoria/estabilidad.
+4. Norminette al cierre.
+
+## Regla para proyectos nuevos
+Cuando aparezca `42/C/<nuevo_proyecto>`, crear su espejo:
+- `42/tests/tests_<nuevo_proyecto>/`
+- `README.md`
+- al menos un `test_*.c` funcional y casos de error.

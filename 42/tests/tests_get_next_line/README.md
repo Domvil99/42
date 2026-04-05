@@ -1,19 +1,31 @@
 # tests_get_next_line
 
-Manual test harness directory for standalone get_next_line validation.
+Directorio de pruebas rígidas para validar `42/C/get_next_line`.
 
-Status: completed (2026-03-12).
+## Qué hay aquí
+- `test_gnl_mandatory_strict.c`: casos de líneas normales, línea vacía, EOF e fd inválido.
+- `test_gnl_bonus_multifd_strict.c`: alternancia real entre dos file descriptors.
 
-Validation order:
-1. Scope/spec alignment with 42/PDFs/2026-03-12_get_next_line.txt
-2. Functional behavior
-3. Memory and stability
-4. Norminette as final closing step
+## Uso portable solo con C (sin .sh)
+Mandatory:
+`cc -Wall -Wextra -Werror -DBUFFER_SIZE=42 test_gnl_mandatory_strict.c <RUTA_GNL>/get_next_line.c <RUTA_GNL>/get_next_line_utils.c -I<RUTA_GNL> -o test_gnl_mandatory && ./test_gnl_mandatory`
 
-Closure evidence summary:
-1. Mandatory compilation with -Wall -Wextra -Werror: OK.
-2. Bonus compilation with -Wall -Wextra -Werror: OK.
-3. Norminette full scan (*.c, *.h): OK.
-4. Functional mandatory tests with BUFFER_SIZE=1, 42, 9999: OK.
-5. Functional bonus multi-fd tests with BUFFER_SIZE=42 and 1: OK.
-6. Memory/stability checks using -fsanitize=address,undefined: no runtime issues observed.
+Bonus:
+`cc -Wall -Wextra -Werror -DBUFFER_SIZE=42 test_gnl_bonus_multifd_strict.c <RUTA_GNL>/get_next_line_bonus.c <RUTA_GNL>/get_next_line_utils_bonus.c -I<RUTA_GNL> -o test_gnl_bonus && ./test_gnl_bonus`
+
+## Criterio estricto
+- Mandatory: `BUFFER_SIZE=1`, `42`, `1024`.
+- Bonus: `BUFFER_SIZE=1`, `42` con multi-fd intercalado.
+- Falla inmediata ante cualquier desvío de contenido o EOF.
+
+## Orden de validación
+1. Scope/spec (`42/PDFs/2026-03-12_get_next_line.txt`).
+2. Funcional (esta carpeta).
+3. Memoria/estabilidad.
+4. Norminette al cierre.
+
+## Regla para proyectos nuevos
+Mantener siempre una suite strict reproducible en C y al menos:
+- un test funcional principal,
+- un test de errores/casos límite,
+- validación con más de una configuración relevante.

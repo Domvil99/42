@@ -13,6 +13,35 @@ Validation order for all projects:
 
 ## 2026-04-05
 
+- Change type: tests-portable-c-peer-review
+- Paths changed:
+  - `42/tests/testsLibf/README.md`
+  - `42/tests/testsLibf/test_libft_portable_strict.c`
+  - `42/tests/tests_ft_printf/README.md`
+  - `42/tests/tests_ft_printf/test_mandatory_matrix.c`
+  - `42/tests/tests_ft_printf/test_bonus_matrix.c`
+  - `42/tests/tests_ft_printf/test_mandatory_ref.c`
+  - `42/tests/tests_ft_printf/test_bonus_ref.c`
+  - `42/tests/tests_get_next_line/README.md`
+  - `42/tests/tests_get_next_line/test_gnl_mandatory_strict.c`
+  - `42/tests/tests_get_next_line/test_gnl_bonus_multifd_strict.c`
+  - `42/tests/tests_push_swap/README.md`
+  - `42/tests/tests_push_swap/test_push_swap_portable_strict.c`
+  - `42/tests/tests_currentLibft/README.md`
+  - `42/tests/tests_currentLibft/test_current_libft_link_strict.c`
+  - `42/tests/test_bonus_autodetect_gate.c`
+  - `42/tests/PEER_REVIEW_30S.md`
+- Notes:
+  - Se redefine el enfoque de tests para corrección de pares usando
+    únicamente programas `test_*.c` portables, sin dependencia operativa de
+    scripts shell.
+  - Los tests quedan parametrizables por ruta desde `cc` (`-I` y libs/binarios
+    externos), facilitando uso en repos de compañeros con rutas distintas.
+  - Se añade gate independiente de autodetección de bonus para distinguir
+    correctamente `mandatory` validado frente a `bonus` no entregado.
+  - Se agrega guía corta de evaluación (`PEER_REVIEW_30S.md`) con comandos
+    directos reutilizables en revisión en vivo.
+
 - Change type: push_swap-markdown-sync
 - Paths changed:
   - `42/C/push_swap/README.md`

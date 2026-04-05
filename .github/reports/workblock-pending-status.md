@@ -1,39 +1,41 @@
 # Workblock Pending Status
 
 Date: 2026-04-05
-Block: Implementación bonus checker en push_swap
+Block: Tests C portables para revisión de pares
 
 ## Repo entrega C (42/C/)
 
 Pending changes:
-- `42/C/push_swap/Makefile`
-- `42/C/push_swap/README.md`
-- `42/C/push_swap/checker_bonus.c`
-- `42/C/push_swap/checker_exec_bonus.c`
-- `42/C/push_swap/checker_read_bonus.c`
-- `42/C/push_swap/checker_bonus.h`
+- none (working tree clean)
 
 ## Repo workspace Raiz
 
 Pending changes:
 - `.github/project-history.md`
 - `.github/reports/workblock-pending-status.md`
-- `.github/tracking/projects/push_swap/push_swap-functions.md`
-- `.github/tracking/projects/push_swap/push_swap-progress.md`
-- `.github/tracking/projects/push_swap/push_swap-reference.md`
-- `.github/study/push_swap/implementation.md`
-- `.github/study/push_swap/validation.md`
-- `.github/study/push_swap/dictionary.md`
+- `42/tests/testsLibf/README.md`
+- `42/tests/tests_ft_printf/README.md`
+- `42/tests/tests_get_next_line/README.md`
 - `42/tests/tests_push_swap/README.md`
+- `42/tests/tests_currentLibft/README.md`
+- `42/tests/PEER_REVIEW_30S.md`
+- `42/tests/test_bonus_autodetect_gate.c`
+- `42/tests/testsLibf/test_libft_portable_strict.c`
+- `42/tests/tests_ft_printf/test_mandatory_ref.c`
+- `42/tests/tests_ft_printf/test_bonus_ref.c`
+- `42/tests/tests_get_next_line/test_gnl_mandatory_strict.c`
+- `42/tests/tests_get_next_line/test_gnl_bonus_multifd_strict.c`
+- `42/tests/tests_push_swap/test_push_swap_portable_strict.c`
+- `42/tests/tests_currentLibft/test_current_libft_link_strict.c`
 
 ## Closure
 
-- Scope: implementar `checker` bonus separado y sincronizar toda la
-	documentación markdown de `push_swap`.
+- Scope: habilitar batería de tests portables en C para validar proyectos
+	propios y de compañeros con rutas parametrizables.
 - Validation:
-	- `make fclean && make` en `42/C/push_swap`: OK,
-	- `make bonus` + rutas `OK/KO/Error` en `checker`: OK,
-	- norminette en `*.c` y `*.h` de `push_swap` (incluyendo bonus): OK.
-- Delivery repo commit: pending.
+	- compilación/ejecución de tests C portables (`libft`, `ft_printf`,
+	  `get_next_line`, `push_swap`, `currentLibft`): OK.
+	- gate de autodetección bonus (`42/tests/test_bonus_autodetect_gate.c`): OK.
+- Delivery repo commit: none required.
 - Workspace repo commit: pending.
 

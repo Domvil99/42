@@ -1,28 +1,34 @@
 # tests_ft_printf
 
-Directorio de pruebas manuales para validar `42/C/ft_printf`.
+Directorio de pruebas rígidas para validar `42/C/ft_printf`.
 
-Status: completed (2026-03-11).
+## Qué hay aquí
+- `test_mandatory_matrix.c` y `test_bonus_matrix.c`: pruebas de `ft_printf`.
+- `test_mandatory_ref.c` y `test_bonus_ref.c`: referencias con `printf`.
+- `Makefile`: compila bins mandatory/bonus.
 
-## Objetivo
-- Comparar comportamiento de `ft_printf` contra `printf`.
-- Validar salida y valor de retorno.
-- Ejecutar casos de obligatorio y bonus por separado.
+## Uso portable solo con C (sin .sh)
+Mandatory:
+`cc -Wall -Wextra -Werror test_mandatory_matrix.c -I<RUTA_FT_PRINTF> <RUTA_FT_PRINTF>/libftprintf.a <RUTA_FT_PRINTF>/libft/libft.a -o test_mandatory_matrix && ./test_mandatory_matrix`
 
-## Orden de validacion (global)
-1. Confirmar scope de entrega segun la spec `42/PDFs/2026-03-12_ft_printf.txt`.
-2. Ejecutar tests funcionales (este directorio es fase funcional).
-3. Validar memoria/estabilidad (por ejemplo con valgrind).
-4. Ejecutar Norminette al final como cierre.
+Bonus:
+`cc -Wall -Wextra -Werror test_bonus_matrix.c -I<RUTA_FT_PRINTF> <RUTA_FT_PRINTF>/libftprintf.a <RUTA_FT_PRINTF>/libft/libft.a -o test_bonus_matrix && ./test_bonus_matrix`
 
-## Uso sugerido
-- Guardar aqui harnesses de prueba (`test_*.c`).
-- Compilar contra `42/C/ft_printf/libftprintf.a` y, si aplica,
-  `42/C/ft_printf/libft/libft.a`.
+Referencia libc:
+`cc -Wall -Wextra -Werror test_mandatory_ref.c -o test_mandatory_ref && ./test_mandatory_ref`
 
-## Estado tecnico (2026-03-11)
-- Suite de validacion finalizada para cierre de entrega.
-- Mandatory: `RET_TOTAL=212` en paridad con `printf`.
-- Bonus: `RET_TOTAL=146` en paridad con `printf`.
-- Valgrind: `0` leaks y `0` errores en casos frontera.
-- Los harnesses se mantienen para regresion y refactor futuro.
+## Criterio estricto
+- La suite falla si hay cualquier diferencia con `printf` en:
+    - salida estándar,
+    - total de caracteres retornado (`RET_TOTAL`).
+- Se construye con `-Wall -Wextra -Werror`.
+
+## Orden de validación
+1. Scope/spec (`42/PDFs/2026-03-12_ft_printf.txt`).
+2. Funcional (esta carpeta).
+3. Memoria/estabilidad.
+4. Norminette al cierre.
+
+## Regla para proyectos nuevos
+Todo proyecto nuevo en `42/C/` debe tener su suite equivalente en `42/tests/`
+con tests C portables y comparación contra comportamiento esperado.
