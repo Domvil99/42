@@ -34,13 +34,19 @@ MODULES = ft_printf get_next_line
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(BONUS_OBJ)
-	$(AR) $(NAME) $(OBJ) $(BONUS_OBJ)
+$(NAME): mandatory bonus modules_bonus
+
+mandatory: $(OBJ)
+	$(RM) $(NAME)
+	$(AR) $(NAME) $(OBJ)
+
+bonus: $(BONUS_OBJ)
+	$(AR) $(NAME) $(BONUS_OBJ)
 	@touch $(BONUS_MARK)
+
+modules_bonus:
 	@$(MAKE) -C ft_printf bonus
 	@$(MAKE) -C get_next_line bonus
-
-bonus: all
 
 clean:
 	$(RM) $(OBJ) $(BONUS_OBJ) $(BONUS_MARK)
@@ -54,4 +60,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all mandatory bonus modules_bonus clean fclean re
