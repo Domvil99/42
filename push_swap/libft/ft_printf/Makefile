@@ -41,7 +41,7 @@ bonus: $(BONUS_AR)
 	@cmp -s $(BONUS_AR) $(NAME) || cp $(BONUS_AR) $(NAME)
 
 $(LIBFT):
-	make -C ..
+	@test -f $(LIBFT) || (echo "libft base no encontrada: ejecuta make en ../" && false)
 
 $(MAND_AR): $(OBJ) $(LIBFT)
 	$(RM) $(MAND_AR)
@@ -60,11 +60,9 @@ $(BONUS_OBJ): %.o: %.c
 # Limpieza
 clean:
 	$(RM) *.o $(OBJ) $(BONUS_OBJ)
-	make clean -C ..
 
 fclean: clean
 	$(RM) $(NAME) $(MAND_AR) $(BONUS_AR)
-	make fclean -C ..
 
 re: fclean all
 

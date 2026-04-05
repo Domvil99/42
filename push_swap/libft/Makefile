@@ -30,22 +30,28 @@ BONUS_SRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 
 OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
+MODULES = ft_printf get_next_line
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(AR) $(NAME) $(OBJ)
-
-bonus: $(NAME) $(BONUS_MARK)
-
-$(BONUS_MARK): $(BONUS_OBJ)
-	$(AR) $(NAME) $(BONUS_OBJ)
+$(NAME): $(OBJ) $(BONUS_OBJ)
+	$(AR) $(NAME) $(OBJ) $(BONUS_OBJ)
 	@touch $(BONUS_MARK)
+	@$(MAKE) -C ft_printf bonus
+	@$(MAKE) -C get_next_line bonus
+
+bonus: all
 
 clean:
 	$(RM) $(OBJ) $(BONUS_OBJ) $(BONUS_MARK)
+	@$(MAKE) -C ft_printf clean
+	@$(MAKE) -C get_next_line clean
 
 fclean: clean
-	$(RM) $(NAME) $(BONUS_MARK)
+	$(RM) $(NAME)
+	@$(MAKE) -C ft_printf fclean
+	@$(MAKE) -C get_next_line fclean
 
 re: fclean all
+
+.PHONY: all bonus clean fclean re

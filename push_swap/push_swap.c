@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saospina <saospina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/03 11:14:02 by saospina          #+#    #+#             */
-/*   Updated: 2026/03/13 17:01:46 by saospina         ###   ########.fr       */
+/*   Created: 2026/02/22 12:35:29 by saospina          #+#    #+#             */
+/*   Updated: 2026/03/13 20:03:55 by saospina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,10 @@ static int	setup_stacks(int argc, char **argv, t_node **a, int **arr)
 		return (-1);
 	}
 	if (count <= 1)
+	{
+		free(*arr);
 		return (0);
+	}
 	*a = build_stack(*arr, count);
 	if (!*a || !assign_indices(*a, *arr, count))
 	{

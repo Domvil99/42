@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saospina <saospina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/01 12:52:28 by saospina          #+#    #+#             */
-/*   Updated: 2026/03/13 19:34:08 by saospina         ###   ########.fr       */
+/*   Created: 2026/02/21 09:24:12 by saospina          #+#    #+#             */
+/*   Updated: 2026/03/13 21:50:36 by saospina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	is_valid_number(const char *s)
 		return (0);
 	while (s[i])
 	{
-		if (s[i] < '0' || s[i] > '9')
+		if (!ft_isdigit((unsigned char)s[i]))
 			return (0);
 		i++;
 	}

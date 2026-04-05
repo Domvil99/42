@@ -2,7 +2,7 @@
 
 ## Description
 
-`push_swap_mandatory` es un proyecto de ordenacion en el que el objetivo es
+`push_swap` es un proyecto de ordenacion en el que el objetivo es
 ordenar la pila `a` usando un conjunto limitado de operaciones sobre pilas
 (`sa`, `sb`, `ss`, `pa`, `pb`, `ra`, `rb`, `rr`, `rra`, `rrb`, `rrr`).
 
@@ -20,7 +20,7 @@ Esta version mandatory compila unicamente el programa `push_swap`.
 Desde la raiz del proyecto:
 
 ```bash
-cd 42/C/push_swap_mandatory
+cd 42/C/push_swap
 make
 ```
 
@@ -55,12 +55,12 @@ Una entrada invalida debe imprimir `Error` en stderr:
 
 ### 3. Validate sorting result
 
-Este proyecto mandatory no incluye checker. Puedes validar operaciones con el
-checker de `42/C/push_swap` (como proxy local):
+Este proyecto mandatory no incluye checker. Puedes validar operaciones con un
+checker externo compatible:
 
 ```bash
 ARG="4 67 3 87 23"
-./push_swap $ARG | ../push_swap/checker $ARG
+./push_swap $ARG | ./checker_linux $ARG
 ```
 
 Salida esperada: `OK`.
