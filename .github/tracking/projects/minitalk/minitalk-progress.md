@@ -3,8 +3,8 @@
 ## Current Status
 
 Proyecto: `42/C/minitalk`
-Estado: in-progress
-Fase activa: obligatorio implementado + validacion completa
+Estado: completed
+Fase activa: mandatory + bonus implementados y validados
 
 ## Milestones
 
@@ -12,7 +12,7 @@ Fase activa: obligatorio implementado + validacion completa
 2. Bootstrap del proyecto `42/C/minitalk` completado.
 3. Integracion de `libft` desde `42/C/currentLibft/libft` completada.
 4. Mandatory `server`/`client` implementado.
-5. Skeleton bonus separado en `*_bonus.c/h` implementado.
+5. Bonus separado en `*_bonus.c/h` implementado (ACK + bytes UTF-8).
 6. Tests C portables creados en `42/tests/tests_minitalk`.
 
 ## Quality Gates
@@ -21,13 +21,15 @@ Fase activa: obligatorio implementado + validacion completa
 
 - Ejecutables obligatorios `server` y `client`: OK.
 - Comunicacion exclusivamente con `SIGUSR1` y `SIGUSR2`: OK.
-- Bonus separado y no mezclado con obligatorio: OK (skeleton).
+- Bonus separado y no mezclado con obligatorio: OK.
 
 ### Gate 2: Functional
 
 - Build obligatorio (`make`): OK.
 - Smoke real servidor/cliente con mensaje: OK.
-- Build bonus skeleton (`make bonus`): OK.
+- Build bonus (`make bonus`): OK.
+- Smoke real bonus con ASCII y UTF-8: OK.
+- ACK por bit validado en ejecucion real: OK.
 
 ### Gate 3: Memory/stability
 
@@ -40,5 +42,4 @@ Fase activa: obligatorio implementado + validacion completa
 
 ## Next Technical Steps
 
-1. Preparar commit de entrega en repo `42/C/`.
-2. Preparar commit de tracking/spec/tests en repo `Raiz/`.
+1. Mantener regresion tests y checklist de cierre al siguiente bloque.

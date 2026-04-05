@@ -43,6 +43,27 @@ Validation order for all projects:
     obligatorio y se deja skeleton bonus separado en `*_bonus.c/h`.
   - Se crean tests C portables para validacion local y evaluacion de pares.
 
+- Change type: minitalk-bonus-implementation
+- Paths changed:
+  - `42/C/minitalk/client_bonus.c`
+  - `42/C/minitalk/server_bonus.c`
+  - `42/C/minitalk/bonus_utils.c`
+  - `42/C/minitalk/minitalk_bonus.h`
+  - `42/C/minitalk/Makefile`
+  - `42/C/minitalk/README.md`
+  - `.github/tracking/projects/minitalk/`
+  - `.github/projects-index.md`
+- Tracking docs updated:
+  - `.github/tracking/projects/minitalk/minitalk-functions.md`
+  - `.github/tracking/projects/minitalk/minitalk-progress.md`
+  - `.github/tracking/projects/minitalk/minitalk-reference.md`
+- Notes:
+  - Se implementa bonus completo en archivos separados con ACK por bit.
+  - Se valida envio y recepcion de mensajes UTF-8 al transmitir bytes crudos.
+  - Se corrige enlazado de Makefile bonus para incluir utilidades comunes.
+  - Validaciones ejecutadas: `make bonus`, smoke bonus real, tests portables
+    de mandatory y barrido final de norminette sin `Error:`.
+
 - Change type: tests-portable-c-peer-review
 - Paths changed:
   - `42/tests/testsLibf/README.md`

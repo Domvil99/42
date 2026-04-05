@@ -30,18 +30,25 @@ Estado: implementado.
 
 Estado: implementado.
 
-## 3. Bonus Skeleton (separado)
+## 3. Bonus (separado)
 
 - `server_bonus.c`
-  - `main` placeholder
+  - `main` (arranque + setup senales + loop `pause`)
+  - `handle_signal` (reconstruccion de byte + ACK por bit)
+  - `reset_state` (limpieza del estado global del servidor bonus)
+  - `setup_signals` (registro `sigaction`)
 - `client_bonus.c`
-  - `main` placeholder
+  - `main` (parseo args + setup handler ACK + envio de mensaje)
+  - `validate_args` (validacion de argc/PID)
+  - `handle_ack` (marca ACK recibido)
+  - `setup_ack_handler` (registro `sigaction` para ACK)
 - `bonus_utils.c`
-  - `mt_bonus_placeholder`
+  - `mt_bonus_send_char` (envio de byte con sincronizacion ACK por bit)
+  - `mt_bonus_send_message` (envio de string + terminador `\0`)
 - `minitalk_bonus.h`
-  - contrato base bonus
+  - contrato de envio bonus
 
-Estado: esqueleto compilable, sin logica bonus activa.
+Estado: implementado.
 
 ## 4. Libft Integration Surface
 
@@ -53,6 +60,11 @@ Funciones usadas en obligatorio:
 - `ft_putstr_fd`
 - `ft_putnbr_fd`
 
+Funciones usadas en bonus:
+- `ft_isdigit`
+- `ft_putstr_fd`
+- `ft_putnbr_fd`
+
 ## Pending Functional Gaps
 
-- Bonus funcional (ACK por senal y soporte Unicode): pendiente por diseno.
+- Sin gaps funcionales abiertos en alcance mandatory+bonus.
