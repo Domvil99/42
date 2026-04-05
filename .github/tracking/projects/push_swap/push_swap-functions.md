@@ -111,6 +111,8 @@ Estado actual de `42/C/push_swap/libft` alineado con base canónica:
 - Módulos hijos integrados disponibles en el árbol local:
   - `libft/ft_printf` con mandatory + bonus source files.
   - `libft/get_next_line` con mandatory + bonus source files.
+- Flujo de build de `libft.a`: orden interno explícito `mandatory -> bonus`
+	y compilación de bonus en módulos hijos al cierre de `all`.
 
 Disponibilidad no implica uso directo en algoritmo `push_swap`; el objetivo es
 tener una base reusable completa para proyectos que permitan `libft`.
@@ -121,6 +123,8 @@ tener una base reusable completa para proyectos que permitan `libft`.
 
 ## Change Log
 
+- 2026-04-05: añadido detalle de orden de build en `push_swap/libft`
+	(`mandatory -> bonus`) para coherencia con política integrada.
 - 2026-04-05: actualizado mapa con superficie integrada de currentLibft
   (base completa + módulos hijos con bonus disponibles).
 - 2026-03-13: baseline inicial de mapa funcional de push_swap.

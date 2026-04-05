@@ -137,28 +137,28 @@ Chapter V Mandatory part
 V.1 The rules
 □ You have 2 stacks named a and b.
 □ At the beginning:
-  The stack a contains a random number of unique negative and/or positive integers.
-  The stack b is empty.
+    The stack a contains a random number of unique negative and/or positive integers.
+    The stack b is empty.
   The goal is to sort the numbers in stack a in ascending order. To achieve this, you have the following operations at your disposal:
-  sa (swap a): Swap the first 2 elements at the top of stack a.
-  Do nothing if there is only one element or none.
-  sb (swap b): Swap the first 2 elements at the top of stack b.
-  Do nothing if there is only one element or none.
-  ss : sa and sb at the same time.
-  pa (push a): Take the first element at the top of b and put it at the top of a.
-  Do nothing if b is empty.
-  pb (push b): Take the first element at the top of a and put it at the top of b.
-  Do nothing if a is empty.
-  ra (rotate a): Shift up all elements of stack a by 1.
-  The first element becomes the last one.
-  rb (rotate b): Shift up all elements of stack b by 1.
-  The first element becomes the last one.
-  rr : ra and rb at the same time.
-  rra (reverse rotate a): Shift down all elements of stack a by 1.
-  The last element becomes the first one.
-  rrb (reverse rotate b): Shift down all elements of stack b by 1.
-  The last element becomes the first one.
-  rrr : rra and rrb at the same time.
+    sa (swap a): Swap the first 2 elements at the top of stack a.
+      Do nothing if there is only one element or none.
+    sb (swap b): Swap the first 2 elements at the top of stack b.
+      Do nothing if there is only one element or none.
+    ss : sa and sb at the same time.
+    pa (push a): Take the first element at the top of b and put it at the top of a.
+      Do nothing if b is empty.
+    pb (push b): Take the first element at the top of a and put it at the top of b.
+      Do nothing if a is empty.
+    ra (rotate a): Shift up all elements of stack a by 1.
+      The first element becomes the last one.
+    rb (rotate b): Shift up all elements of stack b by 1.
+      The first element becomes the last one.
+    rr : ra and rb at the same time.
+    rra (reverse rotate a): Shift down all elements of stack a by 1.
+      The last element becomes the first one.
+    rrb (reverse rotate b): Shift down all elements of stack b by 1.
+      The last element becomes the first one.
+    rrr : rra and rrb at the same time.
 
 
 V.2 Example
@@ -293,12 +293,12 @@ V.4 Benchmark
 To validate this project, you must perform certain sorts with a minimal number of operations:
 
 □ For maximum project validation (100%) and eligibility for bonuses, you must:
-  Sort 100 random numbers in fewer than 700 operations.
-  Sort 500 random numbers in no more than 5500 operations.
+    Sort 100 random numbers in fewer than 700 operations.
+    Sort 500 random numbers in no more than 5500 operations.
 □ For minimal project validation (which implies a minimum grade of 80%), you can succeed with different averages:
-  100 numbers in under 1100 operations and 500 numbers in under 8500 operations
-  100 numbers in under 700 operations and 500 numbers in under 11500 operations
-  100 numbers in under 1300 operations and 500 numbers in under 5500 operations
+    100 numbers in under 1100 operations and 500 numbers in under 8500 operations
+    100 numbers in under 700 operations and 500 numbers in under 11500 operations
+    100 numbers in under 1300 operations and 500 numbers in under 5500 operations
 ...
 All of this will be verified during your evaluation.
 

@@ -85,6 +85,8 @@ Resultado del checkpoint:
 
 ## Change Log
 
+- 2026-04-05: Makefile de `push_swap/libft` ajustado para compilar
+	`libft.a` en orden interno `mandatory -> bonus` y luego módulos hijos bonus.
 - 2026-04-05: integrado baseline currentLibft en `push_swap/libft` y
 	validado build + norminette de árbol completo.
 - 2026-03-13: baseline inicial de progreso + modo estudio paralelo.

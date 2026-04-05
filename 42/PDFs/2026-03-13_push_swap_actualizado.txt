@@ -292,12 +292,12 @@ V.4 Benchmark
 Para validar este proyecto, debes realizar ciertas ordenaciones con un número mínimo de operaciones:
 
 □ Para la validación máxima del proyecto (100%) y elegibilidad para bonuses, debes:
-  Ordenar 100 números aleatorios en menos de 700 operaciones.
-  Ordenar 500 números aleatorios en no más de 5500 operaciones.
+    Ordenar 100 números aleatorios en menos de 700 operaciones.
+    Ordenar 500 números aleatorios en no más de 5500 operaciones.
 □ Para la validación mínima del proyecto (lo que implica una nota mínima del 80%), puedes lograrlo con distintos promedios:
-  100 números en menos de 1100 operaciones y 500 números en menos de 8500 operaciones
-  100 números en menos de 700 operaciones y 500 números en menos de 11500 operaciones
-  100 números en menos de 1300 operaciones y 500 números en menos de 5500 operaciones
+    100 números en menos de 1100 operaciones y 500 números en menos de 8500 operaciones
+    100 números en menos de 700 operaciones y 500 números en menos de 11500 operaciones
+    100 números en menos de 1300 operaciones y 500 números en menos de 5500 operaciones
 ...
 Todo esto se verificará durante tu evaluación.
 

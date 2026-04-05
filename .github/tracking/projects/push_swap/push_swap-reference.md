@@ -69,7 +69,7 @@ Secuencia de operaciones válidas separadas por `\n`.
 
 Detalle de política actual de `push_swap/libft`:
 
-- `all` de la libft local compila base + bonus listas y deja el archivo
+- `all` de la libft local fuerza orden interno `mandatory -> bonus` y deja
 	`libft.a` listo para link.
 - Además dispara build bonus de módulos hijos (`ft_printf`, `get_next_line`)
 	para mantener cobertura completa del baseline integrado.
@@ -102,4 +102,6 @@ Para continuidad con Chat4:
 
 ## Change Log
 
+- 2026-04-05: actualizado flujo Makefile de `push_swap/libft` con orden
+	explícito `mandatory -> bonus` y compilación de módulos hijos al final.
 - 2026-03-13: referencia inicial para uso técnico y revisión rápida.
