@@ -10,8 +10,12 @@ senales UNIX (`SIGUSR1` y `SIGUSR2`).
 - `client` recibe PID + string y la transmite bit a bit.
 - El servidor reconstruye bytes y muestra el mensaje cuando recibe `\0`.
 
-En esta fase se entrega obligatorio completo y se deja bonus en esqueleto
-separado para evolucion posterior.
+La implementacion mantiene separacion estricta entre obligatorio y bonus.
+
+Bonus implementado:
+- `server_bonus` responde ACK por cada bit recibido.
+- `client_bonus` espera ACK por bit para evitar perdida de senales.
+- El flujo transmite bytes UTF-8 completos (mensajes Unicode incluidos).
 
 ## Instrucciones
 ### Compilar obligatorio
@@ -26,10 +30,12 @@ separado para evolucion posterior.
 - `make fclean`
 - `make re`
 
-### Compilar skeleton bonus (sin logica bonus activa)
+### Compilar bonus
 `make bonus`
 
-Genera `server_bonus` y `client_bonus` como placeholders separados.
+### Ejecutar bonus
+1. `./server_bonus`
+2. En otra terminal: `./client_bonus <PID_DEL_SERVER> "mensaje"`
 
 ## Recursos
 - `signal(2)` / `sigaction(2)` / `kill(2)` / `pause(2)`
