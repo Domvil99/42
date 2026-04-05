@@ -15,6 +15,8 @@ Estado: in-progress
 6. Informe de estudio creado para soporte técnico y defensa.
 7. Integración de base `libft` alineada con `currentLibft` (incluye bonus
 	listas + fuentes bonus de módulos hijos).
+8. Implementación bonus `checker` separada de mandatory con archivos
+	`*_bonus.c/h` y target `make bonus`.
 
 ## Quality Gates
 
@@ -23,6 +25,8 @@ Estado: in-progress
 - Scope actual `push_swap`: implementado.
 - Ejecutable obligatorio `push_swap` mantiene compilación y ejecución
 	conforme al subject.
+- Scope bonus `checker`: implementado y compilado por regla `bonus`
+	separada en Makefile.
 
 ### Gate 2: Functional
 
@@ -30,6 +34,10 @@ Estado: in-progress
 - Benchmarks 100/500: evidencia consolidada en muestra real:
 	- 100 números: `602` operaciones (`OK`).
 	- 500 números: `5182` operaciones (`OK`).
+- Checker bonus validado en rutas requeridas:
+	- `OK` (orden correcto),
+	- `KO` (no ordenado),
+	- `Error` (instrucción inválida).
 
 ### Gate 3: Memory/stability
 
@@ -40,6 +48,7 @@ Estado: in-progress
 ### Gate 4: Norminette (final)
 
 - Aplicar cuando funcional + memoria estén cerrados.
+- Estado actual tras bonus checker: `OK` en `*.c` y `*.h` del proyecto.
 
 Checkpoint de validación técnica (2026-04-05):
 
@@ -85,6 +94,9 @@ Resultado del checkpoint:
 
 ## Change Log
 
+- 2026-04-05: bonus `checker` implementado y validado (build, rutas
+	`OK/KO/Error`, norma en verde), con `Created` bonus normalizado a
+	fechas anteriores coherentes.
 - 2026-04-05: Makefile de `push_swap/libft` ajustado para compilar
 	`libft.a` en orden interno `mandatory -> bonus` y luego módulos hijos bonus.
 - 2026-04-05: integrado baseline currentLibft en `push_swap/libft` y

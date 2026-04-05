@@ -7,6 +7,11 @@ Mandatory:
 - `push_swap` binary.
 - `Makefile`, `*.h`, `*.c`.
 
+Bonus:
+
+- `checker` binary.
+- Implementación bonus en archivos `*_bonus.c` y `*_bonus.h`.
+
 ## 2. Input/Output Contract
 
 ### Input
@@ -61,7 +66,9 @@ Secuencia de operaciones válidas separadas por `\n`.
 ### Rules
 
 - `all`: compila `$(NAME)`.
+- `bonus`: compila `checker`.
 - `$(NAME)`: link de objetos + `libft`.
+- `checker`: link de objetos core + bonus + `libft`.
 - `$(LIBFT)`: `make -C libft`.
 - `clean`: limpia `.o` local + libft.
 - `fclean`: limpia binario + limpieza total libft.
@@ -78,8 +85,10 @@ Detalle de política actual de `push_swap/libft`:
 
 ```bash
 make
+make bonus
 ./push_swap 2 1
 ARG="3 2 5 1 4" && ./push_swap $ARG | wc -l
+printf "sa\n" | ./checker 2 1
 valgrind --leak-check=full ./push_swap 3 2 1
 norminette *.c *.h
 ```
@@ -102,6 +111,8 @@ Para continuidad con Chat4:
 
 ## Change Log
 
+- 2026-04-05: añadida referencia de separación mandatory/bonus (`make` vs
+	`make bonus`) y contrato funcional de `checker`.
 - 2026-04-05: actualizado flujo Makefile de `push_swap/libft` con orden
 	explícito `mandatory -> bonus` y compilación de módulos hijos al final.
 - 2026-03-13: referencia inicial para uso técnico y revisión rápida.

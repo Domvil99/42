@@ -13,6 +13,48 @@ Validation order for all projects:
 
 ## 2026-04-05
 
+- Change type: push_swap-markdown-sync
+- Paths changed:
+  - `42/C/push_swap/README.md`
+  - `42/tests/tests_push_swap/README.md`
+  - `.github/study/push_swap/implementation.md`
+  - `.github/study/push_swap/validation.md`
+  - `.github/study/push_swap/dictionary.md`
+  - `.github/reports/pdfs-canonical-inventory.md`
+  - `.github/reports/workblock-pending-status.md`
+  - `.github/tracking/projects/push_swap/`
+- Notes:
+  - Se sincroniza toda la documentación markdown de `push_swap` con la
+    implementación bonus actual (`checker`) y separación mandatory/bonus.
+  - Se refuerza en documentación la regla de archivos bonus en
+    `_bonus.{c/h}` y evaluación separada.
+  - Se establece `42/PDFs/2026-03-13_push_swap.txt` como base canónica
+    vigente para implementación y validación.
+
+- Change type: push_swap-bonus-implementation
+- Paths changed:
+  - `42/C/push_swap/Makefile`
+  - `42/C/push_swap/README.md`
+  - `42/C/push_swap/checker_bonus.c`
+  - `42/C/push_swap/checker_exec_bonus.c`
+  - `42/C/push_swap/checker_read_bonus.c`
+  - `42/C/push_swap/checker_bonus.h`
+  - `.github/tracking/projects/push_swap/`
+  - `.github/study/push_swap/`
+  - `42/tests/tests_push_swap/README.md`
+- Tracking docs updated:
+  - `.github/tracking/projects/push_swap/push_swap-functions.md`
+  - `.github/tracking/projects/push_swap/push_swap-progress.md`
+  - `.github/tracking/projects/push_swap/push_swap-reference.md`
+- Notes:
+  - Se implementa `checker` bonus separado de mandatory en archivos
+    `_bonus.{c/h}`.
+  - Makefile dividido en targets `all` (push_swap) y `bonus` (checker).
+  - Validacion final ejecutada en orden obligatorio: mandatory primero,
+    bonus despues, Norminette al cierre.
+  - Se normalizan timestamps `Created` de archivos bonus para coherencia
+    cronologica respecto al desarrollo mandatory.
+
 - Change type: integration-baseline-refresh
 - Paths changed:
   - `.github/tracking/projects/currentLibft/`

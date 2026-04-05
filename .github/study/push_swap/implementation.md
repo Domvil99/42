@@ -24,6 +24,13 @@ Archivos y rol:
 - `free_utils.c`: manejo de errores y liberacion.
 - `Makefile`: build del proyecto + dependencia `libft/libft.a`.
 
+Archivos bonus checker (separados):
+
+- `checker_bonus.h`: contratos bonus para checker.
+- `checker_bonus.c`: `main` del checker + setup + run.
+- `checker_exec_bonus.c`: parser/dispatcher de instrucciones (`sa..rrr`).
+- `checker_read_bonus.c`: lectura de instrucciones por `stdin`.
+
 ## 2. Flujo de control exacto
 
 ### 2.1 main
@@ -253,10 +260,17 @@ Evidencia de estabilidad (2026-03-14):
 Puntos importantes:
 
 - `NAME = push_swap`.
-- Targets disponibles: `all`, `clean`, `fclean`, `re`.
+- `BONUS_NAME = checker`.
+- Targets disponibles: `all`, `bonus`, `clean`, `fclean`, `re`.
 - Linka con `libft/libft.a`.
 - `clean/fclean` propagan a `libft`.
-- `%.o` depende de `push_swap.h`.
+- `%.o` depende de `push_swap.h` y `checker_bonus.h`.
+
+Separacion mandatory/bonus:
+
+- `all` construye solo `push_swap`.
+- `bonus` construye solo `checker`.
+- Archivos bonus en `_bonus.{c/h}` para evaluacion separada.
 
 ## 11. Trade-offs reales de esta implementacion
 

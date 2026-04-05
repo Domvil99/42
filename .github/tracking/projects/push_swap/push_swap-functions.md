@@ -121,8 +121,27 @@ tener una base reusable completa para proyectos que permitan `libft`.
 
 - Ningún gap funcional abierto registrado en el alcance actual.
 
+## 11. Bonus Checker Surface
+
+- `checker_bonus.c`
+  - `main`
+  - `setup_checker_bonus`
+  - `run_checker_bonus`
+- `checker_exec_bonus.c`
+  - `execute_instruction_bonus`
+  - helpers estáticos por familia de instrucciones
+- `checker_read_bonus.c`
+  - `read_instruction_bonus`
+  - helpers estáticos de buffer/lectura
+- `checker_bonus.h`
+  - prototipos del flujo bonus
+
+Estado: implementado y separado de mandatory.
+
 ## Change Log
 
+- 2026-04-05: añadida superficie bonus `checker` con separación en
+  `*_bonus.c/h` y dispatcher de instrucciones estándar.
 - 2026-04-05: añadido detalle de orden de build en `push_swap/libft`
 	(`mandatory -> bonus`) para coherencia con política integrada.
 - 2026-04-05: actualizado mapa con superficie integrada de currentLibft

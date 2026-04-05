@@ -1,6 +1,6 @@
 # push_swap Dictionary
 
-Glosario tecnico del modulo mandatory con ejemplos cortos.
+Glosario tecnico del modulo push_swap (mandatory + bonus) con ejemplos cortos.
 
 ## Entradas
 
@@ -57,8 +57,16 @@ Glosario tecnico del modulo mandatory con ejemplos cortos.
 - Mini ejemplo: `free(arr)`, `free_stack(&a)`, `free_stack(&b)`.
 
 ### Project scope
-- Definicion: el proyecto entrega un unico binario `push_swap` con operaciones permitidas por subject.
-- Mini ejemplo: el Makefile de este modulo construye `push_swap` y no incluye otros ejecutables.
+- Definicion: el proyecto separa `push_swap` (mandatory) y `checker` (bonus).
+- Mini ejemplo: `make` compila `push_swap`; `make bonus` compila `checker`.
+
+### Checker
+- Definicion: programa bonus que ejecuta instrucciones sobre stacks `a/b`.
+- Mini ejemplo: `printf "sa\n" | ./checker 2 1` imprime `OK`.
+
+### _bonus files
+- Definicion: archivos requeridos para codigo bonus, evaluados por separado.
+- Mini ejemplo: `checker_bonus.c`, `checker_exec_bonus.c`, `checker_bonus.h`.
 
 ### Benchmark
 - Definicion: medida de operaciones para 100/500 entradas.
@@ -66,4 +74,5 @@ Glosario tecnico del modulo mandatory con ejemplos cortos.
 
 ## Change Log
 
+- 2026-04-05: ampliado glosario a bonus checker y separacion `_bonus.{c/h}`.
 - 2026-03-14: glosario inicial especifico para push_swap.

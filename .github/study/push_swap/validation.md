@@ -8,6 +8,11 @@
 
 Este orden evita cerrar estilo cuando aun hay desvio funcional.
 
+En este modulo la validacion funcional se ejecuta en dos capas:
+
+1. Mandatory (`push_swap`).
+2. Bonus (`checker`) solo despues de mandatory estable.
+
 ## 2. Build y smoke tests
 
 Desde `42/C/push_swap`:
@@ -51,7 +56,29 @@ Esperado en invalidos:
 - `Error` en stderr.
 - exit code de error.
 
-## 4. Validacion con checker externo
+## 3.1 Matriz minima funcional (bonus checker)
+
+Compilacion bonus:
+
+```bash
+make bonus
+```
+
+Casos base:
+
+```bash
+printf "sa\n" | ./checker 2 1
+printf "sa\n" | ./checker 1 2
+printf "xx\n" | ./checker 2 1
+```
+
+Esperado:
+
+- `OK` cuando `a` queda ordenada y `b` vacia.
+- `KO` cuando no queda ordenado.
+- `Error` en stderr para instruccion invalida.
+
+## 4. Validacion cruzada con checker externo
 
 Si dispones de checker externo:
 
@@ -62,7 +89,8 @@ ARG="3 2 5 1 4"
 
 Esperado: `OK`.
 
-Nota: este proyecto entrega un unico binario `push_swap`; checker no vive en este arbol.
+Nota: ahora el proyecto incluye checker bonus propio; el checker externo sigue
+siendo util para contraste durante defensa.
 
 ## 5. Rendimiento (benchmarks subject)
 
@@ -144,7 +172,16 @@ Un estado se considera listo cuando se cumple todo:
 - Memoria limpia.
 - Norminette en verde.
 
+## 11. Criterio de "bonus listo"
+
+- `make bonus` genera `checker` sin relink innecesario.
+- Rutas `OK/KO/Error` validadas.
+- Memoria limpia en rutas principales y de error.
+- Norminette en verde incluyendo `*_bonus.c/h`.
+
 ## Change Log
 
+- 2026-04-05: añadida capa de validacion bonus (`checker`) y criterio de
+	aceptacion separado mandatory/bonus.
 - 2026-03-14: guia de validacion mandatory completa con evidencia real
   de build, funcional, benchmark y memoria.
