@@ -68,11 +68,15 @@ clean:
 	$(RM) $(COMMON_OBJS) $(SERVER_OBJS) $(CLIENT_OBJS)
 	$(RM) $(BONUS_SERVER_OBJS) $(BONUS_CLIENT_OBJS) $(BONUS_UTILS_OBJS)
 	$(MAKE) clean -C $(LIBFT_DIR)
+	$(MAKE) clean -C $(LIBFT_DIR)/ft_printf
+	$(MAKE) clean -C $(LIBFT_DIR)/get_next_line
 
 fclean: clean
 	$(RM) $(NAME_SERVER) $(NAME_CLIENT)
 	$(RM) $(NAME_SERVER_BONUS) $(NAME_CLIENT_BONUS)
 	$(MAKE) fclean -C $(LIBFT_DIR)
+	$(MAKE) fclean -C $(LIBFT_DIR)/ft_printf
+	$(MAKE) fclean -C $(LIBFT_DIR)/get_next_line
 
 re: fclean all
 
