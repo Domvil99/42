@@ -42,7 +42,7 @@ Estado: implementado.
   - `validate_args` (validacion de argc/PID)
   - `handle_ack` (marca ACK recibido)
   - `setup_ack_handler` (registro `sigaction` para ACK)
-- `bonus_utils.c`
+- `utils_bonus.c`
   - `ft_sigcomm_send_byte_ack` (envio de byte con ACK por bit)
   - `ft_sigcomm_send_string_ack` (envio de string + terminador `\0`)
 - `minitalk_bonus.h`

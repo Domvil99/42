@@ -9,7 +9,7 @@ Pending changes:
 - `42/C/minitalk/Makefile`
 - `42/C/minitalk/minitalk.h`
 - `42/C/minitalk/minitalk_bonus.h`
-- `42/C/minitalk/bonus_utils.c`
+- `42/C/minitalk/utils_bonus.c`
 - `42/C/minitalk/client.c`
 - `42/C/minitalk/client_bonus.c`
 - `42/C/minitalk/parse_utils.c`

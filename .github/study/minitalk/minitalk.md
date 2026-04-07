@@ -80,7 +80,7 @@ La mitigacion minima suele ser `usleep` por bit; la robusta es bonus con ACK.
 - `parse_utils.c`: parseo de PID y salida de errores.
 - `client_bonus.c`: espera ACK por bit.
 - `server_bonus.c`: envia ACK por cada bit recibido.
-- `bonus_utils.c`: envio sincronizado con flag ACK.
+- `utils_bonus.c`: envio sincronizado con flag ACK.
 
 ## 7. Ruta de lectura recomendada
 

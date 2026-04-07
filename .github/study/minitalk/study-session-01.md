@@ -124,7 +124,7 @@ Respuestas guia (Bloque C):
 
 ### Bloque D (10 min) - Bonus con ACK
 
-1. Leer `client_bonus.c`, `bonus_utils.c`, `server_bonus.c`.
+1. Leer `client_bonus.c`, `utils_bonus.c`, `server_bonus.c`.
 2. Entender por que ACK evita perdida de bits.
 
 Resultado esperado:

@@ -51,8 +51,8 @@ Esperado:
 ## Nota de auditoria
 
 El subject pide archivos bonus en _bonus.c/_bonus.h.
-En este proyecto existe bonus_utils.c (sin sufijo _bonus en nombre).
-Conviene revisar criterio del evaluador de tu campus antes de tocar nada.
+En este proyecto existe utils_bonus.c con sufijo `_bonus` en nombre.
+La separacion mandatory/bonus queda alineada con el subject.
 
 ## Change Log
 

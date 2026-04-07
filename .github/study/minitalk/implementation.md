@@ -43,7 +43,7 @@ Puntos de estudio:
 2. acumulacion de bits sobre `current_char`,
 3. cierre de mensaje al recibir byte nulo (`\0`).
 
-## 4. bonus: client_bonus.c + bonus_utils.c
+## 4. bonus: client_bonus.c + utils_bonus.c
 
 Responsabilidad:
 

@@ -2,7 +2,7 @@
 
 Archivos analizados:
 - 42/C/minitalk/client_bonus.c
-- 42/C/minitalk/bonus_utils.c
+- 42/C/minitalk/utils_bonus.c
 - 42/C/minitalk/server_bonus.c
 
 ## Flujo de client_bonus.c
@@ -19,7 +19,7 @@ Archivos analizados:
 4. main:
 - llama mt_bonus_send_message con puntero a flag ACK.
 
-## Flujo de bonus_utils.c
+## Flujo de utils_bonus.c
 
 - mt_bonus_send_char:
   1. limpia flag ACK,

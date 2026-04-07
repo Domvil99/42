@@ -24,7 +24,7 @@ Validation order for all projects:
   - `42/C/minitalk/signals_utils.c`
   - `42/C/minitalk/client_bonus.c`
   - `42/C/minitalk/server_bonus.c`
-  - `42/C/minitalk/bonus_utils.c`
+  - `42/C/minitalk/utils_bonus.c`
   - `.github/tracking/projects/minitalk/`
   - `.github/reports/workblock-pending-status.md`
 - Tracking docs updated:
@@ -90,7 +90,7 @@ Validation order for all projects:
 - Paths changed:
   - `42/C/minitalk/client_bonus.c`
   - `42/C/minitalk/server_bonus.c`
-  - `42/C/minitalk/bonus_utils.c`
+  - `42/C/minitalk/utils_bonus.c`
   - `42/C/minitalk/minitalk_bonus.h`
   - `42/C/minitalk/Makefile`
   - `42/C/minitalk/README.md`
