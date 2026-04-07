@@ -13,6 +13,33 @@ Validation order for all projects:
 
 ## 2026-04-07
 
+- Change type: minitalk-libft-full-build-and-api-rename
+- Paths changed:
+  - `42/C/minitalk/Makefile`
+  - `42/C/minitalk/minitalk.h`
+  - `42/C/minitalk/minitalk_bonus.h`
+  - `42/C/minitalk/client.c`
+  - `42/C/minitalk/server.c`
+  - `42/C/minitalk/parse_utils.c`
+  - `42/C/minitalk/signals_utils.c`
+  - `42/C/minitalk/client_bonus.c`
+  - `42/C/minitalk/server_bonus.c`
+  - `42/C/minitalk/bonus_utils.c`
+  - `.github/tracking/projects/minitalk/`
+  - `.github/reports/workblock-pending-status.md`
+- Tracking docs updated:
+  - `.github/tracking/projects/minitalk/minitalk-functions.md`
+  - `.github/tracking/projects/minitalk/minitalk-progress.md`
+  - `.github/tracking/projects/minitalk/minitalk-reference.md`
+- Notes:
+  - Se ajusta `make` de minitalk para compilar la libft integrada completa
+    en orden mandatory -> bonus, incluyendo modulos `ft_printf` y
+    `get_next_line` dentro de `libft/`.
+  - Se verifica que todos los `*.c` del arbol `42/C/minitalk/libft` generan
+    su `*.o` tras compilacion.
+  - Se renombra la API interna de `mt_` a `ft_` con nombres mas legibles.
+  - Se simplifica salida de error reutilizando `ft_putstr_fd`.
+
 - Change type: study-minitalk-pack
 - Paths changed:
   - `.github/study/overview.md`

@@ -21,12 +21,12 @@ Estado: implementado.
 ## 2. Shared Utilities
 
 - `parse_utils.c`
-  - `mt_parse_pid`
-  - `mt_write_error`
+  - `ft_parse_pid`
+  - `ft_write_error`
 
 - `signals_utils.c`
-  - `mt_send_char`
-  - `mt_send_message`
+  - `ft_sigcomm_send_byte`
+  - `ft_sigcomm_send_string`
 
 Estado: implementado.
 
@@ -43,8 +43,8 @@ Estado: implementado.
   - `handle_ack` (marca ACK recibido)
   - `setup_ack_handler` (registro `sigaction` para ACK)
 - `bonus_utils.c`
-  - `mt_bonus_send_char` (envio de byte con sincronizacion ACK por bit)
-  - `mt_bonus_send_message` (envio de string + terminador `\0`)
+  - `ft_sigcomm_send_byte_ack` (envio de byte con ACK por bit)
+  - `ft_sigcomm_send_string_ack` (envio de string + terminador `\0`)
 - `minitalk_bonus.h`
   - contrato de envio bonus
 
@@ -56,7 +56,6 @@ Base local copiada desde `42/C/currentLibft/libft` a `42/C/minitalk/libft`.
 
 Funciones usadas en obligatorio:
 - `ft_isdigit`
-- `ft_strlen`
 - `ft_putstr_fd`
 - `ft_putnbr_fd`
 
@@ -64,6 +63,14 @@ Funciones usadas en bonus:
 - `ft_isdigit`
 - `ft_putstr_fd`
 - `ft_putnbr_fd`
+
+## 5. Build Chain Notes
+
+- `make` en minitalk fuerza compilacion de `libft/` completa en orden:
+  mandatory -> bonus.
+- Se compilan tambien modulos integrados en `libft/ft_printf` y
+  `libft/get_next_line` (mandatory -> bonus).
+- Resultado verificado: todos los `*.c` de la libft integrada generan `*.o`.
 
 ## Pending Functional Gaps
 

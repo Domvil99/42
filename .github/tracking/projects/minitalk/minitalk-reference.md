@@ -33,8 +33,14 @@ Client:
 
 Targets requeridos:
 - `all` -> `server` + `client`
-- `bonus` -> `server_bonus` + `client_bonus` (placeholder)
+- `bonus` -> `server_bonus` + `client_bonus`
 - `clean`, `fclean`, `re`
+
+Build de libft integrada desde minitalk:
+- `make` ejecuta compilacion de `libft` root en orden mandatory -> bonus.
+- Luego ejecuta compilacion de `libft/ft_printf` en orden mandatory -> bonus.
+- Luego ejecuta compilacion de `libft/get_next_line` en orden mandatory -> bonus.
+- Objetivo del ajuste: ningun `*.c` de la libft integrada queda sin `*.o`.
 
 ## 5. Bit Protocol (bonus)
 
@@ -73,3 +79,12 @@ cc -Wall -Wextra -Werror test_minitalk_invalid_pid.c -o /tmp/test_minitalk_badpi
 3. No enviar `\0` final y dejar servidor sin flush de mensaje.
 4. Mezclar obligatorio y bonus en mismos archivos.
 5. No sincronizar ACK por bit en bonus y perder senales bajo carga.
+
+## 8. API Naming Convention
+
+- Prefijo compartido de utilidades del proyecto: `ft_`.
+- Ejemplos actuales:
+	- `ft_parse_pid`
+	- `ft_write_error`
+	- `ft_sigcomm_send_byte`
+	- `ft_sigcomm_send_string_ack`

@@ -14,6 +14,9 @@ Fase activa: mandatory + bonus implementados y validados
 4. Mandatory `server`/`client` implementado.
 5. Bonus separado en `*_bonus.c/h` implementado (ACK + bytes UTF-8).
 6. Tests C portables creados en `42/tests/tests_minitalk`.
+7. Cadena de build ajustada para compilar toda la `libft` integrada
+	(root + `ft_printf` + `get_next_line`, mandatory -> bonus).
+8. API interna renombrada de `mt_` a `ft_` para consistencia de naming.
 
 ## Quality Gates
 
@@ -26,6 +29,7 @@ Fase activa: mandatory + bonus implementados y validados
 ### Gate 2: Functional
 
 - Build obligatorio (`make`): OK.
+- Build de `libft` completa (todos los `*.c` -> `*.o`): OK.
 - Smoke real servidor/cliente con mensaje: OK.
 - Build bonus (`make bonus`): OK.
 - Smoke real bonus con ASCII y UTF-8: OK.

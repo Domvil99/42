@@ -35,6 +35,37 @@ En minitalk, su uso esta justificado por el contexto asincrono de senales:
 El subject permite una variable global por programa (cliente y servidor),
 siempre que se justifique.
 
+## Que es un handler
+
+Un handler es una funcion que se ejecuta automaticamente cuando llega una
+senal.
+
+En minitalk:
+
+- `server.c` usa `handle_signal` para recibir bits y reconstruir caracteres.
+- `client_bonus.c` usa `handle_ack` para confirmar que el servidor recibio
+  un bit antes de enviar el siguiente.
+
+Idea clave:
+
+1. Tu no llamas al handler desde `main`.
+2. El sistema operativo lo llama cuando ocurre el evento (la senal).
+3. Por eso el handler debe ser simple y rapido.
+
+## Que es ACK
+
+ACK significa "acknowledgment" (confirmacion de recepcion).
+
+En minitalk bonus:
+
+1. El cliente envia un bit.
+2. El servidor responde una senal de confirmacion (ACK).
+3. El cliente solo entonces envia el siguiente bit.
+
+Beneficio principal:
+
+- reduce perdida de senales porque el envio queda sincronizado paso a paso.
+
 ## Buenas practicas basicas para este proyecto
 
 1. Validar argumentos antes de iniciar logica de envio.
@@ -46,3 +77,5 @@ siempre que se justifique.
 ## Change Log
 
 - 2026-04-05: respuestas basicas iniciales.
+- 2026-04-07: agregada seccion "Que es un handler" con ejemplos del proyecto.
+- 2026-04-07: agregada seccion "Que es ACK" orientada a flujo bonus.
