@@ -39,7 +39,6 @@ Bonus implementado:
 
 ## Recursos
 - `signal(2)` / `sigaction(2)` / `kill(2)` / `pause(2)`
-- 42 subject: `42/PDFs/2026-04-05_minitalk.txt`
 - Linux man-pages project: https://man7.org/linux/man-pages/
 
 ## Uso de IA
