@@ -11,6 +11,22 @@ Validation order for all projects:
 3. memory/stability.
 4. Norminette as final closing step.
 
+## 2026-04-07
+
+- Change type: study-minitalk-pack
+- Paths changed:
+  - `.github/study/overview.md`
+  - `.github/study/minitalk/`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/project-history.md`
+- Notes:
+  - Se agrega paquete completo de estudio para `minitalk` con reporte base,
+    implementacion, validacion, defensa, diccionario, sesion guiada y
+    learning-notes por niveles (teoria + lectura de codigo).
+  - Se actualiza `overview` para reflejar `minitalk` como proyecto cerrado.
+  - Se sincroniza el mapa estructural de `.github/study` en
+    `QUICK_REFERENCE.md`.
+
 ## 2026-04-05
 
 - Change type: minitalk-spec-import

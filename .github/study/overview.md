@@ -23,6 +23,7 @@ Excepcion operativa activa:
 - `get_next_line` (closed)
 - `currentLibft` (in-progress)
 - `push_swap` (in-progress)
+- `minitalk` (closed)
 
 ## Mandatory Structure Rules
 
@@ -84,3 +85,5 @@ Para considerar un reporte como "completo", debe incluir:
    inmediato de estudio en `push_swap`.
 - 2026-03-16: agregado soporte de arranque desde base cero con archivo
    `foundations-nodes-lists.md` para proyectos con listas enlazadas.
+- 2026-04-05: agregado modulo `minitalk` con reporte base de estudio,
+   implementacion, validacion, defensa, diccionario y sesion inicial.

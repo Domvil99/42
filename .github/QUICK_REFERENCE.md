@@ -93,6 +93,14 @@ Raiz/
 │   │   │   ├── defense.md
 │   │   │   ├── case-studies.md
 │   │   │   └── dictionary.md
+│   │   ├── minitalk/
+│   │   │   ├── minitalk.md
+│   │   │   ├── implementation.md
+│   │   │   ├── validation.md
+│   │   │   ├── defense.md
+│   │   │   ├── dictionary.md
+│   │   │   ├── study-session-01.md
+│   │   │   └── learning-notes/
 │   │   └── overview.md
 │   └── workflow-rules.md
 ├── .tools/
