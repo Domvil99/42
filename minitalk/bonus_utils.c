@@ -12,31 +12,31 @@
 
 #include "minitalk_bonus.h"
 
-int	mt_bonus_send_char(pid_t server_pid, unsigned char c,
-		volatile sig_atomic_t *ack_flag)
+int	ft_sigcomm_send_byte_ack(pid_t server_pid, unsigned char byte,
+		volatile sig_atomic_t *ack_received)
 {
-	int	bit;
+	int	bit_index;
 	int	sig;
 
-	bit = 7;
-	while (bit >= 0)
+	bit_index = 7;
+	while (bit_index >= 0)
 	{
-		*ack_flag = 0;
-		if ((c >> bit) & 1)
-			sig = MT_SIG_ONE;
+		*ack_received = 0;
+		if ((byte >> bit_index) & 1)
+			sig = FT_SIGCOMM_BIT_ONE;
 		else
-			sig = MT_SIG_ZERO;
+			sig = FT_SIGCOMM_BIT_ZERO;
 		if (kill(server_pid, sig) == -1)
 			return (0);
-		while (!(*ack_flag))
+		while (!(*ack_received))
 			pause();
-		bit--;
+		bit_index--;
 	}
 	return (1);
 }
 
-int	mt_bonus_send_message(pid_t server_pid, const char *msg,
-		volatile sig_atomic_t *ack_flag)
+int	ft_sigcomm_send_string_ack(pid_t server_pid, const char *msg,
+		volatile sig_atomic_t *ack_received)
 {
 	size_t	idx;
 
@@ -45,11 +45,12 @@ int	mt_bonus_send_message(pid_t server_pid, const char *msg,
 	idx = 0;
 	while (msg[idx])
 	{
-		if (!mt_bonus_send_char(server_pid, (unsigned char)msg[idx], ack_flag))
+		if (!ft_sigcomm_send_byte_ack(server_pid,
+				(unsigned char)msg[idx], ack_received))
 			return (0);
 		idx++;
 	}
-	if (!mt_bonus_send_char(server_pid, '\0', ack_flag))
+	if (!ft_sigcomm_send_byte_ack(server_pid, '\0', ack_received))
 		return (0);
 	return (1);
 }

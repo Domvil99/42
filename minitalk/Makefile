@@ -41,8 +41,13 @@ all: $(NAME_SERVER) $(NAME_CLIENT)
 
 bonus: $(NAME_SERVER_BONUS) $(NAME_CLIENT_BONUS)
 
-$(LIBFT_A):
-	$(MAKE) -C $(LIBFT_DIR)
+$(LIBFT_A): FORCE
+	$(MAKE) -C $(LIBFT_DIR) all
+	$(MAKE) -C $(LIBFT_DIR) bonus
+	$(MAKE) -C $(LIBFT_DIR)/ft_printf all
+	$(MAKE) -C $(LIBFT_DIR)/ft_printf bonus
+	$(MAKE) -C $(LIBFT_DIR)/get_next_line all
+	$(MAKE) -C $(LIBFT_DIR)/get_next_line bonus
 
 $(NAME_SERVER): $(COMMON_OBJS) $(SERVER_OBJS) $(LIBFT_A)
 	$(CC) $(CFLAGS) $(COMMON_OBJS) $(SERVER_OBJS) $(LIBFT_A) -o $(NAME_SERVER)
@@ -71,4 +76,6 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+FORCE:
+
+.PHONY: all bonus clean fclean re FORCE

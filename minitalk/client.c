@@ -16,12 +16,12 @@ static int	validate_args(int argc, char **argv, pid_t *server_pid)
 {
 	if (argc != 3)
 	{
-		mt_write_error("Usage: ./client <server_pid> <message>\n");
+		ft_write_error("Usage: ./client <server_pid> <message>\n");
 		return (0);
 	}
-	if (!mt_parse_pid(argv[1], server_pid))
+	if (!ft_parse_pid(argv[1], server_pid))
 	{
-		mt_write_error("Error: invalid server PID\n");
+		ft_write_error("Error: invalid server PID\n");
 		return (0);
 	}
 	return (1);
@@ -33,9 +33,9 @@ int	main(int argc, char **argv)
 
 	if (!validate_args(argc, argv, &server_pid))
 		return (1);
-	if (!mt_send_message(server_pid, argv[2]))
+	if (!ft_sigcomm_send_string(server_pid, argv[2]))
 	{
-		mt_write_error("Error: failed to send message\n");
+		ft_write_error("Error: failed to send message\n");
 		return (1);
 	}
 	return (0);

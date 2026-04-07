@@ -15,9 +15,9 @@
 
 # include "minitalk.h"
 
-int	mt_bonus_send_char(pid_t server_pid, unsigned char c,
-		volatile sig_atomic_t *ack_flag);
-int	mt_bonus_send_message(pid_t server_pid, const char *msg,
-		volatile sig_atomic_t *ack_flag);
+int	ft_sigcomm_send_byte_ack(pid_t server_pid, unsigned char byte,
+		volatile sig_atomic_t *ack_received);
+int	ft_sigcomm_send_string_ack(pid_t server_pid, const char *msg,
+		volatile sig_atomic_t *ack_received);
 
 #endif

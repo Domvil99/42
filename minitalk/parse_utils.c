@@ -12,7 +12,7 @@
 
 #include "minitalk.h"
 
-int	mt_parse_pid(const char *str, pid_t *pid_out)
+int	ft_parse_pid(const char *str, pid_t *pid_out)
 {
 	long	value;
 	int		idx;
@@ -36,8 +36,8 @@ int	mt_parse_pid(const char *str, pid_t *pid_out)
 	return (1);
 }
 
-void	mt_write_error(const char *msg)
+void	ft_write_error(const char *msg)
 {
 	if (msg)
-		write(2, msg, ft_strlen(msg));
+		ft_putstr_fd((char *)msg, 2);
 }
