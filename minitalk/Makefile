@@ -28,7 +28,7 @@ CLIENT_SRCS = client.c
 
 BONUS_SERVER_SRCS = server_bonus.c
 BONUS_CLIENT_SRCS = client_bonus.c
-BONUS_UTILS_SRCS = bonus_utils.c
+BONUS_UTILS_SRCS = utils_bonus.c
 
 COMMON_OBJS = $(COMMON_SRCS:.c=.o)
 SERVER_OBJS = $(SERVER_SRCS:.c=.o)

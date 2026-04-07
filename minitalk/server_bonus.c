@@ -29,8 +29,6 @@ static void	handle_signal(int sig, siginfo_t *info, void *context)
 	if (sig == FT_SIGCOMM_BIT_ONE)
 		g_server_state.current_byte |= (1 << (7 - g_server_state.bit_index));
 	g_server_state.bit_index++;
-	if (kill(info->si_pid, FT_SIGCOMM_BIT_ONE) == -1)
-		return ;
 	if (g_server_state.bit_index == 8)
 	{
 		if (g_server_state.current_byte == '\0')
@@ -44,6 +42,8 @@ static void	handle_signal(int sig, siginfo_t *info, void *context)
 			reset_state(info->si_pid);
 		}
 	}
+	if (kill(info->si_pid, FT_SIGCOMM_BIT_ONE) == -1)
+		return ;
 }
 
 static int	setup_signals(void)
