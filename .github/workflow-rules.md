@@ -216,6 +216,11 @@ Bootstrap rule for new projects using the base:
 	`42/C/<project_name>/libft`.
 3. Keep project root semantics intact (`*.c`, `*.h`, `Makefile` for project).
 4. Do not move parent `libft` out of `currentLibft`; treat it as canonical base.
+5. Enforce full libft availability from project start:
+	- compile libft mandatory first,
+	- compile libft bonus second,
+	- compile project mandatory only after full libft build.
+6. No bonus function from libft can be excluded from project baseline usage.
 
 When a support directory is added under `42/` (outside `42/C/`), update:
 

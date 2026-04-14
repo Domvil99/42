@@ -11,6 +11,21 @@ Validation order for all projects:
 3. memory/stability.
 4. Norminette as final closing step.
 
+## 2026-04-14
+
+- Change type: global-libft-full-build-order-rule
+- Paths changed:
+  - `.github/copilot-instructions.md`
+  - `.github/workflow-rules.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/project-history.md`
+- Notes:
+  - Se establece regla permanente para proyectos que usan libft:
+    compilar siempre libft mandatory primero y bonus despues.
+  - La parte obligatoria del proyecto solo se compila tras build completo de
+    libft.
+  - No se excluyen funciones bonus de la disponibilidad base del proyecto.
+
 ## 2026-04-07
 
 - Change type: minitalk-libft-full-build-and-api-rename

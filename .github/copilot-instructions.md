@@ -107,6 +107,11 @@ Raiz/
   - For `42/C/<new_project>`, copy base from `42/C/currentLibft/libft` into
     `42/C/<new_project>/libft` while keeping project deliverables in root
     (`*.c`, `*.h`, `Makefile`).
+  - Permanent compilation rule for projects using libft:
+    - Compile libft mandatory first.
+    - Compile libft bonus second.
+    - Compile the project's mandatory target only after full libft build.
+    - Do not exclude bonus functions from baseline availability.
 
 ## 42 Delivery Rule (Important)
 - For each deliverable project, files required by the subject must remain at that project's root.
