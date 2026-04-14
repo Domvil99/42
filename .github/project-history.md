@@ -13,6 +13,30 @@ Validation order for all projects:
 
 ## 2026-04-14
 
+- Change type: fractol-spec-import
+- Paths changed:
+  - `42/PDFs/2026-04-14_fract'ol.txt`
+- Notes:
+  - Se registra el subject canonico de fract'ol para implementacion y validacion.
+
+- Change type: fractol-bootstrap-mandatory
+- Paths changed:
+  - `42/C/fract'ol/`
+  - `42/C/fract'ol/libft/`
+  - `42/C/fract'ol/README.md`
+  - `42/tests/tests_fractol/`
+  - `.github/tracking/projects/fractol/`
+  - `.github/projects-index.md`
+  - `.github/QUICK_REFERENCE.md`
+- Tracking docs updated:
+  - `.github/tracking/projects/fractol/fractol-functions.md`
+  - `.github/tracking/projects/fractol/fractol-progress.md`
+  - `.github/tracking/projects/fractol/fractol-reference.md`
+- Notes:
+  - Se crea base mandatory de fract'ol con MiniLibX y libft integrada desde currentLibft.
+  - Se implementan parseo CLI, render de Mandelbrot/Julia, zoom por rueda y eventos de cierre.
+  - Queda pendiente cierre final de validacion local por dependencia X11 del entorno.
+
 - Change type: global-libft-full-build-order-rule
 - Paths changed:
   - `.github/copilot-instructions.md`

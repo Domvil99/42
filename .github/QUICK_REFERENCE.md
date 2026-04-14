@@ -11,6 +11,7 @@ Raiz/
 │   │   ├── get_next_line/
 │   │   ├── push_swap/
 │   │   ├── minitalk/
+│   │   └── fract'ol/
 │   │   └── currentLibft/
 │   ├── PDFs/
 │   │   ├── 2026-03-12_libft_v16_6.txt
@@ -18,7 +19,8 @@ Raiz/
 │   │   ├── 2026-03-12_get_next_line.txt
 │   │   ├── 2026-03-13_push_swap.txt
 │   │   ├── 2026-03-13_push_swap_actualizado.txt
-│   │   └── 2026-04-05_minitalk.txt
+│   │   ├── 2026-04-05_minitalk.txt
+│   │   └── 2026-04-14_fract'ol.txt
 │   ├── tests/
 │   │   ├── testsLibf/
 │   │   │   └── README.md
@@ -31,6 +33,8 @@ Raiz/
 │   │   ├── tests_push_swap/
 │   │   │   └── README.md
 │   │   ├── tests_minitalk/
+│   │   │   └── README.md
+│   │   ├── tests_fractol/
 │   │   │   └── README.md
 │   │   └── tests_<project_name>/
 │   │       └── README.md
@@ -67,6 +71,10 @@ Raiz/
 │   │       │   ├── minitalk-functions.md
 │   │       │   ├── minitalk-progress.md
 │   │       │   └── minitalk-reference.md
+│   │       ├── fractol/
+│   │       │   ├── fractol-functions.md
+│   │       │   ├── fractol-progress.md
+│   │       │   └── fractol-reference.md
 │   │       └── currentLibft/
 │   │           ├── currentLibft-functions.md
 │   │           ├── currentLibft-progress.md

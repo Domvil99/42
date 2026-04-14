@@ -1,0 +1,163 @@
+fract'ol
+Fractales en Grificos por Ordenador
+
+
+
+Resumen: Este proyecto busca crear fractales gráficamente bonitos.
+Versión: 5.0
+
+
+
+índice general
+I. Introducción
+II. Objetivos
+III. Instrucciones generales
+IV. Parte obligatoria
+IV.1. Renderizado
+IV.2. Representación gráfica
+V. Requisitos del Readme
+VI. Parte extra
+VII. Entrega y evaluación
+
+
+
+
+Capátulo I Introducción
+   El término fractal fue usado por primera vez por el matemático Benoit Mandelbrot en 1974, se basó en la palabra latina fractus, cuyo significado es "roto" o "fracturado".
+   Un fractal es un objeto de abstración matemática, como una curva o superficie, que conserva un patrón similar independientemente de la escala.
+   Varios fenémenos naturales, como el romanesco, tienen algunas de las características de los fractales.
+
+
+Ahora, te toca a ti generar algunos fractales majestuosos.
+
+
+
+
+Capátulo II Objetivos
+Es el momento de que crees un proyecto básico de gráficos por ordenador!
+   Vas a utilizar la librería gráfica del campus, la MiniLibX. Esta librería ha sido creada de manera interna e incluye herramientas básicas necesarias para abrir una ventana, crear imágenes y manejar los eventos del teclado y del ratón.
+   Este nuevo proyecto será tu oportunidad para familiarizarte con la MiniLibX, para que descubras o utilices la noción matemática de números complejos y eches un vistazo al concepto de optimización en CGI y practiques el manejo de eventos.
+
+
+
+
+Capítulo III Instrucciones generales
+· El proyecto deberá estar escrito en C.
+· El proyecto debe estar escrito siguiendo la Norma. Si tienes archivos o funciones adicionales, estas deberán estar incluidas en la verificación de la Norma y tendrás un 0 si hay algún error de norma en cualquiera de ellos.
+· Las funciones no deben terminar de forma inesperada (segfault, bus error, double free, etc), excepto en el caso de comportamientos indefinidos. Si esto sucede, el proyecto será considerado no funcional y recibirás un 0 durante la evaluación.
+· Toda la memoria asignada en la pila (heap) deberá liberarse adecuadamente cuando sea necesario. No se permitirán leaks de memoria.
+· Si el enunciado lo requiere, se deberá entregar un Makefile que compilará tus archivos fuente a la salida requerida con las flags -Wall, -Werror y -Wextra. También se deberá utilizar cc y, por supuesto, el Makefile no debe hacer relink.
+· El Makefile entregado debe contener al menos las normas $(NAME), all, clean, fclean y re.
+· Para entregar los bonus del proyecto se deberá incluir una regla bonus en el Makefile, en la que se añadirán todos los headers, librerías o funciones que estén prohibidas en la parte principal del proyecto. Los bonus deben estar en archivos distintos _bonus.{c/h}. La parte obligatoria y los bonus se evalúan por separado.
+· Si el proyecto permite el uso de la libft, se deberá copiar su fuente y sus Makefile asociados en un directorio libft con su correspondiente Makefile. El Makefile del proyecto debe compilar primero la librería utilizando su Makefile, y después compilar el proyecto.
+· Es recomendable crear programas de prueba para el proyecto, aunque este trabajo no será entregado ni evaluado. Esto ofrece la oportunidad de verificar que el programa funciona correctamente durante las evaluaciones. Y sí, está permitido utilizar estas pruebas durante cualquier evaluación.
+· Entrega el trabajo en el repositorio Git asignado. Solo el trabajo de tu repositorio Git será evaluado. Si el proyecto tiene que ser evaluado por Deepthought, la evaluacián se realizará despuás de las evaluaciones personales. Si, durante la evaluación de Deepthought, se encuentra un error se, se interrumpirá su evaluación.
+
+
+
+
+Capátulo IV Parte obligatoria
+
+
+
+Nombre de programa:
+	fractol
+Archivos a entregar:
+	Makefile, *.h, *.c
+Makefile:
+	NAME, all, clean, fclean, re
+Argumentos:
+	El tipo de fractal a mostrar y cualquier otra opción disponible
+Funciones autorizadas:
+	· open, close, read, write, malloc, free, perror, strerror, exit
+
+	· Todas las funciones de la librería de matemáticas (-lm, man 3 math)
+
+	· Todas las funciones de la MiniLibX
+
+	· ft_printf y cualquier función equivalente que hayas escrito
+Se permite usar libft:
+	Sí
+Descripción:
+	El objetivo de este proyecto es crear un pequeño programa de exploración de fractales. 
+	Primero, tienes que comprender lo que es un fractal.
+
+
+
+Tu proyecto tendrá que seguir las siguientes reglas:
+	· Tienes que utilizar la MiniLibX, ya sea la versión disponible en los ordenadores del campus o la que instales usando sus fuentes originales.
+	· Tendrás que entregar un Makefile que compilará tus archivos fuente. No debe hacer relink.
+
+	· Las variables globales están prohibidas.
+
+
+
+
+IV.1. Renderizado
+· Tu programa debe ofrecer los conjuntos de Julia y Mandelbrot.
+· La rueda del ratón hace zoom in y zoom out y lo hace casi infinitamente (dentro de los límites del ordenador). Ese es el concepto de un fractal.
+· Debes poder crear un conjunto de Julia diferente a través de los parámetros del programa.
+· Un parámetro se pasará a través de la CLI para definir el tipo de fractal visualizado.
+	-Puedes usar más parámetros como opciones de renderizado.
+	-Si no se introduce un parámetro, o si el parámetro es inválido, el programa mostrará una lista de parámetros disponibles y terminará correctamente.
+· Debes usar al menos unos pocos colores para mostrar la profundidad de cada fractal. Es incluso mejor si te adentras en los efectos psicodólicos.
+
+
+
+
+IV.2. Representación gráfica
+· Tu programa tiene que mostrar la imagen en una ventana.
+· El manejo de tu ventana debe ser fluido (cambio a otra ventana, minimización y demás)
+· ESC debe cerrar la ventana y salir del programa de manera limpia.
+· Hacer click en la cruz del marco de la ventana debe cerrarla y cerrar el programa de manera limpia.
+· El uso de im�genes de la MiniLibX es obligatorio.
+
+
+
+
+Capátulo V Requisitos del Readme
+   Debe incluirse un archivo README.md en la raíz del repositorio Git. Su propósito es permitir que cualquier persona que no está familiarizada con el proyecto (pares, personal, responsables de selección, etc.) pueda entender rápidamente de qué trata el proyecto, cómo ejecutarlo y dónde encontrar más información sobre el tema.
+El README.md debe incluir, como mínimo:
+· La primera línea debe estar en cursiva y decir: Este proyecto ha sido creado como parte del currículo de 42 por <login1>[, <login2>[, <login3>[...]]].
+· Una sección de "Descripción"que presente claramente el proyecto, incluyendo su objetivo y una breve visión general.
+· Una sección de "Instrucciones"que contenga cualquier información relevante sobre compilación, instalación y/o ejecución.
+· Una sección de "Recursos"que enumere referencias cl´qsicas relacionadas con el tema (documentación, artículos, tutoriales, etc.), así como una descripción del uso de IA, especificando para qué tareas y en qué partes del proyecto se ha utilizado.
+
+Podrían requerirse secciones adicionales dependiendo del proyecto (por ejemplo, ejemplos de uso, lista de caracterésticas, decisiones técnicas, etc.).
+
+Cualquier contenido extra requerida se listará explícitamente a continuación.
+
+	Se recomienda hacerlo en inglés,
+	pero tienes la opción de realizarlo en el idioma principal de tu campus.
+
+
+
+
+Capátulo VI Parte extra
+   Habitualmente, te animaríamos a que desarrollaras nuevas caracterésticas extra. Sin embargo, habrá proyectos gráficos mucho más interesantes más adelante. ¡Te están esperando! ¡No pierdas demasiado tiempo en este ejercicio!
+Conseguirás algunos puntos extra con lo siguiente:
+· Un fractal diferente más (hay más de cien referencias a distintos tipos de fractales online).
+· El zoom sigue la posición actual del ratón.
+· Adicionalmente al zoom: moverse con flechas.
+· Haz que el rango de color cambie.
+	
+
+	La parte bonus será exclusivamente evaluada si la parte obligatoria
+	está PERFECTA. Perfecta significa que todos los requisitos de la
+	parte obligatoria deben estar correctamente completados y funcionan
+	perfectamente. De otro modo, tus bonus no serán evaluados de ninguna
+	manera.
+
+
+
+
+Capítulo VII  
+Entrega y evaluación
+
+   Entrega tu trabajo en tu repositorio Git como de costumbre. Solo el trabajo de tu repositorio será evaluado. Comprueba dos veces si es necesario que los nombres de tus archivos sean los correctos.
+   Como estos ejercicios no se verifican con un programa, puedes organizar tus archivos como quieras, siempre que entregues los archivos obligatorios y cumplas los requisitos.
+Durante la evaluación, es posible que se solicite una ligera modificación del proyecto. Esto puede consistir en ajustar ligeramente el comportamiento, modificar unas cuantas líneas de código o incorporar una característica fácil de implementar.
+Puede que este paso no sea necesario en todos los proyectos, pero hay que tenerlo en cuenta si así se especifica en la hoja de evaluación.
+Este paso sirve para verificar la comprensión real de una parte específica del proyecto. La modificación se puede realizar en cualquier entorno de desarrollo que se elija (por ejemplo, la configuración habitual), y debería ser factible en unos pocos minutos, a menos que se defina un plazo específico como parte de la evaluación.
+Por ejemplo, se puede pedir hacer una pequeña actualización en una función o script, modificar lo que se vería en pantalla o ajustar una estructura de datos para almacenar nueva información, etc.
+Los detalles (alcance, objetivo, etc.) se especificarán cada hoja de evaluación y pueden variar de una evaluación a otra para el mismo proyecto.
