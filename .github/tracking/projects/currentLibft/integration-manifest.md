@@ -1,7 +1,7 @@
 # Integration Manifest - currentLibft
 
-Last Updated: 2026-04-05
-Consolidation Version: 1.1
+Last Updated: 2026-04-15
+Consolidation Version: 1.2
 
 ## Overview
 
@@ -92,9 +92,18 @@ Consolidated index of modules integrated into `42/C/currentLibft/libft`.
 
 ## Integration Gate
 
-- Build gate: `make` and `make bonus` in `42/C/currentLibft`
+- Build gate:
+  - `make`, `make clean`, `make fclean`, `make full` in
+    `42/C/currentLibft/libft`
+  - `libft.a` consolidada con base + internos (`ft_printf`, `get_next_line`)
 - Module parity gate: base libft files synchronized against `42/C/libft`
 - Final style gate: norminette on impacted modules when applicable
+
+## Build Policy Snapshot
+
+- `make` ejecuta build integrado completo por defecto.
+- `clean` y `fclean` limpian todo el arbol integrado (`.o` y `.a`).
+- No se automatiza `chmod` en Makefiles.
 
 ## Notes
 

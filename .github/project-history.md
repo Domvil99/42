@@ -66,6 +66,36 @@ Validation order for all projects:
     compilación/norminette y a la limitación de entorno X11 para smoke visual.
   - Se aplica barrida documental para mantener trazabilidad limpia de rutas.
 
+## 2026-04-15
+
+- Change type: current-libft-build-contract-hardening
+- Paths changed:
+  - `42/C/currentLibft/libft/Makefile`
+  - `42/C/currentLibft/libft/ft_printf/Makefile`
+  - `42/C/currentLibft/libft/get_next_line/Makefile`
+  - `42/C/fract'ol/Makefile`
+- Notes:
+  - Se refuerza contrato de build integrado en currentLibft para que
+    `make` ejecute compilacion completa (base + modulos internos) y
+    `clean/fclean` limpien todo el arbol (`.o/.a`).
+  - Se alinea el flujo de proyectos consumidores para compilar libft completa
+    antes de su target mandatory.
+  - Se elimina automatizacion de `chmod` en Makefiles; cualquier ajuste de
+    permisos se ejecuta manualmente salvo exigencia explicita del subject.
+
+- Change type: current-libft-tracking-sync
+- Paths changed:
+  - `.github/tracking/projects/currentLibft/currentLibft-functions.md`
+  - `.github/tracking/projects/currentLibft/currentLibft-progress.md`
+  - `.github/tracking/projects/currentLibft/currentLibft-reference.md`
+  - `.github/tracking/projects/currentLibft/integration-manifest.md`
+  - `.github/projects-index.md`
+  - `.github/QUICK_REFERENCE.md`
+  - `.github/project-history.md`
+- Notes:
+  - Se sincroniza tracking para reflejar contrato integrado `make/clean/
+    fclean/full` y politica operativa sin `chmod` automatico.
+
 ## 2026-04-07
 
 - Change type: minitalk-libft-full-build-and-api-rename

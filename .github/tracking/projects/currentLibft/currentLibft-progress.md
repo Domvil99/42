@@ -19,8 +19,10 @@ Cobertura funcional registrada (2026-04-05):
 ## Integration Gates
 
 1. Build gate:
-   - `make` en `42/C/currentLibft`.
-   - `make bonus` en `42/C/currentLibft`.
+    - `make`, `make clean`, `make fclean`, `make full` en
+       `42/C/currentLibft/libft`.
+    - `libft.a` integrada incluye base + internos (`ft_printf`,
+       `get_next_line`).
 2. Parity gate:
    - base libft sincronizada con `42/C/libft`.
 3. Style gate:
@@ -36,8 +38,13 @@ Cobertura funcional registrada (2026-04-05):
   - `.github/tracking/projects/currentLibft/integration-manifest.md`
   - `.github/projects-index.md`
   - `.github/project-history.md`
+- Regla operativa activa: `make` en currentLibft/libft realiza build completo
+   integrado, y `clean/fclean` limpian completamente `.o/.a` del arbol.
+- Politica activa: no usar `chmod` automatico en Makefiles.
 
 ## Change Log
 
+- 2026-04-15: gate de build actualizado a flujo integrado completo
+   (`make/clean/fclean/full`) con validacion local OK.
 - 2026-04-05: progreso actualizado con cobertura integrada detallada.
 - 2026-03-20: tracking inicial de progreso creado.

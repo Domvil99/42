@@ -236,11 +236,15 @@ realpath /home/domvil99/empresa/42/newLibft/Raiz
     4. Keep integrated child projects only under that local `libft/` when
        truly required by project architecture.
      5. Compilation order is mandatory:
-         - `make -C libft all` (mandatory libft),
-         - `make -C libft bonus` (bonus libft),
+         - `make -C libft` (build completo integrado por defecto),
+         - opcional explicito: `make -C libft full`,
          - then compile project mandatory target.
      6. Baseline rule: all libft functions (mandatory + bonus) are available
          from project creation; do not exclude bonus functions.
+
+Makefile policy note:
+- Avoid automated `chmod` in Makefiles. If permission fixes are needed,
+  execute them manually unless the subject explicitly requires automation.
 
 ### When a new project is added under `42/C/`
 - `.github/projects-index.md`

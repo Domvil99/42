@@ -1,27 +1,39 @@
 # Workblock Pending Status
 
-Date: 2026-04-14
-Block: Markdown system sweep + fractol tracking sync
+Date: 2026-04-15
+Block: currentLibft full-contract hardening + replica mandatory alignment
 
 ## Repo entrega C (42/C/)
 
 Pending changes:
-- none
+- `42/C/currentLibft/libft/Makefile`
+- `42/C/currentLibft/libft/ft_printf/Makefile`
+- `42/C/currentLibft/libft/get_next_line/Makefile`
+- `42/C/fract'ol/Makefile`
+- `42/C/fract'ol/README.md`
+- Makefile y snapshot local de libft del proyecto réplica mandatory
 
 ## Repo workspace Raiz
 
 Pending changes:
-- `.github/reports/workblock-pending-status.md` (snapshot final del bloque)
+- `.github/tracking/projects/currentLibft/currentLibft-functions.md`
+- `.github/tracking/projects/currentLibft/currentLibft-progress.md`
+- `.github/tracking/projects/currentLibft/currentLibft-reference.md`
+- `.github/tracking/projects/currentLibft/integration-manifest.md`
+- `.github/projects-index.md`
+- `.github/QUICK_REFERENCE.md`
+- `.github/project-history.md`
+- `.github/reports/workblock-pending-status.md`
 
 ## Closure
 
-- Scope: sincronizar documentación global y tracking de fract'ol con el
-  estado real validado de compilación y normas.
+- Scope: aplicar contrato unificado para que currentLibft compile/limpie todo
+  el arbol integrado por defecto y alinear proyectos consumidores a ese flujo.
 - Validation target:
-  - inventario canónico de PDFs actualizado a 2026-04-14.
-  - snapshot de pendientes alineado al bloque actual.
-  - tracking de fract'ol ajustado a evidencias de build/norminette.
-  - barrida final de `.md` sin registro de rutas descartadas.
-- Delivery repo commit: already synced (`42/C` sin cambios documentales nuevos).
-- Workspace repo commit: local commit creado, pendiente aprobación/push.
+  - `make`, `make clean`, `make fclean`, `make full` OK en currentLibft/libft.
+  - mandatory del proyecto réplica compilando tras `make -C libft full`.
+  - política activa sin `chmod` automático en Makefiles.
+  - barrida `.md` sin registro explícito de rutas descartadas.
+- Delivery repo commit: pending.
+- Workspace repo commit: pending.
 

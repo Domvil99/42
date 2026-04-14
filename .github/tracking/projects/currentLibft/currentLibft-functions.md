@@ -47,11 +47,22 @@ Headers base:
 - La base `currentLibft/libft` mantiene paridad funcional de la libft base
   y agrega modulos integrados en subdirectorios hijos.
 
+## Build Contract (2026-04-15)
+
+- `make` en `currentLibft/libft` ejecuta build integrado completo.
+- Build completo = base mandatory + base bonus + internos (`ft_printf` y
+  `get_next_line`) mandatory + bonus + empaquetado en una sola `libft.a`.
+- `make clean` y `make fclean` ejecutan limpieza completa y eliminan residuos
+  `.o` y `.a` del arbol integrado.
+- No se automatiza `chmod` en Makefiles; si se necesita, se ejecuta manualmente
+  salvo exigencia explicita del subject.
+
 ## Source of Truth
 
 - `.github/tracking/projects/currentLibft/integration-manifest.md`
 
 ## Change Log
 
+- 2026-04-15: contrato de build/clean unificado en `make/clean/fclean/full`.
 - 2026-04-05: ampliado detalle de fuentes/APIs integradas para reutilizacion.
 - 2026-03-20: tracking inicial generado.

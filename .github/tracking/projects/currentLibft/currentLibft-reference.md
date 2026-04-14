@@ -34,7 +34,14 @@ API complementaria disponible por headers integrados:
 Configuracion relevante para reutilizacion:
 - get_next_line mandatory: `BUFFER_SIZE=1024`
 - get_next_line bonus: `BUFFER_SIZE=42`, `OPEN_MAX=1024`
-- Build base libft: `make` (mandatory) y `make bonus` (listas bonus)
+- Build base libft:
+  - `make` => build completo integrado (base + internos)
+  - `make clean` / `make fclean` => limpieza completa integrada
+  - `make full` => alias explicito de build completo
+
+Politica operativa:
+- No usar `chmod` automatico en Makefiles. Si se requiere, ejecutar manualmente
+  salvo que el subject lo exija de forma explicita.
 
 ## Validation Order
 
@@ -46,8 +53,8 @@ Configuracion relevante para reutilizacion:
 ## Quick Checks
 
 ```bash
-cd 42/C/currentLibft
-make && make bonus
+cd 42/C/currentLibft/libft
+make && make clean && make fclean && make full
 ```
 
 Chequeo recomendado de headers integrados:
@@ -59,5 +66,6 @@ ls ft_printf/*.h get_next_line/*.h libft*.h
 
 ## Change Log
 
+- 2026-04-15: referencia alineada a contrato de build completo por defecto.
 - 2026-04-05: ampliada referencia de API integrada y configuraciones runtime.
 - 2026-03-20: referencia inicial creada.

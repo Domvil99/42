@@ -35,6 +35,11 @@ Para seguimiento tecnico, el workspace mantiene tres variantes activas:
 Regla de sincronizacion: libft1 y libft2 comparten base de headers y
 funcionalidad; current replica la base de libft1 e integra modulos hijos.
 
+Regla de bootstrap activa (2026-04-15): cada nuevo proyecto que use libft
+debe copiar snapshot local desde `42/C/currentLibft/libft` a
+`42/C/<project>/libft` y compilar esa libft local completa antes del target
+mandatory del proyecto.
+
 ## Update Rules
 
 1. Add one row when a new project directory is created.
