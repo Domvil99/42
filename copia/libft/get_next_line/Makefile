@@ -38,9 +38,9 @@ $(MAND_AR): $(OBJ)
 	$(RM) $(MAND_AR)
 	$(AR) $(MAND_AR) $(OBJ)
 
-$(BONUS_AR): $(BONUS_OBJ)
+$(BONUS_AR): $(OBJ) $(BONUS_OBJ)
 	$(RM) $(BONUS_AR)
-	$(AR) $(BONUS_AR) $(BONUS_OBJ)
+	$(AR) $(BONUS_AR) $(OBJ) $(BONUS_OBJ)
 
 $(OBJ): %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

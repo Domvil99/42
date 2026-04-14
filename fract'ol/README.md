@@ -19,9 +19,6 @@ Ejecutar Mandelbrot:
 Ejecutar Julia (ejemplo):
 
 ./fractol julia -0.7 0.27015
-chmod +x
-chmod 000 carpeta
-chmod 755 carpeta
 
 Controles:
 

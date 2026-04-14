@@ -26,7 +26,6 @@ $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR) full
 
 $(MLX):
-	if [ -f $(MLX_DIR)/configure ]; then chmod +x $(MLX_DIR)/configure; fi
 	$(MAKE) -C $(MLX_DIR)
 
 $(NAME): $(OBJS) $(LIBFT) $(MLX)
@@ -43,7 +42,6 @@ clean:
 	rm -f $(BONUS_OBJS)
 	$(MAKE) -C $(LIBFT_DIR) clean_full
 	find $(LIBFT_DIR) -type f -name '*.o' -delete
-	if [ -f $(MLX_DIR)/configure ]; then chmod +x $(MLX_DIR)/configure; fi
 	if [ -f $(MLX_DIR)/makefile.gen ]; then $(MAKE) -C $(MLX_DIR) clean; fi
 
 fclean: clean

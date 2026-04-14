@@ -24,8 +24,6 @@ BONUS_SRC = ft_printf_bonus.c handle_format_bonus.c parse_format_bonus.c \
 OBJ         = $(SRC:.c=.o)
 BONUS_OBJ   = $(BONUS_SRC:.c=.o)
 
-LIBFT       = ../libft.a
-
 CC          = cc
 CFLAGS      = -Wall -Wextra -Werror
 BONUS_CFLAGS= $(CFLAGS) -DFT_PRINTF_BONUS
@@ -40,16 +38,13 @@ $(NAME): $(MAND_AR)
 bonus: $(BONUS_AR)
 	@cmp -s $(BONUS_AR) $(NAME) || cp $(BONUS_AR) $(NAME)
 
-$(LIBFT):
-	make -C ..
-
-$(MAND_AR): $(OBJ) $(LIBFT)
+$(MAND_AR): $(OBJ)
 	$(RM) $(MAND_AR)
-	$(AR) $(MAND_AR) $(OBJ) $(LIBFT)
+	$(AR) $(MAND_AR) $(OBJ)
 
-$(BONUS_AR): $(BONUS_OBJ) $(LIBFT)
+$(BONUS_AR): $(OBJ) $(BONUS_OBJ)
 	$(RM) $(BONUS_AR)
-	$(AR) $(BONUS_AR) $(BONUS_OBJ) $(LIBFT)
+	$(AR) $(BONUS_AR) $(OBJ) $(BONUS_OBJ)
 
 $(OBJ): %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -60,11 +55,9 @@ $(BONUS_OBJ): %.o: %.c
 # Limpieza
 clean:
 	$(RM) *.o $(OBJ) $(BONUS_OBJ)
-	make clean -C ..
 
 fclean: clean
 	$(RM) $(NAME) $(MAND_AR) $(BONUS_AR)
-	make fclean -C ..
 
 re: fclean all
 

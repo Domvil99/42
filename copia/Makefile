@@ -16,8 +16,7 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(LIBFT):
-	$(MAKE) -C $(LIBFT_DIR) all
-	$(MAKE) -C $(LIBFT_DIR) bonus
+	$(MAKE) -C $(LIBFT_DIR) full
 
 $(MLX):
 	$(MAKE) -C $(MLX_DIR)
@@ -30,13 +29,13 @@ $(NAME): $(OBJS) $(LIBFT) $(MLX)
 
 clean:
 	rm -f $(OBJS)
-	$(MAKE) -C $(LIBFT_DIR) clean
+	$(MAKE) -C $(LIBFT_DIR) clean_full
 	find $(LIBFT_DIR) -type f -name '*.o' -delete
-	$(MAKE) -C $(MLX_DIR) clean
+	if [ -f $(MLX_DIR)/makefile.gen ]; then $(MAKE) -C $(MLX_DIR) clean; fi
 
 fclean: clean
 	rm -f $(NAME)
-	$(MAKE) -C $(LIBFT_DIR) fclean
+	$(MAKE) -C $(LIBFT_DIR) fclean_full
 	find $(LIBFT_DIR) -type f -name '*.a' -delete
 
 re: fclean all

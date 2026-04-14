@@ -16,6 +16,8 @@ CFLAGS = -Wall -Werror -Wextra
 AR = ar rcs
 RM = rm -f
 BONUS_MARK = .bonus
+INTERNAL_DIRS = ft_printf get_next_line
+INTERNAL_LIBS = ft_printf/libftprintf.a get_next_line/libftgnl.a
 
 SRC = ft_strlen.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_toupper.c ft_tolower.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
@@ -31,21 +33,66 @@ BONUS_SRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
-all: $(NAME)
+all: full
+
+mandatory: $(NAME)
 
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
-bonus: $(NAME) $(BONUS_MARK)
+bonus: mandatory $(BONUS_MARK)
 
 $(BONUS_MARK): $(BONUS_OBJ)
 	$(AR) $(NAME) $(BONUS_OBJ)
 	@touch $(BONUS_MARK)
 
-clean:
+local_clean:
 	$(RM) $(OBJ) $(BONUS_OBJ) $(BONUS_MARK)
 
-fclean: clean
+local_fclean: local_clean
 	$(RM) $(NAME) $(BONUS_MARK)
 
 re: fclean all
+
+internal_all:
+	@for dir in $(INTERNAL_DIRS); do \
+		$(MAKE) -C $$dir all || exit 1; \
+	done
+
+internal_bonus: internal_all
+	@for dir in $(INTERNAL_DIRS); do \
+		$(MAKE) -C $$dir bonus || exit 1; \
+	done
+
+pack_internal: mandatory internal_bonus
+	@for lib in $(INTERNAL_LIBS); do \
+		if [ -f $$lib ]; then \
+			for obj in $$(ar t $$lib); do \
+				ar x $$lib $$obj; \
+			done; \
+		fi; \
+	done
+	@objs="$$(ls -1 *.o 2>/dev/null)"; \
+	if [ -n "$$objs" ]; then \
+		$(AR) $(NAME) $$objs; \
+	fi
+
+full: mandatory bonus internal_all internal_bonus pack_internal
+
+clean_full: local_clean
+	@for dir in $(INTERNAL_DIRS); do \
+		$(MAKE) -C $$dir clean || exit 1; \
+	done
+	@find . -type f -name '*.o' -delete
+
+fclean_full: clean_full local_fclean
+	@for dir in $(INTERNAL_DIRS); do \
+		$(MAKE) -C $$dir fclean || exit 1; \
+	done
+	@find . -type f -name '*.a' -delete
+
+clean: clean_full
+
+fclean: fclean_full
+
+.PHONY: all bonus clean fclean re internal_all internal_bonus pack_internal full clean_full fclean_full
