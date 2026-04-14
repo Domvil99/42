@@ -3,7 +3,7 @@
 Purpose: definir una referencia canonica por proyecto en `42/PDFs/` y
 evitar confusion entre versiones historicas y versiones vigentes.
 
-## Canonical Set (2026-03-13)
+## Canonical Set (2026-04-14)
 
 | Project | Canonical spec | Legacy files kept | Status | Notes |
 |---|---|---|---|---|
@@ -11,6 +11,8 @@ evitar confusion entre versiones historicas y versiones vigentes.
 | ft_printf | `42/PDFs/2026-03-12_ft_printf.txt` | (none) | OK | Canonical vigente.
 | get_next_line | `42/PDFs/2026-03-12_get_next_line.txt` | (none) | OK | Canonical vigente.
 | push_swap | `42/PDFs/2026-03-13_push_swap.txt` | `42/PDFs/2026-03-13_push_swap_actualizado.txt` | DONE | Source original en inglés fijado como base canónica para implementación/validación.
+| minitalk | `42/PDFs/2026-04-05_minitalk.txt` | (none) | OK | Canonical vigente.
+| fract'ol | `42/PDFs/2026-04-14_fract'ol.txt` | (none) | OK | Canonical vigente.
 
 ## Operational Rule
 
@@ -19,8 +21,8 @@ evitar confusion entre versiones historicas y versiones vigentes.
 3. Ninguna traduccion nueva se cierra sin source oficial disponible y
    revision de usuario (`REVIEW_PENDING` -> `DONE`).
 
-## Next Action (push_swap)
+## Next Action
 
-1. Continuar con ACK de Chat2 en H-009 o H-011 segun prioridad de ejecucion.
-2. Mantener `2026-03-13_push_swap.txt` como referencia canónica vigente.
-3. Registrar cualquier futura revision en project-history antes de reemplazar el canonical.
+1. Registrar en `project-history.md` cualquier nuevo spec importado antes de
+   actualizar este inventario.
+2. Mantener una sola referencia canónica activa por proyecto.

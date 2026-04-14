@@ -2,10 +2,9 @@
 
 ## Build order
 
-1. make -C libft all
-2. make -C libft bonus
-3. make fractol mandatory
-4. (future) make bonus
+1. make -C libft full
+2. make fractol (mandatory)
+3. make bonus
 
 ## Fractal formulas
 
@@ -21,6 +20,7 @@
 - ESC: cerrar programa
 - Window close (X): cerrar programa
 - Mouse wheel up/down: zoom in/out
+- C: cambiar paleta
 - CLI invalida: mostrar ayuda y terminar correctamente
 
 ## Notes
@@ -28,3 +28,4 @@
 - Sin variables globales.
 - Render obligatorio mediante imagen MiniLibX.
 - Color por profundidad de iteracion.
+- Validacion grafica completa requiere entorno con display X11 activo.

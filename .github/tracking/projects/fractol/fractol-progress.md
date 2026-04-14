@@ -4,7 +4,7 @@
 
 - Project: 42/C/fract'ol
 - Stage: in-progress
-- Scope: mandatory only
+- Scope: mandatory + bonus base integrada
 
 ## Gates
 
@@ -16,19 +16,21 @@
 2. Functional
 - [x] Parseo CLI base implementado
 - [x] Estructura de render y eventos implementada
-- [ ] Build completo de fractol en entorno local
-- [ ] Smoke test mandelbrot
-- [ ] Smoke test julia
+- [x] Build completo de fractol en entorno local (`make`, `make re`, `make bonus`)
+- [ ] Smoke test mandelbrot con display X11 activo
+- [ ] Smoke test julia con display X11 activo
+- [x] Smoke test CLI sin argumentos / argumentos invalidos
 
 3. Memory/stability
-- [ ] Verificacion de salida limpia por ESC
-- [ ] Verificacion de salida limpia por cierre de ventana
-- [ ] Verificacion de leaks
+- [ ] Verificacion de salida limpia por ESC (sesion grafica)
+- [ ] Verificacion de salida limpia por cierre de ventana (sesion grafica)
+- [ ] Verificacion de leaks en sesion grafica
 
 4. Norminette (final)
-- [ ] Cabeceras 42 en archivos de fractol
-- [ ] Barrido final norminette sin errores
+- [x] Cabeceras 42 en archivos de fractol
+- [x] Barrido final norminette sin errores (`Error:`)
 
 ## Known blocker
 
-- MiniLibX no compila por dependencia de includes X11 ausentes en el sistema local.
+- Validacion grafica interactiva depende de sesion X11 activa; en entorno
+	headless solo se puede cerrar la validacion de build/CLI/norminette.

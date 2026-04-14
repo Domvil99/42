@@ -50,6 +50,22 @@ Validation order for all projects:
     libft.
   - No se excluyen funciones bonus de la disponibilidad base del proyecto.
 
+- Change type: markdown-system-sweep
+- Paths changed:
+  - `.github/reports/pdfs-canonical-inventory.md`
+  - `.github/reports/workblock-pending-status.md`
+  - `.github/tracking/projects/fractol/`
+  - `42/C/fract'ol/README.md`
+  - `42/tests/tests_fractol/README.md`
+- Notes:
+  - Se actualiza el inventario canónico de PDFs incluyendo `minitalk` y
+    `fract'ol`.
+  - Se sincroniza el snapshot de pendientes con el bloque actual y el estado
+    real de repos.
+  - Se alinea tracking de `fract'ol` a validaciones recientes de
+    compilación/norminette y a la limitación de entorno X11 para smoke visual.
+  - Se aplica barrida documental para mantener trazabilidad limpia de rutas.
+
 ## 2026-04-07
 
 - Change type: minitalk-libft-full-build-and-api-rename

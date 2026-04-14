@@ -18,9 +18,14 @@ Incluye Mandelbrot y Julia, zoom por rueda y cierre limpio.
 
 ## Mandatory Status
 
-- Parseo CLI: in-progress
-- Render Mandelbrot: in-progress
-- Render Julia: in-progress
-- Zoom wheel: in-progress
-- Cierre limpio (ESC/cross): in-progress
-- Colores por profundidad: in-progress
+- Parseo CLI: implemented
+- Render Mandelbrot: implemented (pendiente smoke visual en X11)
+- Render Julia: implemented (pendiente smoke visual en X11)
+- Zoom wheel: implemented (pendiente smoke visual en X11)
+- Cierre limpio (ESC/cross): implemented (pendiente smoke visual en X11)
+- Colores por profundidad: implemented
+
+## Bonus Status
+
+- Estructura bonus separada (`*_bonus.c` / `*_bonus.h`): implemented
+- Build target `make bonus`: implemented
