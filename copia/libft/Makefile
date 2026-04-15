@@ -18,6 +18,7 @@ RM = rm -f
 BONUS_MARK = .bonus
 INTERNAL_DIRS = ft_printf get_next_line
 INTERNAL_LIBS = ft_printf/libftprintf.a get_next_line/libftgnl.a
+PACK_TMP = .pack_tmp
 
 SRC = ft_strlen.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_toupper.c ft_tolower.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
@@ -65,17 +66,18 @@ internal_bonus: internal_all
 	done
 
 pack_internal: mandatory internal_bonus
+	@mkdir -p $(PACK_TMP)
 	@for lib in $(INTERNAL_LIBS); do \
 		if [ -f $$lib ]; then \
-			for obj in $$(ar t $$lib); do \
-				ar x $$lib $$obj; \
-			done; \
+			(cd $(PACK_TMP) && ar x ../$$lib) || exit 1; \
 		fi; \
 	done
-	@objs="$$(ls -1 *.o 2>/dev/null)"; \
-	if [ -n "$$objs" ]; then \
-		$(AR) $(NAME) $$objs; \
+	@if ls $(PACK_TMP)/*.o >/dev/null 2>&1; then \
+		$(AR) $(NAME) $(OBJ) $(BONUS_OBJ) $(PACK_TMP)/*.o; \
+	else \
+		$(AR) $(NAME) $(OBJ) $(BONUS_OBJ); \
 	fi
+	@$(RM) -r $(PACK_TMP)
 
 full: mandatory bonus internal_all internal_bonus pack_internal
 
@@ -83,12 +85,14 @@ clean_full: local_clean
 	@for dir in $(INTERNAL_DIRS); do \
 		$(MAKE) -C $$dir clean || exit 1; \
 	done
+	@$(RM) -r $(PACK_TMP)
 	@find . -type f -name '*.o' -delete
 
 fclean_full: clean_full local_fclean
 	@for dir in $(INTERNAL_DIRS); do \
 		$(MAKE) -C $$dir fclean || exit 1; \
 	done
+	@$(RM) -r $(PACK_TMP)
 	@find . -type f -name '*.a' -delete
 
 clean: clean_full
