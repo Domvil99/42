@@ -96,6 +96,18 @@ Validation order for all projects:
   - Se sincroniza tracking para reflejar contrato integrado `make/clean/
     fclean/full` y politica operativa sin `chmod` automatico.
 
+- Change type: current-libft-object-locality-fix
+- Paths changed:
+  - `42/C/currentLibft/libft/Makefile`
+  - `42/C/currentLibft/libft/ft_printf/Makefile`
+  - `42/C/currentLibft/libft/get_next_line/Makefile`
+  - `42/C/fract'ol/libft/Makefile`
+- Notes:
+  - Se corrige empaquetado interno para evitar extraccion de objetos de
+    modulos internos en la raiz de `libft`.
+  - `libft.a` mantiene inclusion completa de base mandatory/bonus y modulos
+    internos, respetando ubicacion correcta de artefactos.
+
 ## 2026-04-07
 
 - Change type: minitalk-libft-full-build-and-api-rename

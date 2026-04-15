@@ -54,6 +54,8 @@ Headers base:
   `get_next_line`) mandatory + bonus + empaquetado en una sola `libft.a`.
 - `make clean` y `make fclean` ejecutan limpieza completa y eliminan residuos
   `.o` y `.a` del arbol integrado.
+- El empaquetado de internos usa temporal aislado (`.pack_tmp`) para evitar
+  generar `.o` de modulos internos en la raiz de `libft`.
 - No se automatiza `chmod` en Makefiles; si se necesita, se ejecuta manualmente
   salvo exigencia explicita del subject.
 
@@ -63,6 +65,8 @@ Headers base:
 
 ## Change Log
 
+- 2026-04-15: corregido `pack_internal` para mantener objetos internos fuera
+  de la raiz de `libft`.
 - 2026-04-15: contrato de build/clean unificado en `make/clean/fclean/full`.
 - 2026-04-05: ampliado detalle de fuentes/APIs integradas para reutilizacion.
 - 2026-03-20: tracking inicial generado.

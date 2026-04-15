@@ -42,6 +42,8 @@ Configuracion relevante para reutilizacion:
 Politica operativa:
 - No usar `chmod` automatico en Makefiles. Si se requiere, ejecutar manualmente
   salvo que el subject lo exija de forma explicita.
+- Durante integracion de modulos internos, los `.o` extraidos para empaquetado
+  deben vivir solo en temporal aislado y no en la raiz de `libft`.
 
 ## Validation Order
 
@@ -66,6 +68,7 @@ ls ft_printf/*.h get_next_line/*.h libft*.h
 
 ## Change Log
 
+- 2026-04-15: agregada regla de ubicacion de objetos internos en empaquetado.
 - 2026-04-15: referencia alineada a contrato de build completo por defecto.
 - 2026-04-05: ampliada referencia de API integrada y configuraciones runtime.
 - 2026-03-20: referencia inicial creada.

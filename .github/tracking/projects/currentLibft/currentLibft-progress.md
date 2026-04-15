@@ -23,6 +23,8 @@ Cobertura funcional registrada (2026-04-05):
        `42/C/currentLibft/libft`.
     - `libft.a` integrada incluye base + internos (`ft_printf`,
        `get_next_line`).
+    - Validacion de artefactos: sin `.o` internos en raiz de `libft` tras
+       `make full`.
 2. Parity gate:
    - base libft sincronizada con `42/C/libft`.
 3. Style gate:
@@ -44,6 +46,8 @@ Cobertura funcional registrada (2026-04-05):
 
 ## Change Log
 
+- 2026-04-15: validado fix de localizacion de objetos internos (`.o`) para
+   evitar contaminacion de la raiz de `libft`.
 - 2026-04-15: gate de build actualizado a flujo integrado completo
    (`make/clean/fclean/full`) con validacion local OK.
 - 2026-04-05: progreso actualizado con cobertura integrada detallada.

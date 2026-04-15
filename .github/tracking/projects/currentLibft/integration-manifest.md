@@ -103,6 +103,8 @@ Consolidated index of modules integrated into `42/C/currentLibft/libft`.
 
 - `make` ejecuta build integrado completo por defecto.
 - `clean` y `fclean` limpian todo el arbol integrado (`.o` y `.a`).
+- El empaquetado de modulos internos usa temporal y evita dejar `.o` en la
+  raiz de `libft`.
 - No se automatiza `chmod` en Makefiles.
 
 ## Notes
