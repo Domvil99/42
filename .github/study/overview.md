@@ -24,6 +24,7 @@ Excepcion operativa activa:
 - `currentLibft` (in-progress)
 - `push_swap` (in-progress)
 - `minitalk` (closed)
+- `fractol` (closed)
 
 ## Mandatory Structure Rules
 
@@ -87,3 +88,5 @@ Para considerar un reporte como "completo", debe incluir:
    `foundations-nodes-lists.md` para proyectos con listas enlazadas.
 - 2026-04-05: agregado modulo `minitalk` con reporte base de estudio,
    implementacion, validacion, defensa, diccionario y sesion inicial.
+- 2026-04-16: agregado modulo `fractol` con reporte base de estudio,
+  implementacion, validacion, defensa, diccionario y sesion inicial.
