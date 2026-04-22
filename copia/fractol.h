@@ -41,11 +41,11 @@ typedef struct s_complex
 
 typedef struct s_img
 {
-	void	*ptr;
-	char	*addr;
-	int		bpp;
-	int		line_len;
-	int		endian;
+	void	*ptr; 
+	char	*addr; //puntero al buffer de la imagen
+	int		bpp; // bits por pixel
+	int		line_len;  // bits por linea de la imagen 
+	int		endian; // orden de bits 0 pequeño 1 big
 }	t_img;
 
 typedef struct s_view
@@ -58,14 +58,14 @@ typedef struct s_view
 
 typedef struct s_app
 {
-	void		*mlx;
-	void		*win;
-	t_img		img;
-	t_view		view;
-	t_fractal	fractal;
-	t_complex	julia_c;
-	int			max_iter;
-	int			palette_shift;
+	void		*mlx; //punteros MLX
+	void		*win;	// 
+	t_img		img;	// buffer de imagen
+	t_view		view;	//vista del plano complejo
+	t_fractal	fractal; //tipo de fractal activo
+	t_complex	julia_c;	//constante de Julia
+	int			max_iter; // iteraciones máximas
+	int			palette_shift; //desplazamiento de paleta
 }	t_app;
 
 int		parse_args(t_app *app, int argc, char **argv);

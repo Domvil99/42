@@ -41,10 +41,10 @@ static int	init_image(t_app *app)
 int	init_app(t_app *app)
 {
 	set_defaults(app);
-	app->mlx = mlx_init();
+	app->mlx = mlx_init(); // Inicializa la conexión con el servidor gráfico X11.
 	if (!app->mlx)
 		return (0);
-	app->win = mlx_new_window(app->mlx, WIDTH, HEIGHT, "fractol");
+	app->win = mlx_new_window(app->mlx, WIDTH, HEIGHT, "fractol"); // Crea una ventana REAL en tu pantalla usando X11 de tamaño WIDTH x HEIGHT.
 	if (!app->win)
 		destroy_and_exit(app, 1);
 	if (!init_image(app))
@@ -60,7 +60,7 @@ void	destroy_and_exit(t_app *app, int code)
 		mlx_destroy_window(app->mlx, app->win);
 	if (app->mlx)
 	{
-		mlx_destroy_display(app->mlx);
+		mlx_destroy_display(app->mlx); //Cierra la conexión con el servidor gráfico X11.
 		free(app->mlx);
 	}
 	exit(code);

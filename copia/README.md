@@ -20,6 +20,11 @@ Ejecutar Julia (ejemplo):
 
 ./fractol julia -0.7 0.27015
 
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./fractol mandelbrot
+
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes ./fractol mandelbrot
+
+
 Controles:
 
 - ESC: cerrar
