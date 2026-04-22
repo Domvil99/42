@@ -57,7 +57,28 @@ Pipeline de ejecucion:
 3. costo alto por pixel con iteraciones elevadas,
 4. errores de liberacion de recursos MLX.
 
-## 6. Ruta de lectura recomendada
+## 6. Constantes y defaults reales
+
+Valores actuales en el codigo de /fractol:
+
+- WIDTH = 900
+- HEIGHT = 700
+- MAX_ITER inicial = 80
+- view inicial:
+	- min_re = -2.0
+	- max_re = 2.0
+	- min_im = -1.6
+	- max_im = 1.6
+- palette_shift inicial = 0
+- escape interno: (z.re^2 + z.im^2) <= 4.0
+
+Colorizacion actual (fractal_calc.c):
+
+- r = (iter * 9 + shift) % 255
+- g = (iter * 7 + shift * 2) % 255
+- b = (iter * 13 + shift * 3) % 255
+
+## 7. Ruta de lectura recomendada
 
 1. fractol.md (este archivo)
 2. implementation.md
@@ -69,3 +90,5 @@ Pipeline de ejecucion:
 ## Change Log
 
 - 2026-04-16: creacion inicial del reporte de estudio para fractol.
+- 2026-04-18: agregado bloque de constantes/defaults reales y detalle exacto
+	de escape y colorizacion segun codigo actual.

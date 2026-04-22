@@ -40,6 +40,11 @@ Es contar cuantas iteraciones aguanta un punto antes de escapar.
 En este sistema iterativo, si |z| > 2, el valor crecera sin limite en
 iteraciones siguientes.
 
+Nota tecnica del codigo real:
+
+- En implementacion se comprueba (z.re * z.re + z.im * z.im) <= 4.0.
+- Es equivalente matematicamente a comprobar |z| <= 2.
+
 ## Buenas practicas basicas
 
 1. separar parseo, init, calculo y eventos,
