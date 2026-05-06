@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saospina <saospina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/14 17:23:00 by saospina          #+#    #+#             */
-/*   Updated: 2026/04/14 17:23:00 by saospina         ###   ########.fr       */
+/*   Created: 2026/04/14 17:23:41 by saospina          #+#    #+#             */
+/*   Updated: 2026/04/14 17:31:19 by saospina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	render_fractal(t_app *app)
 		}
 		y++;
 	}
-	mlx_put_image_to_window(app->mlx, app->win, app->img.ptr, 0, 0);
+	mlx_put_image_to_window(app->mlx, app->win, app->img.ptr, 0, 0); //Dibuja la imagen en la ventana
 }
 
 void	zoom_view(t_app *app, double factor, int x, int y)

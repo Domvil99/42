@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saospina <saospina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/14 17:21:00 by saospina          #+#    #+#             */
-/*   Updated: 2026/04/14 17:21:00 by saospina         ###   ########.fr       */
+/*   Created: 2026/04/14 17:35:21 by saospina          #+#    #+#             */
+/*   Updated: 2026/05/03 10:29:17 by saospina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	parse_julia(t_app *app, int argc, char **argv)
 
 	if (argc != 4)
 		return (0);
-	ok_re = 0; //debo de preguntar 
+	ok_re = 0; 
 	ok_im = 0;
 	app->fractal = FRACTAL_JULIA;
 	app->julia_c.re = ft_atod(argv[2], &ok_re);
@@ -39,7 +39,7 @@ int	parse_args(t_app *app, int argc, char **argv)
 	if (is_same(argv[1], "mandelbrot") && argc == 2)
 	{
 		app->fractal = FRACTAL_MANDELBROT;
-		app->julia_c.re = 0.0; //debo de preguntar
+		app->julia_c.re = 0.0;
 		app->julia_c.im = 0.0;
 		return (1);
 	}

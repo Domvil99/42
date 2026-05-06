@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saospina <saospina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/14 17:13:00 by saospina          #+#    #+#             */
-/*   Updated: 2026/04/14 17:13:00 by saospina         ###   ########.fr       */
+/*   Created: 2026/04/14 17:13:15 by saospina          #+#    #+#             */
+/*   Updated: 2026/04/14 17:16:52 by saospina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ static void	set_defaults(t_app *app)
 
 static int	init_image(t_app *app)
 {
-	app->img.ptr = mlx_new_image(app->mlx, WIDTH, HEIGHT);
+	app->img.ptr = mlx_new_image(app->mlx, WIDTH, HEIGHT); // Crea una imagen vacía en memoria donde dibujaremos los píxeles del fractal.
 	if (!app->img.ptr)
 		return (0);
-	app->img.addr = mlx_get_data_addr(app->img.ptr, &app->img.bpp,
-			&app->img.line_len, &app->img.endian);
+	app->img.addr = mlx_get_data_addr(app->img.ptr, &app->img.bpp, 
+			&app->img.line_len, &app->img.endian);// Devuelve el puntero al buffer de píxeles de la imagen para poder escribir colores.
 	if (!app->img.addr)
 		return (0);
 	return (1);
@@ -44,7 +44,7 @@ int	init_app(t_app *app)
 	app->mlx = mlx_init(); // Inicializa la conexión con el servidor gráfico X11.
 	if (!app->mlx)
 		return (0);
-	app->win = mlx_new_window(app->mlx, WIDTH, HEIGHT, "fractol"); // Crea una ventana REAL en tu pantalla usando X11 de tamaño WIDTH x HEIGHT.
+	app->win = mlx_new_window(app->mlx, WIDTH, HEIGHT, "fractol"); // Crea una ventana REAL en tu pantalla usando X11 
 	if (!app->win)
 		destroy_and_exit(app, 1);
 	if (!init_image(app))

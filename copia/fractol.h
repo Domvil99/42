@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saospina <saospina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/14 17:11:00 by saospina          #+#    #+#             */
-/*   Updated: 2026/04/14 17:19:00 by saospina         ###   ########.fr       */
+/*   Created: 2026/04/14 17:12:41 by saospina          #+#    #+#             */
+/*   Updated: 2026/04/14 17:19:13 by saospina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <math.h>
-# include "minilibx-linux/minilibx-linux/mlx.h"
+# include "minilibx-linux/mlx.h"
 # include "libft/libft.h"
 
 # define WIDTH 900
 # define HEIGHT 700
-# define MAX_ITER 80
+# define MAX_ITER 120
 # define KEY_ESC 65307
 # define KEY_C 99
 # define EVT_DESTROY 17
@@ -37,7 +36,7 @@ typedef struct s_complex
 {
 	double	re;
 	double	im;
-}	t_complex;
+}	t_complex; //Un punto del plano complejo (Cálculo del fractal)
 
 typedef struct s_img
 {
@@ -54,7 +53,7 @@ typedef struct s_view
 	double	max_re;
 	double	min_im;
 	double	max_im;
-}	t_view;
+}	t_view; // Un área completa del plano complejo (camara, zoom, vista);
 
 typedef struct s_app
 {
