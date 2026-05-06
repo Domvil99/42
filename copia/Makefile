@@ -4,7 +4,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
-MLX_DIR = minilibx-linux/minilibx-linux
+MLX_DIR = minilibx-linux
 MLX = $(MLX_DIR)/libmlx.a
 
 INCLUDES = -I. -I$(LIBFT_DIR) -I$(MLX_DIR)
