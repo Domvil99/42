@@ -3,7 +3,7 @@
 ## Current Status
 
 Proyecto: `42/C/push_swap`
-Estado: in-progress
+Estado: completed
 
 ## Milestones
 

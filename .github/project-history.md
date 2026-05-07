@@ -11,6 +11,25 @@ Validation order for all projects:
 3. memory/stability.
 4. Norminette as final closing step.
 
+## 2026-05-08
+
+- Change type: push_swap-closure-final
+- Paths changed:
+  - `.github/tracking/projects/push_swap/push_swap-progress.md`
+  - `.github/projects-index.md`
+  - `.github/project-history.md`
+- Notes:
+  - Se completa cierre final de push_swap tras validacion Norminette exitosa (sin errores).
+  - Todas las quality gates cerradas: scope/spec OK, functional OK (benchmarks 100/500 validados), memory/stability OK, Norminette OK.
+  - Proyecto marcado como completed en tracking y indices globales.
+  - Pendiente: creacion de material de estudio bajo .github/study/push_swap/ y limpieza post-cierre (make fclean, git status limpio).
+
+- Change type: fractol-status-sync
+- Paths changed:
+  - `.github/projects-index.md`
+- Notes:
+  - Se sincroniza estado de fract'ol a completed en indice global tras validacion previa consolidada.
+
 ## 2026-04-14
 
 - Change type: fractol-spec-import
