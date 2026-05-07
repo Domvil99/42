@@ -28,4 +28,10 @@
 - Sin variables globales.
 - Render obligatorio mediante imagen MiniLibX.
 - Color por profundidad de iteracion.
+- Validaciones locales ya ejecutadas:
+  - `make fclean && make`: OK
+  - `make bonus`: OK
+  - CLI invalida en mandatory y bonus: ayuda correcta + `exit=1`
+  - Valgrind en CLI invalida mandatory/bonus: `ERROR SUMMARY: 0 errors`
+  - Norminette `*.c`/`*.h`: OK sin `Error:`
 - Validacion grafica completa requiere entorno con display X11 activo.

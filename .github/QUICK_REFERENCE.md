@@ -210,6 +210,14 @@ realpath /home/domvil99/empresa/42/newLibft/Raiz
 - `.github/study/push_swap/push_swap.md` (si hay cambios de arquitectura
     o estrategia)
 
+### When `42/C/fract'ol` changes
+- `.github/tracking/projects/fractol/fractol-functions.md`
+- `.github/tracking/projects/fractol/fractol-progress.md`
+- `.github/tracking/projects/fractol/fractol-reference.md`
+- `42/tests/tests_fractol/README.md`
+- `.github/projects-index.md`
+- `.github/project-history.md`
+
 ### currentLibft Integration Rule
 - `42/C/currentLibft` must keep a single parent `libft` at:
     - `42/C/currentLibft/libft`

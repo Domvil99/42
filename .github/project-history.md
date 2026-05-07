@@ -68,6 +68,28 @@ Validation order for all projects:
 
 ## 2026-04-15
 
+- Change type: fractol-technical-validation-cycle
+- Paths changed:
+  - `.github/tracking/projects/fractol/fractol-functions.md`
+  - `.github/tracking/projects/fractol/fractol-progress.md`
+  - `.github/tracking/projects/fractol/fractol-reference.md`
+  - `42/tests/tests_fractol/README.md`
+  - `.github/projects-index.md`
+  - `.github/project-history.md`
+- Notes:
+  - Se completa ciclo tecnico de validacion local de `fract'ol` separando
+    mandatory y bonus.
+  - Evidencia consolidada: `make fclean && make` OK, `make bonus` OK,
+    CLI invalida con ayuda correcta y `exit=1` en ambos binarios,
+    valgrind en rutas CLI invalidas con `ERROR SUMMARY: 0 errors`,
+    barrido norminette de `*.c`/`*.h` sin `Error:`, y smoke de arranque
+    con argumentos validos (`timeout`, `exit=124`) sin errores por stderr.
+  - Queda pendiente unicamente validacion grafica interactiva
+    (render/eventos/cierre en ventana) en sesion X11 estable.
+  - En el entorno actual no se detectaron herramientas de automatizacion
+    X11 (`xvfb-run`/`xdotool`) para disparar eventos de ventana de forma
+    reproducible desde terminal.
+
 - Change type: current-libft-build-contract-hardening
 - Paths changed:
   - `42/C/currentLibft/libft/Makefile`

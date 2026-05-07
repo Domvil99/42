@@ -18,7 +18,7 @@ Incluye Mandelbrot y Julia, zoom por rueda y cierre limpio.
 
 ## Mandatory Status
 
-- Parseo CLI: implemented
+- Parseo CLI: implemented y validado en casos invalidos
 - Render Mandelbrot: implemented (pendiente smoke visual en X11)
 - Render Julia: implemented (pendiente smoke visual en X11)
 - Zoom wheel: implemented (pendiente smoke visual en X11)
@@ -28,4 +28,6 @@ Incluye Mandelbrot y Julia, zoom por rueda y cierre limpio.
 ## Bonus Status
 
 - Estructura bonus separada (`*_bonus.c` / `*_bonus.h`): implemented
-- Build target `make bonus`: implemented
+- Build target `make bonus`: implemented y validado
+- Parseo CLI bonus: validado en casos invalidos
+- Estado memoria en rutas CLI invalidas: valgrind sin errores

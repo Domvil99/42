@@ -11,7 +11,7 @@ Purpose: central index for all projects under `42/` and their relation with `42/
 | get_next_line | 42/C/get_next_line | completed | no | Standalone deliverable; also integrated into currentLibft as child module |
 | push_swap | 42/C/push_swap | in-progress | yes | Proyecto standalone con estrategias small/chunk/radix |
 | minitalk | 42/C/minitalk | completed | yes | Comunicacion cliente-servidor por SIGUSR1/SIGUSR2; mandatory y bonus (ACK + UTF-8) implementados |
-| fract'ol | 42/C/fract'ol | in-progress | yes | Proyecto grafico MiniLibX: mandatory con Mandelbrot y Julia |
+| fract'ol | 42/C/fract'ol | in-progress | yes | Proyecto grafico MiniLibX: build mandatory/bonus, CLI, valgrind CLI y norminette OK; pendiente smoke visual interactivo X11 |
 | currentLibft | 42/C/currentLibft | in-progress | base | Integrated base: libft + ft_printf + get_next_line under `currentLibft/libft/`; base libft parity synced with libft1 on 2026-03-12 |
 | tests | 42/tests | in-progress | no | Contenedor unificado de carpetas de pruebas por proyecto |
 | testsLibf | 42/tests/testsLibf | completed | yes | Manual test programs for libft validation (maintained for regression) |
