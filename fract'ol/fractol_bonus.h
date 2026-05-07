@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <math.h>
-# include "minilibx-linux/minilibx-linux/mlx.h"
+# include "minilibx-linux/mlx.h"
 # include "libft/libft.h"
 
 # define WIDTH 900
