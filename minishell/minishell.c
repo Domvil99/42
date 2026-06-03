@@ -15,8 +15,8 @@
 int	main(int argc, char **argv, char **envp)
 {
 	t_shell	shell;
-	char	*input;
-	t_command *cmd;
+	char		*input;
+	t_command	*cmd;
 
 	(void)argc;
 	(void)argv;
@@ -32,7 +32,12 @@ int	main(int argc, char **argv, char **envp)
 			break;
 		if (*input)
 			add_history(input);
-		cmd = parse_input(input);
+		if (g_signal_received == SIGINT)
+		{
+			shell.exit_status = 130;
+			g_signal_received = 0;
+		}
+		cmd = parse_input(input, &shell);
 		if (cmd)
 			execute_commands(&shell, cmd);
 		free(input);

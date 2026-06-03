@@ -21,7 +21,7 @@
 
 # define WIDTH 900
 # define HEIGHT 700
-# define MAX_ITER 12
+# define MAX_ITER 90
 # define KEY_ESC 65307
 # define KEY_C 99
 # define EVT_DESTROY 17

@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   signals.c                                          :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: domvil <domvil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/08 10:00:00 by domvil            #+#    #+#             */
-/*   Updated: 2026/05/08 10:00:00 by domvil           ###   ########.fr       */
+/*   Created: 2026/05/26 12:00:00 by domvil            #+#    #+#             */
+/*   Updated: 2026/05/26 12:00:00 by domvil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	g_signal_received = 0;
-
-void	sigint_handler(int sig)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	(void)sig;
-	g_signal_received = SIGINT;
-	ft_putchar_fd('\n', 1);
-	rl_on_new_line();
-	rl_replace_line("", 0);
-	rl_redisplay();
-}
-
-void	setup_signals(void)
-{
-	signal(SIGINT, sigint_handler);
-	signal(SIGQUIT, SIG_IGN);
+	while (*s1 && *s2 && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }

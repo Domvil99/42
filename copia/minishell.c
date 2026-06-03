@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   signals.c                                          :+:      :+:    :+:   */
+/*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: domvil <domvil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,20 +12,34 @@
 
 #include "minishell.h"
 
-int	g_signal_received = 0;
-
-void	sigint_handler(int sig)
+int	main(int argc, char **argv, char **envp)
 {
-	(void)sig;
-	g_signal_received = SIGINT;
-	ft_putchar_fd('\n', 1);
-	rl_on_new_line();
-	rl_replace_line("", 0);
-	rl_redisplay();
-}
+	t_shell	shell;
+	char	*input;
+	t_command *cmd;
 
-void	setup_signals(void)
-{
-	signal(SIGINT, sigint_handler);
-	signal(SIGQUIT, SIG_IGN);
+	(void)argc;
+	(void)argv;
+	shell.env = create_env(envp);
+	shell.pwd = getcwd(NULL, 0);
+	shell.oldpwd = NULL;
+	shell.exit_status = 0;
+	setup_signals();
+	while (1)
+	{
+		input = readline("minishell> ");
+		if (!input)
+			break;
+		if (*input)
+			add_history(input);
+		cmd = parse_input(input);
+		if (cmd)
+			execute_commands(&shell, cmd);
+		free(input);
+		free_commands(cmd);
+	}
+	free(shell.pwd);
+	free(shell.oldpwd);
+	free_env(shell.env);
+	return (shell.exit_status);
 }

@@ -30,21 +30,18 @@
 
 typedef struct s_command
 {
-	char		**args;
-	char		*input_file;
-	char		*output_file;
-	char		*heredoc_delimiter;
-	int			heredoc;
-	int			append;
-	int			operator_type;
-	struct s_command	*next;
+	char	**args;
+	char	*input_file;
+	char	*output_file;
+	int		append;
+	struct s_command *next;
 }	t_command;
 
 typedef struct s_env
 {
-	char		*key;
-	char		*value;
-	struct s_env	*next;
+	char	*key;
+	char	*value;
+	struct s_env *next;
 }	t_env;
 
 typedef struct s_shell
@@ -56,9 +53,8 @@ typedef struct s_shell
 }	t_shell;
 
 // Parsing
-t_command	*parse_input(char *input, t_shell *shell);
+t_command	*parse_input(char *input);
 void		free_commands(t_command *cmd);
-char		**tokenize_with_quotes(const char *input);
 
 // Builtins
 int			ft_cd(t_shell *shell, char **args);
@@ -72,14 +68,8 @@ int			ft_exit(t_shell *shell, char **args);
 // Execution
 void		execute_commands(t_shell *shell, t_command *cmd);
 void		execute_builtin(t_shell *shell, t_command *cmd);
-int			execute_builtin_as_child(t_shell *shell, t_command *cmd);
 void		execute_external(t_shell *shell, t_command *cmd);
 char		*resolve_executable_path(t_shell *shell, char *cmd);
-int			setup_input_redirect(char *filename);
-int			setup_output_redirect(char *filename, int append);
-int			prepare_heredocs(t_command *cmd);
-int			is_builtin(char *cmd);
-void		execute_with_redirections(t_shell *shell, t_command *cmd);
 
 // Signals
 void		setup_signals(void);
@@ -90,8 +80,6 @@ void		free_env(t_env *env);
 char		*get_env_value(t_env *env, char *key);
 void		set_env_value(t_env **env, char *key, char *value);
 char		**env_to_array(t_env *env);
-void		free_string_array(char **array);
 int			ft_strcmp(const char *s1, const char *s2);
-char		*expand_input_variables(char *input, t_shell *shell);
-extern int		g_signal_received;
+
 #endif

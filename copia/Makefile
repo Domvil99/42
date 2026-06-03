@@ -4,8 +4,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 LDFLAGS = -lreadline
 
-SRCS = minishell.c parsing.c builtins.c builtins_utils.c execution.c signals.c utils.c \
-		ft_strcmp.c env_array.c tokenize.c parse_command.c expand.c
+SRCS = minishell.c parsing.c builtins.c execution.c signals.c utils.c
 OBJS = $(SRCS:.c=.o)
 
 LIBFT_DIR = libft
