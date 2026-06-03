@@ -1,0 +1,27 @@
+# Plantilla de commits sugeridos
+
+Usa este archivo como guía si prefieres escribir tus mensajes manualmente en lugar de ejecutar `scripts/prepare_push.sh`.
+
+Formato recomendado:
+- Título corto y claro: `<scope>: <acción breve>`
+  - `scope`: proyecto o módulo afectado, por ejemplo `libft`, `push_swap`, `fractol`.
+  - `acción breve`: `fix`, `add`, `refactor`, `test`, `docs`.
+
+Ejemplos:
+- libft: fix ft_atoi edge-case handling
+- push_swap: add initial sort-chunks implementation
+- ft_printf: fix null string handling in print_string
+
+Agrupa los archivos relacionados y haz commits coherentes por funcionalidad.
+
+Después de crear commits, recuerda ejecutar:
+
+```bash
+# Verifica rama actual y estado
+git branch --show-current
+git status
+
+# Revisa commits y empuja
+git log --oneline -n 10
+git push origin $(git rev-parse --abbrev-ref HEAD)
+```
