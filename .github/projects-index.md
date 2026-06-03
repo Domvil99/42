@@ -12,6 +12,7 @@ Purpose: central index for all projects under `42/` and their relation with `42/
 | push_swap | 42/C/push_swap | completed | yes | Proyecto standalone con estrategias small/chunk/radix |
 | minitalk | 42/C/minitalk | completed | yes | Comunicacion cliente-servidor por SIGUSR1/SIGUSR2; mandatory y bonus (ACK + UTF-8) implementados |
 | fract'ol | 42/C/fract'ol | completed | yes | Proyecto grafico MiniLibX: build mandatory/bonus, CLI, valgrind CLI y norminette OK; smoke visual interactivo X11 validado |
+| minishell | 42/C/minishell | in-progress | yes | Shell implementation with builtins, command execution, pipes and redirections |
 | currentLibft | 42/C/currentLibft | in-progress | base | Integrated base: libft + ft_printf + get_next_line under `currentLibft/libft/`; base libft parity synced with libft1 on 2026-03-12 |
 | tests | 42/tests | in-progress | no | Contenedor unificado de carpetas de pruebas por proyecto |
 | testsLibf | 42/tests/testsLibf | completed | yes | Manual test programs for libft validation (maintained for regression) |
@@ -21,6 +22,7 @@ Purpose: central index for all projects under `42/` and their relation with `42/
 | tests_currentLibft | 42/tests/tests_currentLibft | in-progress | yes | Integration gate for currentLibft build/link/norminette checks |
 | tests_push_swap | 42/tests/tests_push_swap | in-progress | yes | Espacio de pruebas para push_swap |
 | tests_fractol | 42/tests/tests_fractol | in-progress | yes | Checklist y pruebas manuales para fract'ol mandatory |
+| tests_minishell | 42/tests/tests_minishell | planned | no | Espacio de pruebas para minishell |
 
 ## Libft Variants Reference
 

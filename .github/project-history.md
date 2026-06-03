@@ -30,6 +30,18 @@ Validation order for all projects:
 - Notes:
   - Se sincroniza estado de fract'ol a completed en indice global tras validacion previa consolidada.
 
+- Change type: minishell-bootstrap
+- Paths changed:
+  - `42/C/minishell/`
+  - `42/C/minishell/libft/`
+  - `42/tests/tests_minishell/`
+  - `42/tests/tests_minishell/README.md`
+  - `.github/projects-index.md`
+  - `.github/project-history.md`
+- Notes:
+  - Se inicia bootstrap de minishell: creacion de directorio, copia de libft integrada desde currentLibft, setup de tests placeholder.
+  - Estado: in-progress, pendiente obtener subject canonico y comenzar implementacion mandatory.
+
 ## 2026-04-14
 
 - Change type: fractol-spec-import
