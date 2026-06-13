@@ -81,7 +81,7 @@ int	ft_unset(t_shell *shell, char **args)
 		prev = NULL;
 		while (tmp)
 		{
-			if (ft_strcmp(tmp->key, args[i]) == 0)
+			if (strcmp(tmp->key, args[i]) == 0)
 			{
 				if (prev)
 					prev->next = tmp->next;

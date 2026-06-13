@@ -16,7 +16,7 @@ static char	*get_var_value(char *var_name, t_shell *shell)
 {
 	char	*value;
 
-	if (ft_strcmp(var_name, "?") == 0)
+	if (strcmp(var_name, "?") == 0)
 		return (ft_itoa(shell->exit_status));
 	value = get_env_value(shell->env, var_name);
 	if (!value)

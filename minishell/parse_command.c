@@ -15,8 +15,8 @@
 static int	token_is_end(char *token)
 {
 	return (!token || token[0] == '|' || token[0] == '<'
-		|| token[0] == '>' || ft_strcmp(token, "&&") == 0
-		|| ft_strcmp(token, "||") == 0);
+		|| token[0] == '>' || strcmp(token, "&&") == 0
+		|| strcmp(token, "||") == 0);
 }
 
 static int	get_arg_count(char **tokens, int idx)
@@ -92,7 +92,7 @@ void	parse_redirection(t_command *cmd, char **tokens, int *idx)
 		if (!tokens[*idx] || tokens[*idx][0] == '|')
 			break ;
 		filename = tokens[*idx];
-		if (ft_strcmp(redir_type, "<") == 0)
+		if (strcmp(redir_type, "<") == 0)
 		{
 			free(cmd->input_file);
 			cmd->input_file = ft_strdup(filename);
@@ -100,7 +100,7 @@ void	parse_redirection(t_command *cmd, char **tokens, int *idx)
 			free(cmd->heredoc_delimiter);
 			cmd->heredoc_delimiter = NULL;
 		}
-		else if (ft_strcmp(redir_type, "<<") == 0)
+		else if (strcmp(redir_type, "<<") == 0)
 		{
 			free(cmd->heredoc_delimiter);
 			cmd->heredoc_delimiter = ft_strdup(filename);
@@ -108,13 +108,13 @@ void	parse_redirection(t_command *cmd, char **tokens, int *idx)
 			free(cmd->input_file);
 			cmd->input_file = NULL;
 		}
-		else if (ft_strcmp(redir_type, ">") == 0)
+		else if (strcmp(redir_type, ">") == 0)
 		{
 			free(cmd->output_file);
 			cmd->output_file = ft_strdup(filename);
 			cmd->append = 0;
 		}
-		else if (ft_strcmp(redir_type, ">>") == 0)
+		else if (strcmp(redir_type, ">>") == 0)
 		{
 			free(cmd->output_file);
 			cmd->output_file = ft_strdup(filename);
