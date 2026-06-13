@@ -28,47 +28,20 @@ void	free_string_array(char **array)
 static char	*get_heredoc_path(void)
 {
 	static int	counter;
-	char		*pid_str;
 	char		*count_str;
-	char		*tmp;
-	char		*path;
+	char		*tmp1;
+	char		*result;
 
-	pid_str = ft_itoa(getpid());
 	count_str = ft_itoa(++counter);
-	if (!pid_str || !count_str)
-	{
-		free(pid_str);
-		free(count_str);
+	if (!count_str)
 		return (NULL);
-	}
-	tmp = ft_strjoin("/tmp/minishell_heredoc_", pid_str);
-	if (!tmp)
-	{
-		free(pid_str);
-		free(count_str);
-		return (NULL);
-	}
-	path = ft_strjoin(tmp, "_");
-	free(tmp);
-	if (!path)
-	{
-		free(pid_str);
-		free(count_str);
-		return (NULL);
-	}
-	tmp = ft_strjoin(path, count_str);
-	free(path);
-	if (!tmp)
-	{
-		free(pid_str);
-		free(count_str);
-		return (NULL);
-	}
-	path = ft_strjoin(tmp, ".tmp");
-	free(tmp);
-	free(pid_str);
+	tmp1 = ft_strjoin("/tmp/minishell_heredoc_", count_str);
 	free(count_str);
-	return (path);
+	if (!tmp1)
+		return (NULL);
+	result = ft_strjoin(tmp1, ".tmp");
+	free(tmp1);
+	return (result);
 }
 
 static int	write_heredoc_to_file(const char *limiter, const char *path)
@@ -95,7 +68,7 @@ static int	write_heredoc_to_file(const char *limiter, const char *path)
 		}
 		if (!line)
 			break ;
-		if (strcmp(line, limiter) == 0)
+		if (ft_strcmp(line, limiter) == 0)
 		{
 			free(line);
 			break ;
@@ -192,46 +165,49 @@ char	*resolve_executable_path(t_shell *shell, char *cmd)
 
 int	is_builtin(char *cmd)
 {
-	if (strcmp(cmd, "cd") == 0 || strcmp(cmd, "echo") == 0 ||
-		strcmp(cmd, "pwd") == 0 || strcmp(cmd, "export") == 0 ||
-		strcmp(cmd, "unset") == 0 || strcmp(cmd, "env") == 0 ||
-		strcmp(cmd, "exit") == 0)
+	if (ft_strcmp(cmd, "cd") == 0
+		|| ft_strcmp(cmd, "echo") == 0
+		|| ft_strcmp(cmd, "pwd") == 0
+		|| ft_strcmp(cmd, "export") == 0
+		|| ft_strcmp(cmd, "unset") == 0
+		|| ft_strcmp(cmd, "env") == 0
+		|| ft_strcmp(cmd, "exit") == 0)
 		return (1);
 	return (0);
 }
 
 int	execute_builtin_as_child(t_shell *shell, t_command *cmd)
 {
-	if (strcmp(cmd->args[0], "cd") == 0)
+	if (ft_strcmp(cmd->args[0], "cd") == 0)
 		return (ft_cd(shell, cmd->args));
-	else if (strcmp(cmd->args[0], "echo") == 0)
+	else if (ft_strcmp(cmd->args[0], "echo") == 0)
 		return (ft_echo(cmd->args));
-	else if (strcmp(cmd->args[0], "pwd") == 0)
+	else if (ft_strcmp(cmd->args[0], "pwd") == 0)
 		return (ft_pwd(shell));
-	else if (strcmp(cmd->args[0], "export") == 0)
+	else if (ft_strcmp(cmd->args[0], "export") == 0)
 		return (ft_export(shell, cmd->args));
-	else if (strcmp(cmd->args[0], "unset") == 0)
+	else if (ft_strcmp(cmd->args[0], "unset") == 0)
 		return (ft_unset(shell, cmd->args));
-	else if (strcmp(cmd->args[0], "env") == 0)
+	else if (ft_strcmp(cmd->args[0], "env") == 0)
 		return (ft_env(shell));
 	return (1);
 }
 
 void	execute_builtin(t_shell *shell, t_command *cmd)
 {
-	if (strcmp(cmd->args[0], "cd") == 0)
+	if (ft_strcmp(cmd->args[0], "cd") == 0)
 		shell->exit_status = ft_cd(shell, cmd->args);
-	else if (strcmp(cmd->args[0], "echo") == 0)
+	else if (ft_strcmp(cmd->args[0], "echo") == 0)
 		shell->exit_status = ft_echo(cmd->args);
-	else if (strcmp(cmd->args[0], "pwd") == 0)
+	else if (ft_strcmp(cmd->args[0], "pwd") == 0)
 		shell->exit_status = ft_pwd(shell);
-	else if (strcmp(cmd->args[0], "export") == 0)
+	else if (ft_strcmp(cmd->args[0], "export") == 0)
 		shell->exit_status = ft_export(shell, cmd->args);
-	else if (strcmp(cmd->args[0], "unset") == 0)
+	else if (ft_strcmp(cmd->args[0], "unset") == 0)
 		shell->exit_status = ft_unset(shell, cmd->args);
-	else if (strcmp(cmd->args[0], "env") == 0)
+	else if (ft_strcmp(cmd->args[0], "env") == 0)
 		shell->exit_status = ft_env(shell);
-	else if (strcmp(cmd->args[0], "exit") == 0)
+	else if (ft_strcmp(cmd->args[0], "exit") == 0)
 		ft_exit(shell, cmd->args);
 }
 

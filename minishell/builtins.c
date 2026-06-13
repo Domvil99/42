@@ -45,7 +45,7 @@ int	ft_echo(char **args)
 
 	i = 1;
 	n_flag = 0;
-	if (args[1] && strcmp(args[1], "-n") == 0)
+	if (args[1] && ft_strcmp(args[1], "-n") == 0)
 	{
 		n_flag = 1;
 		i++;

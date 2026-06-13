@@ -51,19 +51,19 @@ static int	is_control_token(const char *token)
 {
 	if (!token)
 		return (0);
-	if (strcmp(token, "|") == 0)
+	if (ft_strcmp(token, "|") == 0)
 		return (1);
-	if (strcmp(token, "&&") == 0)
+	if (ft_strcmp(token, "&&") == 0)
 		return (1);
-	if (strcmp(token, "||") == 0)
+	if (ft_strcmp(token, "||") == 0)
 		return (1);
 	return (0);
 }
 
 static int	is_redirection(const char *token)
 {
-	return (strcmp(token, "<") == 0 || strcmp(token, "<<") == 0
-		|| strcmp(token, ">") == 0 || strcmp(token, ">>") == 0);
+	return (ft_strcmp(token, "<") == 0 || ft_strcmp(token, "<<") == 0
+		|| ft_strcmp(token, ">") == 0 || ft_strcmp(token, ">>") == 0);
 }
 
 static t_command	*allocate_command(void)
@@ -92,7 +92,7 @@ static void	apply_redirection(t_command *cmd, char **tokens, int *idx)
 	(*idx)++;
 	if (!tokens[*idx] || is_control_token(tokens[*idx]))
 		return ;
-	if (strcmp(redir, "<") == 0)
+	if (ft_strcmp(redir, "<") == 0)
 	{
 		free(cmd->input_file);
 		cmd->input_file = ft_strdup(tokens[*idx]);
@@ -100,7 +100,7 @@ static void	apply_redirection(t_command *cmd, char **tokens, int *idx)
 		free(cmd->heredoc_delimiter);
 		cmd->heredoc_delimiter = NULL;
 	}
-	else if (strcmp(redir, "<<") == 0)
+	else if (ft_strcmp(redir, "<<") == 0)
 	{
 		free(cmd->heredoc_delimiter);
 		cmd->heredoc_delimiter = ft_strdup(tokens[*idx]);
@@ -108,13 +108,13 @@ static void	apply_redirection(t_command *cmd, char **tokens, int *idx)
 		free(cmd->input_file);
 		cmd->input_file = NULL;
 	}
-	else if (strcmp(redir, ">") == 0)
+	else if (ft_strcmp(redir, ">") == 0)
 	{
 		free(cmd->output_file);
 		cmd->output_file = ft_strdup(tokens[*idx]);
 		cmd->append = 0;
 	}
-	else if (strcmp(redir, ">>") == 0)
+	else if (ft_strcmp(redir, ">>") == 0)
 	{
 		free(cmd->output_file);
 		cmd->output_file = ft_strdup(tokens[*idx]);
@@ -125,11 +125,11 @@ static void	apply_redirection(t_command *cmd, char **tokens, int *idx)
 
 static int	get_operator_type(const char *token)
 {
-	if (strcmp(token, "|") == 0)
+	if (ft_strcmp(token, "|") == 0)
 		return (1);
-	if (strcmp(token, "&&") == 0)
+	if (ft_strcmp(token, "&&") == 0)
 		return (2);
-	if (strcmp(token, "||") == 0)
+	if (ft_strcmp(token, "||") == 0)
 		return (3);
 	return (0);
 }
